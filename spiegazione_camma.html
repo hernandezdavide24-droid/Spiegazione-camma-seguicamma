@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Come funziona una camma?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f2ede2; --ink:#24211c; --muted:#655f52; --panel:#ffffff;
+    --line:#ddd2b3; --accent:#e8590c; --accent-deep:#b6440a; --steel:#4d6b6b;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1b1712; --ink:#f0e9da; --muted:#b9ae98; --panel:#252019;
+      --line:#3a3226; --accent:#f2793a; --accent-deep:#ffa066; --steel:#7fa3a3;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1b1712; --ink:#f0e9da; --muted:#b9ae98; --panel:#252019;
+    --line:#3a3226; --accent:#f2793a; --accent-deep:#ffa066; --steel:#7fa3a3;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Public Sans', system-ui, sans-serif;
+    font-variant-numeric: tabular-nums;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .page{ max-width:640px; margin:0 auto; padding:0 20px 56px; }
+
+  header{ text-align:center; padding:38px 12px 8px; }
+  header h1{
+    font-family:'Fraunces', serif; font-weight:600; font-size:clamp(28px,7vw,38px);
+    margin:0 0 10px; line-height:1.15;
+  }
+  header p{ color:var(--muted); font-size:15.5px; max-width:38ch; margin:0 auto; line-height:1.5; }
+
+  .stage{
+    margin:26px 0 8px; border-radius:22px; background:var(--ink); position:relative;
+    padding:22px 16px 18px; overflow:hidden;
+  }
+  .stage::before{
+    content:''; position:absolute; inset:0; border-radius:22px;
+    background: radial-gradient(120% 90% at 50% 0%, rgba(232,89,12,0.22), transparent 60%);
+    pointer-events:none;
+  }
+  .stage svg{ width:100%; height:auto; display:block; position:relative; }
+
+  .readout{
+    display:flex; justify-content:center; gap:28px; margin-top:14px; position:relative;
+  }
+  .readout .stat{ text-align:center; }
+  .readout .stat b{
+    display:block; font-family:'Fraunces', serif; font-weight:600; font-size:22px; color:#f2ede2;
+  }
+  .readout .stat span{ font-size:11.5px; color:#b9ae98; letter-spacing:.02em; }
+
+  .controls{
+    display:flex; align-items:center; justify-content:center; gap:14px;
+    margin-top:16px; position:relative;
+  }
+  .controls button{
+    font-family:'Public Sans', sans-serif; font-weight:600; font-size:14px;
+    background:var(--accent); color:#241608; border:none; border-radius:999px;
+    padding:10px 20px; cursor:pointer;
+  }
+  .controls button:focus-visible{ outline:2px solid #f2ede2; outline-offset:2px; }
+  .controls .speed{ display:flex; align-items:center; gap:8px; color:#e8e0cf; font-size:13px; }
+  .controls input[type="range"]{ width:100px; accent-color:var(--accent); }
+
+  section.copy{ margin-top:34px; }
+  section.copy h2{
+    font-family:'Fraunces', serif; font-weight:600; font-size:21px; margin:0 0 12px;
+  }
+  section.copy p{ font-size:15.5px; line-height:1.65; margin:0 0 14px; max-width:60ch; }
+  section.copy p:last-child{ margin-bottom:0; }
+
+  .glossary{ margin-top:34px; }
+  .row{
+    display:grid; grid-template-columns: 118px 1fr; gap:14px;
+    padding:13px 0; border-top:1px solid var(--line);
+  }
+  .row:last-child{ border-bottom:1px solid var(--line); }
+  .row dt{ font-weight:700; font-size:14.5px; padding-left:12px; border-left:3px solid var(--accent); }
+  .row dd{ margin:0; font-size:14.5px; color:var(--muted); line-height:1.5; }
+
+  .examples{ margin-top:34px; }
+  .ex-item{ display:flex; gap:12px; padding:10px 0; font-size:15px; line-height:1.55; }
+  .ex-item .glyph{ font-size:20px; flex:none; width:26px; text-align:center; }
+  .ex-item b{ font-weight:600; }
+
+  footer{
+    margin-top:46px; padding-top:18px; border-top:1px solid var(--line);
+    text-align:center; color:var(--muted); font-size:12.5px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>Come funziona&nbsp;una camma?</h1>
+    <p>Guarda il meccanismo che trasforma un giro di manovella in un movimento su e giù.</p>
+  </header>
+
+  <div class="stage">
+    <svg id="scene" viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arrow" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
+          <path d="M0,0 L7,3.5 L0,7 z" fill="#e8e0cf"/>
+        </marker>
+      </defs>
+
+      <!-- base / telaio -->
+      <rect x="40" y="252" width="240" height="6" rx="2" fill="#3a342b"/>
+      <g id="hatchGround"></g>
+
+      <!-- guida fissa -->
+      <rect x="132" y="85" width="36" height="28" rx="4" fill="none" stroke="#8a8172" stroke-width="2"/>
+
+      <!-- molla di richiamo -->
+      <polyline id="spring" points="" fill="none" stroke="#8a8172" stroke-width="2" stroke-linejoin="round"/>
+
+      <!-- asta (rod) -->
+      <rect id="rod" x="142" y="0" width="16" height="0" fill="#e8e0cf"/>
+      <rect x="128" y="40" width="44" height="8" rx="2" fill="#e8e0cf"/>
+
+      <!-- cerchio base (riferimento tratteggiato) -->
+      <circle cx="150" cy="220" r="58" fill="none" stroke="#5a5347" stroke-width="1.4" stroke-dasharray="5,5"/>
+
+      <!-- gruppo camma: ruota attorno all'albero -->
+      <g id="camGroup">
+        <circle cx="150" cy="194" r="58" fill="#3a342b" stroke="#e8e0cf" stroke-width="2"/>
+        <line x1="150" y1="194" x2="150" y2="136" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+      </g>
+      <circle cx="150" cy="220" r="6" fill="#e8e0cf"/>
+
+      <!-- rullo (seguicamma) -->
+      <circle id="roller" cx="150" cy="150" r="15" fill="#f2ede2" stroke="#e8e0cf" stroke-width="2.5"/>
+
+      <!-- verso di rotazione -->
+      <path d="M 118,205 A 34,34 0 1 1 118,235" fill="none" stroke="#e8e0cf" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <text x="150" y="276" text-anchor="middle" font-family="Public Sans" font-size="11" fill="#8a8172">telaio</text>
+    </svg>
+
+    <div class="readout">
+      <div class="stat"><b id="angleOut">0°</b><span>angolo camma</span></div>
+      <div class="stat"><b id="liftOut">0</b><span>alzata relativa</span></div>
+    </div>
+
+    <div class="controls">
+      <button id="toggleBtn" type="button">Pausa</button>
+      <div class="speed">
+        <span>lento</span>
+        <input id="speedRange" type="range" min="0.3" max="2.4" step="0.1" value="1">
+        <span>veloce</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="copy">
+    <h2>Un giro, un ciclo</h2>
+    <p>Gira la manovella e l'albero fa ruotare la camma — il disco che vedi animato qui sopra. Il suo bordo non è un cerchio perfetto: mentre gira, spinge verso l'alto il piccolo rullo un po' alla volta, poi lo lascia scendere di nuovo. Un giro completo della camma corrisponde a un ciclo completo di salita e discesa del rullo.</p>
+    <p>Perché il rullo resti sempre a contatto con il disco, anche mentre scende, una molla lo richiama verso il basso. Senza quella molla, girando abbastanza in fretta, il rullo si staccherebbe dal profilo.</p>
+    <p>Cambiando la forma del disco cambia anche il modo in cui il rullo si muove — più dolce, più brusco, con soste più o meno lunghe. È proprio questo il margine di progettazione che stiamo esplorando in questo lavoro.</p>
+  </section>
+
+  <section class="glossary">
+    <h2>Le parti in gioco</h2>
+    <dl>
+      <div class="row"><dt>Camma</dt><dd>Il disco calettato sull'albero. La sua forma, non il motore, decide come si muoverà il rullo.</dd></div>
+      <div class="row"><dt>Seguicamma</dt><dd>Il rullo (o piattello) che tocca il bordo della camma e ne segue il profilo.</dd></div>
+      <div class="row"><dt>Molla di richiamo</dt><dd>Tiene il seguicamma sempre a contatto con la camma, anche in discesa.</dd></div>
+      <div class="row"><dt>Guida</dt><dd>Obbliga il seguicamma a muoversi solo su e giù, senza ruotare o spostarsi di lato.</dd></div>
+    </dl>
+  </section>
+
+  <section class="examples">
+    <h2>Dove lo trovi già</h2>
+    <div class="ex-item"><span class="glyph">🚗</span><div><b>Nei motori a scoppio</b> — l'albero a camme apre e chiude le valvole a ogni ciclo, con un tempismo millimetrico.</div></div>
+    <div class="ex-item"><span class="glyph">📦</span><div><b>Nelle macchine automatiche</b> — camme sincronizzano il movimento di slitte e pinze durante il confezionamento.</div></div>
+    <div class="ex-item"><span class="glyph">🧵</span><div><b>Nelle macchine tessili</b> — muovono periodicamente gli organi di selezione e battitura del filo.</div></div>
+  </section>
+
+  <footer>Progetto LPI — meccanismo camma-seguicamma</footer>
+</div>
+
+<script>
+(function(){
+  const camGroup = document.getElementById('camGroup');
+  const roller = document.getElementById('roller');
+  const rod = document.getElementById('rod');
+  const spring = document.getElementById('spring');
+  const angleOut = document.getElementById('angleOut');
+  const liftOut = document.getElementById('liftOut');
+  const toggleBtn = document.getElementById('toggleBtn');
+  const speedRange = document.getElementById('speedRange');
+  const hatchGround = document.getElementById('hatchGround');
+
+  for (let x = 46; x <= 300; x += 16) {
+    const l = document.createElementNS('http://www.w3.org/2000/svg','line');
+    l.setAttribute('x1', x); l.setAttribute('y1', 258);
+    l.setAttribute('x2', x+9); l.setAttribute('y2', 270);
+    l.setAttribute('stroke', '#3a342b'); l.setAttribute('stroke-width', 1.4);
+    hatchGround.appendChild(l);
+  }
+
+  const shaftX = 150, shaftY = 220, rB = 58, ecc = 26, rollerR = 15;
+
+  let theta = 0;
+  let playing = true;
+  let last = null;
+
+  function render(){
+    const rad = theta;
+    const height = ecc*Math.cos(rad) + Math.sqrt(Math.max(rB*rB - ecc*ecc*Math.sin(rad)*Math.sin(rad), 0));
+    const rollerY = shaftY - height - rollerR;
+
+    camGroup.setAttribute('transform', `rotate(${(theta*180/Math.PI).toFixed(2)} ${shaftX} ${shaftY})`);
+    roller.setAttribute('cy', rollerY.toFixed(2));
+
+    const rodTop = 40;
+    rod.setAttribute('y', rodTop);
+    rod.setAttribute('height', Math.max(rollerY - rodTop, 0).toFixed(2));
+
+    const attachY = rollerY + rollerR + 14;
+    const anchorX = shaftX + 46, anchorY = 244;
+    const pts = [];
+    const n = 6;
+    for(let i=0;i<=n;i++){
+      const t = i/n;
+      const x = (shaftX+18) + t*(anchorX-(shaftX+18));
+      const y = attachY + t*(anchorY-attachY);
+      const off = (i===0||i===n) ? 0 : (i%2? 7:-7);
+      pts.push(`${(x+off).toFixed(1)},${y.toFixed(1)}`);
+    }
+    spring.setAttribute('points', pts.join(' '));
+
+    const deg = Math.round(((theta*180/Math.PI)%360+360)%360);
+    angleOut.textContent = deg + '°';
+    liftOut.textContent = (height-(rB-ecc)).toFixed(0) + ' mm';
+  }
+
+  function frame(ts){
+    if(last==null) last = ts;
+    const dt = Math.min((ts-last)/1000, 0.05);
+    last = ts;
+    if(playing){
+      const speed = parseFloat(speedRange.value);
+      theta += dt * speed;
+    }
+    render();
+    requestAnimationFrame(frame);
+  }
+
+  toggleBtn.addEventListener('click', function(){
+    playing = !playing;
+    toggleBtn.textContent = playing ? 'Pausa' : 'Gioca';
+  });
+
+  render();
+  requestAnimationFrame(frame);
+})();
+</script>
+
+</body>
+</html>
