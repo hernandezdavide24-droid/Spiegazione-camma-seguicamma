@@ -3,271 +3,718 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Come funziona una camma?</title>
+<title>Come funziona una camma</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#f2ede2; --ink:#24211c; --muted:#655f52; --panel:#ffffff;
-    --line:#ddd2b3; --accent:#e8590c; --accent-deep:#b6440a; --steel:#4d6b6b;
+    --bg:#eef2fa; --ink:#0f1a33; --muted:#5a6a90; --card:#ffffff; --line:#dbe3f3;
+    --accent:#2f6fed; --accent-soft:rgba(47,111,237,.12); --good:#16a36a; --bad:#e0493e;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --paper:#1b1712; --ink:#f0e9da; --muted:#b9ae98; --panel:#252019;
-      --line:#3a3226; --accent:#f2793a; --accent-deep:#ffa066; --steel:#7fa3a3;
+      --bg:#080f1e; --ink:#e8eefb; --muted:#93a3c7; --card:#111b31; --line:#22304f;
+      --accent:#5b8dff; --accent-soft:rgba(91,141,255,.16); --good:#3ccf8e; --bad:#ff6b5f;
     }
   }
   :root[data-theme="dark"]{
-    --paper:#1b1712; --ink:#f0e9da; --muted:#b9ae98; --panel:#252019;
-    --line:#3a3226; --accent:#f2793a; --accent-deep:#ffa066; --steel:#7fa3a3;
+    --bg:#080f1e; --ink:#e8eefb; --muted:#93a3c7; --card:#111b31; --line:#22304f;
+    --accent:#5b8dff; --accent-soft:rgba(91,141,255,.16); --good:#3ccf8e; --bad:#ff6b5f;
   }
 
-  *{ box-sizing:border-box; }
-  html{ scroll-padding-top: env(safe-area-inset-top, 0px); }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
   body{
-    margin:0; background:var(--paper); color:var(--ink);
-    font-family:'Public Sans', system-ui, sans-serif;
-    font-variant-numeric: tabular-nums;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Inter', system-ui, sans-serif; line-height:1.5;
+    padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0);
   }
-  .page{ max-width:640px; margin:0 auto; padding:0 20px 56px; }
+  .page{ max-width:620px; margin:0 auto; padding:0 16px 64px; }
+  h1,h2{ font-family:'Sora', sans-serif; letter-spacing:-.015em; margin:0; }
 
-  header{ text-align:center; padding:38px 12px 8px; }
-  header h1{
-    font-family:'Fraunces', serif; font-weight:600; font-size:clamp(28px,7vw,38px);
-    margin:0 0 10px; line-height:1.15;
+  /* ---------- HERO ---------- */
+  .hero{ text-align:center; padding:36px 8px 18px; }
+  .eyebrow{
+    display:inline-block; font-size:12px; font-weight:600; color:var(--accent);
+    background:var(--accent-soft); padding:5px 12px; border-radius:99px;
   }
-  header p{ color:var(--muted); font-size:15.5px; max-width:38ch; margin:0 auto; line-height:1.5; }
+  .hero h1{ font-size:clamp(30px,8.5vw,44px); font-weight:800; line-height:1.08; margin:14px 0 10px; }
+  .hero h1 span{ color:var(--accent); }
+  .hero p{ color:var(--muted); font-size:16px; margin:0 auto; max-width:30ch; }
 
+  /* ---------- STAGE: sempre scuro, indipendente dal tema del telefono ---------- */
   .stage{
-    margin:26px 0 8px; border-radius:22px; background:var(--ink); position:relative;
-    padding:22px 16px 18px; overflow:hidden;
+    --s-bg:#0c1630; --s-fg:#eaf1ff; --s-mut:#8ea3d3; --s-line:#3a4f82; --s-dark:#1a2a52; --s-acc:#5b8dff;
+    background:var(--s-bg); color:var(--s-fg); border-radius:26px; padding:16px 14px 18px;
+    position:relative; overflow:hidden; box-shadow:0 24px 50px -24px rgba(12,22,48,.7);
   }
   .stage::before{
-    content:''; position:absolute; inset:0; border-radius:22px;
-    background: radial-gradient(120% 90% at 50% 0%, rgba(232,89,12,0.22), transparent 60%);
-    pointer-events:none;
+    content:''; position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(110% 70% at 50% 0%, rgba(91,141,255,.25), transparent 60%);
   }
-  .stage svg{ width:100%; height:auto; display:block; position:relative; }
+  .stage > *{ position:relative; }
 
-  .readout{
-    display:flex; justify-content:center; gap:28px; margin-top:14px; position:relative;
+  .phase-bar{ display:flex; gap:6px; margin-bottom:6px; }
+  .phase{
+    flex:1; text-align:center; font-size:11.5px; font-weight:600; color:var(--s-mut);
+    padding:7px 2px; border-radius:10px; background:rgba(255,255,255,.05);
+    transition:background .25s, color .25s, transform .25s;
   }
-  .readout .stat{ text-align:center; }
-  .readout .stat b{
-    display:block; font-family:'Fraunces', serif; font-weight:600; font-size:22px; color:#f2ede2;
-  }
-  .readout .stat span{ font-size:11.5px; color:#b9ae98; letter-spacing:.02em; }
+  .phase.on{ background:var(--s-acc); color:#fff; transform:translateY(-1px); }
 
-  .controls{
-    display:flex; align-items:center; justify-content:center; gap:14px;
-    margin-top:16px; position:relative;
-  }
-  .controls button{
-    font-family:'Public Sans', sans-serif; font-weight:600; font-size:14px;
-    background:var(--accent); color:#241608; border:none; border-radius:999px;
-    padding:10px 20px; cursor:pointer;
-  }
-  .controls button:focus-visible{ outline:2px solid #f2ede2; outline-offset:2px; }
-  .controls .speed{ display:flex; align-items:center; gap:8px; color:#e8e0cf; font-size:13px; }
-  .controls input[type="range"]{ width:100px; accent-color:var(--accent); }
+  #mech{ width:100%; height:auto; display:block; touch-action:none; cursor:grab; user-select:none; }
+  #mech.dragging{ cursor:grabbing; }
 
-  section.copy{ margin-top:34px; }
-  section.copy h2{
-    font-family:'Fraunces', serif; font-weight:600; font-size:21px; margin:0 0 12px;
+  .sv-frame{ fill:var(--s-dark); }
+  .sv-hatch{ stroke:var(--s-dark); stroke-width:1.4; }
+  .sv-line{ fill:none; stroke:var(--s-line); stroke-width:2; }
+  .sv-bush{ fill:#223766; stroke:var(--s-line); stroke-width:2; }
+  .sv-dash{ fill:none; stroke:var(--s-line); stroke-width:1.3; stroke-dasharray:5 5; }
+  .sv-cam{ fill:#1e3163; stroke:var(--s-fg); stroke-width:2; }
+  .sv-fg{ fill:var(--s-fg); }
+  .sv-acc{ fill:var(--s-acc); }
+  .sv-acc-stroke{ stroke:var(--s-acc); stroke-width:3.5; stroke-linecap:round; }
+  .sv-pointer{ stroke:var(--s-acc); stroke-width:1.6; stroke-dasharray:3 3; }
+  .sv-roller{ fill:#eaf1ff; stroke:var(--s-acc); stroke-width:3; }
+  .sv-spring{ fill:none; stroke:#9fb6ea; stroke-width:2.2; stroke-linejoin:round; transition:opacity .3s; }
+  .sv-text{ fill:var(--s-mut); font-family:Inter, sans-serif; font-size:10.5px; }
+  .sv-tick{ stroke:var(--s-mut); stroke-width:1.2; }
+
+  .sv-lever{ fill:none; stroke:var(--s-fg); stroke-width:7; stroke-linecap:round; stroke-linejoin:round; }
+  .sv-lip{ fill:none; stroke:var(--s-fg); stroke-width:4; stroke-linecap:round; }
+  .sv-ball{ fill:#ff7a45; stroke:#fff; stroke-width:2; }
+  .mode-row{ display:flex; justify-content:center; margin-bottom:10px; }
+  .mode-row .seg button{ font-size:13.5px; padding:8px 16px; }
+
+  .part{ transition:opacity .3s, filter .3s; }
+  .stage[data-focus] .part{ opacity:.15; }
+  .stage[data-focus="cam"] .p-cam,
+  .stage[data-focus="follower"] .p-follower,
+  .stage[data-focus="spring"] .p-spring,
+  .stage[data-focus="guide"] .p-guide{ opacity:1; filter:drop-shadow(0 0 7px rgba(91,141,255,.95)); }
+
+  .drag-hint{
+    position:absolute; left:50%; top:47%; transform:translateX(-50%);
+    font-size:12.5px; font-weight:600; color:#fff; background:rgba(47,111,237,.95);
+    padding:7px 13px; border-radius:99px; pointer-events:none; white-space:nowrap;
+    animation:bob 1.8s ease-in-out infinite; transition:opacity .4s;
   }
-  section.copy p{ font-size:15.5px; line-height:1.65; margin:0 0 14px; max-width:60ch; }
-  section.copy p:last-child{ margin-bottom:0; }
+  .drag-hint.gone{ opacity:0; }
+  @keyframes bob{ 50%{ transform:translate(-50%,-5px); } }
 
-  .glossary{ margin-top:34px; }
-  .row{
-    display:grid; grid-template-columns: 118px 1fr; gap:14px;
-    padding:13px 0; border-top:1px solid var(--line);
+  .flyoff{
+    position:absolute; right:14px; top:60px; font-size:12px; font-weight:700;
+    background:#e0493e; color:#fff; padding:6px 11px; border-radius:99px;
+    opacity:0; transform:scale(.8); transition:opacity .15s, transform .15s; pointer-events:none;
   }
-  .row:last-child{ border-bottom:1px solid var(--line); }
-  .row dt{ font-weight:700; font-size:14.5px; padding-left:12px; border-left:3px solid var(--accent); }
-  .row dd{ margin:0; font-size:14.5px; color:var(--muted); line-height:1.5; }
+  .flyoff.show{ opacity:1; transform:scale(1); }
 
-  .examples{ margin-top:34px; }
-  .ex-item{ display:flex; gap:12px; padding:10px 0; font-size:15px; line-height:1.55; }
-  .ex-item .glyph{ font-size:20px; flex:none; width:26px; text-align:center; }
-  .ex-item b{ font-weight:600; }
+  #graph{ width:100%; height:auto; display:block; margin-top:2px; }
+  .g-axis{ stroke:var(--s-line); stroke-width:1; }
+  .g-ghost{ fill:none; stroke:var(--s-line); stroke-width:2; stroke-dasharray:3 4; }
+  .g-trace{ fill:none; stroke:var(--s-acc); stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
+  .g-dot{ fill:#fff; stroke:var(--s-acc); stroke-width:3; }
+  .g-lbl{ fill:var(--s-mut); font-family:Inter, sans-serif; font-size:10px; }
 
-  footer{
-    margin-top:46px; padding-top:18px; border-top:1px solid var(--line);
-    text-align:center; color:var(--muted); font-size:12.5px;
+  .readout{ display:flex; justify-content:space-around; margin:8px 0 12px; }
+  .readout div{ text-align:center; }
+  .readout b{ display:block; font-family:Sora, sans-serif; font-size:22px; font-variant-numeric:tabular-nums; color:var(--s-fg); }
+  .readout span{ font-size:11px; color:var(--s-mut); }
+
+  .ctrl{ display:flex; gap:8px; flex-wrap:wrap; justify-content:center; }
+  .seg{ display:flex; background:rgba(255,255,255,.07); border-radius:99px; padding:3px; }
+  .seg button, .pill{
+    font:600 13px Inter, sans-serif; color:var(--s-mut); background:none; border:none;
+    padding:8px 13px; border-radius:99px; cursor:pointer; transition:background .2s, color .2s;
+  }
+  .seg button.on{ background:var(--s-acc); color:#fff; }
+  .pill{ background:rgba(255,255,255,.07); display:flex; align-items:center; gap:8px; }
+  .pill .sw{ width:32px; height:18px; border-radius:99px; background:#3b4d7d; position:relative; transition:background .2s; }
+  .pill .sw::after{ content:''; position:absolute; top:2px; left:2px; width:14px; height:14px; border-radius:50%; background:#fff; transition:transform .2s; }
+  .pill.on .sw{ background:#16a36a; }
+  .pill.on .sw::after{ transform:translateX(14px); }
+  .pill.on{ color:#fff; }
+  .stage button:focus-visible{ outline:2px solid #fff; outline-offset:2px; }
+
+  /* ---------- SEZIONI ---------- */
+  section{ margin-top:44px; }
+  section h2{ font-size:22px; margin-bottom:6px; }
+  .lead{ color:var(--muted); font-size:15px; margin:0 0 16px; }
+
+  .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .step{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:14px 8px; text-align:center; }
+  .step .ico{ font-size:26px; line-height:1; }
+  .step b{ display:block; font-family:Sora, sans-serif; font-size:14px; margin:8px 0 2px; }
+  .step span{ font-size:12.5px; color:var(--muted); display:block; line-height:1.35; }
+
+  .types{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .type{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px 14px; display:flex; flex-direction:column; gap:6px; }
+  .type .ico{ font-size:28px; line-height:1; }
+  .type b{ font-family:Sora, sans-serif; font-size:16px; }
+  .type span{ font-size:13.5px; color:var(--muted); line-height:1.45; flex:1; }
+  .type .chip{ align-self:flex-start; padding:8px 14px; font-size:13px; margin-top:4px; }
+
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{
+    font:600 14px Inter, sans-serif; color:var(--ink); background:var(--card); border:1px solid var(--line);
+    padding:10px 15px; border-radius:99px; cursor:pointer; transition:all .2s;
+  }
+  .chip.on{ background:var(--accent); border-color:var(--accent); color:#fff; transform:translateY(-2px); }
+  .chip:focus-visible, .opt:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+  .chip-info{
+    margin-top:12px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--accent);
+    border-radius:14px; padding:12px 14px; font-size:14.5px; min-height:48px;
+  }
+
+  .uses{ display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory; margin:0 -16px; padding:0 16px 6px; }
+  .use{
+    flex:0 0 72%; scroll-snap-align:start; background:var(--card); border:1px solid var(--line);
+    border-radius:18px; padding:16px;
+  }
+  .use .ico{ font-size:30px; }
+  .use b{ display:block; font-family:Sora, sans-serif; font-size:15.5px; margin:8px 0 4px; }
+  .use span{ font-size:13.5px; color:var(--muted); }
+
+  .quiz{ background:var(--card); border:1px solid var(--line); border-radius:20px; padding:18px; }
+  .quiz p{ margin:0 0 4px; font-weight:600; font-size:15.5px; }
+  .opt{
+    display:block; width:100%; text-align:left; font:500 14.5px Inter, sans-serif; color:var(--ink);
+    background:transparent; border:1.5px solid var(--line); border-radius:12px; padding:11px 14px; margin-top:8px; cursor:pointer;
+    transition:all .2s;
+  }
+  .opt.right{ border-color:var(--good); background:rgba(22,163,106,.12); }
+  .opt.wrong{ border-color:var(--bad); background:rgba(224,73,62,.1); }
+  .fb{ margin-top:12px; font-size:14px; color:var(--muted); min-height:1.5em; }
+
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+    .drag-hint{ animation:none; }
   }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <header>
-    <h1>Come funziona&nbsp;una camma?</h1>
-    <p>Guarda il meccanismo che trasforma un giro di manovella in un movimento su e giù.</p>
+  <header class="hero">
+    <span class="eyebrow">Meccanismo camma-seguicamma</span>
+    <h1>Un giro diventa<br><span>su e giù</span></h1>
+    <p>Trascina la camma col dito e guarda cosa succede.</p>
   </header>
 
-  <div class="stage">
-    <svg id="scene" viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <marker id="arrow" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto">
-          <path d="M0,0 L7,3.5 L0,7 z" fill="#e8e0cf"/>
-        </marker>
-      </defs>
+  <!-- ================= STAGE INTERATTIVO ================= -->
+  <div class="stage" id="stage">
+    <div class="mode-row">
+      <div class="seg" id="modeSeg">
+        <button data-m="trans" class="on">↕ Traslante</button>
+        <button data-m="osc">↻ Oscillante</button>
+      </div>
+    </div>
+    <div class="phase-bar">
+      <div class="phase" data-ph="0">⬆ Salita</div>
+      <div class="phase" data-ph="1">⏸ Sosta alta</div>
+      <div class="phase" data-ph="2">⬇ Discesa</div>
+      <div class="phase" data-ph="3">⏸ Sosta bassa</div>
+    </div>
 
-      <!-- base / telaio -->
-      <rect x="40" y="252" width="240" height="6" rx="2" fill="#3a342b"/>
-      <g id="hatchGround"></g>
+    <svg id="mech" viewBox="0 -50 360 380" aria-label="Animazione del meccanismo camma-seguicamma">
+      <!-- telaio -->
+      <rect class="sv-frame" x="30" y="304" width="310" height="6" rx="2"/>
+      <g id="hatch"></g>
 
-      <!-- guida fissa -->
-      <rect x="132" y="85" width="36" height="28" rx="4" fill="none" stroke="#8a8172" stroke-width="2"/>
-
-      <!-- molla di richiamo -->
-      <polyline id="spring" points="" fill="none" stroke="#8a8172" stroke-width="2" stroke-linejoin="round"/>
-
-      <!-- asta (rod) -->
-      <rect id="rod" x="142" y="0" width="16" height="0" fill="#e8e0cf"/>
-      <rect x="128" y="40" width="44" height="8" rx="2" fill="#e8e0cf"/>
-
-      <!-- cerchio base (riferimento tratteggiato) -->
-      <circle cx="150" cy="220" r="58" fill="none" stroke="#5a5347" stroke-width="1.4" stroke-dasharray="5,5"/>
-
-      <!-- gruppo camma: ruota attorno all'albero -->
-      <g id="camGroup">
-        <circle cx="150" cy="194" r="58" fill="#3a342b" stroke="#e8e0cf" stroke-width="2"/>
-        <line x1="150" y1="194" x2="150" y2="136" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+      <!-- ===== VERSIONE OSCILLANTE (bilanciere) ===== -->
+      <g id="modeO" style="display:none">
+        <g class="part p-guide">
+          <line class="sv-line" x1="205" y1="36" x2="332" y2="36"/>
+          <line class="sv-line" x1="332" y1="36" x2="332" y2="304"/>
+          <line class="sv-line" x1="205" y1="36" x2="205" y2="122"/>
+          <path class="sv-bush" d="M197,120 L213,120 L209,134 L201,134 Z"/>
+        </g>
+        <g class="part p-spring"><polyline id="springO" class="sv-spring" points=""/></g>
+        <g class="part p-follower">
+          <polyline id="lever" class="sv-lever" points=""/>
+          <path id="lips" class="sv-lip" d=""/>
+          <circle id="rollerO" class="sv-roller" cx="130" cy="150" r="12"/>
+        </g>
+        <circle class="sv-fg" cx="205" cy="128" r="4.5"/>
+        <circle id="ball" class="sv-ball" cx="260" cy="120" r="8"/>
       </g>
-      <circle cx="150" cy="220" r="6" fill="#e8e0cf"/>
 
-      <!-- rullo (seguicamma) -->
-      <circle id="roller" cx="150" cy="150" r="15" fill="#f2ede2" stroke="#e8e0cf" stroke-width="2.5"/>
+      <!-- ===== VERSIONE TRASLANTE ===== -->
+      <g id="modeT">
+      <!-- guida: bussola fissata al telaio, l'asta ci scorre dentro -->
+      <g class="part p-guide">
+        <line class="sv-line" x1="145" y1="37" x2="300" y2="37"/>
+        <line class="sv-line" x1="300" y1="37" x2="300" y2="304"/>
+        <rect class="sv-bush" x="112" y="28" width="36" height="18" rx="4"/>
+        <!-- supporto del fulcro del bilanciere -->
+        <line class="sv-line" x1="215" y1="-2" x2="215" y2="37"/>
+        <path class="sv-bush" d="M207,6 L223,6 L219,-6 L211,-6 Z"/>
+      </g>
 
-      <!-- verso di rotazione -->
-      <path d="M 118,205 A 34,34 0 1 1 118,235" fill="none" stroke="#e8e0cf" stroke-width="2" marker-end="url(#arrow)"/>
+      <!-- bilanciere spinto dall'asta, con la pallina -->
+      <g class="part p-beam">
+        <polyline id="beamT" class="sv-lever" points=""/>
+        <path id="lipsT" class="sv-lip" d=""/>
+      </g>
+      <circle class="sv-fg" cx="215" cy="-2" r="4.5"/>
+      <circle id="ballT" class="sv-ball" cx="260" cy="-20" r="8"/>
 
-      <text x="150" y="276" text-anchor="middle" font-family="Public Sans" font-size="11" fill="#8a8172">telaio</text>
+      <!-- scala in mm -->
+      <g id="scale"></g>
+
+      <!-- molla (coassiale all'asta, tra guida e collare) -->
+      <g class="part p-spring"><polyline id="spring" class="sv-spring" points=""/></g>
+
+      <!-- seguicamma: asta + collare + indice + rullo -->
+      <g class="part p-follower">
+        <rect id="rod" class="sv-fg" x="125" y="10" width="10" height="100" rx="2"/>
+        <circle id="rodTip" class="sv-roller" cx="130" cy="0" r="5"/>
+        <rect id="collar" class="sv-fg" x="113" y="0" width="34" height="6" rx="2"/>
+        <line id="pointer" class="sv-pointer" x1="147" y1="0" x2="238" y2="0"/>
+        <circle id="roller" class="sv-roller" cx="130" cy="150" r="12"/>
+      </g>
+      </g>
+
+      <!-- camma -->
+      <g class="part p-cam">
+        <circle class="sv-dash" cx="130" cy="210" r="46"/>
+        <g id="camG">
+          <path id="camPath" class="sv-cam" d=""/>
+          <line class="sv-acc-stroke" x1="130" y1="210" x2="130" y2="244"/>
+          <circle class="sv-acc" cx="130" cy="244" r="7"/>
+        </g>
+        <circle class="sv-fg" cx="130" cy="210" r="5"/>
+      </g>
+
+      <text class="sv-text" x="250" y="326" text-anchor="middle">telaio</text>
+    </svg>
+
+    <div class="drag-hint" id="hint">👆 Trascina la camma</div>
+    <div class="flyoff" id="flyoff">Il rullo si è staccato!</div>
+
+    <svg id="graph" viewBox="0 0 340 92" aria-label="Grafico dell'alzata in funzione dell'angolo">
+      <line class="g-axis" x1="24" y1="72" x2="330" y2="72"/>
+      <line class="g-axis" x1="24" y1="8" x2="24" y2="72"/>
+      <path id="gGhost" class="g-ghost" d=""/>
+      <path id="gTrace" class="g-trace" d=""/>
+      <circle id="gDot" class="g-dot" r="5" cx="24" cy="72"/>
+      <text class="g-lbl" x="24" y="86" text-anchor="middle">0°</text>
+      <text class="g-lbl" x="177" y="86" text-anchor="middle">180°</text>
+      <text class="g-lbl" x="330" y="86" text-anchor="middle">360°</text>
+      <text class="g-lbl" x="2" y="14">alz.</text>
     </svg>
 
     <div class="readout">
-      <div class="stat"><b id="angleOut">0°</b><span>angolo camma</span></div>
-      <div class="stat"><b id="liftOut">0</b><span>alzata relativa</span></div>
+      <div><b id="outA">0°</b><span>rotazione camma</span></div>
+      <div><b id="outH">0 mm</b><span id="outHlbl">alzata rullo</span></div>
     </div>
 
-    <div class="controls">
-      <button id="toggleBtn" type="button">Pausa</button>
-      <div class="speed">
-        <span>lento</span>
-        <input id="speedRange" type="range" min="0.3" max="2.4" step="0.1" value="1">
-        <span>veloce</span>
+    <div class="ctrl">
+      <div class="seg" id="speedSeg">
+        <button data-v="0">Pausa</button>
+        <button data-v="0.7">Lento</button>
+        <button data-v="1.8" class="on">Normale</button>
+        <button data-v="6.5">Veloce</button>
       </div>
+      <button class="pill on" id="springBtn" aria-pressed="true"><span class="sw"></span>Molla</button>
     </div>
   </div>
 
-  <section class="copy">
-    <h2>Un giro, un ciclo</h2>
-    <p>Gira la manovella e l'albero fa ruotare la camma — il disco che vedi animato qui sopra. Il suo bordo non è un cerchio perfetto: mentre gira, spinge verso l'alto il piccolo rullo un po' alla volta, poi lo lascia scendere di nuovo. Un giro completo della camma corrisponde a un ciclo completo di salita e discesa del rullo.</p>
-    <p>Perché il rullo resti sempre a contatto con il disco, anche mentre scende, una molla lo richiama verso il basso. Senza quella molla, girando abbastanza in fretta, il rullo si staccherebbe dal profilo.</p>
-    <p>Cambiando la forma del disco cambia anche il modo in cui il rullo si muove — più dolce, più brusco, con soste più o meno lunghe. È proprio questo il margine di progettazione che stiamo esplorando in questo lavoro.</p>
+  <!-- ================= IN 3 PASSI ================= -->
+  <section class="reveal">
+    <h2>In 3 passi</h2>
+    <p class="lead">Tutto il meccanismo, in un colpo d'occhio.</p>
+    <div class="steps">
+      <div class="step"><div class="ico">🔄</div><b>Giri</b><span>la manovella fa ruotare la camma</span></div>
+      <div class="step"><div class="ico">🥚</div><b>Il profilo</b><span>la camma non è rotonda: spinge il rullo</span></div>
+      <div class="step"><div class="ico">↕️</div><b>Su e giù</b><span>il rullo sale, si ferma, scende</span></div>
+    </div>
   </section>
 
-  <section class="glossary">
-    <h2>Le parti in gioco</h2>
-    <dl>
-      <div class="row"><dt>Camma</dt><dd>Il disco calettato sull'albero. La sua forma, non il motore, decide come si muoverà il rullo.</dd></div>
-      <div class="row"><dt>Seguicamma</dt><dd>Il rullo (o piattello) che tocca il bordo della camma e ne segue il profilo.</dd></div>
-      <div class="row"><dt>Molla di richiamo</dt><dd>Tiene il seguicamma sempre a contatto con la camma, anche in discesa.</dd></div>
-      <div class="row"><dt>Guida</dt><dd>Obbliga il seguicamma a muoversi solo su e giù, senza ruotare o spostarsi di lato.</dd></div>
-    </dl>
+  <!-- ================= DUE TIPI ================= -->
+  <section class="reveal">
+    <h2>Due modi di seguire la camma</h2>
+    <p class="lead">Stessa camma, movimento diverso.</p>
+    <div class="types">
+      <div class="type">
+        <div class="ico">↕️</div>
+        <b>Traslante</b>
+        <span>L'asta sale e scende dritta dentro una guida e spinge dal basso un bilanciere: il piano si inclina e la pallina rotola.</span>
+        <button class="chip" data-show="trans">Guardalo</button>
+      </div>
+      <div class="type">
+        <div class="ico">⚖️</div>
+        <b>Oscillante</b>
+        <span>Il rullo sta direttamente sulla leva, che ruota attorno a un perno come un'altalena. Anche qui il piano si inclina e la pallina rotola.</span>
+        <button class="chip" data-show="osc">Guardalo</button>
+      </div>
+    </div>
   </section>
 
-  <section class="examples">
-    <h2>Dove lo trovi già</h2>
-    <div class="ex-item"><span class="glyph">🚗</span><div><b>Nei motori a scoppio</b> — l'albero a camme apre e chiude le valvole a ogni ciclo, con un tempismo millimetrico.</div></div>
-    <div class="ex-item"><span class="glyph">📦</span><div><b>Nelle macchine automatiche</b> — camme sincronizzano il movimento di slitte e pinze durante il confezionamento.</div></div>
-    <div class="ex-item"><span class="glyph">🧵</span><div><b>Nelle macchine tessili</b> — muovono periodicamente gli organi di selezione e battitura del filo.</div></div>
+  <!-- ================= LE PARTI ================= -->
+  <section class="reveal">
+    <h2>Tocca una parte</h2>
+    <p class="lead">Si illumina nell'animazione qui sopra.</p>
+    <div class="chips" id="chips">
+      <button class="chip" data-p="cam">Camma</button>
+      <button class="chip" data-p="follower">Seguicamma</button>
+      <button class="chip" data-p="spring">Molla</button>
+      <button class="chip" data-p="guide">Guida</button>
+    </div>
+    <div class="chip-info" id="chipInfo">Scegli una parte per scoprire a cosa serve.</div>
   </section>
 
-  <footer>Progetto LPI — meccanismo camma-seguicamma</footer>
+  <!-- ================= ESPERIMENTO ================= -->
+  <section class="reveal">
+    <h2>Esperimento: togli la molla</h2>
+    <p class="lead">Senza molla, se la camma gira veloce il rullo non riesce a starle dietro e salta via. Ecco perché la molla c'è.</p>
+    <button class="chip" id="tryBtn">▶ Fammelo vedere</button>
+  </section>
+
+  <!-- ================= DOVE SI USA ================= -->
+  <section class="reveal">
+    <h2>Dove lo trovi</h2>
+    <p class="lead">Scorri di lato →</p>
+    <div class="uses">
+      <div class="use"><div class="ico">🚗</div><b>Motori delle auto</b><span>L'albero a camme apre e chiude le valvole migliaia di volte al minuto.</span></div>
+      <div class="use"><div class="ico">📦</div><b>Macchine automatiche</b><span>Muovono pinze e slitte sempre allo stesso ritmo, senza elettronica.</span></div>
+      <div class="use"><div class="ico">🧵</div><b>Macchine tessili</b><span>Guidano i movimenti ripetitivi che intrecciano il filo.</span></div>
+    </div>
+  </section>
+
+  <!-- ================= QUIZ ================= -->
+  <section class="reveal">
+    <h2>Hai capito?</h2>
+    <div class="quiz">
+      <p>Cosa decide come si muove il rullo?</p>
+      <button class="opt" data-ok="0">La velocità della manovella</button>
+      <button class="opt" data-ok="1">La forma della camma</button>
+      <button class="opt" data-ok="0">La lunghezza dell'asta</button>
+      <div class="fb" id="fb" aria-live="polite"></div>
+    </div>
+  </section>
+
 </div>
 
 <script>
 (function(){
-  const camGroup = document.getElementById('camGroup');
-  const roller = document.getElementById('roller');
-  const rod = document.getElementById('rod');
-  const spring = document.getElementById('spring');
-  const angleOut = document.getElementById('angleOut');
-  const liftOut = document.getElementById('liftOut');
-  const toggleBtn = document.getElementById('toggleBtn');
-  const speedRange = document.getElementById('speedRange');
-  const hatchGround = document.getElementById('hatchGround');
+  const $ = id => document.getElementById(id);
+  const NS = 'http://www.w3.org/2000/svg';
 
-  for (let x = 46; x <= 300; x += 16) {
-    const l = document.createElementNS('http://www.w3.org/2000/svg','line');
-    l.setAttribute('x1', x); l.setAttribute('y1', 258);
-    l.setAttribute('x2', x+9); l.setAttribute('y2', 270);
-    l.setAttribute('stroke', '#3a342b'); l.setAttribute('stroke-width', 1.4);
-    hatchGround.appendChild(l);
+  // ---- geometria (px nel disegno) ----
+  const CX = 130, CY = 210, RB = 46, H = 44, RR = 12;
+  const MM = 30 / H;                       // 44 px di alzata = 30 mm
+  const B1 = 140, B2 = 190, B3 = 320;      // fine salita, fine sosta alta, fine discesa (gradi)
+
+  // legge di moto cicloidale
+  const cyc = x => x - Math.sin(2*Math.PI*x) / (2*Math.PI);
+  function lift(deg){
+    const d = ((deg % 360) + 360) % 360;
+    if (d < B1) return H * cyc(d / B1);
+    if (d < B2) return H;
+    if (d < B3) return H * (1 - cyc((d - B2) / (B3 - B2)));
+    return 0;
+  }
+  function phaseOf(deg){
+    const d = ((deg % 360) + 360) % 360;
+    return d < B1 ? 0 : d < B2 ? 1 : d < B3 ? 2 : 3;
   }
 
-  const shaftX = 150, shaftY = 220, rB = 58, ecc = 26, rollerR = 15;
+  // profilo della camma: il punto di contatto è sempre in alto (-90°)
+  (function(){
+    let d = '';
+    for (let psi = 0; psi <= 360; psi += 2){
+      const r = RB + lift(-90 - psi);
+      const a = psi * Math.PI / 180;
+      d += (psi ? 'L' : 'M') + (CX + r*Math.cos(a)).toFixed(1) + ',' + (CY + r*Math.sin(a)).toFixed(1);
+    }
+    $('camPath').setAttribute('d', d + 'Z');
+  })();
 
-  let theta = 0;
-  let playing = true;
-  let last = null;
+  // tratteggio del telaio
+  for (let x = 36; x <= 334; x += 15){
+    const l = document.createElementNS(NS,'line');
+    l.setAttribute('x1',x); l.setAttribute('y1',310); l.setAttribute('x2',x+8); l.setAttribute('y2',320);
+    l.setAttribute('class','sv-hatch'); $('hatch').appendChild(l);
+  }
+
+  // scala graduata letta dall'indice del collare
+  const yLow = CY - RB - RR;               // centro rullo a riposo
+  const COLLAR_OFF = 22;                   // distanza collare-rullo
+  for (let mm = 0; mm <= 30; mm += 5){
+    const y = yLow - COLLAR_OFF - mm / MM;
+    const t = document.createElementNS(NS,'line');
+    t.setAttribute('x1',238); t.setAttribute('x2', mm % 10 ? 244 : 250);
+    t.setAttribute('y1',y); t.setAttribute('y2',y); t.setAttribute('class','sv-tick');
+    $('scale').appendChild(t);
+    if (mm % 10 === 0){
+      const tx = document.createElementNS(NS,'text');
+      tx.setAttribute('x',255); tx.setAttribute('y',y+3.5); tx.setAttribute('class','sv-text');
+      tx.textContent = mm + ' mm'; $('scale').appendChild(tx);
+    }
+  }
+
+  // grafico alzata/angolo
+  const GX0 = 24, GX1 = 330, GY0 = 72, GY1 = 12;
+  const gx = deg => GX0 + (deg/360)*(GX1-GX0);
+  const gy = s => GY0 - (s/H)*(GY0-GY1);
+  (function(){
+    let d = '';
+    for (let a = 0; a <= 360; a += 3) d += (a ? 'L' : 'M') + gx(a).toFixed(1) + ',' + gy(lift(a)).toFixed(1);
+    $('gGhost').setAttribute('d', d);
+  })();
+
+  // ---- stato ----
+  let theta = 0, omega = 1.8, springOn = true;
+  let hf = 0, vf = 0, prevCam = 0;
+  const G = 900;                            // "gravità" in px/s² quando la molla è tolta
+  let dragging = false, lastPointerAng = 0, lastT = null, hintGone = false;
 
   function render(){
-    const rad = theta;
-    const height = ecc*Math.cos(rad) + Math.sqrt(Math.max(rB*rB - ecc*ecc*Math.sin(rad)*Math.sin(rad), 0));
-    const rollerY = shaftY - height - rollerR;
+    const deg = ((theta % 360) + 360) % 360;
+    $('camG').setAttribute('transform', 'rotate(' + deg.toFixed(2) + ' ' + CX + ' ' + CY + ')');
 
-    camGroup.setAttribute('transform', `rotate(${(theta*180/Math.PI).toFixed(2)} ${shaftX} ${shaftY})`);
-    roller.setAttribute('cy', rollerY.toFixed(2));
+    const ry = yLow - hf;
+    $('roller').setAttribute('cy', ry.toFixed(1));
+    const cy = ry - COLLAR_OFF;
+    $('collar').setAttribute('y', (cy - 3).toFixed(1));
+    $('pointer').setAttribute('y1', cy.toFixed(1)); $('pointer').setAttribute('y2', cy.toFixed(1));
+    const rodTop = ry - ROD_LEN;               // l'asta ha lunghezza fissa: sale e scende tutta
+    $('rod').setAttribute('y', rodTop.toFixed(1));
+    $('rod').setAttribute('height', ROD_LEN);
+    $('rodTip').setAttribute('cy', rodTop.toFixed(1));
+    if (mode === 'trans') renderBeam(rodTop);
 
-    const rodTop = 40;
-    rod.setAttribute('y', rodTop);
-    rod.setAttribute('height', Math.max(rollerY - rodTop, 0).toFixed(2));
-
-    const attachY = rollerY + rollerR + 14;
-    const anchorX = shaftX + 46, anchorY = 244;
-    const pts = [];
-    const n = 6;
-    for(let i=0;i<=n;i++){
-      const t = i/n;
-      const x = (shaftX+18) + t*(anchorX-(shaftX+18));
-      const y = attachY + t*(anchorY-attachY);
-      const off = (i===0||i===n) ? 0 : (i%2? 7:-7);
-      pts.push(`${(x+off).toFixed(1)},${y.toFixed(1)}`);
+    // molla tra guida (y=46) e collare
+    const top = 46, bot = cy - 3, n = 10, pts = [];
+    for (let i = 0; i <= n; i++){
+      const y = top + (bot - top) * i / n;
+      const x = (i === 0 || i === n) ? 130 : 130 + (i % 2 ? 12 : -12);
+      pts.push(x + ',' + y.toFixed(1));
     }
-    spring.setAttribute('points', pts.join(' '));
+    $('spring').setAttribute('points', pts.join(' '));
+    $('spring').style.opacity = springOn ? 1 : 0;
 
-    const deg = Math.round(((theta*180/Math.PI)%360+360)%360);
-    angleOut.textContent = deg + '°';
-    liftOut.textContent = (height-(rB-ecc)).toFixed(0) + ' mm';
+    let d = '';
+    for (let a = 0; a <= deg; a += 3) d += (a ? 'L' : 'M') + gx(a).toFixed(1) + ',' + gy(lift(a)).toFixed(1);
+    $('gTrace').setAttribute('d', d);
+    $('gDot').setAttribute('cx', gx(deg).toFixed(1));
+    $('gDot').setAttribute('cy', gy(Math.min(hf, H + 20)).toFixed(1));
+
+    if (mode === 'osc') renderOsc(ry);
+
+    $('outA').textContent = Math.round(deg) + '°';
+    $('outH').textContent = mode === 'osc'
+      ? Math.round(-tiltDeg) + '°'
+      : Math.round(hf * MM) + ' mm';
+
+    const ph = phaseOf(deg);
+    document.querySelectorAll('.phase').forEach(p => p.classList.toggle('on', +p.dataset.ph === ph));
+    $('flyoff').classList.toggle('show', hf - lift(deg) > 2);
   }
 
-  function frame(ts){
-    if(last==null) last = ts;
-    const dt = Math.min((ts-last)/1000, 0.05);
-    last = ts;
-    if(playing){
-      const speed = parseFloat(speedRange.value);
-      theta += dt * speed;
+  // ---- versione oscillante: bilanciere con perno fisso + pallina sul piano ----
+  const PX = 205, PY = 128, L1 = 76, L2 = 125, U_MIN = 34, U_MAX = L2 - 10, BR = 8;
+  let mode = 'trans', tiltDeg = 0, dirX = 1, dirY = 0;
+  let ballU = 80, ballV = 0;
+
+  function leverFromRoller(ry){
+    const s = Math.max(-0.95, Math.min(0.95, (ry - PY) / L1));
+    const c = Math.sqrt(1 - s*s);
+    dirX = c; dirY = -s;                          // direzione del braccio lungo (verso destra)
+    tiltDeg = Math.atan2(dirY, dirX) * 180 / Math.PI;
+    return { x: PX - L1*c, y: PY + L1*s };        // centro del rullo
+  }
+
+  function renderOsc(ry){
+    const r = leverFromRoller(ry);
+    const tip = { x: PX + L2*dirX, y: PY + L2*dirY };
+    const nx = dirY, ny = -dirX;                  // normale verso l'alto
+    $('rollerO').setAttribute('cx', r.x.toFixed(1)); $('rollerO').setAttribute('cy', r.y.toFixed(1));
+    $('lever').setAttribute('points', r.x.toFixed(1)+','+r.y.toFixed(1)+' '+PX+','+PY+' '+tip.x.toFixed(1)+','+tip.y.toFixed(1));
+
+    const iu = U_MIN - BR - 3, ix = PX + iu*dirX, iy = PY + iu*dirY;
+    $('lips').setAttribute('d',
+      'M'+tip.x.toFixed(1)+','+tip.y.toFixed(1)+' l'+(nx*14).toFixed(1)+','+(ny*14).toFixed(1)+
+      ' M'+ix.toFixed(1)+','+iy.toFixed(1)+' l'+(nx*11).toFixed(1)+','+(ny*11).toFixed(1));
+
+    const off = BR + 3.5;
+    $('ball').setAttribute('cx', (PX + ballU*dirX + nx*off).toFixed(1));
+    $('ball').setAttribute('cy', (PY + ballU*dirY + ny*off).toFixed(1));
+
+    // molla: tira in su il braccio lungo, così il rullo resta premuto sulla camma
+    const ax = PX + 18*dirX, ay = PY + 18*dirY, top = 36, n = 8, pts = [];
+    for (let i = 0; i <= n; i++){
+      const y = top + (ay - top) * i / n;
+      const x = (i === 0 || i === n) ? ax : ax + (i % 2 ? 8 : -8);
+      pts.push(x.toFixed(1) + ',' + y.toFixed(1));
+    }
+    $('springO').setAttribute('points', pts.join(' '));
+    $('springO').style.opacity = springOn ? 1 : 0;
+  }
+
+  // ---- versione traslante: l'asta spinge dal basso un bilanciere con la pallina ----
+  const ROD_LEN = 128, BX = 215, BY = -2, B_LEFT = 85, B_RIGHT = 100, BU_MIN = 28, BU_MAX = 90;
+  function renderBeam(rodTop){
+    const cy = rodTop - 5;                        // punto di appoggio sopra la testa dell'asta
+    const dx = BX - 130, dy = BY - cy, len = Math.hypot(dx, dy);
+    dirX = dx / len; dirY = dy / len;             // direzione del braccio destro
+    tiltDeg = Math.atan2(dirY, dirX) * 180 / Math.PI;
+    const L = { x: BX - (B_LEFT + 14)*dirX, y: BY - (B_LEFT + 14)*dirY };
+    const R = { x: BX + B_RIGHT*dirX, y: BY + B_RIGHT*dirY };
+    const nx = dirY, ny = -dirX;                  // normale verso l'alto
+    $('beamT').setAttribute('points', L.x.toFixed(1)+','+L.y.toFixed(1)+' '+R.x.toFixed(1)+','+R.y.toFixed(1));
+    const iu = BU_MIN - BR - 3, ix = BX + iu*dirX, iy = BY + iu*dirY;
+    $('lipsT').setAttribute('d',
+      'M'+R.x.toFixed(1)+','+R.y.toFixed(1)+' l'+(nx*14).toFixed(1)+','+(ny*14).toFixed(1)+
+      ' M'+ix.toFixed(1)+','+iy.toFixed(1)+' l'+(nx*11).toFixed(1)+','+(ny*11).toFixed(1));
+    const off = BR + 3.5;
+    $('ballT').setAttribute('cx', (BX + ballU*dirX + nx*off).toFixed(1));
+    $('ballT').setAttribute('cy', (BY + ballU*dirY + ny*off).toFixed(1));
+  }
+
+  // la pallina accelera verso il lato più basso del piano e rimbalza sui bordi
+  function ballPhysics(dt){
+    const lo = mode === 'osc' ? U_MIN : BU_MIN, hi = mode === 'osc' ? U_MAX : BU_MAX;
+    ballV += (1400 * dirY) * dt;                  // componente della gravità lungo il piano
+    ballV *= Math.exp(-0.6 * dt);                 // attrito di rotolamento
+    ballU += ballV * dt;
+    if (ballU < lo){ ballU = lo; ballV = -ballV * 0.35; }
+    if (ballU > hi){ ballU = hi; ballV = -ballV * 0.35; }
+  }
+
+  function setMode(m){
+    mode = m;
+    $('modeO').style.display = m === 'osc' ? '' : 'none';
+    $('modeT').style.display = m === 'osc' ? 'none' : '';
+    mech.setAttribute('viewBox', m === 'osc' ? '0 0 360 330' : '0 -50 360 380');
+    document.querySelectorAll('#modeSeg button').forEach(b => b.classList.toggle('on', b.dataset.m === m));
+    $('outHlbl').textContent = m === 'osc' ? 'inclinazione piano' : 'alzata rullo';
+    const g = document.querySelector('#chips [data-p="guide"]');
+    g.textContent = m === 'osc' ? 'Fulcro' : 'Guida';
+    if ($('stage').dataset.focus === 'guide') $('chipInfo').innerHTML = INFO[m === 'osc' ? 'pivot' : 'guide'];
+    ballU = 80; ballV = 0;
+  }
+  document.querySelectorAll('#modeSeg button').forEach(b => b.addEventListener('click', () => setMode(b.dataset.m)));
+  document.querySelectorAll('[data-show]').forEach(b => b.addEventListener('click', () => {
+    setMode(b.dataset.show);
+    $('stage').scrollIntoView({ behavior:'smooth', block:'center' });
+  }));
+
+  // senza molla il rullo è libero: sale se spinto, ricade solo per gravità
+  function physics(dt){
+    const camH = lift(theta);
+    const camV = dt > 0 ? (camH - prevCam) / dt : 0;
+    prevCam = camH;
+    if (springOn){ hf = camH; vf = camV; return; }
+    vf -= G * dt; hf += vf * dt;
+    if (hf <= camH){ hf = camH; vf = camV; }
+  }
+
+  function frame(t){
+    if (lastT === null) lastT = t;
+    const dt = Math.min((t - lastT) / 1000, 0.033);
+    lastT = t;
+    const steps = 4;
+    for (let i = 0; i < steps; i++){
+      if (!dragging) theta += omega * (dt/steps) * 180 / Math.PI;
+      physics(dt / steps);
+      ballPhysics(dt / steps);
     }
     render();
     requestAnimationFrame(frame);
   }
 
-  toggleBtn.addEventListener('click', function(){
-    playing = !playing;
-    toggleBtn.textContent = playing ? 'Pausa' : 'Gioca';
+  // ---- trascinamento col dito ----
+  const mech = $('mech');
+  function angAt(e){
+    const r = mech.getBoundingClientRect();
+    const vb = mech.viewBox.baseVal;
+    const x = vb.x + (e.clientX - r.left) * vb.width / r.width, y = vb.y + (e.clientY - r.top) * vb.height / r.height;
+    return Math.atan2(y - CY, x - CX) * 180 / Math.PI;
+  }
+  mech.addEventListener('pointerdown', e => {
+    dragging = true; lastPointerAng = angAt(e); mech.classList.add('dragging');
+    mech.setPointerCapture(e.pointerId);
+    if (!hintGone){ hintGone = true; $('hint').classList.add('gone'); }
   });
+  mech.addEventListener('pointermove', e => {
+    if (!dragging) return;
+    const a = angAt(e);
+    let delta = a - lastPointerAng;
+    if (delta > 180) delta -= 360;
+    if (delta < -180) delta += 360;
+    theta += delta; lastPointerAng = a;
+  });
+  const endDrag = () => { dragging = false; mech.classList.remove('dragging'); };
+  mech.addEventListener('pointerup', endDrag);
+  mech.addEventListener('pointercancel', endDrag);
+
+  // ---- controlli ----
+  function setSpeed(v){
+    omega = v;
+    document.querySelectorAll('#speedSeg button').forEach(b => b.classList.toggle('on', +b.dataset.v === v));
+  }
+  document.querySelectorAll('#speedSeg button').forEach(b => b.addEventListener('click', () => setSpeed(+b.dataset.v)));
+
+  function setSpring(on){
+    springOn = on;
+    $('springBtn').classList.toggle('on', on);
+    $('springBtn').setAttribute('aria-pressed', on);
+  }
+  $('springBtn').addEventListener('click', () => setSpring(!springOn));
+
+  $('tryBtn').addEventListener('click', () => {
+    setSpring(false); setSpeed(6.5);
+    $('stage').scrollIntoView({ behavior:'smooth', block:'center' });
+  });
+
+  // ---- parti ----
+  const INFO = {
+    cam: '<b>Camma</b> — il disco sagomato. È la sua forma a decidere come e quanto sale il rullo.',
+    follower: '<b>Seguicamma</b> — il rullo con la sua asta. Appoggia sulla camma e ne copia il profilo.',
+    spring: '<b>Molla</b> — spinge il rullo verso il basso, così non perde mai il contatto con la camma.',
+    guide: '<b>Guida</b> — tiene l\'asta dritta: può solo salire e scendere, niente altro.',
+    pivot: '<b>Fulcro</b> — il perno fisso attorno a cui ruota la leva, come il centro di un\'altalena.'
+  };
+  // il chip "Guida" diventa "Fulcro" nella versione oscillante
+  const infoFor = p => (p === 'guide' && mode === 'osc') ? INFO.pivot : INFO[p];
+  const chips = document.querySelectorAll('#chips .chip');
+  chips.forEach(c => c.addEventListener('click', () => {
+    const stage = $('stage');
+    const same = stage.dataset.focus === c.dataset.p;
+    chips.forEach(x => x.classList.remove('on'));
+    if (same){ delete stage.dataset.focus; $('chipInfo').textContent = 'Scegli una parte per scoprire a cosa serve.'; return; }
+    c.classList.add('on');
+    stage.dataset.focus = c.dataset.p;
+    $('chipInfo').innerHTML = infoFor(c.dataset.p);
+  }));
+
+  // ---- quiz ----
+  document.querySelectorAll('.opt').forEach(o => o.addEventListener('click', () => {
+    document.querySelectorAll('.opt').forEach(x => x.classList.remove('right','wrong'));
+    const ok = o.dataset.ok === '1';
+    o.classList.add(ok ? 'right' : 'wrong');
+    $('fb').textContent = ok
+      ? '✅ Esatto! Cambiando il profilo della camma cambia tutto il movimento.'
+      : '❌ Non proprio: guarda l\'animazione, cosa spinge il rullo?';
+  }));
+
+  // ---- comparsa delle sezioni allo scorrimento ----
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { threshold: .15 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  }
 
   render();
   requestAnimationFrame(frame);
 })();
 </script>
-
 </body>
 </html>
