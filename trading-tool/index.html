@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analisi Lungo Termine</title>
+<meta name="description" content="Analisi tecnica, proiezione statistica e consigli per investimenti di lungo periodo su ETF, indici, materie prime e cambi.">
+<style>
+:root {
+  --bg: #f6f7f9; --card: #ffffff; --ink: #1b1f24; --muted: #6b7280; --line: #e3e6ea; --grid: #eceef1;
+  --accent: #2563eb; --accent-2: #f59e0b; --pos: #15803d; --neg: #c2410c; --neu: #64748b;
+  --pos-bg: #e8f5ec; --neg-bg: #fdeee6; --neu-bg: #eef1f5;
+  --fan: rgba(37, 99, 235, 0.10); --fan-2: rgba(37, 99, 235, 0.20);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1216; --card: #171b21; --ink: #e8eaed; --muted: #9aa3ae; --line: #2a3038; --grid: #222830;
+    --accent: #60a5fa; --accent-2: #fbbf24; --pos: #4ade80; --neg: #fb923c; --neu: #94a3b8;
+    --pos-bg: #13261a; --neg-bg: #2a1a10; --neu-bg: #1c222a;
+    --fan: rgba(96, 165, 250, 0.12); --fan-2: rgba(96, 165, 250, 0.24);
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 16px; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 8px 0 16px; }
+h1 { font-size: 22px; margin: 0; }
+h1 small { display: block; font-size: 13px; font-weight: 400; color: var(--muted); }
+h2 { font-size: 16px; margin: 0 0 12px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+button, select, input { font: inherit; color: inherit; }
+button { cursor: pointer; border: 1px solid var(--line); background: var(--card); border-radius: 8px; padding: 8px 14px; }
+button.primary { background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 600; }
+button:disabled { opacity: .5; cursor: default; }
+input, select { border: 1px solid var(--line); background: var(--bg); border-radius: 8px; padding: 8px 10px; min-width: 0; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: end; }
+.row > label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--muted); }
+.grow { flex: 1 1 220px; }
+.tabs { display: flex; gap: 4px; margin-bottom: 14px; border-bottom: 1px solid var(--line); }
+.tabs button { border: none; border-bottom: 2px solid transparent; border-radius: 0; background: none; padding: 8px 12px; color: var(--muted); }
+.tabs button[aria-selected="true"] { color: var(--ink); border-color: var(--accent); font-weight: 600; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; font-size: 13px; }
+.chips button { padding: 3px 10px; border-radius: 99px; font-size: 13px; }
+.muted { color: var(--muted); font-size: 13px; }
+.suggest { position: relative; }
+.suggest ul { position: absolute; z-index: 5; top: 100%; left: 0; right: 0; margin: 4px 0 0; padding: 4px; list-style: none; background: var(--card); border: 1px solid var(--line); border-radius: 8px; max-height: 260px; overflow: auto; }
+.suggest li { padding: 6px 8px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+.suggest li:hover { background: var(--bg); }
+.error { background: var(--neg-bg); color: var(--neg); border-radius: 8px; padding: 10px 12px; margin-top: 12px; }
+.verdict { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 720px) { .verdict { grid-template-columns: 1.1fr 1fr; } }
+.action { font-size: 28px; font-weight: 700; margin: 2px 0 6px; }
+.pos { color: var(--pos); } .neg { color: var(--neg); } .neu { color: var(--neu); }
+.gauge { position: relative; height: 10px; border-radius: 99px; background: linear-gradient(90deg, var(--neg), var(--neu-bg) 50%, var(--pos)); margin: 12px 0 4px; }
+.gauge i { position: absolute; top: -5px; width: 4px; height: 20px; background: var(--ink); border-radius: 2px; transform: translateX(-2px); }
+.gauge-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); }
+.subs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 12px; }
+.sub { background: var(--bg); border-radius: 8px; padding: 8px 10px; font-size: 13px; }
+.sub b { display: block; font-size: 16px; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; }
+.kpi { background: var(--bg); border-radius: 8px; padding: 10px; }
+.kpi span { display: block; font-size: 12px; color: var(--muted); }
+.kpi b { font-size: 18px; }
+.chart-box { position: relative; }
+canvas#chart { width: 100%; height: 360px; display: block; }
+#tooltip { position: absolute; pointer-events: none; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 6px 8px; font-size: 12px; box-shadow: 0 4px 14px rgba(0,0,0,.12); }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--muted); margin-top: 8px; }
+.legend span::before { content: ""; display: inline-block; width: 14px; height: 3px; margin-right: 5px; vertical-align: middle; background: var(--c); }
+.signals { display: grid; gap: 8px; }
+.signal { border-left: 3px solid var(--neu); background: var(--neu-bg); padding: 8px 12px; border-radius: 0 8px 8px 0; font-size: 14px; }
+.signal.pos { border-color: var(--pos); background: var(--pos-bg); color: inherit; }
+.signal.neg { border-color: var(--neg); background: var(--neg-bg); color: inherit; }
+.signal b { display: block; }
+ul.tips { padding-left: 18px; margin: 0; } ul.tips li { margin-bottom: 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+th { color: var(--muted); font-weight: 500; font-size: 12px; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.table-scroll { overflow-x: auto; }
+dialog { border: 1px solid var(--line); border-radius: 12px; background: var(--card); color: var(--ink); max-width: 520px; width: calc(100% - 32px); }
+dialog::backdrop { background: rgba(0,0,0,.4); }
+dialog label { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; font-size: 13px; color: var(--muted); }
+.drop { border: 2px dashed var(--line); border-radius: 12px; padding: 24px; text-align: center; color: var(--muted); }
+.drop.over { border-color: var(--accent); }
+.digitizer { position: relative; margin-top: 12px; }
+.digitizer canvas { max-width: 100%; display: block; cursor: crosshair; border-radius: 8px; border: 1px solid var(--line); }
+.step { font-weight: 600; margin: 10px 0 6px; min-height: 3em; }
+details summary { cursor: pointer; font-weight: 600; }
+.disclaimer { font-size: 12px; color: var(--muted); }
+.spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spin .8s linear infinite; vertical-align: -2px; margin-right: 6px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Analisi Lungo Termine<small>ETF, indici, materie prime e cambi — analisi tecnica, proiezione statistica e consigli</small></h1>
+    <button id="openSettings" title="Impostazioni e chiavi API">⚙ Impostazioni</button>
+  </header>
+
+  <section class="card">
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="ticker">Da ticker</button>
+      <button role="tab" aria-selected="false" data-tab="shot">Da screenshot</button>
+    </div>
+
+    <div id="tab-ticker">
+      <form id="tickerForm" class="row">
+        <label class="grow suggest">Simbolo o nome
+          <input id="symbol" autocomplete="off" placeholder="es. VWCE.DEX, SWDA.LON, SPY, EUR/USD">
+          <ul id="suggestions" hidden></ul>
+        </label>
+        <button class="primary" type="submit" id="analyzeBtn">Analizza</button>
+      </form>
+      <div class="chips">
+        <span class="muted">Esempi:</span>
+        <button data-sym="VWCE.DEX">VWCE (Xetra)</button>
+        <button data-sym="SWDA.LON">SWDA (Londra)</button>
+        <button data-sym="SPY">S&amp;P 500 (SPY)</button>
+        <button data-sym="GLD">Oro (GLD)</button>
+        <button data-sym="EUR/USD">EUR/USD</button>
+        <button id="demoBtn">Prova con dati demo</button>
+      </div>
+    </div>
+
+    <div id="tab-shot" hidden>
+      <div class="drop" id="drop">
+        <p>Trascina qui lo screenshot di un grafico oppure <label style="color:var(--accent);cursor:pointer;text-decoration:underline">scegli un file<input type="file" id="shotFile" accept="image/*" hidden></label>.</p>
+        <p class="muted">Funziona meglio con grafici di almeno 2–3 anni e assi con date e prezzi leggibili.</p>
+      </div>
+      <div id="shotOptions" hidden>
+        <div class="row" style="margin-top:12px">
+          <button class="primary" id="aiRead">Leggi con Claude (AI)</button>
+          <button id="manualRead">Digitalizza a mano (gratis)</button>
+        </div>
+        <p class="muted">L'AI richiede una chiave Anthropic nelle Impostazioni (costa pochi centesimi a lettura). La modalità manuale è gratuita: clicchi sugli assi e lungo la curva.</p>
+      </div>
+      <div id="digitizer" class="digitizer" hidden>
+        <div class="step" id="digStep"></div>
+        <div class="row" id="digInputs" style="min-height:42px"></div>
+        <canvas id="digCanvas"></canvas>
+        <div class="row" style="margin-top:10px">
+          <label style="flex-direction:row;align-items:center;gap:6px"><input type="checkbox" id="digLog"> Asse prezzi logaritmico</label>
+          <button id="digUndo">Annulla ultimo punto</button>
+          <button id="digReset">Ricomincia</button>
+          <button class="primary" id="digDone" disabled>Analizza la curva</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:16px">
+      <label>Profilo investitore
+        <select id="profile">
+          <option value="bilanciato">Bilanciato</option>
+          <option value="dinamico">Dinamico</option>
+        </select>
+      </label>
+      <label>Orizzonte proiezione
+        <select id="horizon">
+          <option value="1">1 anno</option>
+          <option value="3">3 anni</option>
+          <option value="5" selected>5 anni</option>
+          <option value="10">10 anni</option>
+        </select>
+      </label>
+      <label>Grafico: storico mostrato
+        <select id="window">
+          <option value="3">3 anni</option>
+          <option value="5">5 anni</option>
+          <option value="10" selected>10 anni</option>
+          <option value="0">Tutto</option>
+        </select>
+      </label>
+    </div>
+    <div id="error" class="error" hidden></div>
+    <div id="status" class="muted" style="margin-top:10px"></div>
+  </section>
+
+  <div id="results" hidden>
+    <section class="card verdict">
+      <div>
+        <div class="muted" id="assetName"></div>
+        <div class="action" id="action"></div>
+        <div class="gauge"><i id="gaugeMark"></i></div>
+        <div class="gauge-labels"><span>−100 vendi</span><span>0 neutro</span><span>+100 accumula</span></div>
+        <p id="scoreText" class="muted"></p>
+      </div>
+      <div>
+        <div class="subs" id="subs"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Grafico e proiezione</h2>
+      <div class="chart-box"><canvas id="chart"></canvas><div id="tooltip" hidden></div></div>
+      <div class="legend">
+        <span style="--c:var(--ink)">Prezzo</span>
+        <span style="--c:var(--accent-2)">Media 10 sett.</span>
+        <span style="--c:var(--accent)">Media 40 sett. (≈200 gg)</span>
+        <span style="--c:var(--muted)">Tendenza storica</span>
+        <span style="--c:var(--pos)">Mediana proiezione / supporti</span>
+        <span style="--c:var(--neg)">Resistenze</span>
+        <span style="--c:var(--fan-2)">Fascia 50% e 90%</span>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Proiezione statistica</h2>
+      <div class="kpis" id="kpis"></div>
+      <p class="muted" id="projText"></p>
+    </section>
+
+    <section class="card">
+      <h2>Cosa fare (consigli operativi)</h2>
+      <ul class="tips" id="tips"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Segnali tecnici</h2>
+      <div class="signals" id="signals"></div>
+      <div id="aiObs" hidden style="margin-top:12px"></div>
+    </section>
+
+    <section class="card" id="fundCard" hidden>
+      <h2>Dati fondamentali</h2>
+      <div class="kpis" id="fund"></div>
+      <div id="fundExtra" class="muted" style="margin-top:10px"></div>
+    </section>
+
+    <section class="card">
+      <h2>Il punteggio ha funzionato in passato su questo strumento?</h2>
+      <div id="backtest"></div>
+    </section>
+  </div>
+
+  <section class="card">
+    <details>
+      <summary>Come funziona e come leggere i risultati</summary>
+      <p><b>Dati.</b> Si usano prezzi <b>settimanali</b> (adatti al lungo periodo), corretti per dividendi quando la fonte lo consente.</p>
+      <p><b>Analisi tecnica.</b> Media mobile a 40 settimane (equivalente alla classica "200 giorni") e a 10 settimane: prezzo sopra la media lunga = trend sano. RSI: sotto 30 il prezzo è sceso troppo in fretta (ipervenduto), sopra 70 è salito troppo in fretta (ipercomprato). MACD: misura se la spinta sta accelerando o rallentando. Supporti e resistenze: zone di prezzo dove il mercato si è fermato più volte.</p>
+      <p><b>Valutazione rispetto alla storia.</b> Si traccia la linea di crescita media di lungo periodo (in scala logaritmica). Molto sopra = caro rispetto alla propria storia, molto sotto = a sconto. Per gli ETF azionari questa è una misura "di prezzo"; se disponibili si mostrano anche costi (TER), dividendi e P/E.</p>
+      <p><b>Proiezione Monte Carlo.</b> Si simulano 2.000 futuri possibili ricombinando a blocchi i rendimenti settimanali realmente avvenuti (crisi comprese). Non è una previsione del prezzo esatto: è la <b>gamma di scenari</b> plausibili se il futuro somiglierà al passato. Con uno storico breve la crescita viene prudenzialmente avvicinata a un 6% annuo.</p>
+      <p><b>Punteggio.</b> Combina trend, momentum, valutazione e ribasso dai massimi, con pesi diversi per profilo: il profilo <i>dinamico</i> dà più peso al comprare sui ribassi, il <i>bilanciato</i> più peso alla valutazione e al trend.</p>
+      <p><b>Verifica storica.</b> Il tool ricalcola il punteggio settimana per settimana usando solo i dati disponibili in quel momento e controlla cosa è successo nei 12 mesi seguenti. Se le righe "punteggio alto" e "punteggio basso" non sono diverse dalla media, su quello strumento il segnale <b>non ha avuto valore predittivo</b>: in quel caso il PAC costante è la scelta più solida.</p>
+    </details>
+    <p class="disclaimer">Strumento educativo: non è una consulenza finanziaria personalizzata. Nessun modello può prevedere i mercati con certezza; i rendimenti passati non garantiscono quelli futuri. Prima di investire valuta obiettivi, orizzonte, tasse e costi, eventualmente con un consulente abilitato.</p>
+  </section>
+</div>
+
+<dialog id="settings">
+  <form method="dialog">
+    <h2>Impostazioni</h2>
+    <label>Fonte dati
+      <select id="provider">
+        <option value="alphavantage">Alpha Vantage (borse europee, fondamentali; 25 richieste/giorno)</option>
+        <option value="twelvedata">Twelve Data (USA, forex, oro XAU/USD; 800 richieste/giorno)</option>
+      </select>
+    </label>
+    <label>Chiave Alpha Vantage — <a href="https://www.alphavantage.co/support/#api-key" target="_blank" rel="noopener">ottienila gratis</a>
+      <input id="avKey" type="password" autocomplete="off">
+    </label>
+    <label>Chiave Twelve Data — <a href="https://twelvedata.com/register" target="_blank" rel="noopener">ottienila gratis</a>
+      <input id="tdKey" type="password" autocomplete="off">
+    </label>
+    <label>Chiave Anthropic (Claude) per gli screenshot — <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">crea una chiave</a>
+      <input id="claudeKey" type="password" autocomplete="off">
+    </label>
+    <p class="muted">Le chiavi sono salvate solo in questo browser e inviate solo al rispettivo servizio. Non usare questo tool su computer condivisi.</p>
+    <div class="row" style="justify-content:flex-end"><button value="cancel">Annulla</button><button class="primary" value="save" id="saveSettings">Salva</button></div>
+  </form>
+</dialog>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
