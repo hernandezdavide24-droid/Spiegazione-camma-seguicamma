@@ -106,6 +106,10 @@ EBIBLE_FIXES = [
     ('perch’egli e il nostro Dio', 'perch’egli è il nostro Dio'),
     ('E chi e il figliuolo d’Isai', 'E chi è il figliuolo d’Isai'),
     ('Questo e lo scritto', 'Questo è lo scritto'),
+    ('dell’Eterno fu rivolta Giona', 'dell’Eterno fu rivolta a Giona'),
+    ('Perché hanno tritano Galaad', 'Perché hanno tritato Galaad'),
+    ('han sprezzato al legge', 'han sprezzato la legge'),
+    ('l’Eterno mi perse di dietro al gregge', 'l’Eterno mi prese di dietro al gregge'),
 ]
 
 # Rimandi alla numerazione originale italiana, es. "(21:6)" o "(H21-6)".
