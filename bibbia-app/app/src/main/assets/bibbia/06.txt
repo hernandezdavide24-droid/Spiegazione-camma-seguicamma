@@ -26,7 +26,7 @@
 2	8	Or prima che le spie s’addormentassero, Rahab salì da loro sul tetto,
 2	9	e disse a quegli uomini: “Io so che l’Eterno vi ha dato il paese, che il terrore del vostro nome ci ha invasi, e che tutti gli abitanti del paese hanno perso coraggio davanti a voi.
 2	10	Poiché noi abbiamo udito come l’Eterno asciugò le acque del mar Rosso d’innanzi a voi quando usciste dall’Egitto, e quel che faceste ai due re degli Amorei, di là dal Giordano, Sihon e Og, che votaste allo sterminio.
-2	11	E non appena l’abbiamo udito, il nostro cuore si è strutto e non è più rimasto coraggio in alcuno, per via di voi; poiché l’Eterno, il vostro Dio, e Dio lassù nei cieli e quaggiù sulla terra.
+2	11	E non appena l’abbiamo udito, il nostro cuore si è strutto e non è più rimasto coraggio in alcuno, per via di voi; poiché l’Eterno, il vostro Dio, è Dio lassù nei cieli e quaggiù sulla terra.
 2	12	Or dunque, vi prego, giuratemi per l’Eterno, giacché vi ho trattati con bontà, che anche voi tratterete con bontà la casa di mio padre;
 2	13	e datemi un pegno sicuro che salverete la vita a mio padre, a mia madre, ai miei fratelli, alle mie sorelle e a tutti i loro, e che ci preserverete dalla morte”.
 2	14	E quegli uomini risposero: “Siamo pronti a dare la nostra vita per voi, se non divulgate questo nostro affare; e quando l’Eterno ci avrà dato il paese, noi ti tratteremo con bontà e lealtà”.
@@ -148,7 +148,7 @@
 7	23	Essi presero quelle cose di mezzo alla tenda, le portarono a Giosuè e a tutti i figliuoli d’Israele, e le deposero davanti all’Eterno.
 7	24	E Giosuè e tutto Israele con lui presero Acan, figliuolo di Zerach, l’argento, il mantello, la verga d’oro, i suoi figliuoli e le sue figliuole, i suoi bovi, i suoi asini, le sue pecore, la sua tenda e tutto quello che gli apparteneva, e li fecero salire nella valle di Acor.
 7	25	E Giosuè disse: “Perché ci hai tu conturbati? L’Eterno conturberà te in questo giorno!” E tutto Israele lo lapidò; e dopo aver lapidati gli altri, dettero tutti alle fiamme.
-7	26	Poi ammassarono sopra Acan un gran mucchio di pietre, che dura fino al dì d’oggi. E l’Eterno s’acquetò dell’ardente sua ira. Perciò quel luogo e stato chiamato fino al dì d’oggi “valle di Acòr”.
+7	26	Poi ammassarono sopra Acan un gran mucchio di pietre, che dura fino al dì d’oggi. E l’Eterno s’acquetò dell’ardente sua ira. Perciò quel luogo è stato chiamato fino al dì d’oggi “valle di Acòr”.
 8	1	Poi l’Eterno disse a Giosuè: “Non temere, e non ti sgomentare! Prendi teco tutta la gente di guerra, lèvati e sali contro ad Ai. Guarda, io do in tua mano il re di Ai, il suo popolo, la sua città e il suo paese.
 8	2	E tu tratterai Ai e il suo re come hai trattato Gerico a il suo re; ne prenderete per voi soltanto il bottino e il bestiame. Tendi un’imboscata dietro alla città”.
 8	3	Giosuè dunque con tutta la gente di guerra si levò per salire contro ad Ai. Egli scelse trentamila uomini valenti e prodi, li fe’ partire di notte, e diede loro quest’ordine:
@@ -223,7 +223,7 @@
 10	10	E l’Eterno li mise in rotta davanti ad Israele, che fe’ loro subire una grande sconfitta presso Gabaon, li inseguì per la via che sale a Beth-Horon, e li batté fino ad Azeka e a Makkeda.
 10	11	Mentre fuggivano d’innanzi a Israele ed erano alla scesa di Beth-Horon, l’Eterno fe’ cader dal cielo su loro delle grosse pietre fino ad Azeka, ed essi perirono; quelli che morirono per le pietre della grandinata furon più numerosi di quelli che i figliuoli d’Israele uccisero con la spada.
 10	12	Allora Giosuè parlò all’Eterno, il giorno che l’Eterno diede gli Amorei in potere de’ figliuoli d’Israele, e disse in presenza d’Israele: “Sole, fermati su Gabaon, e tu, luna, sulla valle d’Aialon!”
-10	13	E il sole si fermò, e la luna rimase la suo luogo, finché la nazione si fosse vendicata de’ suoi nemici. Questo non sta egli scritto nel libro del Giusto? E il sole si fermò in mezzo al cielo e non s’affrettò a tramontare per quasi un giorno intero.
+10	13	E il sole si fermò, e la luna rimase al suo luogo, finché la nazione si fosse vendicata de’ suoi nemici. Questo non sta egli scritto nel libro del Giusto? E il sole si fermò in mezzo al cielo e non s’affrettò a tramontare per quasi un giorno intero.
 10	14	E mai, né prima né poi, s’è dato un giorno simile a quello, nel quale l’Eterno abbia esaudito la voce d’un uomo; poiché l’Eterno combatteva per Israele.
 10	15	E Giosuè, con tutto Israele, tornò al campo di Ghilgal.
 10	16	Or i cinque re eran fuggiti, e s’erano nascosti nella spelonca di Makkeda.
@@ -620,7 +620,7 @@
 23	11	Vegliate dunque attentamente su voi stessi, per amar l’Eterno, il vostro Dio.
 23	12	Perché, se vi ritraete da lui e v’unite a quel che resta di queste nazioni che son rimaste fra voi e v’imparentate con loro e vi mescolate con esse ed esse con voi,
 23	13	siate ben certi che l’Eterno, il vostro Dio, non continuerà a scacciare queste genti d’innanzi a voi, ma esse diventeranno per voi una rete, un’insidia, un flagello ai vostri fianchi, tante spine negli occhi vostri, finché non siate periti e scomparsi da questo buon paese che l’Eterno, il vostro Dio, v’ha dato.
-23	14	Or ecco, io me ne vo oggi per la via di tutto il mondo; riconoscete dunque con tutto il vostro cuore e con tutta l’anima vostra che neppur una di tutte le buone parole che l’Eterno, il vostro Dio, ha pronunciate su voi e caduta a terra; tutte si son compiute per voi; neppure una e caduta a terra.
+23	14	Or ecco, io me ne vo oggi per la via di tutto il mondo; riconoscete dunque con tutto il vostro cuore e con tutta l’anima vostra che neppur una di tutte le buone parole che l’Eterno, il vostro Dio, ha pronunciate su voi è caduta a terra; tutte si son compiute per voi; neppure una è caduta a terra.
 23	15	E avverrà che, come ogni buona parola che l’Eterno, il vostro Dio, vi avea detta si è compiuta per voi, così l’Eterno adempirà a vostro danno tutte le sue parole di minaccia, finché vi abbia sterminati di su questo buon paese, che il vostro Dio, l’Eterno, vi ha dato.
 23	16	Se trasgredite il patto che l’Eterno, il vostro Dio, vi ha imposto, e andate a servire altri dèi e vi prostrate davanti a loro, l’ira dell’Eterno s’accenderà contro di voi, e voi perirete presto, scomparendo dal buon paese ch’egli vi ha dato”.
 24	1	Giosuè adunò pure tutte le tribù d’Israele in Sichem, e convocò gli anziani d’Israele, i capi, i giudici e gli ufficiali del popolo, i quali si presentarono davanti a Dio.

@@ -75,6 +75,31 @@ FIXES = {
     (38, 1, 21): [('della nazioni', 'delle nazioni')],
 }
 
+# Accenti persi nel testo eBible ("e" al posto di "è"), verificati uno per uno.
+# Le sostituzioni valgono per tutta la Bibbia, quindi devono essere frasi non ambigue.
+EBIBLE_FIXES = [
+    (' e stato ', ' è stato '), (' e stata ', ' è stata '),
+    ('l’anno di remissione, e vicino!', 'l’anno di remissione, è vicino!'),
+    ('su voi e caduta a terra', 'su voi è caduta a terra'),
+    ('neppure una e caduta a terra', 'neppure una è caduta a terra'),
+    ('quest’uomo e venuto in casa mia', 'quest’uomo è venuto in casa mia'),
+    ('Dio e venuto nell’accampamento', 'Dio è venuto nell’accampamento'),
+    ('uno del popolo e venuto', 'uno del popolo è venuto'),
+    ('Il fuoco di Dio e caduto', 'Il fuoco di Dio è caduto'),
+    ('L’Eterno e vicino a quelli', 'L’Eterno è vicino a quelli'),
+    ('il vostro Dio, e Dio lassù', 'il vostro Dio, è Dio lassù'),
+    ('la luna rimase la suo luogo', 'la luna rimase al suo luogo'),
+    ('e sulla terra e tuo!', 'e sulla terra è tuo!'),
+    ('riconobbe che l’Eterno Dio.', 'riconobbe che l’Eterno è Dio.'),
+    ('Ecco, Iddio e colui che m’aiuta', 'Ecco, Iddio è colui che m’aiuta'),
+    ('la sua benevolenza e per tutta', 'la sua benevolenza è per tutta'),
+    ('la cui trasgressione e rimessa', 'la cui trasgressione è rimessa'),
+    ('io so ch’egli e così', 'io so ch’egli è così'),
+    ('e questo e il numero', 'e questo è il numero'),
+    ('e non e Dio delle valli', 'e non è Dio delle valli'),
+    ('questa non e una parola senza valore', 'questa non è una parola senza valore'),
+]
+
 # Rimandi alla numerazione originale italiana, es. "(21:6)" o "(H21-6)".
 MARKER = re.compile(r'\(H?\d+[:-]\d+\)\s*')
 
@@ -158,9 +183,12 @@ def convert_bible(osis_path, ebible, out_dir):
                 key = (bid, c, n)
                 if key in ebible:
                     full = clean(ebible[key])
+                    for old, new in EBIBLE_FIXES:
+                        full = full.replace(old, new)
                     if heading:
-                        eb_heading, full = split_heading(full, body)
-                        heading = eb_heading or heading
+                        # Se il titolo non si separa in modo pulito (OSIS a volte mette la nota
+                        # nel punto sbagliato, es. Salmo 60) si lascia il testo eBible intero.
+                        heading, full = split_heading(full, body)
                     body = full
                     stats['ebible'] += 1
                 else:

@@ -89,7 +89,7 @@
 4	4	Il popolo quindi mandò gente a Sciloh, e di la fu portata l’arca del patto dell’Eterno degli eserciti, il quale sta fra i cherubini; e i due figliuoli di Eli, Hofni e Fineas, erano là, con l’arca del patto di Dio.
 4	5	E quando l’arca del patto dell’Eterno entrò nel campo, tutto Israele diè in grandi grida di gioia, sì che ne rimbombo la terra.
 4	6	I Filistei, all’udire quelle alte grida, dissero: “Che significano queste grandi grida nel campo degli Ebrei?” E seppero che l’arca dell’Eterno era arrivata nell’accampamento.
-4	7	E i Filistei ebbero paura, perché dicevano: “Dio e venuto nell’accampamento”. Ed esclamarono: “Guai a noi! poiché non era così nei giorni passati.
+4	7	E i Filistei ebbero paura, perché dicevano: “Dio è venuto nell’accampamento”. Ed esclamarono: “Guai a noi! poiché non era così nei giorni passati.
 4	8	Guai a noi! Chi ci salverà dalle mani di questi dèi potenti? Questi son gli dèi che colpiron gli Egiziani d’ogni sorta di piaghe nel deserto.
 4	9	Siate forti, Filistei, e comportatevi da uomini, onde non abbiate a diventare schiavi degli Ebrei, com’essi sono stati schiavi vostri! Conducetevi da uomini, e combattete!”
 4	10	I Filistei dunque combatterono, e Israele fu sconfitto, e ciascuno se ne fuggì nella sua tenda. La rotta fu enorme, e caddero, d’Israele, trentamila fanti.
@@ -99,12 +99,12 @@
 4	14	Ed Eli, udendo lo strepito delle grida, disse: “Che significa il chiasso di questo tumulto?” E quell’uomo andò in fretta a portar la nuova ad Eli.
 4	15	Or Eli avea novantott’anni; la vista gli era venuta meno, sicché non potea vedere.
 4	16	Quell’uomo gli disse: “Son io che vengo dal campo di battaglia e che ne son fuggito oggi”. Ed Eli disse: “Com’è andata la cosa, figliuol mio?”
-4	17	E colui che portava la nuova, rispondendo, disse: “Israele e fuggito d’innanzi ai Filistei; e v’è stata una grande strage fra il popolo; anche i tuoi due figliuoli, Hofni e Fineas, sono morti, e l’arca di Dio e stata presa”.
+4	17	E colui che portava la nuova, rispondendo, disse: “Israele e fuggito d’innanzi ai Filistei; e v’è stata una grande strage fra il popolo; anche i tuoi due figliuoli, Hofni e Fineas, sono morti, e l’arca di Dio è stata presa”.
 4	18	E come ebbe mentovato l’arca di Dio, Eli cadde dal suo seggio all’indietro, allato alla porta, si ruppe la nuca, e morì, perché era un uomo vecchio e pesante. Era stato giudice d’Israele quarant’anni.
 4	19	La nuora di lui, moglie di Fineas, era incinta e prossima al parto; quando udì la nuova che l’arca di Dio era presa e che il suo suocero e il suo marito erano morti, si curvò e partorì, perché sorpresa a un tratto dai dolori.
 4	20	E nel punto che stava per morire, le donne che l’assistevano le dissero: “Non temere, poiché hai partorito un figliuolo”. Ma ella non rispose e non ne fece caso.
 4	21	E al suo bambino pose nome Icabod, dicendo: “La gloria ha esulato da Israele”, perché l’arca di Dio era stata presa, e a motivo del suo suocero e del suo marito.
-4	22	E disse: “La gloria ha esulato da Israele, perché l’arca di Dio e stata presa”.
+4	22	E disse: “La gloria ha esulato da Israele, perché l’arca di Dio è stata presa”.
 5	1	I Filistei, dunque, presero l’arca di Dio, e la trasportarono da Eben-Ezer a Asdod;
 5	2	presero l’arca di Dio, la portarono nella casa di Dagon, e la posarono allato a Dagon.
 5	3	E il giorno dopo, gli Asdodei alzatisi di buon’ora trovarono Dagon caduto con la faccia a terra, davanti all’arca dell’Eterno. Presero Dagon e lo rimisero al suo posto.
@@ -705,7 +705,7 @@
 26	12	Davide dunque prese la lancia e la brocca dell’acqua che Saul avea presso al suo capo, e se ne andarono. Nessuno vide la cosa né s’accorse di nulla; e nessuno si svegliò; tutti dormivano, perché l’Eterno avea fatto cader su loro un sonno profondo.
 26	13	Poi Davide passò dalla parte opposta e si fermò in lontananza in vetta al monte, a gran distanza dal campo di Saul;
 26	14	e gridò alla gente di Saul e ad Abner, figliuolo di Ner: “Non rispondi tu, Abner?” Abner rispose e disse: “Chi sei tu che gridi al re?”
-26	15	E Davide disse ad Abner: “Non sei tu un valoroso? E chi è pari a te in Israele? Perché dunque non hai tu fatto buona guardia al re tuo signore? Poiché uno del popolo e venuto per ammazzare il re tuo signore.
+26	15	E Davide disse ad Abner: “Non sei tu un valoroso? E chi è pari a te in Israele? Perché dunque non hai tu fatto buona guardia al re tuo signore? Poiché uno del popolo è venuto per ammazzare il re tuo signore.
 26	16	Questo che tu hai fatto non sta bene. Com’è vero che l’Eterno vive, meritate la morte voi che non avete fatto buona guardia al vostro signore, all’unto dell’Eterno! Ed ora guarda dove sia la lancia del re e dove sia la brocca dell’acqua che stava presso al suo capo!”
 26	17	Saul riconobbe la voce di Davide e disse: “E’ questa la tua voce, o figliuol mio Davide?” Davide rispose: “E’ la mia voce, o re, mio signore!”
 26	18	Poi aggiunse: “Perché il mio signore perseguita il suo servo? Che ho io fatto? Che delitto ho io commesso?

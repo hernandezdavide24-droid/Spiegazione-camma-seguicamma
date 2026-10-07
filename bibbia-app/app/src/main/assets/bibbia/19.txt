@@ -229,7 +229,7 @@
 18	40	hai fatto voltar le spalle davanti a me ai miei nemici, e ho distrutto quelli che m’odiavano.
 18	41	Hanno gridato, ma non vi fu chi li salvasse; hanno gridato all’Eterno, ma egli non rispose loro.
 18	42	Io li ho tritati come polvere esposta al vento, li ho spazzati via come il fango delle strade.
-18	43	Tu m’hai liberato dalle dissensioni del popolo, m’hai costituito capo di nazioni; un popolo che non conoscevo mi e stato sottoposto.
+18	43	Tu m’hai liberato dalle dissensioni del popolo, m’hai costituito capo di nazioni; un popolo che non conoscevo mi è stato sottoposto.
 18	44	Al solo udir parlare di me, m’hanno ubbidito; i figli degli stranieri m’hanno reso omaggio.
 18	45	I figli degli stranieri son venuti meno, sono usciti tremanti dai loro ripari.
 18	46	Vive l’Eterno! Sia benedetta la mia ròcca! E sia esaltato l’Iddio della mia salvezza!
@@ -402,7 +402,7 @@
 30	2	O Eterno, Dio mio, io ho gridato a te, e tu m’hai sanato.
 30	3	O Eterno, tu hai fatto risalir l’anima mia dal soggiorno de’ morti, tu m’hai ridato la vita perch’io non scendessi nella fossa.
 30	4	Salmeggiate all’Eterno, voi suoi fedeli, e celebrate la memoria della sua santità.
-30	5	Poiché l’ira sua è sol per un momento, ma la sua benevolenza e per tutta una vita. La sera alberga da noi il pianto; ma la mattina viene il giubilo.
+30	5	Poiché l’ira sua è sol per un momento, ma la sua benevolenza è per tutta una vita. La sera alberga da noi il pianto; ma la mattina viene il giubilo.
 30	6	Quanto a me, nella mia prosperità, dicevo: Non sarò mai smosso.
 30	7	O Eterno, per il tuo favore, avevi reso forte il mio monte; tu nascondesti la tua faccia, ed io fui smarrito.
 30	8	Io ho gridato a te, o Eterno; ho supplicato l’Eterno, dicendo:
@@ -436,7 +436,7 @@
 31	23	Amate l’Eterno, voi tutti i suoi santi! L’Eterno preserva i fedeli, e rende ampia retribuzione a chi procede alteramente.
 31	24	Siate saldi, e il vostro cuore si fortifichi, o voi tutti che sperate nell’Eterno!
 32	0	Di Davide. Cantico.
-32	1	Beato colui la cui trasgressione e rimessa e il cui peccato è coperto!
+32	1	Beato colui la cui trasgressione è rimessa e il cui peccato è coperto!
 32	2	Beato l’uomo a cui l’Eterno non imputa l’iniquità e nel cui spirito non è frode alcuna!
 32	3	Mentr’io mi son taciuto le mie ossa si son consumate pel ruggire ch’io facevo tutto il giorno.
 32	4	Poiché giorno e notte la tua mano s’aggravava su me, il mio succo vitale s’era mutato come per arsura d’estate. Sela.
@@ -486,7 +486,7 @@
 34	15	Gli occhi dell’Eterno sono sui giusti e le sue orecchie sono attente al loro grido.
 34	16	La faccia dell’Eterno è contro quelli che fanno il male per sterminare di sulla terra la loro memoria.
 34	17	I giusti gridano e l’Eterno li esaudisce e li libera da tutte le loro distrette.
-34	18	L’Eterno e vicino a quelli che hanno il cuor rotto, e salva quelli che hanno lo spirito contrito.
+34	18	L’Eterno è vicino a quelli che hanno il cuor rotto, e salva quelli che hanno lo spirito contrito.
 34	19	Molte sono le afflizioni del giusto; ma l’Eterno lo libera da tutte.
 34	20	Egli preserva tutte le ossa di lui, non uno ne è rotto.
 34	21	La malvagità farà perire il malvagio, e quelli che odiano il giusto saranno condannati.
@@ -822,7 +822,7 @@
 54	1	Per il Capo de’ musici. Per strumenti a corda. Cantico di Davide quando gli Zifei vennero a dire a Saul: Davide non si tiene egli nascosto fra noi? O Dio, salvami per il tuo nome, e fammi giustizia per la tua potenza.
 54	2	O Dio, ascolta la mia preghiera, porgi orecchio alle parole della mia bocca!
 54	3	Poiché degli stranieri si son levati contro a me e de’ violenti cercano l’anima mia. Essi non tengono Iddio presente innanzi a loro. Sela.
-54	4	Ecco, Iddio e colui che m’aiuta; il Signore è fra quelli che sostengon l’anima mia.
+54	4	Ecco, Iddio è colui che m’aiuta; il Signore è fra quelli che sostengon l’anima mia.
 54	5	Egli farà ricadere il male sopra i miei nemici. Nella tua fedeltà, distruggili!
 54	6	Con animo volonteroso io t’offrirò sacrifizi; celebrerò il tuo nome, o Eterno, perch’esso è buono;
 54	7	perché m’ha liberato da ogni distretta, e l’occhio mio ha visto sui miei nemici quel che desideravo.
@@ -902,7 +902,6 @@
 59	15	Vadano vagando per trovar da mangiare, e se non trovano da saziarsi, passino così la notte.
 59	16	Ma io canterò la tua potenza, e al mattino loderò ad alta voce la tua benignità, perché tu sei stato per me un alto ricetto, un rifugio nel giorno della mia distretta.
 59	17	O mia forza, a te salmeggerò, perché Dio è il mio alto ricetto, l’Iddio benigno per me.
-60	0	tornò, e sconfisse 12.000 Idumei nella valle del Sale.
 60	1	Per il Capo de’ musici. Su “il giglio della testimonianza”. Inno di Davide da insegnare; quand’egli mosse guerra ai Siri di Mesopotamia e ai Siri di Soba e Joab tornò, e sconfisse 12.000 Idumei nella valle del Sale. O Dio, tu ci hai rigettati, ci hai dispersi, tu ti sei adirato; deh, ci ristabilisci!
 60	2	Tu hai fatto tremare la terra, tu l’hai schiantata; restaura le sue rotture, perché vacilla.
 60	3	Tu hai fatto vedere al tuo popolo cose dure; tu ci hai dato a bere un vino che stordisce.
