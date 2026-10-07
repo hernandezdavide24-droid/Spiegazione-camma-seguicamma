@@ -1,0 +1,48 @@
+#intro
+titolo: Giacomo
+sintesi: È una lettera molto pratica, simile ai libri sapienziali dell'Antico Testamento e al Sermone sul monte. Giacomo insegna a vivere la fede nella vita di ogni giorno: affrontare le prove con gioia, chiedere sapienza a Dio, mettere in pratica la Parola, non fare favoritismi verso i ricchi, controllare la lingua, evitare litigi e orgoglio, essere pazienti e pregare. Il suo messaggio più famoso: una fede senza opere è morta.
+autore: Giacomo, «servitore di Dio e del Signor Gesù Cristo», tradizionalmente identificato con Giacomo, fratello del Signore e guida della chiesa di Gerusalemme (Atti 15; Galati 1:19), martirizzato nel 62 d.C.
+data: Fra il 45 e il 62 d.C.; potrebbe essere uno dei più antichi scritti del Nuovo Testamento.
+destinatari: «Alle dodici tribù che sono nella dispersione»: cristiani di origine ebraica sparsi fuori dalla Palestina.
+contesto: Le comunità vivono difficoltà economiche e prove; alcuni ricchi sfruttano i lavoratori, nelle riunioni si favoriscono i benestanti, ci sono litigi e maldicenze. Alcuni pensano che basti credere senza che la fede cambi la vita.
+scopo: Mostrare come si vive concretamente una fede autentica, e smascherare una religiosità fatta solo di parole.
+temi: Le prove e la perseveranza; la sapienza dall'alto; ascoltare e mettere in pratica; la religione pura; nessun favoritismo; fede e opere; la lingua; l'umiltà; la ricchezza e la giustizia; la pazienza; la preghiera.
+struttura: 1 · Prove, sapienza e Parola messa in pratica.
+2 · Contro i favoritismi; fede e opere.
+3 · La lingua e la vera sapienza.
+4 · Le liti, l'orgoglio e i progetti umani.
+5 · Ai ricchi; pazienza, preghiera e cura reciproca.
+cristo: Giacomo nomina Gesù solo due volte, ma la lettera riecheggia continuamente le sue parole: beati i poveri (2:5), non giurare (5:12), essere facitori della Parola come chi costruisce sulla roccia (1:22). Chiama Gesù «il Signore della gloria» (2:1) e invita ad aspettare con pazienza la sua venuta (5:7-8).
+chiave: Gc 1:2-3; Gc 1:5; Gc 1:22; Gc 1:27; Gc 2:17; Gc 4:8
+
+#cap 1 Prove, sapienza e Parola
+@1 Saluto
+@2 La gioia nelle prove
+@5 Chiedere sapienza
+@12 La tentazione
+@19 Ascoltare e mettere in pratica
+Giacomo invita a considerare le prove motivo di gioia, perché producono costanza. Chi manca di sapienza «la chiegga a Dio che dona a tutti liberalmente», ma con fede, senza dubitare. Dio non tenta nessuno: la tentazione nasce dai propri desideri, mentre da Dio vengono «ogni donazione buona e ogni dono perfetto». Ognuno sia «pronto ad ascoltare, tardo al parlare, lento all'ira». Non basta ascoltare: «siate facitori della Parola e non soltanto uditori». La religione pura è soccorrere orfani e vedove e conservarsi puri dal mondo.
+
+#cap 2 Fede e opere
+@1 Nessun favoritismo
+@14 Una fede senza opere
+Se nella riunione si offre il posto migliore al ricco vestito bene e si lascia in piedi il povero, si fanno distinzioni ingiuste: Dio ha scelto i poveri come eredi del regno. La legge regale è amare il prossimo come se stessi. A che serve dire di avere fede se non si aiuta un fratello senza vestiti e senza cibo? «Così è della fede; se non ha opere, è per se stessa morta». Anche i demoni credono e tremano. Abrahamo e Rahab mostrarono la loro fede con le azioni: «come il corpo senza lo spirito è morto, così anche la fede senza le opere è morta».
+
+#cap 3 La lingua e la sapienza
+@1 Il potere della lingua
+@13 Due sapienze
+Non tutti devono fare i maestri, perché chi insegna sarà giudicato più severamente. La lingua è piccola ma potente, come il morso che guida il cavallo o il timone di una nave: «Vedete un piccol fuoco, che gran foresta incendia!». Con la stessa bocca si benedice Dio e si maledicono gli uomini fatti a sua immagine. C'è una sapienza terrena, fatta di gelosia e rivalità, e una sapienza che viene dall'alto: pura, pacifica, mite, piena di misericordia e di buoni frutti.
+
+#cap 4 Avvicinatevi a Dio
+@1 L'origine delle liti
+@7 Sottomettetevi a Dio
+@11 Non giudicate
+@13 Se il Signore vuole
+Liti e guerre nascono dai desideri che combattono dentro di noi. L'amicizia con il mondo è inimicizia con Dio. «Iddio resiste ai superbi e dà grazia agli umili»: sottomettetevi a Dio, resistete al diavolo, «Appressatevi a Dio, ed Egli si appresserà a voi». Chi parla male del fratello si mette al posto di Dio, l'unico giudice. A chi fa progetti sicuri di guadagno Giacomo ricorda: «siete un vapore che appare per un po' di tempo e poi svanisce»; bisogna dire: «Se piace al Signore».
+
+#cap 5 Pazienza e preghiera
+@1 Guai ai ricchi oppressori
+@7 La pazienza
+@13 La preghiera della fede
+@19 Riportare chi si è smarrito
+Giacomo denuncia i ricchi che accumulano tesori e non pagano il salario ai lavoratori: il loro grido è giunto a Dio. I credenti siano pazienti come il contadino che aspetta la pioggia, e come Giobbe, perché la venuta del Signore è vicina. Non giurate: il vostro sì sia sì e il vostro no sia no. Chi soffre preghi, chi è lieto canti; i malati chiamino gli anziani perché preghino e li ungano con olio. «Confessate dunque i falli gli uni agli altri, e pregate gli uni per gli altri»: la preghiera del giusto è potente, come quella di Elia. Chi riporta un fratello dall'errore salva un'anima.
