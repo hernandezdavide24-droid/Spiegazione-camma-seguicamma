@@ -1,0 +1,24 @@
+#intro
+titolo: Giuda
+sintesi: Breve e vigorosa lettera di Giuda, fratello di Giacomo. Voleva scrivere della salvezza comune, ma si sente costretto a esortare i credenti a «combattere strenuamente per la fede». Alcuni individui si sono infiltrati nella comunità e trasformano la grazia di Dio in un pretesto per l'immoralità. Giuda ricorda gli esempi di giudizio del passato, descrive questi uomini con immagini forti e conclude con una delle più belle dossologie del Nuovo Testamento.
+autore: Giuda, «servitore di Gesù Cristo e fratello di Giacomo» (v. 1), tradizionalmente identificato con uno dei fratelli di Gesù (Marco 6:3).
+data: Probabilmente fra il 65 e l'80 d.C. Ha molti punti in comune con 2 Pietro 2.
+destinatari: Cristiani non meglio identificati, probabilmente di origine giudaica, visti i molti riferimenti all'Antico Testamento e alla tradizione ebraica.
+contesto: Alcuni maestri immorali partecipano ai pasti comunitari, disprezzano l'autorità e seguono le proprie passioni. Giuda cita anche scritti giudaici conosciuti dai lettori, come il libro di Enoc.
+scopo: Mettere in guardia dai falsi maestri ed esortare i credenti a rimanere saldi nella fede e nell'amore di Dio.
+temi: La fede trasmessa una volta per sempre; il giudizio di Dio; gli esempi di Israele nel deserto, degli angeli e di Sodoma; l'edificazione nella fede; la misericordia verso chi dubita; Dio che custodisce.
+struttura: 1-4 · Saluto e motivo della lettera.
+5-16 · Esempi di giudizio e ritratto degli empi.
+17-23 · Esortazioni ai credenti.
+24-25 · Dossologia.
+cristo: I credenti sono «custoditi da Gesù Cristo» (v. 1) e aspettano «la misericordia del Signor nostro Gesù Cristo per aver la vita eterna» (v. 21). Gli empi invece rinnegano «il nostro unico Padrone e Signore Gesù Cristo» (v. 4).
+chiave: Gd 1:3; Gd 1:20-21; Gd 1:24-25
+
+#cap 1 Combattere per la fede
+@1 Saluto
+@3 Combattete per la fede
+@5 Esempi di giudizio
+@8 Il ritratto degli empi
+@17 Esortazioni ai credenti
+@24 Lode a Dio
+Giuda esorta «a combattere strenuamente per la fede, che è stata una volta per sempre tramandata ai santi», perché si sono infiltrati uomini che trasformano la grazia in dissolutezza. Ricorda il giudizio sul popolo incredulo nel deserto, sugli angeli ribelli e su Sodoma e Gomorra. Questi uomini sono «nuvole senz'acqua», alberi senza frutto, onde selvagge, stelle erranti. Ma i credenti si edifichino sulla loro santissima fede, preghino nello Spirito Santo, si conservino nell'amore di Dio, abbiano misericordia di chi dubita e cerchino di salvare altri. La lettera si chiude con una lode a colui «che è potente da preservarvi da ogni caduta e da farvi comparire davanti alla sua gloria irreprensibili, con giubilo».
