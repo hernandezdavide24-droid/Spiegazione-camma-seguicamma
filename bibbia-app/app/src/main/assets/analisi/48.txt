@@ -10,7 +10,7 @@ temi: Un solo vangelo; la giustificazione per fede; Abrahamo padre dei credenti;
 struttura: 1-2 · Parte personale: il vangelo di Paolo viene da Dio; lo scontro con Pietro ad Antiochia.
 3-4 · Parte dottrinale: fede e legge, Abrahamo, figli e non schiavi, Agar e Sara.
 5-6 · Parte pratica: la libertà, lo Spirito, l'amore fraterno.
-cristo: Paolo può dire: «non son più io che vivo, ma è Cristo che vive in me» (2:20). Cristo ci ha riscattati dalla maledizione della legge diventando maledizione per noi (3:13); nato da donna, sotto la legge, è venuto perché ricevessimo l'adozione di figli (4:4-5). In lui «non c'è qui né Giudeo né Greco... perché voi tutti siete uno in Cristo Gesù» (3:28).
+cristo: Paolo può dire: «non son più io che vivo, ma è Cristo che vive in me» (2:20). Cristo ci ha riscattati dalla maledizione della legge diventando maledizione per noi (3:13); nato da donna, sotto la legge, è venuto perché ricevessimo l'adozione di figli (4:4-5). In lui «non c'è qui né Giudeo né Greco... poiché voi tutti siete uno in Cristo Gesù» (3:28).
 chiave: Gal 2:16; Gal 2:20; Gal 3:28; Gal 5:1; Gal 5:22-23; Gal 6:2
 
 #cap 1 Non c'è un altro vangelo
@@ -23,7 +23,7 @@ Paolo salta il consueto ringraziamento e va al punto: si meraviglia che i Galati
 @1 L'accordo a Gerusalemme
 @11 Paolo affronta Pietro
 @15 Giustificati per fede
-A Gerusalemme le colonne della Chiesa, Giacomo, Cefa e Giovanni, hanno riconosciuto il vangelo di Paolo e non hanno obbligato Tito, un greco, a farsi circoncidere. Ad Antiochia però Pietro, per paura, aveva smesso di mangiare con i pagani, e Paolo lo ha rimproverato apertamente. Il principio è chiaro: «l'uomo non è giustificato per le opere della legge ma soltanto per mezzo della fede in Cristo Gesù». Paolo è stato crocifisso con Cristo: «non son più io che vivo, ma è Cristo che vive in me».
+A Gerusalemme le colonne della Chiesa, Giacomo, Cefa e Giovanni, hanno riconosciuto il vangelo di Paolo e non hanno obbligato Tito, un greco, a farsi circoncidere. Ad Antiochia però Pietro, per paura, aveva smesso di mangiare con i pagani, e Paolo lo ha rimproverato apertamente. Il principio è chiaro: «l'uomo non è giustificato per le opere della legge ma lo è soltanto per mezzo della fede in Cristo Gesù». Paolo è stato crocifisso con Cristo: «non son più io che vivo, ma è Cristo che vive in me».
 
 #cap 3 La fede di Abrahamo e lo scopo della legge
 @1 O Galati insensati

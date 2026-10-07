@@ -46,6 +46,7 @@ def main():
                         bad += 1
                         print(f'{os.path.basename(f)}:{n}: «{piece.strip()}»')
     print('OK' if bad == 0 else f'{bad} citazioni non trovate')
+    sys.exit(1 if bad else 0)
 
 
 if __name__ == '__main__':
