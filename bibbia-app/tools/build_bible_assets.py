@@ -110,6 +110,7 @@ EBIBLE_FIXES = [
     ('Perché hanno tritano Galaad', 'Perché hanno tritato Galaad'),
     ('han sprezzato al legge', 'han sprezzato la legge'),
     ('l’Eterno mi perse di dietro al gregge', 'l’Eterno mi prese di dietro al gregge'),
+    ('a motivo della grava età', 'a motivo della grave età'),
 ]
 
 # Rimandi alla numerazione originale italiana, es. "(21:6)" o "(H21-6)".

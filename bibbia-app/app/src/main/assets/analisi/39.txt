@@ -1,0 +1,43 @@
+#intro
+titolo: Malachia
+sintesi: Ultimo libro profetico dell'Antico Testamento. Il Tempio è ricostruito ma la fede si è raffreddata: i sacerdoti offrono animali difettosi, i matrimoni si rompono, le decime non vengono portate e molti dicono che servire Dio non serve a niente. Malachia risponde con un dialogo serrato fra Dio e il popolo e annuncia che Dio manderà il suo messaggero, poi verrà lui stesso, e prima del suo giorno manderà il profeta Elia.
+autore: Malachia, che significa “il mio messaggero”. Alcuni pensano che sia un titolo più che un nome; della sua vita non si sa nulla.
+data: Circa 460-430 a.C., al tempo di Esdra e Neemia, quando il Tempio funzionava già da decenni.
+destinatari: I sacerdoti e il popolo di Giuda dopo l'esilio.
+contesto: Le grandi promesse di Aggeo e Zaccaria sembrano non realizzarsi: Giuda resta una piccola provincia persiana, povera e senza re. Subentrano delusione, routine religiosa e compromessi, come i matrimoni con donne straniere idolatre e i divorzi facili (vedi Neemia 13).
+scopo: Risvegliare un popolo stanco, ricordare l'amore e la fedeltà di Dio, chiamare a un culto sincero e preparare alla venuta del Signore.
+temi: L'amore di Dio («Io v'ho amati»); il rispetto per il nome di Dio; la fedeltà nel matrimonio («io odio il ripudio»); le decime e la fiducia; il Dio che non cambia; il messaggero che prepara la via; il giorno dell'Eterno; il ritorno di Elia.
+struttura: 1:1-5 · L'amore di Dio per Israele.
+1:6-2:9 · Accusa ai sacerdoti.
+2:10-16 · L'infedeltà nei matrimoni.
+2:17-3:6 · Il messaggero e il giudizio.
+3:7-18 · Le decime e chi teme Dio.
+4 · Il giorno dell'Eterno e la venuta di Elia.
+cristo: I vangeli vedono in Giovanni Battista il messaggero che prepara la via (3:1; Marco 1:2) e l'Elia che doveva venire (4:5; Matteo 11:10-14; 17:10-13). L'angelo annuncia che Giovanni ricondurrà «il cuore dei padri verso i figliuoli» (Luca 1:17). Gesù è il Signore che entra nel suo tempio e il «sole della giustizia» che porta guarigione.
+chiave: Ml 1:2; Ml 2:10; Ml 3:1; Ml 3:6; Ml 3:10; Ml 4:2
+
+#cap 1 L'amore di Dio e il culto disprezzato
+@1 «Io v'ho amati»
+@6 Sacerdoti che disprezzano il nome di Dio
+@11 Grande è il mio nome fra le nazioni
+Dio comincia con una dichiarazione d'amore; il popolo risponde: «In che ci hai tu amati?». È lo schema di tutto il libro: Dio afferma, il popolo obietta, Dio spiega. Ai sacerdoti Dio chiede: «se dunque io son padre, dov'è l'onore che m'è dovuto?». Offrono animali ciechi, zoppi e malati, che non oserebbero regalare al governatore. Meglio chiudere le porte del Tempio. Intanto, fra le nazioni, «grande è il mio nome».
+
+#cap 2 Sacerdoti e matrimoni infedeli
+@1 Il patto con Levi
+@10 «Non abbiam noi tutti uno stesso padre?»
+@13 La moglie della giovinezza
+@17 «Dov'è l'Iddio di giustizia?»
+Dio ricorda ai sacerdoti il patto con Levi: il sacerdote dovrebbe custodire la conoscenza e insegnare la verità, e invece fa inciampare molti. Poi accusa il popolo di tradire il patto sposando donne che servono altri dèi e ripudiando la moglie della giovinezza: «io odio il ripudio, dice l'Eterno». Infine il popolo stanca Dio con le sue lamentele: chi fa il male prospera, «Dov'è l'Iddio di giustizia?».
+
+#cap 3 Il messaggero e il fuoco che purifica
+@1 «Io vi mando il mio messaggero»
+@6 Dio non cambia
+@8 Derubare Dio
+@13 Il libro di memoria
+Risposta: «io vi mando il mio messaggero; egli preparerà la via davanti a me», e poi il Signore stesso entrerà nel suo tempio. Sarà come il fuoco di chi raffina i metalli: purificherà i sacerdoti e giudicherà chi opprime operai, vedove, orfani e stranieri. «io, l'Eterno, non muto». Il popolo ruba a Dio trattenendo decime e offerte; Dio sfida: «mettetemi alla prova in questo», e vedrete la benedizione. Chi teme Dio è scritto in un libro di memoria e sarà la sua «proprietà particolare».
+
+#cap 4 Il giorno che viene e il profeta Elia
+@1 Il sole della giustizia
+@4 Ricordate la legge di Mosè
+@5 Elia prima del grande giorno
+Il giorno dell'Eterno sarà come una fornace per i superbi, «Ma per voi che temete il mio nome si leverà il sole della giustizia, e la guarigione sarà nelle sue ali». Il popolo deve ricordare la legge di Mosè. L'Antico Testamento si chiude con una promessa e un'attesa: Dio manderà «Elia, il profeta», che riconcilierà padri e figli. Dopo questo, per circa quattrocento anni, nessun profeta, fino a Giovanni Battista.
