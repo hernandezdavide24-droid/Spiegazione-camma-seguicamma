@@ -1,0 +1,243 @@
+#intro
+titolo: Esodo
+sintesi: Il racconto della liberazione d'Israele dalla schiavitù d'Egitto. Dio chiama Mosè, libera il popolo con segni potenti, lo guida attraverso il mar Rosso e il deserto fino al monte Sinai, dove stringe con lui un'alleanza, gli dona i dieci comandamenti e chiede di costruire il tabernacolo per abitare in mezzo a loro.
+autore: Tradizionalmente Mosè. Il libro raccoglie racconti, leggi e istruzioni per il culto, trasmessi e ordinati nel tempo.
+data: Gli eventi si collocano probabilmente nel XIII secolo a.C. (secondo altri calcoli nel XV secolo a.C.).
+destinatari: Il popolo d'Israele di ogni generazione, chiamato a ricordare che Dio lo ha liberato.
+contesto: Gli Israeliti, discendenti di Giacobbe, vivono in Egitto da secoli e sono diventati schiavi, costretti a costruire città per il Faraone. L'Egitto era la grande potenza del tempo, con molti dèi e un re considerato divino.
+scopo: Mostrare che il Dio d'Israele è il Signore della storia, più forte di ogni potere umano, che ascolta il grido degli oppressi e li libera per farne il suo popolo, con una legge e un luogo d'incontro.
+temi: Liberazione e redenzione; la rivelazione del nome di Dio («Io sono»); la Pasqua; l'alleanza e la Legge; la presenza di Dio fra il popolo; la fedeltà di Dio e l'infedeltà del popolo.
+struttura: 1-18 · La liberazione dall'Egitto e il viaggio fino al Sinai.
+19-24 · L'alleanza al Sinai e i dieci comandamenti.
+25-31 · Le istruzioni per il tabernacolo.
+32-34 · Il vitello d'oro e il rinnovo dell'alleanza.
+35-40 · La costruzione del tabernacolo e la gloria di Dio che lo riempie.
+cristo: Gesù muore durante la Pasqua ed è chiamato «la nostra Pasqua» (1 Corinzi 5:7): come il sangue dell'agnello salvò Israele, così la sua morte libera dal peccato. La manna anticipa Gesù, «il pan della vita» (Giovanni 6:35).
+chiave: Es 3:14; Es 12:13; Es 14:13-14; Es 19:5-6; Es 20:2-3; Es 34:6-7
+
+#cap 1 Israele schiavo in Egitto
+@1 Il popolo si moltiplica
+@8 L'oppressione
+@15 Le levatrici che temono Dio
+I discendenti di Giacobbe diventano numerosissimi. Un nuovo Faraone, che non aveva conosciuto Giuseppe, li teme e li riduce in schiavitù; poi ordina di uccidere i neonati maschi. Le levatrici Scifra e Pua temono Dio e disobbediscono all'ordine.
+
+#cap 2 Nascita e fuga di Mosè
+@1 Il bambino salvato dalle acque
+@11 Mosè fugge a Madian
+@23 Dio ascolta il grido
+Una donna della tribù di Levi nasconde il figlio in un cestello sul Nilo; la figlia del Faraone lo trova e lo chiama Mosè. Da adulto, Mosè uccide un Egiziano che maltrattava un Ebreo e fugge a Madian, dove sposa Sefora. Intanto Dio ascolta il lamento d'Israele e si ricorda del suo patto.
+
+#cap 3 Il pruno ardente
+@1 Dio chiama Mosè
+@13 Il nome di Dio
+Sul monte Horeb, Mosè vede un pruno che arde senza consumarsi. Dio gli parla: ha visto l'afflizione del suo popolo e lo manda dal Faraone. Mosè chiede il suo nome e Dio risponde: «Io sono quegli che sono».
+
+#cap 4 I segni e il ritorno in Egitto
+@1 Il bastone e la mano
+@10 Mosè esita, Aaronne lo aiuterà
+@18 Il ritorno in Egitto
+Dio dà a Mosè dei segni per convincere il popolo. Mosè obietta di non saper parlare, e Dio gli affianca il fratello Aaronne. Mosè torna in Egitto e il popolo, vedendo i segni, crede e adora.
+
+#cap 5 Il Faraone indurisce il lavoro
+@1 «Chi è l'Eterno?»
+@6 Mattoni senza paglia
+@22 Il lamento di Mosè
+Il Faraone rifiuta di lasciar partire il popolo e rende il lavoro ancora più duro: gli Israeliti devono fare mattoni senza ricevere la paglia. Il popolo accusa Mosè, e Mosè si lamenta con Dio.
+
+#cap 6 La promessa di liberazione
+@1 «Io sono l'Eterno»
+@14 La genealogia di Mosè e Aaronne
+@28 Mosè ripete le sue obiezioni
+Dio rinnova la promessa: libererà Israele, lo prenderà come suo popolo e lo condurrà nella terra promessa ai padri. Il popolo, scoraggiato, non ascolta. Una genealogia presenta le origini di Mosè e Aaronne.
+
+#cap 7 Il bastone e la prima piaga
+@1 Mosè e Aaronne davanti al Faraone
+@14 L'acqua cambiata in sangue
+Il bastone di Aaronne diventa un serpente e divora quelli dei maghi egiziani, ma il cuore del Faraone si indurisce. Inizia la serie delle piaghe: l'acqua del Nilo diventa sangue.
+
+#cap 8 Rane, zanzare e mosconi
+@1 Le rane
+@16 Le zanzare
+@20 I mosconi
+Seguono le piaghe delle rane, delle zanzare e dei mosconi. I maghi stessi riconoscono: «Questo è il dito di Dio». Il Faraone promette di lasciar partire il popolo, ma appena la piaga cessa cambia idea.
+
+#cap 9 Peste, ulceri e grandine
+@1 La moria del bestiame
+@8 Le ulceri
+@13 La grandine
+Il bestiame degli Egiziani muore, mentre quello d'Israele è risparmiato; poi vengono le ulceri e una grandine devastante. Il Faraone ammette di aver peccato, ma di nuovo indurisce il cuore.
+
+#cap 10 Locuste e tenebre
+@1 Le locuste
+@21 Le tenebre
+Le locuste divorano ciò che resta dei campi; poi fitte tenebre coprono l'Egitto per tre giorni, mentre dove abitano gli Israeliti c'è luce. Il Faraone caccia Mosè minacciandolo di morte.
+
+#cap 11 L'annuncio dell'ultima piaga
+@1 La morte dei primogeniti
+Dio annuncia l'ultima piaga: a mezzanotte moriranno tutti i primogeniti d'Egitto. Allora il Faraone lascerà partire il popolo.
+
+#cap 12 La Pasqua e l'uscita dall'Egitto
+@1 L'istituzione della Pasqua
+@29 La morte dei primogeniti
+@37 La partenza
+@43 Le regole della Pasqua
+Ogni famiglia israelita deve sacrificare un agnello e segnare con il suo sangue gli stipiti della porta: quando Dio colpirà l'Egitto, «passerà oltre» quelle case. A mezzanotte muoiono i primogeniti egiziani e il Faraone lascia partire Israele. La Pasqua dovrà essere celebrata ogni anno a ricordo.
+
+#cap 13 La consacrazione dei primogeniti
+@1 I primogeniti appartengono a Dio
+@17 La colonna di nuvola e di fuoco
+Ogni primogenito d'Israele è consacrato a Dio, a memoria della liberazione. Dio guida il popolo nel deserto con una colonna di nuvola di giorno e di fuoco di notte. Mosè porta con sé le ossa di Giuseppe.
+
+#cap 14 Il passaggio del mar Rosso
+@1 Il Faraone insegue Israele
+@10 «L'Eterno combatterà per voi»
+@21 Le acque si dividono
+Il Faraone si pente e insegue il popolo con i carri. Gli Israeliti, intrappolati fra il mare e l'esercito, hanno paura; Mosè risponde: «L'Eterno combatterà per voi». Mosè stende la mano, il mare si apre e Israele passa all'asciutto; le acque ritornano e travolgono gli Egiziani.
+
+#cap 15 Il cantico di Mosè
+@1 Il canto di vittoria
+@20 Il canto di Maria
+@22 Le acque amare di Mara
+Mosè e il popolo cantano la vittoria di Dio: «L'Eterno è la mia forza e l'oggetto del mio cantico». La profetessa Maria guida la danza delle donne. A Mara le acque amare diventano dolci: Dio si presenta come «l'Eterno che ti guarisco».
+
+#cap 16 La manna e le quaglie
+@1 Il popolo mormora
+@13 Il pane dal cielo
+@22 Il sabato
+Nel deserto il popolo rimpiange il cibo d'Egitto. Dio manda quaglie la sera e la manna al mattino: ognuno deve raccoglierne solo quanto basta per il giorno, e il sesto giorno il doppio, per riposare il sabato.
+
+#cap 17 L'acqua dalla roccia e Amalek
+@1 L'acqua a Massah e Meribah
+@8 La vittoria su Amalek
+A Refidim manca l'acqua e il popolo contesta Mosè: Dio fa sgorgare acqua dalla roccia. Poi Israele combatte contro Amalek: finché Mosè tiene alte le mani, sostenute da Aaronne e Hur, Israele vince.
+
+#cap 18 Il consiglio di Jethro
+@1 Jethro visita Mosè
+@13 La scelta dei giudici
+Jethro, suocero di Mosè, ascolta tutto ciò che Dio ha fatto e lo benedice. Vedendo Mosè sfinito nel giudicare il popolo da solo, gli consiglia di scegliere uomini capaci e timorati di Dio per condividere il lavoro.
+
+#cap 19 Al monte Sinai
+@1 «Un regno di sacerdoti»
+@9 La preparazione all'incontro
+@16 Dio scende sul monte
+Il popolo si accampa davanti al Sinai. Dio propone un'alleanza: se Israele ascolterà la sua voce, sarà il suo tesoro particolare, «un regno di sacerdoti e una nazione santa». Fra tuoni, lampi e fuoco Dio scende sul monte.
+
+#cap 20 I dieci comandamenti
+@1 Le dieci parole
+@18 La paura del popolo
+@22 L'altare
+Dio pronuncia i dieci comandamenti, introdotti dalle parole: «Io sono l'Eterno, l'Iddio tuo, che ti ho tratto dal paese d'Egitto». Riguardano il rapporto con Dio (un solo Dio, niente idoli, rispetto del nome, il sabato) e con il prossimo (genitori, vita, matrimonio, proprietà, verità, desideri).
+
+#cap 21 Leggi sugli schiavi e sulla violenza
+@1 Gli schiavi ebrei
+@12 Omicidio e ferite
+@28 Danni causati dagli animali
+Inizia il «libro del patto», con leggi concrete per la vita del popolo: limiti alla schiavitù, punizioni per l'omicidio e le violenze, responsabilità per i danni. La regola «occhio per occhio» serviva a evitare vendette eccessive.
+
+#cap 22 Leggi sulla proprietà e sulla giustizia
+@1 Furti e danni
+@16 Leggi morali e religiose
+@21 Lo straniero, la vedova, l'orfano
+Norme sui furti, sui beni affidati e sui danni. Dio chiede di non opprimere lo straniero, la vedova e l'orfano, perché ascolta il loro grido, e di prestare al povero senza interessi.
+
+#cap 23 Giustizia e feste
+@1 Giustizia imparziale
+@10 Anno sabatico e sabato
+@14 Le tre feste annuali
+@20 L'angelo e la promessa
+Il popolo deve essere giusto anche con il nemico e non piegare la giustizia. Si stabiliscono l'anno sabatico, il sabato e le tre grandi feste. Dio promette un angelo che guiderà Israele nella terra promessa.
+
+#cap 24 La conclusione dell'alleanza
+@1 Il sangue del patto
+@12 Mosè sul monte
+Il popolo promette: «Noi faremo tutto quello che l'Eterno ha detto». Mosè asperge il popolo con il sangue del patto. Gli anziani vedono il Dio d'Israele; Mosè sale sul monte e vi rimane quaranta giorni.
+
+#cap 25 Il tabernacolo: l'arca e la tavola
+@1 Le offerte del popolo
+@10 L'arca del patto
+@23 La tavola e il candelabro
+Dio chiede offerte volontarie per costruire un santuario: «perch'io abiti in mezzo a loro». Descrive l'arca con il propiziatorio e i cherubini, la tavola dei pani e il candelabro d'oro.
+
+#cap 26 La tenda
+@1 I teli e le assi
+@31 Il velo
+Istruzioni per la struttura del tabernacolo: teli, coperture, assi di legno e il velo che separa il luogo santo dal luogo santissimo, dove sarà posta l'arca.
+
+#cap 27 L'altare e il cortile
+@1 L'altare degli olocausti
+@9 Il cortile
+@20 L'olio per la lampada
+Si descrivono l'altare di rame per i sacrifici, il cortile recintato intorno alla tenda e l'olio puro per tenere sempre accesa la lampada.
+
+#cap 28 Le vesti dei sacerdoti
+@1 Le vesti sacre
+@15 Il pettorale
+@31 Il manto e la lamina d'oro
+Aaronne e i suoi figli saranno sacerdoti. Le loro vesti sono descritte nei dettagli: l'efod, il pettorale con dodici pietre che portano i nomi delle tribù, il manto e la lamina d'oro con la scritta «Santo all'Eterno».
+
+#cap 29 La consacrazione dei sacerdoti
+@1 Il rito di consacrazione
+@38 Il sacrificio quotidiano
+Per sette giorni Aaronne e i figli vengono consacrati con lavaggi, unzione e sacrifici. Ogni giorno si offriranno due agnelli, mattina e sera. Dio promette: «E dimorerò in mezzo ai figliuoli d'Israele e sarò il loro Dio».
+
+#cap 30 L'altare dei profumi e altre istruzioni
+@1 L'altare dei profumi
+@11 Il prezzo del riscatto
+@17 La conca e l'olio dell'unzione
+Si descrivono l'altare dove bruciare il profumo, la tassa del riscatto uguale per ricchi e poveri, la conca per lavarsi, l'olio sacro e il profumo riservato al culto.
+
+#cap 31 Gli artigiani e il sabato
+@1 Betsaleel e Oholiab
+@12 Il segno del sabato
+Dio riempie del suo Spirito gli artigiani Betsaleel e Oholiab perché realizzino l'opera. Il sabato è dichiarato segno perpetuo dell'alleanza. Mosè riceve le due tavole di pietra scritte dal dito di Dio.
+
+#cap 32 Il vitello d'oro
+@1 Il popolo si fa un idolo
+@7 Mosè intercede
+@15 Le tavole spezzate
+@30 Mosè si offre per il popolo
+Mentre Mosè è sul monte, il popolo chiede ad Aaronne un dio visibile e adora un vitello d'oro. Dio vuole distruggerlo, ma Mosè intercede. Sceso dal monte, Mosè spezza le tavole e punisce i colpevoli; poi torna da Dio pronto a essere cancellato dal suo libro pur di ottenere il perdono per il popolo.
+
+#cap 33 «Fammi vedere la tua gloria!»
+@1 Dio non salirà con loro?
+@7 La tenda di convegno
+@12 La preghiera di Mosè
+Dio annuncia che non accompagnerà più il popolo. Mosè, che parlava con Dio «faccia a faccia, come un uomo parla col proprio amico», insiste: se Dio non viene, è meglio non partire. Dio acconsente; Mosè chiede di vedere la sua gloria e Dio gli concede di vederlo solo «per di dietro».
+
+#cap 34 Il rinnovo dell'alleanza
+@1 Le nuove tavole
+@10 Le condizioni dell'alleanza
+@29 Il volto raggiante di Mosè
+Dio passa davanti a Mosè e proclama il suo nome: «l'Iddio misericordioso e pietoso, lento all'ira, ricco in benignità e fedeltà». Rinnova l'alleanza e scrive di nuovo le tavole. Mosè scende dal monte con il volto raggiante, tanto da doverlo coprire con un velo.
+
+#cap 35 Le offerte per il santuario
+@1 Il sabato
+@4 Il popolo porta i doni
+@30 Gli artigiani
+Mosè ricorda il sabato e invita a portare offerte. Il popolo risponde con generosità: uomini e donne «di cuor volenteroso» portano oro, tessuti e lavoro.
+
+#cap 36 Inizia la costruzione
+@1 Offerte più che sufficienti
+@8 La tenda
+Le offerte sono così abbondanti che Mosè deve fermare la raccolta. Gli artigiani realizzano i teli, le assi e il velo del tabernacolo.
+
+#cap 37 L'arca e gli arredi
+@1 L'arca e il propiziatorio
+@10 La tavola, il candelabro, l'altare dei profumi
+Betsaleel costruisce l'arca, la tavola, il candelabro e l'altare dei profumi esattamente come Dio aveva indicato.
+
+#cap 38 L'altare e il cortile
+@1 L'altare degli olocausti e la conca
+@9 Il cortile
+@21 Il conto dei metalli
+Si realizzano l'altare di rame, la conca e il cortile; un resoconto elenca l'oro, l'argento e il rame usati.
+
+#cap 39 Le vesti sacre
+@1 L'efod e il pettorale
+@32 L'opera è finita
+Vengono confezionate le vesti dei sacerdoti. Tutto è completato «come l'Eterno aveva ordinato a Mosè», e Mosè benedice il popolo.
+
+#cap 40 La gloria riempie il tabernacolo
+@1 Il tabernacolo viene eretto
+@34 La nuvola e la gloria
+Il primo giorno del primo mese Mosè innalza il tabernacolo e vi pone l'arca e gli arredi. La nuvola copre la tenda e la gloria dell'Eterno la riempie: Dio abita in mezzo al suo popolo e lo guida in tutto il viaggio.

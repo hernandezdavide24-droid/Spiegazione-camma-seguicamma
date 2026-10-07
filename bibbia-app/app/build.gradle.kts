@@ -37,6 +37,10 @@ android {
     buildFeatures {
         compose = true
     }
+    testOptions {
+        // Robolectric ha bisogno di risorse e assets per far girare l'app nei test JVM.
+        unitTests.isIncludeAndroidResources = true
+    }
     androidResources {
         // I file della Bibbia sono testo: non comprimerli rende la lettura più veloce.
         noCompress += "txt"
@@ -67,4 +71,10 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.tooling)
 
     testImplementation(libs.junit)
+    testImplementation(libs.robolectric)
+    testImplementation(libs.androidx.test.core)
+    testImplementation(libs.androidx.test.junit)
+    testImplementation(platform(libs.androidx.compose.bom))
+    testImplementation(libs.androidx.compose.ui.test.junit4)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
 }

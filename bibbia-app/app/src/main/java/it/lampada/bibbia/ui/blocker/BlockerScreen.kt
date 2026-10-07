@@ -73,7 +73,6 @@ import it.lampada.bibbia.data.db.BlockedAppEntity
 import it.lampada.bibbia.ui.components.BackTopBar
 import it.lampada.bibbia.ui.components.SectionTitle
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.time.DayOfWeek
@@ -88,22 +87,20 @@ fun BlockerScreen(container: AppContainer, onBack: () -> Unit) {
     val apps by repo.apps.collectAsStateWithLifecycle(emptyList())
     val schedules by repo.schedules.collectAsStateWithLifecycle(emptyList())
 
-    // Lo stato dei permessi si aggiorna quando si torna dalle impostazioni di sistema.
+    // Permessi e tempo d'uso si aggiornano ogni volta che si torna su questa schermata.
     var accessibilityOn by remember { mutableStateOf(repo.isAccessibilityEnabled()) }
     var usageOn by remember { mutableStateOf(repo.usage.hasPermission()) }
+    var refresh by remember { mutableIntStateOf(0) }
     LifecycleEventEffect(Lifecycle.Event.ON_RESUME) {
         accessibilityOn = repo.isAccessibilityEnabled()
         usageOn = repo.usage.hasPermission()
+        refresh++
     }
 
-    // Tempo di utilizzo di oggi, aggiornato ogni minuto.
     var usage by remember { mutableStateOf<Map<String, Long>>(emptyMap()) }
-    LaunchedEffect(apps, usageOn) {
-        while (true) {
-            val packages = apps.map { it.packageName }.toSet()
-            usage = withContext(Dispatchers.Default) { repo.usageToday(packages) }
-            delay(60_000)
-        }
+    LaunchedEffect(apps, usageOn, refresh) {
+        val packages = apps.map { it.packageName }.toSet()
+        usage = withContext(Dispatchers.Default) { repo.usageToday(packages) }
     }
 
     var showAddApp by remember { mutableStateOf(false) }

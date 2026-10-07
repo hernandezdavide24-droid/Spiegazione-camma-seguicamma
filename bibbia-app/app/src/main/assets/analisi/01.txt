@@ -1,0 +1,285 @@
+#intro
+titolo: Genesi
+sintesi: Il libro delle origini: la creazione del mondo e dell'uomo, l'ingresso del male, il diluvio, e poi la storia di Abramo, Isacco, Giacobbe e Giuseppe, i padri del popolo d'Israele. Dio sceglie una famiglia per benedire attraverso di essa tutte le nazioni.
+autore: La tradizione ebraica e cristiana lo attribuisce a Mosè, come i primi cinque libri della Bibbia (il Pentateuco o Torah). Molti studiosi pensano che il testo abbia raccolto tradizioni antiche, messe per iscritto e ordinate nel corso dei secoli.
+data: Gli eventi dei patriarchi si collocano intorno al 2000-1700 a.C.; la redazione del libro va dall'epoca di Mosè (XIII secolo a.C. circa) fino alla forma definitiva, che molti datano al periodo dell'esilio babilonese (VI-V secolo a.C.).
+destinatari: Il popolo d'Israele, perché conoscesse le proprie radici e il Dio che lo aveva chiamato.
+contesto: Nel mondo antico circolavano molti racconti sulle origini (babilonesi, egiziani). La Genesi ne condivide alcune immagini ma ne cambia il senso: un solo Dio crea con la parola, il mondo è buono, l'essere umano è a sua immagine e il male nasce dalla libertà umana, non da una lotta fra dèi.
+scopo: Spiegare chi è Dio, chi è l'uomo, perché nel mondo c'è il male e come Dio ha iniziato un piano di salvezza scegliendo Abramo e la sua discendenza.
+temi: Dio creatore; l'uomo a immagine di Dio; il peccato e le sue conseguenze; la promessa e la fede di Abramo; l'alleanza; la provvidenza che trasforma il male in bene.
+struttura: 1-11 · Le origini del mondo e dell'umanità (creazione, caduta, diluvio, Babele).
+12-25 · Abramo, padre dei credenti.
+25-36 · Isacco e Giacobbe.
+37-50 · Giuseppe e la discesa in Egitto.
+cristo: La promessa che la discendenza della donna schiaccerà il serpente (3:15) è letta dai cristiani come il primo annuncio di Cristo. Gesù è il discendente di Abramo nel quale tutte le nazioni sono benedette (Galati 3:16).
+chiave: Gen 1:1; Gen 1:27; Gen 3:15; Gen 12:2-3; Gen 15:6; Gen 50:20
+
+#cap 1 La creazione
+@1 I sei giorni della creazione
+@26 L'essere umano a immagine di Dio
+In sei «giorni» Dio crea con la sua parola la luce, il cielo, la terra, le piante, gli astri, gli animali e infine l'uomo e la donna, fatti a sua immagine e incaricati di custodire la terra. Tutto ciò che Dio crea è «buono», anzi «molto buono».
+
+#cap 2 Il giardino di Eden
+@1 Il settimo giorno
+@4 L'uomo nel giardino
+@18 La creazione della donna
+Dio si riposa il settimo giorno e lo benedice. Poi il racconto si concentra sull'uomo: Dio lo plasma dalla polvere, gli soffia il suo alito di vita e lo pone nel giardino di Eden con un solo divieto. Crea la donna dal suo fianco: i due diventano «una stessa carne».
+
+#cap 3 La caduta
+@1 La tentazione e il peccato
+@8 Dio cerca l'uomo
+@14 Le conseguenze del peccato
+@20 Fuori dal giardino
+Il serpente insinua il dubbio sulla bontà di Dio; la donna e l'uomo mangiano del frutto proibito e scoprono vergogna e paura. Dio li cerca, annuncia le conseguenze del peccato ma anche la promessa che la discendenza della donna schiaccerà il capo del serpente. Li veste e li allontana dal giardino.
+
+#cap 4 Caino e Abele
+@1 Il primo omicidio
+@16 La discendenza di Caino
+@25 Seth
+Caino, geloso del fratello Abele la cui offerta è gradita a Dio, lo uccide. Dio lo interroga («Dov'è Abele tuo fratello?»), lo punisce ma lo protegge con un segno. Il male cresce nella discendenza di Caino; con Seth inizia una nuova linea che invoca il nome dell'Eterno.
+
+#cap 5 Da Adamo a Noè
+@1 La genealogia dei patriarchi
+Una genealogia collega Adamo a Noè attraverso dieci generazioni, con vite lunghissime. Spicca Enoc, che «camminò con Dio» e fu preso da lui senza morire.
+
+#cap 6 La corruzione e l'arca
+@1 La malvagità dell'umanità
+@9 Noè e il comando dell'arca
+La violenza riempie la terra e Dio si addolora di aver creato l'uomo. Ma Noè, uomo giusto, trova grazia: Dio gli ordina di costruire un'arca per salvare la sua famiglia e una coppia di ogni specie animale.
+
+#cap 7 Il diluvio
+@1 L'ingresso nell'arca
+@11 Le acque coprono la terra
+Noè entra nell'arca con la famiglia e gli animali; Dio stesso chiude la porta. Le acque scendono per quaranta giorni e coprono anche i monti: ogni essere vivente fuori dall'arca perisce.
+
+#cap 8 La fine del diluvio
+@1 Le acque si ritirano
+@6 Il corvo e la colomba
+@15 L'uscita dall'arca e il sacrificio
+Dio «si ricorda» di Noè e le acque calano. Noè manda un corvo e poi una colomba, che torna con un ramoscello d'ulivo. Uscito dall'arca offre un sacrificio, e Dio promette che non maledirà più la terra.
+
+#cap 9 L'alleanza con Noè
+@1 La benedizione e l'arcobaleno
+@18 I figli di Noè
+Dio benedice Noè, valorizza la vita umana e stabilisce un'alleanza con tutti i viventi: l'arcobaleno ne è il segno. L'episodio dell'ubriachezza di Noè introduce la benedizione di Sem e Jafet e la maledizione di Canaan.
+
+#cap 10 La tavola dei popoli
+@1 I discendenti di Jafet, Cham e Sem
+Un elenco presenta i popoli conosciuti come discendenti dei tre figli di Noè, mostrando che tutta l'umanità forma una sola grande famiglia.
+
+#cap 11 La torre di Babele
+@1 La torre e la confusione delle lingue
+@10 Da Sem ad Abramo
+Gli uomini vogliono costruire una torre che arrivi al cielo per «farsi un nome»: Dio confonde la loro lingua e li disperde. La genealogia di Sem conduce ad Abramo, che parte con il padre Terah da Ur dei Caldei verso Charan.
+
+#cap 12 La chiamata di Abramo
+@1 «Vattene dal tuo paese»
+@10 Abramo in Egitto
+Dio chiama Abramo a lasciare la sua terra e gli promette una grande discendenza, una terra e la benedizione per tutte le famiglie della terra. Abramo obbedisce e parte. Durante una carestia scende in Egitto e, per paura, fa passare la moglie Sarai per sua sorella.
+
+#cap 13 Abramo e Lot si separano
+@1 La separazione
+@14 La promessa rinnovata
+Le greggi di Abramo e del nipote Lot sono troppo numerose: Abramo lascia a Lot la scelta e Lot sceglie la fertile valle del Giordano, vicino a Sodoma. Dio rinnova ad Abramo la promessa della terra e di una discendenza numerosa come la polvere.
+
+#cap 14 Abramo e Melchisedec
+@1 La guerra dei re e la liberazione di Lot
+@17 La benedizione di Melchisedec
+Abramo libera Lot, fatto prigioniero da una coalizione di re. Al ritorno lo benedice Melchisedec, re di Salem e sacerdote del Dio altissimo, che offre pane e vino; Abramo gli dà la decima.
+
+#cap 15 L'alleanza con Abramo
+@1 Abramo credette all'Eterno
+@7 Il patto fra gli animali divisi
+Abramo è senza figli, ma Dio gli mostra le stelle: «Così sarà la tua progenie». Abramo crede, e Dio glielo conta come giustizia. Con un antico rito, Dio stesso si impegna in un patto: la terra sarà dei suoi discendenti.
+
+#cap 16 Agar e Ismaele
+@1 Sarai e Agar
+@7 L'angelo nel deserto
+Sarai, sterile, dà ad Abramo la schiava egiziana Agar perché abbia un figlio da lei. Nasce il conflitto e Agar fugge; nel deserto l'angelo dell'Eterno la incontra e le promette un figlio, Ismaele. Agar dà all'Eterno il nome di Atta-El-Roi, che significa: Dio che mi vede.
+
+#cap 17 Il segno della circoncisione
+@1 Abrahamo e Sara: i nuovi nomi
+@9 La circoncisione
+@15 La promessa di Isacco
+Dio rinnova l'alleanza e cambia i nomi: Abramo diventa Abrahamo («padre di molte nazioni») e Sarai diventa Sara. Il segno dell'alleanza è la circoncisione. Dio promette che Sara, ormai anziana, avrà un figlio: Isacco.
+
+#cap 18 Gli ospiti a Mamre
+@1 L'ospitalità di Abrahamo
+@16 Abrahamo intercede per Sodoma
+Tre misteriosi visitatori sono accolti da Abrahamo: annunciano che Sara avrà un figlio entro un anno, e Sara ride. Poi Abrahamo intercede con coraggio per Sodoma: se ci fossero anche solo dieci giusti, Dio non la distruggerebbe.
+
+#cap 19 La distruzione di Sodoma
+@1 Gli angeli in casa di Lot
+@15 La fuga e la rovina delle città
+@30 Lot e le figlie
+La violenza degli abitanti di Sodoma contro gli ospiti di Lot mostra la gravità del loro peccato. Gli angeli fanno fuggire Lot e la sua famiglia; la moglie si volta indietro e diventa una colonna di sale. Sodoma e Gomorra sono distrutte.
+
+#cap 20 Abrahamo e Abimelec
+@1 Sara nella casa di Abimelec
+Di nuovo Abrahamo fa passare Sara per sua sorella, questa volta con Abimelec re di Gherar. Dio protegge Sara e avverte il re in sogno; Abrahamo prega e la famiglia di Abimelec viene guarita.
+
+#cap 21 La nascita di Isacco
+@1 Isacco nasce
+@8 Agar e Ismaele allontanati
+@22 Il patto di Beer-Sceba
+Dio mantiene la promessa: nasce Isacco, il cui nome ricorda il riso di Sara. Agar e Ismaele vengono mandati via, ma Dio li salva nel deserto. Abrahamo stringe un patto con Abimelec a Beer-Sceba.
+
+#cap 22 Il sacrificio di Isacco
+@1 La prova di Abrahamo
+@15 La promessa confermata
+@20 I parenti di Abrahamo
+Dio mette alla prova Abrahamo chiedendogli di offrire Isacco sul monte Moriah. Abrahamo obbedisce fidandosi che «Iddio se lo provvederà l'agnello»; all'ultimo momento l'angelo lo ferma e al posto del figlio viene offerto un montone. Dio conferma solennemente le sue promesse.
+
+#cap 23 La morte di Sara
+@1 La tomba di Macpela
+Sara muore a Hebron. Abrahamo compra dagli Hittei il campo e la grotta di Macpela per seppellirla: è il primo pezzo della terra promessa che appartiene alla sua famiglia.
+
+#cap 24 Una moglie per Isacco
+@1 La missione del servo
+@10 Rebecca al pozzo
+@28 Nella casa di Labano
+@62 Isacco e Rebecca
+Abrahamo manda il suo servo a cercare una moglie per Isacco fra i parenti in Mesopotamia. Il servo prega per un segno e incontra Rebecca al pozzo; la famiglia acconsente e Rebecca accetta di partire. Isacco la sposa e la ama.
+
+#cap 25 Morte di Abrahamo; Esaù e Giacobbe
+@1 Gli ultimi anni di Abrahamo
+@12 I discendenti di Ismaele
+@19 La nascita dei gemelli
+@27 La primogenitura venduta
+Abrahamo muore e viene sepolto a Macpela. Rebecca partorisce due gemelli in lotta già nel grembo: Esaù, cacciatore, e Giacobbe, uomo tranquillo. Esaù vende la sua primogenitura a Giacobbe per un piatto di minestra.
+
+#cap 26 Isacco e i pozzi
+@1 La promessa a Isacco
+@12 Le contese per i pozzi
+@23 L'alleanza a Beer-Sceba
+Dio rinnova a Isacco la promessa fatta ad Abrahamo. Isacco prospera a Gherar e scava pozzi contesi dai Filistei, finché trova pace a Rehoboth e a Beer-Sceba, dove Dio gli appare e Abimelec stringe alleanza con lui.
+
+#cap 27 La benedizione rubata
+@1 L'inganno di Rebecca e Giacobbe
+@30 Il pianto di Esaù
+@41 Giacobbe deve fuggire
+Isacco, vecchio e cieco, vuole benedire Esaù; Rebecca organizza un inganno e Giacobbe, travestito, riceve la benedizione. Esaù, disperato, giura di uccidere il fratello, e Rebecca convince Giacobbe a fuggire da suo fratello Labano.
+
+#cap 28 La scala di Bethel
+@1 Giacobbe parte
+@10 Il sogno della scala
+In viaggio verso Charan, Giacobbe sogna una scala che unisce terra e cielo, percorsa dagli angeli. Dio gli rinnova la promessa e gli assicura: «Io son teco». Giacobbe chiama quel luogo Bethel, «casa di Dio», e fa un voto.
+
+#cap 29 Giacobbe da Labano
+@1 L'incontro con Rachele
+@15 Lea e Rachele
+@31 I primi figli di Lea
+Giacobbe si innamora di Rachele e lavora sette anni per lei, ma Labano lo inganna dandogli in sposa la sorella maggiore Lea; dopo altri sette anni di lavoro ottiene anche Rachele. Dio vede Lea poco amata e le dona figli.
+
+#cap 30 I figli di Giacobbe
+@1 La rivalità fra le sorelle
+@22 Nasce Giuseppe
+@25 Le greggi di Giacobbe
+Fra Lea e Rachele c'è gelosia: nascono figli anche dalle loro serve. Finalmente Rachele partorisce Giuseppe. Giacobbe, con un accordo astuto sulle greggi, diventa molto ricco nonostante i raggiri di Labano.
+
+#cap 31 La fuga da Labano
+@1 Giacobbe parte di nascosto
+@22 Labano lo insegue
+@43 Il patto di Galaad
+Su ordine di Dio, Giacobbe torna verso la sua terra con famiglia e greggi, fuggendo di nascosto; Rachele ruba gli idoli del padre. Labano lo raggiunge, ma Dio lo avverte di non fargli del male: i due fanno un patto e si separano in pace.
+
+#cap 32 La lotta a Peniel
+@1 La paura di incontrare Esaù
+@24 Giacobbe lotta con Dio
+Giacobbe teme l'incontro con Esaù: prega e manda doni. Di notte, al guado dello Iabbok, lotta con un misterioso uomo fino all'alba e chiede di essere benedetto. Riceve un nome nuovo, Israele, e resta zoppo: ha visto Dio faccia a faccia.
+
+#cap 33 La riconciliazione con Esaù
+@1 I fratelli si abbracciano
+@18 Giacobbe a Sichem
+Esaù corre incontro a Giacobbe, lo abbraccia e piange: i fratelli si riconciliano. Giacobbe si stabilisce presso Sichem e innalza un altare.
+
+#cap 34 Dina e Sichem
+@1 La violenza su Dina
+@13 La vendetta di Simeone e Levi
+Dina, figlia di Giacobbe, viene violentata da Sichem. I fratelli Simeone e Levi, con un inganno, sterminano gli uomini della città. Giacobbe li rimprovera per la violenza che mette in pericolo tutta la famiglia.
+
+#cap 35 Ritorno a Bethel
+@1 Via gli idoli, ritorno a Bethel
+@16 La morte di Rachele
+@22 I dodici figli; la morte di Isacco
+Giacobbe purifica la famiglia dagli idoli e torna a Bethel, dove Dio gli conferma il nome Israele e le promesse. Rachele muore dando alla luce Beniamino. Isacco muore e i figli Esaù e Giacobbe lo seppelliscono.
+
+#cap 36 I discendenti di Esaù
+@1 La famiglia di Esaù
+@20 I capi di Edom
+Elenco dei discendenti di Esaù, padre del popolo di Edom, e dei loro capi e re: anche Esaù riceve una benedizione e diventa una nazione.
+
+#cap 37 Giuseppe venduto dai fratelli
+@1 I sogni di Giuseppe
+@12 Il complotto dei fratelli
+Giuseppe, il figlio prediletto di Giacobbe, riceve una tunica speciale e fa sogni in cui i fratelli si inchinano a lui. Per gelosia i fratelli lo gettano in una cisterna e poi lo vendono a mercanti diretti in Egitto, facendo credere al padre che sia stato sbranato.
+
+#cap 38 Giuda e Tamar
+@1 La storia di Tamar
+@27 Perets e Zerach
+Giuda non rispetta l'obbligo verso la nuora vedova Tamar, che con uno stratagemma ottiene giustizia e rimane incinta di lui. Giuda riconosce: «Ella è più giusta di me». Dai gemelli nati, Perets sarà antenato del re Davide.
+
+#cap 39 Giuseppe in casa di Potifar
+@1 L'Eterno era con Giuseppe
+@7 La moglie di Potifar
+@19 Giuseppe in prigione
+Venduto a Potifar, ufficiale del Faraone, Giuseppe prospera perché Dio è con lui. Rifiuta le avances della moglie del padrone, che lo accusa falsamente: finisce in prigione, ma anche lì Dio lo benedice.
+
+#cap 40 I sogni dei prigionieri
+@1 Il coppiere e il panettiere
+In prigione Giuseppe interpreta i sogni del coppiere e del panettiere del Faraone: il primo sarà reintegrato, il secondo giustiziato. Tutto accade come previsto, ma il coppiere si dimentica di Giuseppe.
+
+#cap 41 Giuseppe governatore d'Egitto
+@1 I sogni del Faraone
+@14 Giuseppe interpreta i sogni
+@37 Giuseppe viceré
+@46 Gli anni dell'abbondanza e della carestia
+Il Faraone sogna sette vacche grasse e sette magre: Giuseppe, chiamato dalla prigione, spiega che verranno sette anni di abbondanza e sette di carestia. Il Faraone lo nomina governatore di tutto l'Egitto; Giuseppe accumula il grano e ha due figli, Manasse ed Efraim.
+
+#cap 42 I fratelli in Egitto
+@1 Il primo viaggio
+@18 Simeone resta in ostaggio
+@29 Il ritorno da Giacobbe
+La carestia colpisce anche Canaan e i fratelli di Giuseppe scendono in Egitto a comprare grano. Giuseppe li riconosce ma non si fa riconoscere: li mette alla prova, trattiene Simeone e chiede che portino il fratello minore Beniamino.
+
+#cap 43 Il secondo viaggio con Beniamino
+@1 Giacobbe lascia partire Beniamino
+@15 Il banchetto da Giuseppe
+Finito il grano, Giacobbe acconsente a far partire Beniamino. Giuseppe accoglie i fratelli in casa sua, libera Simeone e, commosso alla vista di Beniamino, si ritira a piangere. Poi banchetta con loro.
+
+#cap 44 La coppa d'argento
+@1 La prova della coppa
+@18 Giuda si offre al posto di Beniamino
+Giuseppe fa nascondere la sua coppa nel sacco di Beniamino e lo accusa di furto. Giuda, che un tempo aveva proposto di vendere Giuseppe, ora offre sé stesso come schiavo al posto del fratello: i fratelli sono cambiati.
+
+#cap 45 Giuseppe si fa riconoscere
+@1 «Io son Giuseppe»
+@16 L'invito a Giacobbe
+Giuseppe, sopraffatto dalla commozione, si rivela ai fratelli e li perdona: «Non siete dunque voi che m'avete mandato qua, ma è Dio», per conservare loro la vita. Il Faraone invita tutta la famiglia in Egitto e Giacobbe rivive alla notizia che Giuseppe è vivo.
+
+#cap 46 Giacobbe scende in Egitto
+@1 La promessa a Beer-Sceba
+@8 La famiglia di Giacobbe
+@28 L'incontro con Giuseppe
+Dio rassicura Giacobbe: «Non temere di scendere in Egitto, perché là ti farò diventare una grande nazione». Settanta persone della famiglia si trasferiscono; Giacobbe riabbraccia Giuseppe.
+
+#cap 47 Israele in Egitto
+@1 Giacobbe davanti al Faraone
+@13 Giuseppe e la carestia
+@27 La richiesta di Giacobbe
+La famiglia si stabilisce nella terra di Goscen. Giacobbe benedice il Faraone. Durante la carestia Giuseppe amministra il grano dell'Egitto. Giacobbe, vicino alla morte, chiede di essere sepolto nella terra dei padri.
+
+#cap 48 Giacobbe benedice Efraim e Manasse
+@1 L'adozione dei figli di Giuseppe
+Giacobbe adotta come suoi i due figli di Giuseppe e li benedice, ponendo la destra sul più giovane, Efraim: ancora una volta Dio sceglie in modo sorprendente.
+
+#cap 49 Le benedizioni di Giacobbe
+@1 Le parole sui dodici figli
+@29 La morte di Giacobbe
+Prima di morire Giacobbe rivolge parole profetiche a ciascuno dei dodici figli, futuri capostipiti delle tribù d'Israele. A Giuda promette lo scettro: da lui verrà la stirpe regale. Poi muore.
+
+#cap 50 Morte di Giacobbe e di Giuseppe
+@1 La sepoltura di Giacobbe
+@15 Il perdono di Giuseppe
+@22 La morte di Giuseppe
+Giacobbe è sepolto a Macpela. I fratelli temono la vendetta di Giuseppe, ma lui li rassicura: «Voi avevate pensato del male contro a me; ma Dio ha pensato di convertirlo in bene». Giuseppe muore chiedendo che le sue ossa siano portate nella terra promessa.

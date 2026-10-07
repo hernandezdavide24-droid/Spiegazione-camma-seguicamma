@@ -22,7 +22,9 @@ class LampadaApp : Application() {
             val s = container.settings.current()
             if (s.dailyVerseEnabled) {
                 // KEEP: se una notifica è già programmata non la sposta.
-                DailyVerseScheduler.schedule(this@LampadaApp, s.dailyVerseHour, s.dailyVerseMinute, replace = false)
+                runCatching {
+                    DailyVerseScheduler.schedule(this@LampadaApp, s.dailyVerseHour, s.dailyVerseMinute, replace = false)
+                }
             }
         }
     }
