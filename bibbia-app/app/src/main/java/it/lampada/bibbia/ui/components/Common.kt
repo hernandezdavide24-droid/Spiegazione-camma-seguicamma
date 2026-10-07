@@ -31,7 +31,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarScrollBehavior
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
@@ -53,7 +52,6 @@ fun BackTopBar(
     title: String,
     onBack: () -> Unit,
     subtitle: String? = null,
-    scrollBehavior: TopAppBarScrollBehavior? = null,
     actions: @Composable RowScope.() -> Unit = {},
 ) {
     TopAppBar(
@@ -77,7 +75,6 @@ fun BackTopBar(
             }
         },
         actions = actions,
-        scrollBehavior = scrollBehavior,
     )
 }
 

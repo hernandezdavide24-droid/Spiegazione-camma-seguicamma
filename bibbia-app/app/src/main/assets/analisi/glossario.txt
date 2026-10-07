@@ -1,2 +1,132 @@
-// Glossario: termine|varianti separate da virgola|spiegazione
-Eterno|l’Eterno,dell’Eterno|Nella Riveduta «l'Eterno» traduce il nome personale di Dio rivelato a Mosè (in ebraico YHWH, Esodo 3:14-15).
+// Glossario usato dall'analisi del versetto.
+// Formato: termine|varianti separate da virgola|spiegazione
+// Le varianti si cercano come parole intere, senza badare a maiuscole e accenti.
+
+// Nomi di Dio e di Gesù
+Eterno|Eterno|Nella Riveduta «l'Eterno» traduce il nome personale di Dio rivelato a Mosè (in ebraico YHWH, Esodo 3:14-15), che significa «Io sono» o «Colui che è». Altre Bibbie lo rendono con «il Signore».
+Iddio|Iddio|Forma antica e solenne di «Dio».
+Cristo|Cristo,Messia|«Cristo» (dal greco) e «Messia» (dall'ebraico) significano «unto»: il re promesso da Dio, consacrato con l'olio. Per i cristiani è Gesù.
+Figliuol dell'uomo|Figliuol dell’uomo,Figliuolo dell’uomo|Titolo con cui Gesù parla di sé. Viene da Daniele 7:13-14: una figura umana che riceve da Dio regno e gloria eterni.
+agnello|agnello,agnelli|L'animale più usato nei sacrifici, soprattutto per la Pasqua ebraica. Nel Nuovo Testamento Gesù è chiamato «Agnello di Dio» perché dà la vita per liberare il suo popolo.
+Spirito Santo|Spirito Santo,Spirito di Dio|La presenza e la forza di Dio che agisce nel mondo e nei credenti; per la fede cristiana è la terza persona della Trinità.
+Signore degli eserciti|Eterno degli eserciti,Dio degli eserciti|Titolo di Dio: gli «eserciti» sono le schiere degli angeli e delle stelle. Indica la sua potenza sovrana su tutto.
+
+// Parole antiche della Riveduta
+figliuolo|figliuolo,figliuoli,figliuola,figliuole,figliuol|Forma antica di «figlio, figli, figlia». «I figliuoli d'Israele» sono semplicemente gli Israeliti.
+avea|avea,aveano,avean|Forma antica di «aveva, avevano».
+teco|teco|Forma antica: «con te».
+meco|meco|Forma antica: «con me».
+seco|seco|Forma antica: «con sé».
+fo|fo|Forma antica: «faccio».
+vo'|vo’|Forma antica: «voglio».
+giammai|giammai|«Mai», con più forza.
+niuno|niuno,niun,niuna|Forma antica: «nessuno, nessuna».
+veruno|veruno,veruna|Forma antica: «alcuno» oppure, in frasi negative, «nessuno».
+quivi|quivi|Forma antica: «lì, in quel luogo».
+ivi|ivi|Forma antica: «lì».
+colà|colà|Forma antica: «là».
+donde|donde|«Da dove».
+laonde|laonde|«Perciò, per questo motivo».
+epperò|epperò|«E perciò».
+deh|deh|Esclamazione di supplica: «ti prego, per favore».
+uopo|uopo|«Bisogno»: «è d'uopo» significa «è necessario».
+mercé|mercé|«Grazie a, per mezzo di».
+guari|guari|«Molto, a lungo»: «non guari dopo» significa «poco dopo».
+testé|testé|«Poco fa, proprio ora».
+vieppiù|vieppiù|«Sempre di più».
+dipoi|dipoi|«Dopo, poi».
+appo|appo|Forma antica: «presso».
+costoro|costoro|«Queste persone», spesso con una sfumatura di distacco.
+savio|savio,savi,savia|«Saggio, saggi».
+stolto|stolto,stolti,stoltezza|Nei Proverbi e nei Salmi lo stolto non è chi ha poca intelligenza, ma chi vive come se Dio non ci fosse.
+empio|empio,empi,empietà|Chi non rispetta Dio e vive contro la sua volontà; il contrario del «giusto».
+iniquità|iniquità|Male, ingiustizia, colpa.
+raunanza|raunanza,raunanze|Forma antica di «adunanza»: l'assemblea del popolo.
+sacrifizio|sacrifizio,sacrifizi|Forma antica di «sacrificio»: un'offerta a Dio, spesso un animale, per ringraziarlo, per stare in comunione con lui o per il perdono dei peccati.
+benignità|benignità|Bontà, gentilezza verso gli altri.
+longanimità|longanimità|Pazienza di chi sopporta a lungo senza adirarsi.
+meretrice|meretrice,meretrici|Prostituta. Nei profeti è anche immagine del popolo infedele a Dio.
+
+// Culto e Legge
+olocausto|olocausto,olocausti|Sacrificio in cui l'animale veniva bruciato interamente sull'altare: un'offerta data tutta a Dio.
+tabernacolo|tabernacolo|La grande tenda-santuario costruita nel deserto (Esodo 25-40): il luogo della presenza di Dio in mezzo al popolo, prima del Tempio di Gerusalemme.
+tenda di convegno|tenda di convegno|Altro nome del tabernacolo: la «tenda dell'incontro» dove Dio parlava con Mosè.
+arca del patto|arca del patto,arca dell’Eterno,arca di Dio|Cassa di legno rivestita d'oro che conteneva le tavole dei dieci comandamenti; stava nel luogo più sacro del santuario ed era il segno della presenza di Dio.
+patto|patto,patti|Alleanza: un impegno solenne fra Dio e il suo popolo. Dio promette protezione e benedizione, il popolo si impegna a seguirlo. Gesù parla di un «nuovo patto» nel suo sangue.
+circoncisione|circoncisione,circonciso,circoncisi,incirconciso,incirconcisi,circoncidere|Rito ebraico (un piccolo taglio sul corpo dei maschi) segno dell'alleanza con Abramo. «Incirconcisi» indica i popoli stranieri; i profeti e Paolo parlano di una circoncisione «del cuore».
+Levita|Levita,Leviti|Membri della tribù di Levi, incaricati del servizio nel santuario e poi nel Tempio. I sacerdoti erano i discendenti di Aaronne, della stessa tribù.
+sommo sacerdote|sommo sacerdote,sommi sacerdoti,capi sacerdoti|Il capo dei sacerdoti, l'unico che una volta all'anno entrava nel luogo santissimo. Ai tempi di Gesù i «capi sacerdoti» erano la classe dirigente del Tempio.
+efod|efod|Veste sacra indossata dal sommo sacerdote; a volte indica anche un oggetto usato per consultare Dio.
+sabato|sabato,sabati|Il settimo giorno della settimana, dedicato al riposo e a Dio (Esodo 20:8-11). Per gli Ebrei inizia al tramonto del venerdì.
+Pasqua|Pasqua|Nell'Antico Testamento è la festa che ricorda la liberazione dall'Egitto (Esodo 12). Gesù morì e risuscitò proprio durante la Pasqua ebraica.
+azzimi|azzimi,azzimo|Pane senza lievito, mangiato nella settimana della Pasqua per ricordare la fuga in fretta dall'Egitto.
+Pentecoste|Pentecoste|Festa ebraica del raccolto, cinquanta giorni dopo la Pasqua. In quel giorno lo Spirito Santo scese sui discepoli (Atti 2).
+primizie|primizie|I primi frutti del raccolto, offerti a Dio per riconoscere che tutto viene da lui.
+decima|decima,decime|La decima parte del raccolto o dei guadagni, data per il servizio di Dio e per i poveri.
+voto|voto,voti|Promessa solenne fatta a Dio.
+nazireo|nazireo|Persona consacrata a Dio con un voto speciale: non beveva vino e non si tagliava i capelli (Numeri 6), come Sansone.
+giubileo|giubileo|Ogni cinquant'anni le terre tornavano alle famiglie originarie e gli schiavi ebrei venivano liberati (Levitico 25).
+primogenito|primogenito,primogeniti,primogenitura|Il figlio nato per primo, che riceveva una parte doppia dell'eredità e il ruolo di capofamiglia.
+immondo|immondo,immonda,immondi,immonde,impuro,impura,impuri|Nella Legge di Mosè non significa «sporco» o «cattivo», ma «non adatto al culto»: chi era impuro doveva purificarsi prima di avvicinarsi al santuario.
+lebbra|lebbra,lebbroso,lebbrosi|Nella Bibbia indica varie malattie della pelle che rendevano impuri e costringevano a vivere isolati.
+espiazione|espiazione,propiziazione|Il modo in cui una colpa viene cancellata e il rapporto con Dio è ristabilito. Nel Nuovo Testamento la morte di Gesù è l'espiazione definitiva.
+cherubini|cherubini,cherubino|Esseri celesti al servizio di Dio, raffigurati anche sopra l'arca del patto. Non sono i bambini alati dell'arte rinascimentale.
+serafini|serafini|Esseri celesti «ardenti» che Isaia vide intorno al trono di Dio (Isaia 6).
+Capo de' musici|Capo de’ musici,Capo dei musici|Il direttore del coro del Tempio: indicazione che il Salmo era destinato al canto comunitario.
+Sela|Sela|Parola ebraica frequente nei Salmi: probabilmente un'indicazione musicale, una pausa per riflettere.
+Maskil|Maskil|Termine ebraico nei titoli di alcuni Salmi; forse «canto di insegnamento».
+Alleluia|Alleluia|Parola ebraica che significa «Lodate l'Eterno!».
+Osanna|Osanna|Grido ebraico che significa «Salva, ti preghiamo!», diventato un'acclamazione di gioia.
+Amen|Amen|Parola ebraica che significa «Così è, così sia»: conferma ciò che è stato detto.
+
+// Luoghi e popoli
+Sion|Sion|Il colle di Gerusalemme su cui sorgeva la città di Davide e poi il Tempio; spesso indica tutta Gerusalemme e il popolo di Dio.
+Gentili|Gentili|I popoli non ebrei, i «pagani».
+Samaritano|Samaritano,Samaritani,Samaritana|Abitanti della Samaria, discendenti in parte da popoli stranieri. Avevano un loro tempio sul monte Garizim ed erano disprezzati dai Giudei.
+Babilonia|Babilonia|Grande impero che nel 586 a.C. distrusse Gerusalemme e deportò il popolo. Nell'Apocalisse è il simbolo del potere che si oppone a Dio.
+cattività|cattività|Prigionia, esilio: soprattutto la deportazione degli Israeliti a Babilonia (dal 597-586 a.C. al 538 a.C.).
+soggiorno dei morti|soggiorno de’ morti,soggiorno dei morti|Traduce l'ebraico «Sheol» e il greco «Ades»: il luogo dove scendono tutti i morti.
+geenna|geenna|Valle vicino a Gerusalemme dove un tempo si offrivano sacrifici idolatri; Gesù la usa come immagine della condanna finale.
+
+// Gruppi ai tempi di Gesù
+Fariseo|Fariseo,Farisei|Movimento religioso molto rispettato, che voleva vivere la Legge di Mosè in ogni dettaglio della vita quotidiana. Gesù critica chi fra loro curava l'apparenza più del cuore.
+Sadduceo|Sadduceo,Sadducei|Gruppo legato ai sacerdoti del Tempio; non credeva nella risurrezione dei morti né negli angeli.
+scriba|scriba,scribi|Esperti della Legge di Mosè, che la copiavano, la interpretavano e la insegnavano.
+dottori della legge|dottori della legge,dottore della legge|Altro nome degli scribi, gli esperti della Legge.
+pubblicano|pubblicano,pubblicani|Esattori delle tasse per conto di Roma: considerati collaboratori degli occupanti e spesso disonesti.
+Erodiani|Erodiani|Sostenitori della dinastia di Erode, che governava con l'appoggio di Roma.
+Sinedrio|Sinedrio|Il tribunale supremo ebraico di Gerusalemme, presieduto dal sommo sacerdote.
+centurione|centurione|Ufficiale dell'esercito romano, a capo di circa cento soldati.
+sinagoga|sinagoga,sinagoghe|Luogo di riunione degli Ebrei per la preghiera e la lettura delle Scritture, presente in ogni città.
+
+// Fede e vita cristiana
+Evangelo|Evangelo,Vangelo|«Buona notizia»: l'annuncio che Dio salva in Gesù Cristo. Indica anche i quattro libri che raccontano la sua vita.
+regno dei cieli|regno de’ cieli,regno dei cieli|Espressione tipica di Matteo per «regno di Dio»: non un luogo, ma Dio che regna con il suo amore, già presente in Gesù e pieno alla fine dei tempi.
+apostolo|apostolo,apostoli|«Inviato»: i dodici scelti da Gesù, e poi Paolo, mandati ad annunciare il Vangelo.
+chiesa|chiesa,chiese|Dal greco «ekklesia», «assemblea»: la comunità di chi crede in Gesù, non un edificio.
+battesimo|battesimo,battezzare,battezzato,battezzati,battezzava|Immersione nell'acqua: segno di purificazione e di inizio di una vita nuova unita a Cristo.
+parabola|parabola,parabole|Breve racconto preso dalla vita quotidiana con cui Gesù insegna una verità sul regno di Dio.
+grazia|grazia|Il dono gratuito e non meritato dell'amore di Dio.
+giustificato|giustificato,giustificati,giustificazione,giustifica,giustificare|Essere dichiarati giusti davanti a Dio, cioè perdonati e accolti, non per i propri meriti ma per la fede in Cristo (Romani 3-5).
+redenzione|redenzione,redento,redenti,Redentore|«Riscatto»: come si pagava per liberare uno schiavo, così Dio libera l'uomo dal peccato a caro prezzo.
+santificazione|santificazione,santificati,santificato|Il cammino con cui Dio rende santa, cioè simile a lui, la vita di chi crede.
+fede|fede|Fiducia in Dio e nelle sue promesse, che si traduce in una vita affidata a lui.
+ravvedimento|ravvedimento,ravvedetevi,ravvedersi,ravveduto|Cambiare mente e direzione: riconoscere il proprio peccato e tornare a Dio. Altre Bibbie traducono «conversione».
+trasgressione|trasgressione,trasgressioni|Violazione di un comandamento: superare un limite posto da Dio.
+carne|carne|Oltre al corpo, nelle lettere di Paolo indica spesso la natura umana lasciata a sé stessa e incline al peccato, in contrasto con lo Spirito.
+Satana|Satana,diavolo|«Avversario», «accusatore»: lo spirito del male che si oppone a Dio e all'uomo.
+demoni|demoni,demonio,demonî,indemoniato,indemoniati|Spiriti maligni. Nei Vangeli Gesù li scaccia, mostrando che il regno di Dio è più forte del male.
+diacono|diacono,diaconi|«Servitore»: nella chiesa primitiva chi si occupava dei bisogni concreti della comunità.
+vescovo|vescovo,vescovi|Nelle lettere di Paolo è il «sorvegliante», responsabile di una comunità locale.
+anziani|anziani,anziano|Responsabili del popolo o della comunità, scelti per la loro esperienza e saggezza.
+mammona|mammona|Parola aramaica per «ricchezza», presentata da Gesù come un idolo che si contende il cuore con Dio.
+zizzania|zizzania|Erba infestante simile al grano finché non matura (Matteo 13).
+vanità|vanità|In Ecclesiaste significa «soffio, vapore»: ciò che passa in fretta e non dà vero appagamento.
+
+// Misure e monete
+siclo|siclo,sicli|Unità di peso (circa 11 grammi), usata anche come moneta d'argento.
+talento|talento,talenti|L'unità di peso più grande, circa 34 chili d'argento o d'oro: una somma enorme, pari a molti anni di salario.
+denaro|denaro,denari|Moneta romana d'argento: la paga di un giorno di lavoro di un bracciante. In alcuni passi indica semplicemente i soldi.
+cubito|cubito,cubiti|Misura di lunghezza pari alla distanza dal gomito alla punta delle dita, circa 45 centimetri.
+efa|efa|Misura per i cereali, circa 22 litri.
+staio|staio|Recipiente usato per misurare i cereali; «mettere la lampada sotto lo staio» significa nasconderla.
