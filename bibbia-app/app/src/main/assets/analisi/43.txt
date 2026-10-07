@@ -1,0 +1,160 @@
+#intro
+titolo: Giovanni
+sintesi: Il Vangelo secondo Giovanni è diverso dagli altri tre: racconta meno episodi ma li approfondisce con lunghi dialoghi e discorsi. Si apre presentando Gesù come la Parola eterna di Dio fatta carne. Sette «segni» (miracoli) e sette affermazioni «Io sono» rivelano chi è. Gran parte del libro è dedicata all'ultima sera con i discepoli e alla sua «ora»: la croce, che Giovanni presenta come il momento della gloria, e la risurrezione.
+autore: La tradizione lo attribuisce all'apostolo Giovanni, figlio di Zebedeo, che nel vangelo si indica come «il discepolo che Gesù amava» e testimone oculare (21:24).
+data: Generalmente fra il 90 e il 100 d.C., probabilmente a Efeso; è l'ultimo dei quattro vangeli.
+destinatari: Cristiani, sia di origine ebraica sia pagana, e chiunque cerchi la verità su Gesù.
+contesto: A fine primo secolo la Chiesa è separata dalla sinagoga e si confronta con idee che negano la vera umanità o la divinità di Gesù. I testimoni oculari stanno scomparendo.
+scopo: Dichiarato apertamente: «queste cose sono scritte, affinché crediate che Gesù è il Cristo, il Figliuol di Dio, e affinché, credendo, abbiate vita nel suo nome» (20:31).
+temi: Gesù Parola di Dio fatta carne; il credere; la vita eterna; luce e tenebre; verità; i segni; gli «Io sono»; l'amore del Padre e del Figlio; lo Spirito Consolatore; l'«ora» della glorificazione; il rimanere in lui.
+struttura: 1:1-18 · Il prologo: la Parola si è fatta carne.
+1:19-12:50 · Il libro dei segni: miracoli e discorsi pubblici.
+13-17 · L'ultima cena: la lavanda dei piedi, i discorsi d'addio, la preghiera.
+18-20 · Passione, morte e risurrezione.
+21 · Epilogo in Galilea: Pietro e il discepolo amato.
+cristo: Giovanni afferma la divinità di Gesù più chiaramente di ogni altro libro: «la Parola era Dio» (1:1) e Toma lo chiama «Signor mio e Dio mio!» (20:28). Gesù dice: «Io son il pan della vita», «la luce del mondo», «la porta», «il buon pastore», «la resurrezione e la vita», «la via, la verità e la vita», «la vera vite».
+chiave: Gv 1:14; Gv 3:16; Gv 11:25; Gv 14:6; Gv 15:5; Gv 20:31
+
+#cap 1 La Parola si è fatta carne
+@1 Il prologo
+@19 La testimonianza di Giovanni
+@29 L'Agnello di Dio
+@35 I primi discepoli
+@43 Filippo e Natanaele
+«Nel principio era la Parola, e la Parola era con Dio, e la Parola era Dio». Per mezzo di essa tutto è stato creato; è la luce che le tenebre non hanno sopraffatto. «E la Parola è stata fatta carne ed ha abitato per un tempo fra noi». Giovanni Battista dice di non essere il Cristo e indica Gesù: «Ecco l'Agnello di Dio, che toglie il peccato del mondo!». Due suoi discepoli seguono Gesù, che chiede: «Che cercate?» e li invita: «Venite e vedrete». Andrea porta suo fratello Simone, che Gesù chiama Cefa (Pietro); poi si uniscono Filippo e Natanaele.
+
+#cap 2 Le nozze di Cana e il tempio
+@1 Le nozze di Cana
+@13 La purificazione del tempio
+@23 Gesù conosce l'uomo
+A una festa di nozze a Cana manca il vino. Maria dice ai servi: «Fate tutto quel che vi dirà». Gesù trasforma l'acqua di sei grandi giare in vino ottimo: è il primo dei suoi segni, e i discepoli credono in lui. A Gerusalemme, per la Pasqua, caccia i mercanti dal Tempio e dice: «Disfate questo tempio, e in tre giorni lo farò risorgere», parlando del suo corpo.
+
+#cap 3 Nicodemo e la nuova nascita
+@1 Il colloquio con Nicodemo
+@16 Dio ha tanto amato il mondo
+@22 La testimonianza finale di Giovanni
+Nicodemo, un capo dei Giudei, viene da Gesù di notte. Gesù gli dice che per vedere il regno di Dio bisogna essere «nato di nuovo», dall'acqua e dallo Spirito. Come Mosè innalzò il serpente nel deserto, così deve essere innalzato il Figlio dell'uomo. «Poiché Iddio ha tanto amato il mondo, che ha dato il suo unigenito Figliuolo, affinché chiunque crede in lui non perisca, ma abbia vita eterna». Dio non ha mandato il Figlio per condannare ma per salvare. Giovanni Battista conclude: «Bisogna che egli cresca, e che io diminuisca».
+
+#cap 4 La Samaritana e il figlio del funzionario
+@1 Al pozzo di Giacobbe
+@27 I campi già biondeggiano
+@39 I Samaritani credono
+@43 Il figlio del funzionario
+Stanco, Gesù siede presso un pozzo in Samaria e chiede da bere a una donna, superando barriere di popolo, religione e genere. Le offre «acqua viva»: chi ne beve non avrà più sete. Le rivela di conoscere la sua vita e le dice che i veri adoratori adoreranno il Padre «in ispirito e verità». Quando lei parla del Messia, Gesù risponde: «Io che ti parlo, son desso». La donna corre in città e molti Samaritani credono: «questi è veramente il Salvator del mondo». A Cana Gesù guarisce a distanza il figlio di un funzionario.
+
+#cap 5 Il paralitico di Betesda e l'autorità del Figlio
+@1 La guarigione alla piscina
+@16 Il Padre e il Figlio
+@31 Le testimonianze
+A Gerusalemme, presso una piscina, Gesù guarisce un uomo paralizzato da trentotto anni: «Lèvati, prendi il tuo lettuccio, e cammina». È sabato e i capi lo accusano. Gesù risponde: «Il Padre mio opera fino ad ora, ed anche io opero», facendosi uguale a Dio. Il Figlio dà la vita e giudica; chi ascolta la sua parola e crede «è passato dalla morte alla vita». Le Scritture stesse testimoniano di lui.
+
+#cap 6 Il pane della vita
+@1 La moltiplicazione dei pani
+@16 Gesù cammina sul mare
+@22 Il discorso nella sinagoga di Capernaum
+@60 Da chi andremo?
+Gesù sfama cinquemila persone con cinque pani d'orzo e due pesci; la folla vuole farlo re, ma lui si ritira. Di notte cammina sul mare: «Son io, non temete». A Capernaum spiega il segno: «Io son il pan della vita; chi viene a me non avrà fame». Bisogna mangiare la sua carne e bere il suo sangue, cioè unirsi totalmente a lui. Molti discepoli se ne vanno. Gesù chiede ai dodici se vogliono andarsene anche loro, e Pietro risponde: «Signore, a chi ce ne andremmo noi? Tu hai parole di vita eterna».
+
+#cap 7 Alla festa delle Capanne
+@1 I fratelli increduli
+@10 Gesù insegna nel tempio
+@37 Fiumi d'acqua viva
+@45 Nessuno ha mai parlato così
+Nemmeno i fratelli di Gesù credono in lui. A metà della festa delle Capanne Gesù insegna nel Tempio; la gente è divisa: alcuni dicono che è buono, altri che inganna. Nell'ultimo giorno della festa grida: «Se alcuno ha sete, venga a me e beva», e promette fiumi d'acqua viva, parlando dello Spirito. Le guardie mandate ad arrestarlo tornano a mani vuote: «Nessun uomo parlò mai come quest'uomo!».
+
+#cap 8 La luce del mondo
+@1 La donna adultera
+@12 «Io son la luce del mondo»
+@31 La verità vi farà liberi
+@48 «Prima che Abramo fosse nato»
+Gli scribi portano a Gesù una donna sorpresa in adulterio; lui scrive per terra e dice: «Chi di voi è senza peccato, scagli il primo la pietra contro di lei». Tutti se ne vanno; Gesù non la condanna e le dice di non peccare più (il passo manca in alcuni manoscritti antichi). Poi dichiara: «Io son la luce del mondo». A chi crede promette: «conoscerete la verità, e la verità vi farà liberi». Il dibattito si fa duro e Gesù afferma: «Prima che Abramo fosse nato, io sono»; tentano di lapidarlo.
+
+#cap 9 Il cieco nato
+@1 La guarigione
+@13 L'inchiesta dei Farisei
+@35 Chi è veramente cieco
+I discepoli chiedono di chi sia la colpa della cecità di un uomo; Gesù risponde che non è colpa di nessuno, ma un'occasione perché si manifestino le opere di Dio. Fa del fango, glielo mette sugli occhi e lo manda a lavarsi a Siloe: l'uomo torna vedendo. I Farisei lo interrogano più volte e alla fine lo cacciano; lui risponde: «una cosa so, che ero cieco e ora ci vedo». Gesù lo incontra e l'uomo crede. Il vero cieco è chi pensa di vedere e rifiuta la luce.
+
+#cap 10 Il buon pastore
+@1 La porta delle pecore
+@11 «Io sono il buon pastore»
+@22 Alla festa della Dedicazione
+Gesù si presenta come la porta delle pecore e come il buon pastore che dà la vita per le pecore, a differenza del mercenario che fugge davanti al lupo. Conosce le sue pecore ed esse conoscono la sua voce; ha anche altre pecore, non di questo ovile. «Io son venuto perché abbian la vita e l'abbiano ad esuberanza». Nessuno può rapirle dalla sua mano, perché «Io ed il Padre siamo uno». Di nuovo cercano di lapidarlo.
+
+#cap 11 La risurrezione di Lazzaro
+@1 Lazzaro è malato
+@17 «Io son la resurrezione e la vita»
+@28 Gesù piange
+@38 «Lazzaro, vieni fuori!»
+@45 Il complotto
+Lazzaro, amico di Gesù e fratello di Marta e Maria, muore a Betania. Quando Gesù arriva è nel sepolcro da quattro giorni. A Marta dice: «Io son la resurrezione e la vita; chi crede in me, anche se muoia, vivrà». Davanti al dolore di Maria e degli amici, «Gesù pianse». Fa togliere la pietra e grida: «Lazzaro, vieni fuori!», e il morto esce avvolto nelle bende. Molti credono, ma il sinedrio decide di uccidere Gesù; il sommo sacerdote Caiàfa dice che è meglio che muoia un solo uomo per il popolo.
+
+#cap 12 L'ora è venuta
+@1 L'unzione a Betania
+@12 L'ingresso in Gerusalemme
+@20 Il chicco di grano
+@37 L'incredulità
+@44 Luce venuta nel mondo
+Maria unge i piedi di Gesù con un profumo prezioso e la casa si riempie di profumo; Giuda protesta. Gesù entra a Gerusalemme acclamato. Alcuni Greci vogliono vederlo e Gesù annuncia: «L'ora è venuta», e spiega con un'immagine: se il granello di frumento non muore resta solo, «ma se muore, produce molto frutto». Quando sarà innalzato da terra attirerà tutti a sé. Nonostante i segni molti non credono, e Gesù proclama di essere venuto come luce nel mondo.
+
+#cap 13 La lavanda dei piedi
+@1 Gesù lava i piedi ai discepoli
+@21 L'annuncio del tradimento
+@31 Il comandamento nuovo
+Prima della Pasqua, «avendo amato i suoi... li amò sino alla fine». Durante la cena Gesù si alza, si cinge di un asciugatoio e lava i piedi ai discepoli, anche a Pietro che all'inizio rifiuta: hanno ricevuto l'esempio per fare lo stesso. Annuncia il tradimento; Giuda esce, «ed era notte». Gesù lascia un comandamento nuovo: «che vi amiate gli uni gli altri», e predice che Pietro lo rinnegherà.
+
+#cap 14 La via, la verità e la vita
+@1 Le molte dimore
+@6 «Io sono la via, la verità e la vita»
+@15 Il Consolatore
+@27 «Vi lascio pace»
+«Il vostro cuore non sia turbato»: Gesù va a preparare un posto per i suoi nella casa del Padre. A Toma risponde: «Io sono la via, la verità e la vita; nessuno viene al Padre se non per mezzo di me». A Filippo: «Chi ha veduto me, ha veduto il Padre». Promette un altro Consolatore, lo Spirito della verità, che starà con loro per sempre. Chi lo ama osserva la sua parola. «Io vi lascio pace; vi do la mia pace».
+
+#cap 15 La vite e i tralci
+@1 La vera vite
+@9 Rimanete nel mio amore
+@18 L'odio del mondo
+«Io sono la vera vite, e il Padre mio è il vignaiuolo». I discepoli sono i tralci: solo rimanendo uniti a lui portano frutto, «perché senza di me non potete far nulla». Gesù chiede di rimanere nel suo amore e di amarsi come lui li ha amati: «Nessuno ha amore più grande che quello di dar la sua vita per i suoi amici». Non li chiama più servi, ma amici. Il mondo li odierà come ha odiato lui, ma lo Spirito renderà testimonianza.
+
+#cap 16 La tristezza si cambierà in gioia
+@1 Le persecuzioni
+@5 L'opera dello Spirito
+@16 Fra poco mi vedrete
+@25 «Io ho vinto il mondo»
+È bene per i discepoli che Gesù se ne vada, perché manderà lo Spirito, che convincerà il mondo e guiderà loro in tutta la verità. Ora sono tristi, ma la loro tristezza si cambierà in gioia, come quella di una donna dopo il parto, e nessuno potrà toglierla. Potranno chiedere al Padre nel suo nome. «Nel mondo avrete tribolazione; ma fatevi animo, io ho vinto il mondo».
+
+#cap 17 La preghiera di Gesù
+@1 Gesù prega per sé
+@6 Prega per i discepoli
+@20 Prega per tutti i credenti
+Alzati gli occhi al cielo, Gesù prega: «Padre, l'ora è venuta; glorifica il tuo Figliuolo». La vita eterna è conoscere il solo vero Dio e colui che ha mandato. Prega per i discepoli, che restano nel mondo: che il Padre li custodisca dal maligno e li santifichi nella verità. Poi prega per tutti quelli che crederanno attraverso la loro parola: «che siano tutti uno», perché il mondo creda.
+
+#cap 18 L'arresto e il processo
+@1 L'arresto nel giardino
+@12 Davanti ad Anna
+@15 Pietro rinnega
+@28 Davanti a Pilato
+Nel giardino Gesù va incontro a chi lo arresta e dice «Io sono»: le guardie indietreggiano e cadono. Ferma Pietro che ha colpito un servo con la spada. È condotto da Anna e da Caiàfa; nel cortile Pietro lo rinnega tre volte. Davanti a Pilato Gesù dichiara: «Il mio regno non è di questo mondo» ed è venuto a testimoniare la verità. Pilato chiede: «Che cos'è verità?». Non trova colpa in lui, ma la folla sceglie Barabba.
+
+#cap 19 La crocifissione
+@1 «Ecco l'uomo!»
+@16 La crocifissione
+@25 Maria e il discepolo amato
+@28 «È compiuto»
+@31 Il costato trafitto
+@38 La sepoltura
+Gesù è flagellato e coronato di spine; Pilato lo presenta alla folla: «Ecco l'uomo!». Alla fine lo consegna. Sulla croce un cartello in tre lingue dice: “Gesù il Nazareno, il re de' Giudei”. Ai piedi della croce stanno sua madre e il discepolo amato; Gesù li affida l'uno all'altra. Dice «Ho sete», poi: «È compiuto!», e china il capo. Un soldato gli trafigge il costato e ne esce sangue e acqua. Giuseppe d'Arimatea e Nicodemo lo seppelliscono in un sepolcro nuovo, in un giardino.
+
+#cap 20 Il Risorto
+@1 Il sepolcro vuoto
+@11 Gesù e Maria Maddalena
+@19 Gesù appare ai discepoli
+@24 Toma
+@30 Lo scopo del libro
+Maria Maddalena trova la tomba vuota; Pietro e l'altro discepolo corrono a vedere, e il discepolo amato «vide, e credette». Maria piange fuori del sepolcro; Gesù la chiama per nome e lei lo riconosce: «Rabbunì!». Lui la manda ad annunciarlo ai fratelli. La sera Gesù appare ai discepoli chiusi in casa, mostra le ferite, dona la pace e lo Spirito Santo. Toma, assente, non crede; otto giorni dopo vede Gesù ed esclama: «Signor mio e Dio mio!». «Beati quelli che non han veduto, e hanno creduto!».
+
+#cap 21 Sul lago di Tiberiade
+@1 La pesca miracolosa
+@15 «Mi ami tu?»
+@20 Il discepolo amato
+Sul lago, dopo una notte senza pesce, Gesù risorto dice ai discepoli di gettare la rete e la riempiono con centocinquantatré grossi pesci. Prepara loro la colazione sulla brace. Per tre volte chiede a Pietro: «Simon di Giovanni, mi ami tu?», e per tre volte gli affida il suo gregge: «Pasci le mie pecore», guarendo così i tre rinnegamenti. Il libro si chiude con la testimonianza del discepolo amato e con l'osservazione che, se si scrivesse tutto ciò che Gesù ha fatto, il mondo non basterebbe a contenere i libri.
