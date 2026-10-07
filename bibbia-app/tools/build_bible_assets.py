@@ -28,7 +28,7 @@ NS = '{http://www.bibletechnologies.net/2003/OSIS/namespace}'
 BOOKS = [
     ("Gen", "Genesi", "Gen"), ("Exod", "Esodo", "Es"), ("Lev", "Levitico", "Lv"),
     ("Num", "Numeri", "Nm"), ("Deut", "Deuteronomio", "Dt"), ("Josh", "Giosuè", "Gs"),
-    ("Judg", "Giudici", "Gdc"), ("Ruth", "Rut", "Rt"), ("1Sam", "1 Samuele", "1Sam"),
+    ("Judg", "Giudici", "Gdc"), ("Ruth", "Ruth", "Rt"), ("1Sam", "1 Samuele", "1Sam"),
     ("2Sam", "2 Samuele", "2Sam"), ("1Kgs", "1 Re", "1Re"), ("2Kgs", "2 Re", "2Re"),
     ("1Chr", "1 Cronache", "1Cr"), ("2Chr", "2 Cronache", "2Cr"), ("Ezra", "Esdra", "Esd"),
     ("Neh", "Neemia", "Ne"), ("Esth", "Ester", "Est"), ("Job", "Giobbe", "Gb"),

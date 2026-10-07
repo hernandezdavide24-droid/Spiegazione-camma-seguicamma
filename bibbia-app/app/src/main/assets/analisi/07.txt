@@ -1,0 +1,132 @@
+#intro
+titolo: Giudici
+sintesi: Il periodo fra la morte di Giosuè e la nascita della monarchia. Israele cade continuamente nell'idolatria, viene oppresso dai popoli vicini, grida a Dio, e Dio suscita dei «giudici» (capi carismatici come Debora, Gedeone, Sansone) che lo liberano. Poi il ciclo ricomincia, sempre più in basso.
+autore: Anonimo. La tradizione ebraica lo attribuisce a Samuele; il libro fa parte della grande storia d'Israele da Giosuè ai Re.
+data: Gli eventi coprono circa due secoli (XII-XI secolo a.C.), prima del regno di Saul.
+destinatari: Il popolo d'Israele, chiamato a riflettere sulle conseguenze dell'abbandono di Dio.
+contesto: Le tribù d'Israele vivono disperse nella terra, senza un governo centrale, circondate da popoli come Cananei, Moabiti, Madianiti, Ammoniti e Filistei. La tentazione è adorare i loro dèi, soprattutto Baal, dio della pioggia e della fertilità.
+scopo: Mostrare che l'infedeltà a Dio porta alla rovina e al caos morale, ma che Dio, nella sua misericordia, continua a liberare il suo popolo quando grida a lui. Prepara la domanda: chi guiderà Israele in modo stabile e giusto?
+temi: Il ciclo peccato-oppressione-grido-liberazione; la pazienza di Dio; Dio che sceglie persone deboli o imperfette; il declino morale; «ognuno faceva quel che gli pareva meglio».
+struttura: 1-2 · Introduzione: conquista incompleta e il ciclo dei giudici.
+3-16 · Le storie dei giudici (Othniel, Ehud, Debora, Gedeone, Jefte, Sansone e altri).
+17-21 · Due racconti finali che mostrano il caos religioso e morale.
+cristo: I giudici sono liberatori imperfetti e temporanei; il libro fa desiderare un liberatore definitivo e un re giusto. La lettera agli Ebrei ricorda Gedeone, Barak, Sansone e Jefte fra gli esempi di fede (Ebrei 11:32).
+chiave: Gdc 2:16; Gdc 2:18; Gdc 6:12; Gdc 21:25
+
+#cap 1 La conquista incompleta
+@1 Le vittorie di Giuda
+@22 Le tribù non scacciano i Cananei
+Dopo la morte di Giosuè, Giuda e Simeone ottengono vittorie. Ma molte tribù non scacciano i Cananei e convivono con loro: è il primo passo verso i compromessi che seguiranno.
+
+#cap 2 Il ciclo dell'infedeltà
+@1 L'angelo a Bokim
+@6 Una generazione che non conosceva l'Eterno
+@11 Peccato, oppressione, liberazione
+Dopo la morte di Giosuè sorge «un'altra generazione, che non conosceva l'Eterno». Il libro spiega lo schema che si ripeterà: Israele serve Baal, Dio lo lascia cadere nelle mani dei nemici, il popolo geme, Dio suscita un giudice che lo libera; morto il giudice, il popolo torna a peccare.
+
+#cap 3 Othniel, Ehud e Shamgar
+@1 I popoli rimasti
+@7 Othniel
+@12 Ehud uccide Eglon
+@31 Shamgar
+Othniel, nipote di Caleb, libera Israele dall'oppressione di Cushan-Rishathaim. Ehud, un beniaminita mancino, uccide con astuzia il grasso re moabita Eglon. Shamgar sconfigge i Filistei con un pungolo da buoi.
+
+#cap 4 Debora e Barak
+@1 L'oppressione di Iabin e Sisera
+@4 La profetessa Debora
+@17 Jael uccide Sisera
+La profetessa Debora, che giudica Israele, chiama Barak a combattere contro Sisera, capo dell'esercito cananeo con novecento carri di ferro. Barak accetta solo se Debora viene con lui. Dio dà la vittoria e Sisera, in fuga, viene ucciso da una donna, Jael.
+
+#cap 5 Il cantico di Debora
+@1 Lode a Dio per la vittoria
+@12 Le tribù che risposero e quelle assenti
+@24 Benedetta Jael
+Uno dei poemi più antichi della Bibbia celebra la vittoria: Dio stesso è sceso a combattere, perfino le stelle dal cielo hanno combattuto contro Sisera. Si lodano le tribù accorse e si rimproverano quelle rimaste a casa.
+
+#cap 6 La chiamata di Gedeone
+@1 L'oppressione di Madian
+@11 «L'Eterno è teco, o uomo forte e valoroso!»
+@25 Gedeone abbatte l'altare di Baal
+@33 Il vello
+I Madianiti saccheggiano i raccolti d'Israele. L'angelo dell'Eterno appare a Gedeone, che batte il grano di nascosto, e lo chiama «uomo forte e valoroso». Gedeone, pieno di dubbi, abbatte l'altare di Baal del padre e chiede a Dio un segno con un vello di lana.
+
+#cap 7 I trecento di Gedeone
+@1 Troppi uomini
+@9 Il sogno nel campo nemico
+@15 Trombe, brocche e fiaccole
+Dio riduce l'esercito di Gedeone da trentaduemila a trecento uomini, perché Israele non si vanti di essersi salvato da solo. Di notte i trecento circondano il campo nemico, spezzano le brocche, alzano le fiaccole e suonano le trombe: i Madianiti, presi dal panico, si uccidono a vicenda e fuggono.
+
+#cap 8 Gedeone dopo la vittoria
+@1 Le tribù scontente
+@4 Succoth e Penuel
+@22 Gedeone rifiuta il regno
+@29 La morte di Gedeone
+Gedeone insegue i re madianiti. Il popolo gli offre di diventare re, ma lui rifiuta: «l'Eterno è quegli che regnerà su voi!». Tuttavia fa un efod d'oro che diventa oggetto di idolatria. Dopo la sua morte, Israele torna a Baal.
+
+#cap 9 Abimelec, re per tre anni
+@1 Abimelec uccide i fratelli
+@7 La parabola di Jotham
+@22 La rovina di Abimelec
+Abimelec, figlio di Gedeone, uccide i suoi settanta fratelli e si fa re a Sichem. L'unico sopravvissuto, Jotham, racconta la parabola degli alberi che vogliono un re e finiscono per scegliere il rovo. Abimelec muore colpito da una macina lanciata da una donna.
+
+#cap 10 Thola, Jair e una nuova oppressione
+@1 Due giudici
+@6 Israele serve altri dèi
+Dopo due giudici minori, Thola e Jair, Israele serve gli dèi di molti popoli e viene oppresso dai Filistei e dagli Ammoniti. Il popolo confessa il proprio peccato e toglie gli dèi stranieri; l'Eterno «si accorò per l'afflizione d'Israele».
+
+#cap 11 Jefte e il suo voto
+@1 Jefte, il figlio rifiutato
+@12 Il dialogo con gli Ammoniti
+@29 Il voto e la figlia
+Jefte, figlio di una prostituta e cacciato dai fratellastri, viene richiamato per guidare la guerra contro Ammon. Prima della battaglia fa un voto avventato: offrirà a Dio chi uscirà per primo da casa sua. Vince, ma ad accoglierlo è la sua unica figlia. Il racconto mostra il dramma di una fede mescolata ai costumi pagani.
+
+#cap 12 Jefte ed Efraim; altri giudici
+@1 La guerra con Efraim e lo «Scibboleth»
+@8 Ibtsan, Elon, Abdon
+La tribù di Efraim litiga con Jefte: nella guerra fra fratelli, i fuggiaschi sono riconosciuti dalla pronuncia della parola «Scibboleth». Seguono tre giudici minori.
+
+#cap 13 La nascita di Sansone
+@1 L'annuncio dell'angelo
+@15 Il sacrificio di Manoah
+Israele è oppresso dai Filistei. L'angelo dell'Eterno annuncia alla moglie sterile di Manoah la nascita di un figlio che sarà nazireo fin dal seno materno e comincerà a liberare Israele. Nasce Sansone.
+
+#cap 14 Sansone e la donna di Timnah
+@1 Il leone e il miele
+@10 L'enigma alla festa nuziale
+Sansone vuole sposare una filistea di Timnah. Lungo la strada uccide un leone a mani nude e più tardi trova del miele nella sua carcassa. Alle nozze propone un enigma ai Filistei, che ottengono la soluzione minacciando la sposa; la vicenda finisce con violenza.
+
+#cap 15 Le vendette di Sansone
+@1 Le volpi e il grano
+@9 La mascella d'asino
+Sansone si vendica dei Filistei incendiando i loro campi. Consegnato dai suoi, rompe le corde e uccide mille Filistei con una mascella d'asino. Dio gli fa sgorgare acqua quando ha sete.
+
+#cap 16 Sansone e Delila
+@1 Le porte di Gaza
+@4 Il segreto della forza
+@23 La morte di Sansone
+Sansone si innamora di Delila, pagata dai Filistei per scoprire il segreto della sua forza. Dopo molte insistenze lui le rivela il voto di nazireato: gli tagliano i capelli, lo accecano e lo imprigionano. Nel tempio di Dagon, Sansone prega un'ultima volta e fa crollare l'edificio, morendo con i Filistei.
+
+#cap 17 Gli idoli di Mica
+@1 Un santuario privato
+Un uomo di nome Mica si costruisce un santuario personale con un idolo e assume un levita come sacerdote. Il commento: «non v'era re in Israele; ognuno faceva quel che gli pareva meglio».
+
+#cap 18 La migrazione di Dan
+@1 Gli esploratori di Dan
+@14 Il furto degli idoli
+@27 La conquista di Lais
+La tribù di Dan, in cerca di terra, ruba gli idoli e il sacerdote di Mica e conquista la tranquilla città di Lais, fondando un santuario idolatra. La confusione religiosa si allarga.
+
+#cap 19 Il crimine di Ghibea
+@1 Il levita e la concubina
+@16 La notte a Ghibea
+Un levita in viaggio si ferma per la notte a Ghibea, nella tribù di Beniamino. Alcuni uomini della città circondano la casa e violentano a morte la sua concubina. Il levita ne smembra il corpo e lo manda alle tribù: un orrore mai visto in Israele.
+
+#cap 20 La guerra contro Beniamino
+@1 L'assemblea a Mitspa
+@18 Le battaglie
+Le tribù chiedono a Beniamino di consegnare i colpevoli, ma Beniamino rifiuta. Scoppia una guerra civile sanguinosa; alla fine la tribù di Beniamino è quasi sterminata.
+
+#cap 21 Mogli per Beniamino
+@1 Il dolore per una tribù perduta
+@16 Le ragazze di Sciloh
+Israele si addolora per la tribù quasi scomparsa e, con soluzioni discutibili, trova mogli per i sopravvissuti. Il libro si chiude con la frase che ne riassume il senso: «In quel tempo, non v'era re in Israele; ognun facea quel che gli pareva meglio».

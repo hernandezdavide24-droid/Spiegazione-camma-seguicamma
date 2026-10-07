@@ -348,9 +348,14 @@ private fun ChapterPage(
     // Porta in vista il versetto richiesto.
     LaunchedEffect(scrollRequest?.id) {
         val req = scrollRequest ?: return@LaunchedEffect
-        val index = headerCount + req.ref.verse - 1
-        // Con l'evidenziazione si lascia visibile anche il versetto precedente, per il contesto.
-        listState.scrollToItem(if (req.flash) (index - 1).coerceAtLeast(0) else index)
+        // Dal primo versetto si parte dall'intestazione del capitolo; con l'evidenziazione si lascia
+        // visibile anche il versetto precedente, per il contesto.
+        val index = when {
+            req.ref.verse <= 1 -> 0
+            req.flash -> headerCount + req.ref.verse - 2
+            else -> headerCount + req.ref.verse - 1
+        }
+        listState.scrollToItem(index)
         onScrollHandled(req.id)
         if (req.flash) {
             flashVerse = req.ref.verse
