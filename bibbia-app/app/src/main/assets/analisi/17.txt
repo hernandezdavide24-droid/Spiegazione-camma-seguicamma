@@ -1,0 +1,66 @@
+#intro
+titolo: Ester
+sintesi: Una giovane ebrea, Ester, diventa regina di Persia. Quando il potente ministro Haman ottiene dal re un decreto per sterminare tutti i Giudei dell'impero, Ester, incoraggiata dal cugino Mardocheo, rischia la vita presentandosi al re e smaschera il complotto. Il popolo è salvato e nasce la festa di Purim.
+autore: Anonimo; probabilmente un ebreo che viveva in Persia e conosceva bene la corte.
+data: Gli eventi si svolgono sotto il re Assuero (Serse I, 486-465 a.C.), nella capitale Susa; il libro fu scritto poco dopo.
+destinatari: Gli Ebrei della diaspora, cioè quelli rimasti a vivere fuori dalla terra d'Israele.
+contesto: Molti Ebrei non erano tornati a Gerusalemme dopo l'esilio e vivevano sparsi nell'immenso impero persiano, esposti a ostilità e pregiudizi.
+scopo: Mostrare che Dio protegge il suo popolo anche quando sembra assente. Curiosamente il nome di Dio non compare mai nel libro (nel testo ebraico), ma la sua provvidenza guida ogni «coincidenza».
+temi: La provvidenza nascosta; il coraggio e la responsabilità; il rovesciamento delle sorti (l'orgoglioso umiliato, l'umile innalzato); il digiuno; la memoria e la festa.
+struttura: 1-2 · Ester diventa regina; Mardocheo sventa una congiura.
+3-5 · Il decreto di Haman e il coraggio di Ester.
+6-7 · Il rovesciamento: Mardocheo onorato, Haman impiccato.
+8-10 · La salvezza dei Giudei e la festa di Purim.
+cristo: Ester rischia la vita intercedendo davanti al re per salvare il suo popolo: un'immagine di Cristo che intercede per noi. Il libro mostra il Dio che agisce dietro le quinte della storia, fino alla salvezza.
+chiave: Est 4:14; Est 4:16; Est 9:22
+
+#cap 1 Il banchetto di Assuero e la regina Vashti
+@1 Le feste del re
+@10 Il rifiuto di Vashti
+Il re Assuero, che regna dall'India all'Etiopia, offre banchetti sontuosi a Susa. La regina Vashti rifiuta di presentarsi per essere mostrata agli ospiti; il re, offeso, la depone su consiglio dei suoi saggi.
+
+#cap 2 Ester diventa regina
+@1 La ricerca di una nuova regina
+@5 Mardocheo ed Ester
+@19 Mardocheo scopre una congiura
+Fra le giovani portate a corte c'è Hadassa, cioè Ester, orfana cresciuta dal cugino Mardocheo, che le consiglia di non rivelare di essere ebrea. Ester trova favore e il re la sceglie come regina. Mardocheo scopre una congiura contro il re e lo fa sapere: il fatto viene registrato negli annali.
+
+#cap 3 Il piano di Haman
+@1 Mardocheo non si inchina
+@7 Il decreto di sterminio
+Il re innalza Haman sopra tutti i ministri. Mardocheo rifiuta di inchinarsi davanti a lui; Haman, furioso, decide di sterminare tutti i Giudei dell'impero. Tira a sorte («pur») il giorno e ottiene dal re un decreto. Mentre il re e Haman bevono, la città di Susa è sgomenta.
+
+#cap 4 «Per un tempo come questo»
+@1 Il lutto dei Giudei
+@4 Il dialogo fra Ester e Mardocheo
+@15 Il digiuno
+Mardocheo e i Giudei fanno lutto. Ester esita: chi entra dal re senza essere chiamato rischia la morte. Mardocheo risponde: se tu taci, la liberazione verrà da un'altra parte, «e chi sa se non sei pervenuta ad esser regina appunto per un tempo come questo?». Ester chiede a tutti di digiunare tre giorni e decide: «s'io debbo perire, ch'io perisca!».
+
+#cap 5 Ester davanti al re
+@1 Il re accoglie Ester
+@9 L'orgoglio di Haman
+Ester si presenta al re, che le porge lo scettro d'oro e le promette fino a metà del regno. Lei invita il re e Haman a un banchetto, e poi a un secondo. Haman, gonfio d'orgoglio ma irritato da Mardocheo, fa preparare una forca alta cinquanta cubiti per impiccarlo.
+
+#cap 6 Mardocheo onorato
+@1 La notte insonne del re
+@4 Haman costretto a onorare Mardocheo
+Quella notte il re non riesce a dormire, si fa leggere gli annali e scopre che Mardocheo gli ha salvato la vita senza ricevere ricompensa. Proprio allora arriva Haman per chiedere di impiccarlo; il re gli chiede come onorare un uomo, e Haman, credendo si tratti di sé, descrive grandi onori, che dovrà invece tributare a Mardocheo.
+
+#cap 7 La caduta di Haman
+@1 Ester rivela il complotto
+Al secondo banchetto Ester rivela al re di essere ebrea e che Haman vuole sterminare il suo popolo. Il re si infuria e Haman viene impiccato sulla forca che aveva preparato per Mardocheo.
+
+#cap 8 Il contro-decreto
+@1 Mardocheo al posto di Haman
+@3 Ester supplica il re
+@9 Il nuovo editto
+Il re dà a Ester la casa di Haman e a Mardocheo il suo anello. Poiché un decreto persiano non si poteva revocare, il re ne emana un altro che permette ai Giudei di difendersi. La paura si trasforma in gioia, e molti si fanno Giudei.
+
+#cap 9 La vittoria e la festa di Purim
+@1 I Giudei si difendono
+@17 L'istituzione di Purim
+Nel giorno stabilito per lo sterminio, i Giudei sconfiggono chi li attacca. Mardocheo ed Ester stabiliscono che ogni anno si celebri Purim, chiamata così dal «pur», la sorte gettata da Haman: giorni in cui il dolore fu «mutato in gioia, il loro lutto in festa», con conviti, doni reciproci e aiuti ai poveri.
+
+#cap 10 La grandezza di Mardocheo
+@1 Il secondo dopo il re
+Mardocheo diventa il secondo dopo il re, stimato dal suo popolo, perché cercava il bene dei Giudei e parlava per la pace di tutta la sua stirpe.
