@@ -1,0 +1,70 @@
+#intro
+titolo: Esdra
+sintesi: Il ritorno degli Ebrei dall'esilio di Babilonia e la ricostruzione. Nella prima parte un primo gruppo, guidato da Zorobabel, torna grazie all'editto del re persiano Ciro e ricostruisce il Tempio fra mille difficoltà. Nella seconda parte, decenni dopo, lo scriba Esdra arriva a Gerusalemme per insegnare la Legge e riformare la vita del popolo.
+autore: Tradizionalmente Esdra stesso, che in alcune parti parla in prima persona. Esdra e Neemia erano in origine un unico libro.
+data: Gli eventi vanno dal 538 a.C. (editto di Ciro) al 458 a.C. circa (arrivo di Esdra). Alcuni documenti ufficiali sono riportati in aramaico, la lingua dell'amministrazione persiana.
+destinatari: La comunità ebraica tornata in Giudea.
+contesto: Dopo la caduta di Babilonia (539 a.C.), l'impero persiano permette ai popoli deportati di tornare nelle loro terre e di onorare i loro dèi. Gerusalemme è in rovina; i reduci sono pochi e poveri, e i popoli vicini si oppongono alla ricostruzione.
+scopo: Mostrare che Dio è fedele alle promesse fatte per mezzo dei profeti: guida perfino i re stranieri per far tornare il suo popolo. Ricostruire il Tempio non basta: serve anche ricostruire una vita fondata sulla Parola di Dio.
+temi: La fedeltà di Dio alle profezie; il ritorno e la ricostruzione; l'opposizione e la perseveranza; la mano di Dio che guida; lo studio e l'insegnamento della Legge; il pentimento e la purezza del popolo.
+struttura: 1-6 · Il ritorno con Zorobabel e la ricostruzione del Tempio (538-515 a.C.).
+7-10 · Il ritorno di Esdra e la riforma del popolo (458 a.C.).
+cristo: Il ritorno dall'esilio realizza solo in parte le promesse dei profeti: il popolo continua ad attendere un tempo di salvezza piena, che i Vangeli vedono iniziare con Gesù. Zorobabel, discendente di Davide, è fra gli antenati di Gesù (Matteo 1:12).
+chiave: Esd 1:1; Esd 3:11; Esd 7:10; Esd 8:22
+
+#cap 1 L'editto di Ciro
+@1 Ciro permette il ritorno
+@5 I preparativi e gli oggetti del Tempio
+Nel primo anno del suo regno, Ciro re di Persia, mosso da Dio come aveva annunciato Geremia, permette agli Ebrei di tornare a Gerusalemme per ricostruire il Tempio. Restituisce gli oggetti sacri portati via da Nebucadnetsar; molti aiutano i partenti con doni.
+
+#cap 2 L'elenco dei rimpatriati
+@1 Le famiglie che tornarono
+@59 Chi non poteva provare l'origine
+@64 Il totale e le offerte
+Un lungo elenco registra le famiglie, i sacerdoti, i Leviti, i cantori e i servitori del Tempio che tornarono: in tutto circa cinquantamila persone. Ogni nome conta per Dio. Arrivati, offrono doni per ricostruire la casa di Dio.
+
+#cap 3 L'altare e le fondamenta del Tempio
+@1 L'altare ricostruito
+@8 Le fondamenta
+Il settimo mese il popolo si raduna, ricostruisce l'altare e riprende i sacrifici e la festa delle Capanne. L'anno dopo si gettano le fondamenta del Tempio: i giovani gridano di gioia, mentre gli anziani che avevano visto il primo Tempio piangono; non si distinguono le grida di gioia dal pianto.
+
+#cap 4 L'opposizione
+@1 L'aiuto rifiutato
+@6 Le lettere ai re di Persia
+@24 I lavori fermati
+Le popolazioni vicine offrono di aiutare, ma Zorobabel rifiuta perché il loro culto è mescolato con l'idolatria. Allora scoraggiano il popolo e scrivono accuse ai re persiani. (Il capitolo inserisce anche lettere di epoche successive.) I lavori del Tempio si fermano fino al regno di Dario.
+
+#cap 5 Ripresa dei lavori
+@1 I profeti Aggeo e Zaccaria
+@6 La lettera di Tattenai
+Spinti dai profeti Aggeo e Zaccaria, Zorobabel e Jeshua riprendono la costruzione. Il governatore Tattenai chiede chi lo abbia permesso e scrive al re Dario, chiedendo di verificare l'editto di Ciro. «L'occhio del loro Dio» vegliava sugli anziani dei Giudei.
+
+#cap 6 Il Tempio completato
+@1 Il decreto di Dario
+@13 La dedicazione
+@19 La Pasqua
+Negli archivi si trova l'editto di Ciro: Dario ordina di non ostacolare i lavori e anzi di finanziarli. Il Tempio è terminato nel 515 a.C. e dedicato con gioia; poi si celebra la Pasqua.
+
+#cap 7 Esdra va a Gerusalemme
+@1 Esdra, scriba esperto della Legge
+@11 La lettera di Artaserse
+@27 Benedetto sia Dio
+Molti anni dopo, Esdra, sacerdote e scriba, parte da Babilonia con il permesso del re Artaserse. Aveva dedicato il cuore allo studio della legge di Dio, a metterla in pratica e a insegnarla. Il re gli dà ampi poteri e doni per il Tempio.
+
+#cap 8 Il viaggio di Esdra
+@1 Chi partì con Esdra
+@21 Il digiuno all'Ahava
+@24 I doni affidati ai sacerdoti
+@31 L'arrivo
+Prima di partire, Esdra proclama un digiuno presso il fiume Ahava: si vergognava di chiedere una scorta al re dopo aver detto che «la mano del nostro Dio assiste tutti quelli che lo cercano». Dio li protegge durante il lungo viaggio e i tesori arrivano intatti.
+
+#cap 9 La preghiera di Esdra
+@1 I matrimoni con le straniere
+@5 La confessione
+Esdra scopre che molti, anche capi e sacerdoti, hanno sposato donne dei popoli idolatri. Sconvolto, si straccia le vesti e prega confessando il peccato del popolo come se fosse suo: «mi vergogno, o mio Dio, d'alzare a te la mia faccia».
+
+#cap 10 La riforma
+@1 Il popolo si pente
+@9 L'assemblea sotto la pioggia
+@18 L'elenco dei colpevoli
+Il popolo, commosso, piange e si impegna a separarsi dai matrimoni misti che lo portavano all'idolatria. In un'assemblea sotto la pioggia si decide di esaminare ogni caso. Il libro termina con l'elenco di chi aveva sposato donne straniere.

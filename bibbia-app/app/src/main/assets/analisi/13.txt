@@ -1,0 +1,179 @@
+#intro
+titolo: 1 Cronache
+sintesi: Una rilettura della storia d'Israele da Adamo a Davide, scritta dopo il ritorno dall'esilio. Dopo nove capitoli di genealogie, che collegano il popolo alle sue radici, il libro racconta il regno di Davide con un'attenzione speciale all'arca, al culto, ai Leviti e alla preparazione del Tempio.
+autore: Anonimo, chiamato dagli studiosi “il Cronista”. La tradizione ebraica lo attribuisce a Esdra. Usa i libri di Samuele e dei Re e molte altre fonti, che cita.
+data: Scritto probabilmente intorno al 400 a.C., quando gli Ebrei, tornati dall'esilio, ricostruivano la loro vita intorno al secondo Tempio.
+destinatari: La comunità ebraica tornata a Gerusalemme, piccola e povera, sotto il dominio persiano.
+contesto: Non c'è più un re e il Tempio ricostruito è modesto. Il popolo si chiede se è ancora il popolo di Dio e se le promesse a Davide valgono ancora. Il Cronista risponde raccontando la storia dal punto di vista del culto e della fedeltà.
+scopo: Ridare identità e speranza: mostrare che il popolo tornato dall'esilio è erede delle promesse, che il centro della sua vita è il culto del vero Dio e che la promessa a Davide resta valida.
+temi: La continuità del popolo di Dio (genealogie); Davide come re ideale; l'arca e il culto; la musica e la lode; la preparazione del Tempio; cercare Dio con tutto il cuore.
+struttura: 1-9 · Genealogie da Adamo agli abitanti di Gerusalemme dopo l'esilio.
+10-12 · La morte di Saul e l'ascesa di Davide.
+13-16 · L'arca portata a Gerusalemme.
+17-21 · La promessa di Dio, le vittorie, il censimento.
+22-29 · Davide prepara la costruzione del Tempio e l'organizzazione del culto.
+cristo: Le genealogie preparano quella di Gesù in Matteo 1. La promessa a Davide (cap. 17) di un discendente il cui trono sarà stabile per sempre trova compimento, per il Nuovo Testamento, in Gesù.
+chiave: 1Cr 4:10; 1Cr 16:11; 1Cr 16:34; 1Cr 17:11-14; 1Cr 29:11; 1Cr 29:14
+
+#cap 1 Da Adamo a Israele
+@1 Da Adamo a Noè e ai suoi figli
+@24 Da Sem ad Abrahamo
+@28 I discendenti di Abrahamo e di Esaù
+La storia parte dal principio: da Adamo a Noè, dai figli di Noè ad Abrahamo, poi i discendenti di Ismaele, di Esaù e i re di Edom. Il popolo di Dio è inserito nella storia di tutta l'umanità.
+
+#cap 2 I discendenti di Giuda
+@1 I figli di Israele
+@3 La tribù di Giuda fino a Davide
+@18 Altre famiglie di Giuda
+Dopo l'elenco dei dodici figli d'Israele, l'attenzione va subito a Giuda, la tribù da cui viene Davide: la genealogia arriva fino a Isai e ai suoi figli.
+
+#cap 3 La famiglia di Davide
+@1 I figli di Davide
+@10 I re di Giuda
+@17 I discendenti dopo l'esilio
+I figli di Davide nati a Hebron e a Gerusalemme, poi la linea dei re di Giuda fino all'esilio e oltre: la famiglia di Davide non si è estinta.
+
+#cap 4 Altre famiglie di Giuda e di Simeone
+@1 Famiglie di Giuda
+@9 La preghiera di Jabets
+@24 La tribù di Simeone
+Fra le liste di nomi spicca Jabets, «più onorato dei suoi fratelli», che prega Dio di benedirlo, allargare i suoi confini e preservarlo dal male: «E Dio gli concedette quello che avea chiesto».
+
+#cap 5 Le tribù a est del Giordano
+@1 Ruben
+@11 Gad
+@23 Metà di Manasse e l'esilio
+Le tribù di Ruben, Gad e metà di Manasse: vincono quando gridano a Dio, ma più tardi sono deportate dagli Assiri per la loro infedeltà.
+
+#cap 6 La tribù di Levi
+@1 I sommi sacerdoti
+@31 I cantori del Tempio
+@54 Le città dei Leviti
+La lunga genealogia di Levi elenca i sommi sacerdoti discendenti di Aaronne e i cantori stabiliti da Davide (Heman, Asaf, Ethan). Seguono le città assegnate ai Leviti.
+
+#cap 7 Le tribù del nord
+@1 Issacar, Beniamino, Neftali
+@14 Manasse ed Efraim
+@30 Ascer
+Genealogie delle tribù di Issacar, Beniamino, Neftali, Manasse, Efraim e Ascer, con il numero dei loro guerrieri.
+
+#cap 8 La tribù di Beniamino
+@1 Le famiglie di Beniamino
+@29 La famiglia di Saul
+I discendenti di Beniamino, con particolare attenzione alla famiglia di Saul, il primo re.
+
+#cap 9 Gli abitanti di Gerusalemme
+@1 Il ritorno dall'esilio
+@10 Sacerdoti, Leviti e portinai
+@35 Di nuovo la famiglia di Saul
+Elenco di chi tornò ad abitare a Gerusalemme dopo l'esilio, con i sacerdoti, i Leviti e i portinai del Tempio e i loro compiti. Ripetendo la famiglia di Saul, il testo introduce il racconto.
+
+#cap 10 La morte di Saul
+@1 La sconfitta sul Ghilboa
+@13 Perché Saul morì
+Il racconto comincia con la morte di Saul in battaglia. Il Cronista spiega: Saul morì per la sua infedeltà, perché non osservò la parola di Dio e consultò chi evocava gli spiriti invece di cercare l'Eterno. Così il regno passò a Davide.
+
+#cap 11 Davide re a Gerusalemme
+@1 Davide unto re di tutto Israele
+@4 La conquista di Gerusalemme
+@10 I prodi di Davide
+Tutto Israele unge Davide re a Hebron. Davide conquista la fortezza di Sion. Seguono le imprese dei suoi guerrieri più valorosi.
+
+#cap 12 Il sostegno a Davide
+@1 Chi si unì a Davide a Tsiklag
+@23 L'esercito che proclama Davide re
+Uomini di tutte le tribù si uniscono a Davide già quando era perseguitato da Saul, e poi un grande esercito viene a Hebron per farlo re: tutto Israele è unito intorno a lui, con grande gioia.
+
+#cap 13 Il primo tentativo di portare l'arca
+@1 La decisione del popolo
+@9 La morte di Uzza
+Davide propone di portare l'arca a Gerusalemme. Durante il trasporto su un carro Uzza la tocca e muore; Davide ha paura e lascia l'arca in casa di Obed-Edom, che viene benedetto.
+
+#cap 14 Davide si stabilisce a Gerusalemme
+@1 La casa e la famiglia
+@8 Le vittorie sui Filistei
+Hiram re di Tiro costruisce una casa per Davide. Davide consulta Dio prima di ogni battaglia e sconfigge i Filistei.
+
+#cap 15 L'arca entra in Gerusalemme
+@1 Il trasporto fatto secondo la Legge
+@16 Musici e cantori
+@25 La gioia di Davide
+Questa volta l'arca viene portata dai Leviti sulle spalle, come prescritto. Davide organizza cantori e musicisti; l'arca entra in città fra canti, trombe e danze. Mical lo disprezza.
+
+#cap 16 Il canto di ringraziamento
+@1 L'arca nella tenda
+@7 Il salmo di Davide
+@37 Il servizio continuo davanti all'arca
+Davide affida ad Asaf un canto di lode, composto di parti di vari Salmi: «Celebrate l'Eterno, perch'egli è buono, perché la sua benignità dura in perpetuo». Organizza un servizio di lode continuo davanti all'arca.
+
+#cap 17 La promessa di Dio a Davide
+@1 Davide vuole costruire un tempio
+@3 La risposta di Dio tramite Nathan
+@16 La preghiera di Davide
+Come in 2 Samuele 7, Dio promette a Davide una dinastia: un suo figlio costruirà la casa di Dio, e Dio stabilirà il suo trono per sempre. Davide risponde con una preghiera umile e riconoscente.
+
+#cap 18 Le vittorie di Davide
+@1 I nemici sconfitti
+@14 Il governo di Davide
+Davide sconfigge Filistei, Moabiti, Arami ed Edomiti; dedica a Dio il bottino. Regna su tutto Israele con giustizia.
+
+#cap 19 La guerra con gli Ammoniti
+@1 L'offesa agli ambasciatori
+@6 La vittoria
+Il re degli Ammoniti umilia gli ambasciatori di Davide; Joab e Abishai sconfiggono Ammoniti e Arami.
+
+#cap 20 La conquista di Rabba e i giganti
+@1 La presa di Rabba
+@4 Vittorie sui giganti filistei
+Joab conquista Rabba, capitale degli Ammoniti. I guerrieri di Davide abbattono alcuni giganti filistei. Il Cronista non racconta l'episodio di Bath-Sheba: il suo interesse è il Davide del culto e del Tempio.
+
+#cap 21 Il censimento e l'aia di Ornan
+@1 Il censimento
+@7 Il castigo
+@18 L'altare sull'aia di Ornan
+Satana incita Davide a contare il popolo. Dio punisce con una pestilenza; Davide si pente e intercede. Compra l'aia di Ornan e vi costruisce un altare: Dio risponde col fuoco dal cielo. Quel luogo diventerà il sito del Tempio.
+
+#cap 22 Davide prepara il Tempio
+@1 I materiali
+@6 Le istruzioni a Salomone
+@17 L'invito ai capi
+Davide raccoglie in abbondanza pietre, ferro, rame e cedro. Spiega a Salomone che lui non può costruire il Tempio perché ha versato molto sangue, mentre Salomone sarà un uomo di pace. Lo incoraggia a essere forte e ad osservare la Legge.
+
+#cap 23 L'organizzazione dei Leviti
+@1 Il censimento dei Leviti
+@24 I compiti dei Leviti
+Davide, ormai vecchio, fa re Salomone e organizza i Leviti nelle loro famiglie, con i loro compiti nel servizio del futuro Tempio: custodia, canto, assistenza ai sacerdoti.
+
+#cap 24 Le classi dei sacerdoti
+@1 Ventiquattro turni
+@20 Gli altri Leviti
+I sacerdoti discendenti di Aaronne vengono divisi in ventiquattro turni di servizio. Al turno di Abija («Abia» nel Vangelo) apparterrà secoli dopo Zaccaria, padre di Giovanni Battista (Luca 1:5).
+
+#cap 25 I cantori
+@1 Asaf, Heman e Jeduthun
+@8 I ventiquattro turni dei cantori
+Si organizzano i cantori e i musicisti, che cantavano «gl'inni sacri accompagnandosi con cetre, con saltèri e con cembali»: la musica è parte del servizio a Dio.
+
+#cap 26 Portinai, tesorieri e funzionari
+@1 I portinai
+@20 I custodi dei tesori
+@29 Funzionari e giudici
+Si stabiliscono i portinai del Tempio, i responsabili dei tesori e i Leviti incaricati di amministrare la giustizia nel paese.
+
+#cap 27 L'organizzazione civile e militare
+@1 I dodici turni dell'esercito
+@16 I capi delle tribù
+@25 Gli amministratori del re
+Si descrivono i turni mensili dell'esercito, i capi delle tribù e gli amministratori dei beni del re.
+
+#cap 28 Il discorso di Davide all'assemblea
+@1 Dio ha scelto Salomone
+@9 «Se tu lo cerchi, egli si lascerà trovare»
+@11 Il progetto del Tempio
+Davide raduna i capi e annuncia che Dio ha scelto Salomone per costruire il Tempio. A Salomone dice: servi Dio «con cuore integro e con animo volenteroso; poiché l'Eterno scruta tutti i cuori». Gli consegna il progetto del Tempio, ricevuto per ispirazione divina.
+
+#cap 29 Le offerte e la preghiera di Davide
+@1 Le offerte generose
+@10 La preghiera di lode
+@21 Salomone re; la morte di Davide
+Davide e i capi offrono con gioia oro e argento per il Tempio. Davide prega: «A te, o Eterno, la grandezza, la potenza, la gloria»; tutto viene da Dio e «noi t'abbiam dato quello che dalla tua mano abbiam ricevuto». Salomone viene unto re; Davide muore dopo quarant'anni di regno.
