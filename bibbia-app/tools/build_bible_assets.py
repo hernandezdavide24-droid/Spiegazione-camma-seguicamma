@@ -98,6 +98,8 @@ EBIBLE_FIXES = [
     ('e questo e il numero', 'e questo è il numero'),
     ('e non e Dio delle valli', 'e non è Dio delle valli'),
     ('questa non e una parola senza valore', 'questa non è una parola senza valore'),
+    ('perché questo e il tutto dell’uomo', 'perché questo è il tutto dell’uomo'),
+    ('il mio capo e coperto di rugiada', 'il mio capo è coperto di rugiada'),
 ]
 
 # Rimandi alla numerazione originale italiana, es. "(21:6)" o "(H21-6)".

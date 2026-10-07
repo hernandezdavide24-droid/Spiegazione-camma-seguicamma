@@ -1,0 +1,86 @@
+#intro
+titolo: Ecclesiaste
+sintesi: Un sapiente, che si presenta come «l'Ecclesiaste» (il predicatore, figlio di Davide e re a Gerusalemme), cerca il senso della vita «sotto il sole»: prova la sapienza, il piacere, il lavoro, la ricchezza, e scopre che tutto è «vanità», cioè un soffio che passa. Eppure invita a godere con gratitudine dei doni semplici di Dio e conclude: «Temi Dio e osserva i suoi comandamenti».
+autore: Il libro si presenta come opera del «figliuolo di Davide, re di Gerusalemme», tradizionalmente Salomone. Molti studiosi pensano a un saggio posteriore che usa la figura di Salomone. Il nome ebraico è Qoelet.
+data: Se di Salomone, X secolo a.C.; molti studiosi lo datano al IV-III secolo a.C.
+destinatari: Chiunque si interroghi sul senso della vita, del lavoro, del dolore e della morte.
+contesto: È uno dei libri «sapienziali», ma diverso dai Proverbi: invece di dare regole sicure, osserva con onestà che la vita spesso non segue le regole. Il giusto a volte soffre e l'empio prospera; tutti muoiono allo stesso modo.
+scopo: Smontare le illusioni di chi cerca la felicità solo nelle cose terrene, e indicare un modo di vivere umile e grato, nel timore di Dio, accettando i limiti umani.
+temi: La vanità di tutto ciò che passa; il tempo («per tutto v'è il suo tempo»); i limiti della sapienza umana; la morte che accomuna tutti; la gioia come dono di Dio; il timore di Dio.
+struttura: 1-2 · Tutto è vanità: sapienza, piacere, lavoro.
+3-6 · Il tempo, le ingiustizie, la ricchezza.
+7-10 · Consigli di sapienza in un mondo imperfetto.
+11-12 · Godere la giovinezza, ricordarsi del Creatore; conclusione.
+cristo: L'Ecclesiaste mostra che «sotto il sole» non si trova un senso pieno. Il Nuovo Testamento annuncia che in Cristo Dio è entrato nel mondo e ha vinto la morte, dando al lavoro e alla vita un valore che non va perduto (1 Corinzi 15:58).
+chiave: Ec 1:2; Ec 3:1; Ec 3:11; Ec 4:9-10; Ec 12:1; Ec 12:13
+
+#cap 1 Vanità delle vanità
+@1 Tutto è vanità
+@12 La ricerca della sapienza
+«Vanità delle vanità... tutto è vanità»: la parola ebraica indica un soffio, un vapore. Le generazioni passano, il sole sorge e tramonta, i fiumi corrono al mare: «non v'è nulla di nuovo sotto il sole». L'Ecclesiaste cerca la sapienza, ma scopre che più sa, più soffre.
+
+#cap 2 Piacere, opere, ricchezze
+@1 Provare il piacere
+@12 Il saggio e lo stolto muoiono uguali
+@18 A chi lascio il mio lavoro?
+@24 Mangiare, bere e godere è dono di Dio
+Il re prova tutto: risate, vino, grandi opere, giardini, servi, ricchezze, musica. Ma alla fine è tutto «un correr dietro al vento». Il saggio muore come lo stolto, e chi eredita il frutto del lavoro forse non ne sarà degno. La conclusione: godere del frutto della propria fatica è un dono che viene da Dio.
+
+#cap 3 Per tutto c'è il suo tempo
+@1 Un tempo per ogni cosa
+@9 Dio ha messo nel cuore l'eternità
+@16 L'uomo e la bestia
+«Per tutto v'è il suo tempo»: per nascere e morire, piangere e ridere, tacere e parlare, amare e odiare. Dio ha fatto ogni cosa bella al suo tempo e ha messo nel cuore dell'uomo il pensiero dell'eternità, anche se l'uomo non riesce a capire tutta l'opera di Dio.
+
+#cap 4 Oppressione e solitudine
+@1 Le lacrime degli oppressi
+@4 Lavoro e invidia
+@9 Due valgono più di uno
+@13 La gloria che passa
+L'Ecclesiaste vede le lacrime degli oppressi senza consolatore. Molta fatica nasce dall'invidia. Ma «due valgon meglio d'un solo»: se uno cade, l'altro lo rialza; «una corda a tre capi non si rompe così presto».
+
+#cap 5 Davanti a Dio, poche parole
+@1 Nella casa di Dio
+@8 Chi ama il denaro
+@18 Il dono di godere
+Davanti a Dio meglio ascoltare che parlare troppo: lui è in cielo e tu sei sulla terra. Se fai un voto, mantienilo. Chi ama il denaro non ne è mai sazio. Il lavoratore dorme tranquillo; nudi siamo venuti e nudi ce ne andremo.
+
+#cap 6 Ricchezze che non si godono
+@1 Avere tutto e non godere
+@10 Chi sa che cosa è bene per l'uomo?
+È triste avere ricchezze e onori e non poterne godere. L'uomo non sa che cosa sia veramente bene per lui durante i pochi giorni della sua vita vana.
+
+#cap 7 Meglio il lutto della festa
+@1 Una buona reputazione
+@13 Considera l'opera di Dio
+@23 La sapienza è lontana
+Detti sorprendenti: meglio la casa del lutto che quella del banchetto, perché lì si riflette sulla fine. Nel giorno buono godi, nel giorno cattivo rifletti: Dio ha fatto l'uno e l'altro. Non c'è un giusto sulla terra che faccia il bene e non pecchi mai.
+
+#cap 8 Obbedire al re, accettare il mistero
+@1 Il saggio e il re
+@10 L'ingiustizia che resta impunita
+@16 L'uomo non può scoprire l'opera di Dio
+Il saggio sa quando e come agire. A volte i malvagi vengono onorati e i giusti trattati da empi: è vanità. Eppure andrà bene a chi teme Dio. Per quanto si sforzi, l'uomo non può comprendere tutta l'opera di Dio.
+
+#cap 9 Godi la vita che Dio ti dà
+@1 Una stessa sorte per tutti
+@7 Mangia il tuo pane con gioia
+@11 Il tempo e il caso
+@13 La sapienza del povero dimenticata
+Giusti ed empi muoiono allo stesso modo, ma «un cane vivo val meglio d'un leone morto». Quindi: mangia il tuo pane con gioia, godi la vita con la donna che ami, fai con impegno ciò che ti trovi a fare. La corsa non è sempre dei veloci. La sapienza di un povero salvò una città, ma nessuno se ne ricordò.
+
+#cap 10 Un po' di follia rovina tutto
+@1 Una mosca morta
+@8 Chi scava una fossa
+@16 Il paese e i suoi governanti
+Come una mosca morta guasta il profumo, così un po' di stoltezza rovina la sapienza. Detti sulla prudenza nel lavoro e nelle parole, e sul danno dei governanti irresponsabili.
+
+#cap 11 Getta il tuo pane sulle acque
+@1 Sii generoso
+@7 Rallegrati, o giovane
+«Getta il tuo pane sulle acque, perché dopo molto tempo tu lo ritroverai»: sii generoso e intraprendente anche senza sapere come andrà. Chi aspetta il vento ideale non semina mai. Il giovane goda la sua giovinezza, ricordando che Dio lo chiamerà a rendere conto.
+
+#cap 12 Ricordati del tuo Creatore
+@1 Prima che vengano i giorni cattivi
+@8 La conclusione
+Il libro si chiude con una splendida immagine della vecchiaia, descritta come una casa che si spegne: «ricordati del tuo Creatore nei giorni della tua giovinezza», prima che la polvere torni alla terra e lo spirito a Dio che l'ha dato. Conclusione: «Temi Dio e osserva i suoi comandamenti, perché questo è il tutto dell'uomo».

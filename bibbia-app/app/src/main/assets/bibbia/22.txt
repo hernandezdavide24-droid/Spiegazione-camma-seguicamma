@@ -60,7 +60,7 @@
 4	15	Tu sei una fontana di giardino, una sorgente d’acqua viva, un ruscello che scende giù dal Libano.
 4	16	Lèvati, Aquilone, e vieni, o Austro! Soffiate sul mio giardino, sì che se ne spandano gli aromi! Venga l’amico mio nel suo giardino, e ne mangi i frutti deliziosi!
 5	1	Son venuto nel mio giardino, o mia sorella, o sposa mia; ho còlto la mia mirra e i miei aromi; ho mangiato il mio favo di miele; ho bevuto il mio vino ed il mio latte. Amici, mangiate, bevete, inebriatevi d’amore!
-5	2	Io dormivo, ma il mio cuore vegliava. Sento la voce del mio amico, che picchia e dice: “Aprimi, sorella mia, amica mia, colomba mia, o mia perfetta! Poiché il mio capo e coperto di rugiada e le mie chiome son piene di gocce della notte”.
+5	2	Io dormivo, ma il mio cuore vegliava. Sento la voce del mio amico, che picchia e dice: “Aprimi, sorella mia, amica mia, colomba mia, o mia perfetta! Poiché il mio capo è coperto di rugiada e le mie chiome son piene di gocce della notte”.
 5	3	Io mi son tolta la gonna; come me la rimetterei? Mi son lavata i piedi; come l’insudicerei?
 5	4	L’amico mio ha passato la mano per il buco della porta, e le mie viscere si son commosse per lui.
 5	5	Mi son levata per aprire al mio amico, e le mie mani hanno stillato mirra le mie dita mirra liquida, sulla maniglia della serratura.
