@@ -52,7 +52,6 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -83,7 +82,6 @@ import java.util.Locale
 fun BlockerScreen(container: AppContainer, onBack: () -> Unit) {
     val repo = container.blocker
     val context = LocalContext.current
-    val scope = rememberCoroutineScope()
     val apps by repo.apps.collectAsStateWithLifecycle(emptyList())
     val schedules by repo.schedules.collectAsStateWithLifecycle(emptyList())
 
@@ -153,7 +151,7 @@ fun BlockerScreen(container: AppContainer, onBack: () -> Unit) {
                     app = app,
                     usedMillis = usage[app.packageName],
                     onClick = { editApp = app },
-                    onToggle = { enabled -> scope.launch { repo.saveApp(app.copy(enabled = enabled)) } },
+                    onToggle = { enabled -> container.appScope.launch { repo.saveApp(app.copy(enabled = enabled)) } },
                 )
             }
             Spacer(Modifier.height(8.dp))
@@ -174,7 +172,7 @@ fun BlockerScreen(container: AppContainer, onBack: () -> Unit) {
                 ScheduleRow(
                     schedule = s,
                     onClick = { editSchedule = s },
-                    onToggle = { enabled -> scope.launch { repo.saveSchedule(s.copy(enabled = enabled)) } },
+                    onToggle = { enabled -> container.appScope.launch { repo.saveSchedule(s.copy(enabled = enabled)) } },
                 )
             }
             Spacer(Modifier.height(8.dp))
@@ -211,11 +209,11 @@ fun BlockerScreen(container: AppContainer, onBack: () -> Unit) {
             isNew = apps.none { it.packageName == app.packageName },
             onDismiss = { editApp = null },
             onSave = {
-                scope.launch { repo.saveApp(it) }
+                container.appScope.launch { repo.saveApp(it) }
                 editApp = null
             },
             onDelete = {
-                scope.launch { repo.removeApp(app.packageName) }
+                container.appScope.launch { repo.removeApp(app.packageName) }
                 editApp = null
             },
         )
@@ -225,12 +223,12 @@ fun BlockerScreen(container: AppContainer, onBack: () -> Unit) {
             schedule = s,
             onDismiss = { editSchedule = null },
             onSave = {
-                scope.launch { repo.saveSchedule(it) }
+                container.appScope.launch { repo.saveSchedule(it) }
                 editSchedule = null
             },
             onDelete = if (s.id != 0L) {
                 {
-                    scope.launch { repo.removeSchedule(s) }
+                    container.appScope.launch { repo.removeSchedule(s) }
                     editSchedule = null
                 }
             } else null,

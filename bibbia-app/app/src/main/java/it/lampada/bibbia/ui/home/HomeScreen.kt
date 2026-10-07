@@ -36,7 +36,6 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -72,7 +71,6 @@ fun HomeScreen(
     onOpenCalendar: () -> Unit,
 ) {
     val context = LocalContext.current
-    val scope = rememberCoroutineScope()
     val today = remember { LocalDate.now() }
     val verse by produceState<DailyVerse?>(null) { value = container.dailyVerses.forDate(today) }
     val last by container.settings.lastPosition.collectAsStateWithLifecycle(null)
@@ -145,7 +143,7 @@ fun HomeScreen(
                                 val s = v.passage.start
                                 val now = System.currentTimeMillis()
                                 val refs = (s.verse..v.passage.end.verse).map { BookmarkEntity(s.book, s.chapter, it, now) }
-                                scope.launch { container.study.insertBookmarks(refs) }
+                                container.appScope.launch { container.study.insertBookmarks(refs) }
                                 android.widget.Toast.makeText(context, "Salvato nei preferiti", android.widget.Toast.LENGTH_SHORT).show()
                             }) { Icon(Icons.Outlined.BookmarkBorder, "Salva") }
                             IconButton(onClick = {

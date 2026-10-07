@@ -212,17 +212,17 @@ private fun ReaderContent(
                     onColor = { color ->
                         val now = System.currentTimeMillis()
                         val items = selection.map { HighlightEntity(curBook, curChapter, it, color, now) }
-                        scope.launch { container.study.upsertHighlights(items) }
+                        container.appScope.launch { container.study.upsertHighlights(items) }
                         selection = emptySet()
                     },
                     onClearColor = {
                         val verses = selection.toList()
-                        scope.launch { container.study.deleteHighlights(curBook, curChapter, verses) }
+                        container.appScope.launch { container.study.deleteHighlights(curBook, curChapter, verses) }
                         selection = emptySet()
                     },
                     onBookmark = { remove ->
                         val verses = selection.toList()
-                        scope.launch {
+                        container.appScope.launch {
                             if (remove) {
                                 container.study.deleteBookmarks(curBook, curChapter, verses)
                             } else {
@@ -375,9 +375,8 @@ private fun ChapterPage(
                 container.settings.saveLastPosition(currentRef)
             }
         }
-        val scope = rememberCoroutineScope()
         LifecycleEventEffect(Lifecycle.Event.ON_STOP) {
-            scope.launch { container.settings.saveLastPosition(currentRef) }
+            container.appScope.launch { container.settings.saveLastPosition(currentRef) }
         }
     }
 
@@ -640,7 +639,6 @@ private fun BarAction(icon: androidx.compose.ui.graphics.vector.ImageVector, lab
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun TextSettingsSheet(container: AppContainer, settings: Settings, onDismiss: () -> Unit) {
-    val scope = rememberCoroutineScope()
     var scale by remember { mutableFloatStateOf(settings.fontScale) }
     ModalBottomSheet(onDismissRequest = onDismiss) {
         Column(Modifier.padding(horizontal = 24.dp).padding(bottom = 32.dp)) {
@@ -657,7 +655,7 @@ private fun TextSettingsSheet(container: AppContainer, settings: Settings, onDis
                 Slider(
                     value = scale,
                     onValueChange = { scale = it },
-                    onValueChangeFinished = { scope.launch { container.settings.setFontScale(scale) } },
+                    onValueChangeFinished = { container.appScope.launch { container.settings.setFontScale(scale) } },
                     valueRange = 0.8f..1.8f,
                     steps = 9,
                     modifier = Modifier.weight(1f).padding(horizontal = 12.dp),
@@ -668,7 +666,7 @@ private fun TextSettingsSheet(container: AppContainer, settings: Settings, onDis
                 Text("Carattere con grazie (stile libro)", modifier = Modifier.weight(1f))
                 Switch(
                     checked = settings.serifFont,
-                    onCheckedChange = { scope.launch { container.settings.setSerif(it) } },
+                    onCheckedChange = { container.appScope.launch { container.settings.setSerif(it) } },
                 )
             }
             Spacer(Modifier.width(1.dp))
@@ -678,7 +676,6 @@ private fun TextSettingsSheet(container: AppContainer, settings: Settings, onDis
 
 @Composable
 private fun NoteDialog(container: AppContainer, ref: VerseRef, onDismiss: () -> Unit) {
-    val scope = rememberCoroutineScope()
     val existing by produceState<NoteEntity?>(null, ref) {
         value = container.study.notesIn(ref.book, ref.chapter).first().firstOrNull { it.verse == ref.verse }
     }
@@ -697,7 +694,7 @@ private fun NoteDialog(container: AppContainer, ref: VerseRef, onDismiss: () -> 
         },
         confirmButton = {
             TextButton(onClick = {
-                scope.launch {
+                container.appScope.launch {
                     if (text.isBlank()) {
                         existing?.let { container.study.deleteNote(it) }
                     } else {
@@ -712,7 +709,7 @@ private fun NoteDialog(container: AppContainer, ref: VerseRef, onDismiss: () -> 
         dismissButton = {
             if (existing != null) {
                 TextButton(onClick = {
-                    scope.launch { existing?.let { container.study.deleteNote(it) } }
+                    container.appScope.launch { existing?.let { container.study.deleteNote(it) } }
                     onDismiss()
                 }) { Text("Elimina") }
             } else {

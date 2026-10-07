@@ -8,6 +8,9 @@ import it.lampada.bibbia.data.bible.VerseRef
 import it.lampada.bibbia.data.daily.DailyVerseRepository
 import it.lampada.bibbia.data.db.AppDatabase
 import it.lampada.bibbia.data.prefs.SettingsRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -37,4 +40,10 @@ class AppContainer(context: Context) {
     val dailyVerses = DailyVerseRepository(app.assets, bible)
     val blocker = BlockerRepository(app, database.blockerDao())
     val navigator = ReaderNavigator()
+
+    /**
+     * Per i salvataggi (preferiti, note, impostazioni...): non legato a una schermata, così una
+     * scrittura non viene interrotta se l'utente cambia subito pagina.
+     */
+    val appScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 }

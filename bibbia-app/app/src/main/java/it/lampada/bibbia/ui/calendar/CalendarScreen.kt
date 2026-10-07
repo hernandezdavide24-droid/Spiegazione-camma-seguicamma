@@ -35,7 +35,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -83,7 +82,6 @@ fun CalendarScreen(
     var selectedText by rememberSaveable { mutableStateOf(today.toString()) }
     val month = YearMonth.parse(monthText)
     val selected = LocalDate.parse(selectedText)
-    val scope = rememberCoroutineScope()
 
     // Tutte le feste che toccano i giorni del mese mostrato (anche periodi iniziati prima).
     val monthFeasts = remember(month, settings.traditions) {
@@ -112,7 +110,7 @@ fun CalendarScreen(
                         selected = t in settings.traditions,
                         onClick = {
                             val next = if (t in settings.traditions) settings.traditions - t else settings.traditions + t
-                            scope.launch { container.settings.setTraditions(next) }
+                            container.appScope.launch { container.settings.setTraditions(next) }
                         },
                         label = { Text(t.label) },
                     )

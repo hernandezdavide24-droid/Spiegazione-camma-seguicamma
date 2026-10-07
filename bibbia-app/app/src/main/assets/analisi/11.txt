@@ -1,0 +1,145 @@
+#intro
+titolo: 1 Re
+sintesi: Dalla morte di Davide al regno di Achab. Il libro racconta la gloria di Salomone, il re saggio che costruisce il Tempio di Gerusalemme, e il suo declino; poi la divisione del regno in due (Israele al nord, Giuda al sud) e il lungo scontro fra il profeta Elia e il culto di Baal promosso dal re Achab e dalla regina Izebel.
+autore: Anonimo. 1 e 2 Re formavano un'unica opera, basata su annali dei re citati nel testo stesso; la tradizione ebraica la attribuisce al profeta Geremia. Fu completata durante l'esilio babilonese.
+data: Gli eventi vanno da circa il 970 a.C. (morte di Davide) all'853 a.C. circa (morte di Achab).
+destinatari: Il popolo d'Israele, soprattutto in esilio, per capire come si era arrivati alla rovina.
+contesto: Sotto Salomone Israele vive il suo periodo di massimo splendore, con commerci e alleanze internazionali. Dopo di lui il regno si spacca: dieci tribù al nord (Israele, capitale poi Samaria) e Giuda al sud (capitale Gerusalemme). Nel nord i re promuovono culti idolatri.
+scopo: Valutare ogni re in base alla sua fedeltà a Dio e mostrare che l'idolatria porta alla rovina, mentre Dio continua a parlare al suo popolo attraverso i profeti.
+temi: La sapienza come dono di Dio; il Tempio come luogo della presenza di Dio; il cuore diviso; la divisione del regno; i profeti come voce di Dio davanti ai re; l'unico vero Dio contro Baal.
+struttura: 1-11 · Il regno di Salomone: sapienza, Tempio, gloria e declino.
+12-16 · Il regno diviso: Geroboamo, Roboamo e i loro successori.
+17-22 · Elia e il re Achab.
+cristo: Gesù dichiara di essere «più che Salomone» (Matteo 12:42) e paragona il proprio corpo al Tempio (Giovanni 2:19-21). Elia compare accanto a Gesù nella Trasfigurazione, e Gesù cita la vedova di Sarepta come esempio della grazia di Dio verso gli stranieri (Luca 4:25-26).
+chiave: 1Re 3:9; 1Re 8:27; 1Re 18:21; 1Re 18:39; 1Re 19:11-12
+
+#cap 1 Salomone diventa re
+@1 Davide vecchio e Adonija
+@11 Nathan e Bath-Sceba
+@28 Salomone unto re
+Davide è vecchio e il figlio Adonija si proclama re. Il profeta Nathan e Bath-Sceba ricordano a Davide la promessa fatta: sarà Salomone a succedergli. Davide fa ungere Salomone re a Ghihon e il popolo esulta; i sostenitori di Adonija si disperdono.
+
+#cap 2 Il testamento di Davide e il regno consolidato
+@1 Le ultime parole di Davide
+@13 Adonija, Abiathar e Joab
+@36 Scimei
+Davide esorta Salomone a seguire la legge di Dio e muore. Salomone consolida il regno eliminando chi lo minacciava: Adonija, Joab e più tardi Scimei; il sacerdote Abiathar viene allontanato.
+
+#cap 3 Salomone chiede la sapienza
+@1 Il sogno a Gabaon
+@16 Il giudizio delle due madri
+A Gabaon Dio appare in sogno a Salomone e gli dice di chiedere ciò che vuole. Salomone non chiede ricchezze né lunga vita, ma «un cuore intelligente» per governare con giustizia. Dio gliela concede, insieme a ciò che non aveva chiesto. Celebre il giudizio fra due donne che si contendono un bambino.
+
+#cap 4 L'organizzazione del regno
+@1 I funzionari di Salomone
+@20 Pace e prosperità
+@29 La sapienza di Salomone
+Si elencano i ministri e i governatori del regno. Il popolo vive in pace, ognuno sotto la sua vite e il suo fico. La sapienza di Salomone è famosa: pronuncia tremila proverbi e compone canti.
+
+#cap 5 I preparativi per il Tempio
+@1 L'accordo con Hiram di Tiro
+@13 La manodopera
+Salomone si accorda con Hiram, re di Tiro, per avere il legname di cedro del Libano e artigiani esperti. Migliaia di lavoratori preparano pietre e legname.
+
+#cap 6 La costruzione del Tempio
+@1 Le misure del Tempio
+@11 La promessa di Dio
+@14 L'interno e il luogo santissimo
+Nel quattrocentottantesimo anno dopo l'uscita dall'Egitto, Salomone inizia a costruire il Tempio. Dio ricorda che la sua presenza dipende dalla fedeltà del popolo, non dalla bellezza dell'edificio. L'interno è rivestito d'oro e il luogo santissimo accoglierà l'arca, sotto due grandi cherubini.
+
+#cap 7 Il palazzo e gli arredi del Tempio
+@1 Il palazzo reale
+@13 Le colonne e il «mare» di rame
+@48 Gli arredi d'oro
+Salomone costruisce in tredici anni il suo palazzo. L'artigiano Hiram di Tiro realizza le grandi colonne di rame, un'enorme vasca detta «il mare» e gli altri arredi del Tempio.
+
+#cap 8 La dedicazione del Tempio
+@1 L'arca entra nel Tempio
+@12 Il discorso del re
+@22 La preghiera di Salomone
+@54 La benedizione e la festa
+L'arca viene portata nel luogo santissimo e la nuvola della gloria di Dio riempie il Tempio. Salomone prega: neppure «i cieli de' cieli» possono contenere Dio, ma chiede che ascolti le preghiere rivolte verso quel luogo, anche quelle degli stranieri e del popolo in esilio. Segue una grande festa.
+
+#cap 9 La risposta di Dio e le opere di Salomone
+@1 Dio appare di nuovo a Salomone
+@10 Le città e il lavoro forzato
+@26 La flotta
+Dio promette di ascoltare la preghiera, ma avverte: se il re si volgerà ad altri dèi, il Tempio diventerà un cumulo di rovine. Si descrivono le costruzioni di Salomone, il lavoro forzato e la flotta per il commercio.
+
+#cap 10 La regina di Sceba
+@1 La visita della regina
+@14 Le ricchezze di Salomone
+La regina di Sceba viene da lontano per mettere alla prova la sapienza di Salomone e resta senza fiato: benedice il Dio d'Israele. Si descrivono le immense ricchezze del re: oro, avorio, cavalli e carri.
+
+#cap 11 Il cuore diviso di Salomone
+@1 Le mogli straniere e gli idoli
+@14 Gli avversari di Salomone
+@26 Geroboamo e la profezia di Ahija
+Salomone ha centinaia di mogli straniere che, nella sua vecchiaia, gli fanno costruire santuari ai loro dèi: il suo cuore «non appartenne tutto quanto all'Eterno». Dio annuncia che il regno sarà diviso. Il profeta Ahija strappa il suo mantello in dodici pezzi e ne dà dieci a Geroboamo. Salomone muore dopo quarant'anni di regno.
+
+#cap 12 Il regno si divide
+@1 La scelta stolta di Roboamo
+@16 Le dieci tribù si separano
+@25 I vitelli d'oro di Geroboamo
+Il figlio di Salomone, Roboamo, rifiuta di alleggerire il peso delle tasse e segue il consiglio dei giovani: «mio padre vi ha castigati con la frusta, e io vi castigherò coi flagelli a punte». Le dieci tribù del nord si separano e fanno re Geroboamo, che per non far andare il popolo a Gerusalemme costruisce due vitelli d'oro a Bethel e a Dan.
+
+#cap 13 L'uomo di Dio venuto da Giuda
+@1 La profezia contro l'altare di Bethel
+@11 La disobbedienza del profeta
+Un uomo di Dio annuncia la distruzione dell'altare di Bethel e il re Geroboamo, che stende la mano per farlo arrestare, la vede inaridire. Ma lo stesso uomo di Dio, ingannato da un vecchio profeta, disobbedisce al comando ricevuto e muore: la parola di Dio va presa sul serio.
+
+#cap 14 Il giudizio su Geroboamo; Roboamo
+@1 La moglie di Geroboamo dal profeta Ahija
+@21 Il regno di Roboamo in Giuda
+Il figlio di Geroboamo si ammala; la madre consulta travestita il vecchio profeta cieco Ahija, che annuncia la fine della dinastia. In Giuda, sotto Roboamo, si diffonde l'idolatria e il faraone Scishak saccheggia il Tempio.
+
+#cap 15 Abijam, Asa e Nadab
+@1 Abijam re di Giuda
+@9 Asa, re fedele
+@25 Nadab e Baasa in Israele
+Abijam segue i peccati del padre. Suo figlio Asa invece fa ciò che è retto agli occhi di Dio e toglie gli idoli, persino quello della nonna. In Israele Baasa uccide Nadab e ne prende il posto.
+
+#cap 16 Re d'Israele fino ad Achab
+@1 La fine di Baasa
+@8 Ela, Zimri, Omri
+@29 Achab e Izebel
+In Israele i re si succedono fra congiure e omicidi. Omri fonda Samaria come capitale. Suo figlio Achab sposa Izebel, figlia del re di Sidone, e introduce il culto di Baal: fa peggio di tutti quelli che lo avevano preceduto.
+
+#cap 17 Elia e la vedova di Sarepta
+@1 La siccità annunciata
+@2 Al torrente Kerith
+@8 La farina e l'olio che non finiscono
+@17 Il figlio della vedova risuscitato
+Il profeta Elia annuncia ad Achab che non pioverà se non per sua parola: è una sfida a Baal, dio della pioggia. Dio nutre Elia per mezzo dei corvi e poi presso una vedova straniera a Sarepta, la cui farina e il cui olio non si esauriscono. Elia riporta in vita il figlio di lei.
+
+#cap 18 Elia sul monte Carmel
+@1 Elia incontra Abdia e Achab
+@20 «Fino a quando zoppicherete?»
+@30 Il fuoco dal cielo
+@41 La pioggia
+Sul monte Carmel Elia sfida i profeti di Baal: ognuno prepari un sacrificio e il vero Dio risponda col fuoco. I profeti di Baal invocano invano per ore; Elia prega e il fuoco consuma tutto. Il popolo grida: «L'Eterno è Dio!». Poi Elia prega e arriva una grande pioggia.
+
+#cap 19 Elia all'Horeb
+@1 La fuga e lo sconforto
+@9 Il suono dolce e sommesso
+@19 La chiamata di Eliseo
+Minacciato da Izebel, Elia fugge nel deserto e chiede di morire. Un angelo lo nutre e lui cammina fino al monte Horeb. Lì Dio non si manifesta nel vento, nel terremoto o nel fuoco, ma in «un suono dolce e sommesso». Dio lo rimanda al suo compito e gli fa chiamare Eliseo come successore.
+
+#cap 20 Le guerre con Ben-Hadad
+@1 L'assedio di Samaria
+@22 La vittoria ad Afek
+@35 Il profeta rimprovera Achab
+Il re arameo Ben-Hadad assedia Samaria; Dio dà la vittoria ad Achab per mostrare chi è il vero Signore. Ma Achab risparmia Ben-Hadad contro il comando di Dio e un profeta gli annuncia il castigo.
+
+#cap 21 La vigna di Naboth
+@1 Naboth rifiuta di vendere
+@8 Il complotto di Izebel
+@17 Elia annuncia il giudizio
+Achab vuole la vigna di Naboth, che rifiuta di cedere l'eredità dei padri. Izebel organizza un falso processo e fa lapidare Naboth. Elia affronta Achab e annuncia il giudizio sulla sua casa; Achab si umilia e Dio rinvia il castigo.
+
+#cap 22 Micaiah e la morte di Achab
+@1 Achab e Giosafat contro Ramoth di Galaad
+@13 Il profeta Micaiah
+@29 La morte di Achab
+@41 Giosafat e Achazia
+Achab e Giosafat, re di Giuda, vogliono attaccare Ramoth di Galaad. Quattrocento profeti di corte promettono la vittoria, ma il profeta Micaiah annuncia la sconfitta e viene imprigionato. In battaglia Achab, travestito, viene colpito da una freccia tirata a caso e muore, come era stato predetto.

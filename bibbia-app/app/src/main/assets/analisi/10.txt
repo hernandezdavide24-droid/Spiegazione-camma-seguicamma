@@ -1,0 +1,150 @@
+#intro
+titolo: 2 Samuele
+sintesi: Il regno di Davide: dal lutto per Saul alla conquista di Gerusalemme, alla promessa di Dio di una dinastia eterna. Poi la caduta: l'adulterio con Bath-Sheba e l'omicidio di Uria, il pentimento, e le tragedie familiari che ne seguono, fino alla ribellione del figlio Absalom.
+autore: Anonimo; in origine formava un solo libro con 1 Samuele. Si basa probabilmente su cronache di corte e sui ricordi dei profeti Nathan e Gad.
+data: Gli eventi coprono i circa quarant'anni del regno di Davide (circa 1010-970 a.C.).
+destinatari: Il popolo d'Israele, per conoscere il re ideale e la promessa fatta alla sua casa.
+contesto: Dopo la morte di Saul, Davide è prima re della sola tribù di Giuda a Hebron, poi di tutto Israele. Sceglie Gerusalemme, città neutrale fra le tribù, come capitale. Israele diventa per la prima volta un regno forte e unito.
+scopo: Presentare Davide come il re secondo il cuore di Dio, non perché perfetto ma perché, quando pecca, riconosce la sua colpa e torna a Dio; e mostrare la promessa di un discendente il cui regno durerà per sempre.
+temi: La promessa a Davide (il patto davidico); Gerusalemme e l'arca; il peccato anche dei grandi; il pentimento e il perdono; le conseguenze del peccato nella famiglia; la misericordia di Dio.
+struttura: 1-5 · Davide diventa re di Giuda e poi di tutto Israele.
+6-10 · L'arca a Gerusalemme, la promessa di Dio, le vittorie.
+11-12 · Il peccato con Bath-Sheba e il rimprovero di Nathan.
+13-20 · Crisi familiari: Amnon, Absalom e le ribellioni.
+21-24 · Appendici: canti di Davide, i suoi prodi, il censimento.
+cristo: La promessa di 7:12-16, un discendente di Davide con un trono «stabile in perpetuo», è il fondamento dell'attesa del Messia. Il Nuovo Testamento la vede compiuta in Gesù, «figliuol di Davide» (Luca 1:32-33).
+chiave: 2Sam 7:12-13; 2Sam 7:16; 2Sam 12:13; 2Sam 22:2-3; 2Sam 24:24
+
+#cap 1 Il lamento di Davide per Saul e Gionathan
+@1 La notizia della morte di Saul
+@17 Il canto dell'arco
+Un Amalekita porta a Davide la corona di Saul, vantandosi di averlo ucciso, sperando in una ricompensa: Davide lo fa giustiziare per aver colpito l'unto dell'Eterno. Poi compone un lamento struggente per Saul e Gionathan: «Come mai son caduti quei prodi?».
+
+#cap 2 Davide re a Hebron
+@1 Re di Giuda
+@8 Jsh-Bosheth re d'Israele
+@12 La guerra fra le due case
+Davide viene unto re di Giuda a Hebron. Abner, capo dell'esercito di Saul, fa re su Israele Jsh-Bosheth, figlio di Saul. Scoppia una lunga guerra civile; Abner uccide Asael, fratello di Joab, per difendersi.
+
+#cap 3 Abner passa con Davide e viene ucciso
+@1 La casa di Davide si rafforza
+@6 Abner rompe con Jsh-Bosheth
+@22 Joab uccide Abner
+Abner litiga con Jsh-Bosheth e decide di portare tutto Israele a Davide. Ma Joab, per vendicare il fratello, lo uccide a tradimento. Davide prende le distanze dall'omicidio e piange pubblicamente Abner.
+
+#cap 4 L'assassinio di Jsh-Bosheth
+@1 I due capitani traditori
+Due capitani uccidono Jsh-Bosheth nel sonno e portano la sua testa a Davide, credendo di fargli piacere. Davide li condanna: non vuole un regno costruito sull'assassinio. Si accenna anche a Mefibosheth, figlio di Gionathan, rimasto zoppo da piccolo.
+
+#cap 5 Davide re di tutto Israele; Gerusalemme
+@1 L'unzione a Hebron
+@6 La conquista di Gerusalemme
+@17 Le vittorie sui Filistei
+Tutte le tribù riconoscono Davide come re. Davide conquista la fortezza di Sion, abitata dai Gebusei, e ne fa la sua città, Gerusalemme. Consulta Dio e sconfigge due volte i Filistei.
+
+#cap 6 L'arca portata a Gerusalemme
+@1 La morte di Uzza
+@12 Davide danza davanti all'arca
+@20 Il disprezzo di Mical
+Durante il trasporto dell'arca su un carro, Uzza la tocca per sostenerla e muore: l'arca va trattata come Dio ha prescritto. Tre mesi dopo Davide la porta a Gerusalemme con grande festa, danzando con tutte le forze davanti a Dio. Mical, figlia di Saul, lo disprezza per questo.
+
+#cap 7 La promessa di Dio a Davide
+@1 Davide vuole costruire un tempio
+@4 Dio costruirà una casa a Davide
+@18 La preghiera di Davide
+Davide vorrebbe costruire un tempio per l'arca, ma Dio, tramite il profeta Nathan, ribalta la prospettiva: sarà Dio a costruire una «casa», cioè una dinastia, a Davide. Un suo discendente costruirà il tempio, e il suo trono sarà «stabile in perpetuo». Davide risponde con una preghiera piena di stupore e gratitudine.
+
+#cap 8 Le vittorie di Davide
+@1 Un regno che si estende
+@15 Il governo di Davide
+Davide sconfigge Filistei, Moabiti, Arami ed Edomiti: il regno si estende. Davide governa con giustizia ed equità su tutto il popolo; si elencano i suoi funzionari.
+
+#cap 9 Davide e Mefibosheth
+@1 La bontà verso la casa di Saul
+Per amore di Gionathan, Davide cerca un superstite della famiglia di Saul e trova Mefibosheth, figlio di Gionathan, zoppo. Gli restituisce le terre del nonno e lo invita a mangiare sempre alla sua tavola, come uno dei suoi figli.
+
+#cap 10 La guerra contro gli Ammoniti
+@1 L'offesa agli ambasciatori
+@6 Gli Arami sconfitti
+Il nuovo re degli Ammoniti umilia gli ambasciatori di Davide venuti a fare le condoglianze. Ne nasce una guerra; Joab e Abishai sconfiggono Ammoniti e Arami.
+
+#cap 11 Davide e Bath-Sheba
+@1 L'adulterio
+@6 Il tentativo di nascondere la colpa
+@14 La morte di Uria
+Mentre l'esercito è in guerra, Davide resta a Gerusalemme. Dalla terrazza vede Bath-Sheba, moglie del soldato Uria, e la prende con sé; lei rimane incinta. Davide cerca di coprire la cosa e, non riuscendoci, fa morire Uria in battaglia. Il capitolo si chiude: «quello che Davide avea fatto dispiacque all'Eterno».
+
+#cap 12 Nathan: «Tu sei quell'uomo!»
+@1 La parabola della pecorella
+@13 Il pentimento e il perdono
+@15 La morte del bambino; Salomone
+@26 La conquista di Rabba
+Il profeta Nathan racconta a Davide la storia di un ricco che ruba l'unica pecorella di un povero. Davide si indigna e Nathan risponde: «Tu sei quell'uomo!». Davide confessa: «Ho peccato contro l'Eterno», e Dio lo perdona, ma il bambino nato muore. Più tardi nasce Salomone, amato da Dio.
+
+#cap 13 Amnon e Tamar; la vendetta di Absalom
+@1 La violenza di Amnon
+@20 Absalom uccide Amnon
+Amnon, figlio di Davide, violenta la sorellastra Tamar e poi la caccia via. Davide si adira ma non interviene. Due anni dopo Absalom, fratello di Tamar, fa uccidere Amnon e fugge a Gheshur.
+
+#cap 14 Il ritorno di Absalom
+@1 La donna di Tekoa
+@21 Absalom a Gerusalemme
+Joab, con l'aiuto di una donna saggia di Tekoa che racconta una storia inventata, convince Davide a far tornare Absalom. Dopo due anni il re lo riceve e lo bacia, ma il rapporto resta incrinato.
+
+#cap 15 La ribellione di Absalom
+@1 Absalom ruba il cuore del popolo
+@13 Davide fugge da Gerusalemme
+@30 Sul monte degli Ulivi
+Absalom conquista con astuzia il favore del popolo e si fa proclamare re a Hebron. Davide fugge da Gerusalemme salendo piangente il monte degli Ulivi. Rimanda in città l'arca e affida a Hushai il compito di contrastare i consigli del saggio Ahitofel, passato con Absalom.
+
+#cap 16 Tsiba, Shimei e Ahitofel
+@1 Tsiba e le calunnie
+@5 Shimei maledice Davide
+@15 Il consiglio di Ahitofel
+Tsiba, servo di Mefibosheth, inganna Davide. Shimei, della famiglia di Saul, maledice il re e gli tira pietre: Davide impedisce che lo uccidano, dicendo che forse è Dio a permetterlo. A Gerusalemme Ahitofel consiglia ad Absalom gesti che rendono definitiva la rottura con il padre.
+
+#cap 17 Hushai sventa il piano di Ahitofel
+@1 I due consigli
+@15 Davide avvertito
+@24 Davide a Mahanaim
+Ahitofel propone di inseguire subito Davide, ma Hushai convince Absalom ad aspettare: Dio aveva stabilito di sventare il buon consiglio di Ahitofel. Davide, avvertito, attraversa il Giordano e trova aiuto a Mahanaim.
+
+#cap 18 La morte di Absalom
+@1 La battaglia nella foresta
+@9 Absalom impigliato nella quercia
+@19 La notizia a Davide
+Davide chiede ai suoi capitani di trattare con riguardo il giovane Absalom. Durante la battaglia Absalom resta impigliato per i capelli ai rami di una quercia e Joab lo uccide. Alla notizia Davide piange: «Oh foss'io pur morto in vece tua, o Absalom figliuolo mio, figliuolo mio!».
+
+#cap 19 Il ritorno del re
+@1 Joab rimprovera Davide
+@9 Il ritorno a Gerusalemme
+@16 Shimei, Mefibosheth, Barzillai
+@41 Liti fra Giuda e Israele
+Joab scuote Davide dal suo lutto per non perdere il sostegno dell'esercito. Il re torna a Gerusalemme: perdona Shimei, ascolta Mefibosheth e ringrazia l'anziano Barzillai. Nascono però tensioni fra Giuda e le altre tribù.
+
+#cap 20 La rivolta di Sheba
+@1 Sheba incita alla ribellione
+@14 La donna saggia di Abel
+Sheba guida una nuova rivolta delle tribù del nord. Joab uccide il rivale Amasa e assedia la città di Abel; una donna saggia salva la città consegnando la testa di Sheba.
+
+#cap 21 Carestia e guerre
+@1 I Gabaoniti e Ritspa
+@15 Le battaglie con i giganti
+Una carestia viene collegata all'ingiustizia di Saul verso i Gabaoniti. Ritspa veglia con dolore i corpi dei figli uccisi, e Davide dà degna sepoltura a Saul e Gionathan. Seguono le imprese dei prodi di Davide contro i giganti filistei.
+
+#cap 22 Il canto di liberazione di Davide
+@1 «L'Eterno è la mia ròcca»
+@21 La fedeltà di Dio
+@32 Dio dà la vittoria
+Davide loda Dio che lo ha liberato da tutti i nemici: «L'Eterno è la mia ròcca, la mia fortezza, il mio liberatore». È lo stesso testo del Salmo 18.
+
+#cap 23 Le ultime parole di Davide e i suoi prodi
+@1 Il patto eterno
+@8 I prodi di Davide
+Le ultime parole di Davide celebrano il re giusto, come la luce del mattino, e il patto eterno che Dio ha stabilito con la sua casa. Seguono le gesta dei suoi guerrieri più valorosi, fra cui tre che rischiarono la vita per portargli dell'acqua da Bethlehem.
+
+#cap 24 Il censimento e l'aia di Arauna
+@1 Il censimento
+@10 Il castigo
+@18 L'altare sull'aia di Arauna
+Davide, per orgoglio, ordina di contare i combattenti. Si pente, e sceglie di cadere nelle mani di Dio, perché «le sue compassioni sono immense». La peste si ferma presso l'aia di Arauna, che Davide compra per costruirvi un altare: «non offrirò all'Eterno, al mio Dio, olocausti che non mi costino nulla». Lì sorgerà il Tempio.

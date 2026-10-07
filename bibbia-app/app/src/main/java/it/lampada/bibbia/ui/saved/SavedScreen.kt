@@ -36,7 +36,6 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -67,7 +66,6 @@ private val NOTE_DATE = DateTimeFormatter.ofPattern("d MMM yyyy", Locale.ITALIAN
 fun SavedScreen(container: AppContainer, darkTheme: Boolean, onOpenVerse: (VerseRef) -> Unit) {
     var tab by rememberSaveable { mutableIntStateOf(0) }
     var colorFilter by rememberSaveable { mutableStateOf<HighlightColor?>(null) }
-    val scope = rememberCoroutineScope()
     val bookmarks by remember { container.study.allBookmarks() }.collectAsStateWithLifecycle(emptyList())
     val highlights by remember { container.study.allHighlights() }.collectAsStateWithLifecycle(emptyList())
     val notes by remember { container.study.allNotes() }.collectAsStateWithLifecycle(emptyList())
@@ -86,7 +84,7 @@ fun SavedScreen(container: AppContainer, darkTheme: Boolean, onOpenVerse: (Verse
                     LazyColumn {
                         items(bookmarks, key = { "${it.book}.${it.chapter}.${it.verse}" }) { b ->
                             VerseRow(container, b.ref, color = null, onOpen = { onOpenVerse(b.ref) }) {
-                                scope.launch { container.study.deleteBookmarks(b.book, b.chapter, listOf(b.verse)) }
+                                container.appScope.launch { container.study.deleteBookmarks(b.book, b.chapter, listOf(b.verse)) }
                             }
                         }
                     }
@@ -119,7 +117,7 @@ fun SavedScreen(container: AppContainer, darkTheme: Boolean, onOpenVerse: (Verse
                                     color = highlightColor(h.color.argb, darkTheme),
                                     onOpen = { onOpenVerse(h.ref) },
                                 ) {
-                                    scope.launch { container.study.deleteHighlights(h.book, h.chapter, listOf(h.verse)) }
+                                    container.appScope.launch { container.study.deleteHighlights(h.book, h.chapter, listOf(h.verse)) }
                                 }
                             }
                         }
@@ -148,7 +146,7 @@ fun SavedScreen(container: AppContainer, darkTheme: Boolean, onOpenVerse: (Verse
                                         style = MaterialTheme.typography.bodySmall,
                                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                                     )
-                                    IconButton(onClick = { scope.launch { container.study.deleteNote(n) } }) {
+                                    IconButton(onClick = { container.appScope.launch { container.study.deleteNote(n) } }) {
                                         Icon(Icons.Outlined.Delete, "Elimina nota")
                                     }
                                 }

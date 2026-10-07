@@ -104,7 +104,7 @@ fun SettingsScreen(container: AppContainer, settings: Settings, onBack: () -> Un
     }
 
     fun applyDaily(enabled: Boolean, hour: Int, minute: Int) {
-        scope.launch {
+        container.appScope.launch {
             container.settings.setDailyVerse(enabled, hour, minute)
             if (enabled) DailyVerseScheduler.schedule(context, hour, minute, replace = true)
             else DailyVerseScheduler.cancel(context)
@@ -176,13 +176,13 @@ fun SettingsScreen(container: AppContainer, settings: Settings, onBack: () -> Un
             Slider(
                 value = scale,
                 onValueChange = { scale = it },
-                onValueChangeFinished = { scope.launch { container.settings.setFontScale(scale) } },
+                onValueChangeFinished = { container.appScope.launch { container.settings.setFontScale(scale) } },
                 valueRange = 0.8f..1.8f,
                 steps = 9,
             )
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Text("Carattere con grazie (stile libro)", modifier = Modifier.weight(1f))
-                Switch(checked = settings.serifFont, onCheckedChange = { scope.launch { container.settings.setSerif(it) } })
+                Switch(checked = settings.serifFont, onCheckedChange = { container.appScope.launch { container.settings.setSerif(it) } })
             }
 
             SectionTitle("Aspetto")
@@ -190,7 +190,7 @@ fun SettingsScreen(container: AppContainer, settings: Settings, onBack: () -> Un
                 ThemeMode.entries.forEachIndexed { i, mode ->
                     SegmentedButton(
                         selected = settings.theme == mode,
-                        onClick = { scope.launch { container.settings.setTheme(mode) } },
+                        onClick = { container.appScope.launch { container.settings.setTheme(mode) } },
                         shape = SegmentedButtonDefaults.itemShape(i, ThemeMode.entries.size),
                     ) { Text(mode.label) }
                 }
