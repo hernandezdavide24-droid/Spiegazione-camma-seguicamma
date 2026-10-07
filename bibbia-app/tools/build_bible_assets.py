@@ -100,6 +100,7 @@ EBIBLE_FIXES = [
     ('questa non e una parola senza valore', 'questa non è una parola senza valore'),
     ('perché questo e il tutto dell’uomo', 'perché questo è il tutto dell’uomo'),
     ('il mio capo e coperto di rugiada', 'il mio capo è coperto di rugiada'),
+    ('e le me guance, a chi mi strappava', 'e le mie guance, a chi mi strappava'),
 ]
 
 # Rimandi alla numerazione originale italiana, es. "(21:6)" o "(H21-6)".
