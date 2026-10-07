@@ -1,0 +1,229 @@
+#intro
+titolo: Matteo
+sintesi: Il Vangelo secondo Matteo racconta la vita, l'insegnamento, la morte e la risurrezione di Gesù, mostrando che egli è il Messia promesso a Israele, il Figlio di Davide e di Abrahamo, nel quale si compiono le Scritture. Raccoglie gli insegnamenti di Gesù in cinque grandi discorsi, il più famoso dei quali è il Sermone sul monte, e si chiude con l'invio dei discepoli a tutte le nazioni.
+autore: La tradizione antica lo attribuisce a Matteo, detto anche Levi, l'esattore delle tasse diventato uno dei dodici apostoli (9:9). Il testo non indica l'autore.
+data: Probabilmente fra il 60 e l'85 d.C.; molti studiosi pensano a una data dopo la distruzione di Gerusalemme del 70 d.C.
+destinatari: Soprattutto cristiani di origine ebraica, che conoscevano bene l'Antico Testamento e le tradizioni giudaiche.
+contesto: La comunità cristiana sta definendo la propria identità rispetto alla sinagoga: deve spiegare perché Gesù è il Messia anche se è stato respinto da molti capi d'Israele, e come vivere la legge di Dio alla luce del suo insegnamento.
+scopo: Mostrare che Gesù è il Messia e il vero interprete della legge, che il regno dei cieli è arrivato con lui, e formare discepoli che mettano in pratica le sue parole.
+temi: Gesù compimento delle Scritture («affinché si adempisse»); il regno dei cieli; la giustizia più grande di quella degli scribi; la Chiesa; il giudizio finale; Dio con noi, dall'inizio («Emmanuele») alla fine («io sono con voi tutti i giorni»).
+struttura: 1-4 · Nascita, infanzia e inizio del ministero.
+5-7 · Primo discorso: il Sermone sul monte.
+8-10 · Miracoli e secondo discorso: la missione dei dodici.
+11-13 · Opposizione e terzo discorso: le parabole del regno.
+14-18 · Gesù e i discepoli; quarto discorso: la vita della comunità.
+19-25 · Verso Gerusalemme; quinto discorso: la fine dei tempi.
+26-28 · Passione, morte e risurrezione; il mandato missionario.
+cristo: Tutto il libro parla di Cristo. Matteo insiste su di lui come nuovo Mosè che dà la legge sul monte, figlio di Davide, Emmanuele, servo del Signore annunciato da Isaia e Figlio dell'uomo di Daniele, al quale è stata data ogni potestà in cielo e in terra.
+chiave: Mt 1:23; Mt 5:17; Mt 6:33; Mt 11:28; Mt 16:16; Mt 28:19-20
+
+#cap 1 La genealogia e la nascita di Gesù
+@1 La genealogia
+@18 L'annuncio a Giuseppe
+Il vangelo si apre con l'albero genealogico di Gesù, «figliuolo di Davide, figliuolo d'Abramo», diviso in tre gruppi di quattordici generazioni: da Abrahamo a Davide, da Davide all'esilio, dall'esilio a Cristo. Vi compaiono anche quattro donne straniere o irregolari, segno che Dio lavora attraverso storie complicate. Poi l'annuncio a Giuseppe: Maria aspetta un figlio per opera dello Spirito Santo; Giuseppe deve chiamarlo Gesù, «perché è lui che salverà il suo popolo dai loro peccati». È l'Emmanuele, «Iddio con noi».
+
+#cap 2 I magi e la fuga in Egitto
+@1 I magi da oriente
+@13 La fuga in Egitto
+@16 La strage degli innocenti
+@19 Il ritorno a Nazaret
+Dei magi arrivano dall'oriente seguendo una stella e cercano «il re de' Giudei». I sacerdoti indicano Betlemme citando Michea. Erode, geloso, cerca di uccidere il bambino; i magi lo adorano, offrono oro, incenso e mirra e tornano per un'altra strada. Giuseppe, avvisato in sogno, fugge in Egitto con Maria e Gesù. Erode fa uccidere i bambini di Betlemme. Dopo la sua morte la famiglia si stabilisce a Nazaret, in Galilea.
+
+#cap 3 Giovanni Battista e il battesimo di Gesù
+@1 La predicazione di Giovanni
+@7 Frutti degni del ravvedimento
+@13 Il battesimo di Gesù
+Nel deserto di Giudea Giovanni Battista predica: «Ravvedetevi, perché il regno de' cieli è vicino», vestito di pelo di cammello come gli antichi profeti. Battezza nel Giordano e rimprovera Farisei e Sadducei: non basta dire «abbiamo per padre Abramo». Annuncia uno più forte di lui che battezzerà con lo Spirito Santo. Gesù chiede di essere battezzato; mentre esce dall'acqua lo Spirito scende come una colomba e una voce dice: «Questo è il mio diletto Figliuolo nel quale mi sono compiaciuto».
+
+#cap 4 Le tentazioni e i primi discepoli
+@1 Le tentazioni nel deserto
+@12 Inizio della predicazione in Galilea
+@18 I primi discepoli
+@23 Gesù percorre la Galilea
+Gesù digiuna quaranta giorni nel deserto ed è tentato dal diavolo: trasformare pietre in pane, buttarsi dal Tempio, ricevere i regni del mondo adorandolo. Risponde ogni volta con la Scrittura: «Non di pane soltanto vivrà l'uomo». Poi si stabilisce a Capernaum e comincia a predicare. Chiama i pescatori Pietro, Andrea, Giacomo e Giovanni: «Venite dietro a me e vi farò pescatori d'uomini». Percorre la Galilea insegnando e guarendo, e molte folle lo seguono.
+
+#cap 5 Il Sermone sul monte: le beatitudini e la legge
+@1 Le beatitudini
+@13 Sale e luce
+@17 Gesù compie la legge
+@21 «Ma io vi dico»
+@43 Amate i vostri nemici
+Sul monte Gesù insegna ai discepoli. Dichiara beati i poveri in spirito, quelli che piangono, i mansueti, chi ha fame e sete di giustizia, i misericordiosi, i puri di cuore, chi si adopera per la pace e i perseguitati. I discepoli sono «il sale della terra» e «la luce del mondo». Gesù non è venuto ad abolire la legge ma a compierla: va alla radice dei comandamenti, condannando non solo l'omicidio ma l'ira, non solo l'adulterio ma lo sguardo impuro. Chiede di non giurare, di non vendicarsi e perfino: «amate i vostri nemici e pregate per quelli che vi perseguitano».
+
+#cap 6 Il Sermone sul monte: preghiera e fiducia
+@1 Elemosina, preghiera e digiuno nel segreto
+@9 Il Padre nostro
+@19 Tesori in cielo
+@25 Non siate in ansia
+Le opere buone non vanno fatte per essere visti, ma davanti al Padre «che vede nel segreto». Gesù insegna il «Padre nostro». Invita ad accumulare tesori in cielo, perché «dov'è il tuo tesoro, quivi sarà anche il tuo cuore», e avverte che non si possono servire Dio e Mammona. Guardando gli uccelli del cielo e i gigli del campo invita a non affannarsi per il cibo e il vestito: «cercate prima il regno e la giustizia di Dio, e tutte queste cose vi saranno sopraggiunte».
+
+#cap 7 Il Sermone sul monte: giudizio, preghiera, scelta
+@1 Non giudicate
+@7 Chiedete e vi sarà dato
+@13 La porta stretta
+@15 Dai frutti li riconoscerete
+@24 La casa sulla roccia
+«Non giudicate acciocché non siate giudicati»: prima di togliere la pagliuzza dall'occhio del fratello bisogna togliere la trave dal proprio. «Chiedete e vi sarà dato; cercate e troverete»: il Padre dà cose buone a chi gliele domanda. Gesù riassume la legge nella “regola d'oro”: fare agli altri ciò che vorremmo fosse fatto a noi. Avverte che la porta che porta alla vita è stretta, che i falsi profeti si riconoscono dai frutti, e conclude con la parabola delle due case: chi ascolta e mette in pratica costruisce sulla roccia.
+
+#cap 8 Miracoli di guarigione e di potenza
+@1 Il lebbroso
+@5 Il servo del centurione
+@14 La suocera di Pietro
+@18 Le esigenze del discepolato
+@23 La tempesta sedata
+@28 Gli indemoniati di Gadara
+Dopo le parole, i fatti. Gesù tocca e guarisce un lebbroso; guarisce a distanza il servo di un centurione romano, la cui fede lo stupisce più di quella di Israele; guarisce la suocera di Pietro e molti malati. A chi vuole seguirlo ricorda che «il Figliuol dell'uomo non ha dove posare il capo». Sul lago calma la tempesta con una parola, e i discepoli si chiedono chi sia costui. Libera due indemoniati, e i demoni entrano in un branco di porci.
+
+#cap 9 Perdono, chiamata e nuove guarigioni
+@1 Il paralitico perdonato
+@9 La chiamata di Matteo
+@14 Vino nuovo in otri nuovi
+@18 La figlia del capo e la donna malata
+@27 Ciechi e muto
+@35 La messe è grande
+Gesù dice a un paralitico: «i tuoi peccati ti sono rimessi», e per mostrare che ne ha il potere lo fa camminare. Chiama Matteo, un pubblicano, e mangia con i peccatori: «Non sono i sani che hanno bisogno del medico, ma i malati». Una donna malata da dodici anni guarisce toccando il suo mantello e Gesù riporta in vita la figlia di un capo. Guarisce due ciechi e un muto. Vedendo le folle stanche come pecore senza pastore, dice: «Ben è la mèsse grande, ma pochi son gli operai».
+
+#cap 10 La missione dei dodici
+@1 I dodici apostoli
+@5 Istruzioni per la missione
+@16 Come pecore in mezzo ai lupi
+@26 Non temete
+@34 Prendere la croce
+È il secondo grande discorso. Gesù sceglie dodici apostoli e li manda ad annunciare che il regno è vicino, a guarire e a liberare, senza portare denaro: «gratuitamente avete ricevuto, gratuitamente date». Li avverte che saranno perseguitati, ma lo Spirito parlerà per loro. Non devono temere, perché perfino i capelli del loro capo sono contati. Seguire Gesù può dividere le famiglie; chi non prende la sua croce non è degno di lui, ma anche un bicchiere d'acqua dato a un discepolo non resterà senza ricompensa.
+
+#cap 11 Giovanni, le città e il riposo
+@1 La domanda di Giovanni
+@7 Gesù parla di Giovanni
+@20 Guai alle città impenitenti
+@25 «Venite a me»
+Dalla prigione Giovanni Battista manda a chiedere se Gesù è colui che deve venire. Gesù risponde indicando i segni: ciechi che vedono, zoppi che camminano, il vangelo annunciato ai poveri. Elogia Giovanni come il più grande dei profeti, l'Elia che doveva venire. Rimprovera le città che hanno visto i miracoli senza convertirsi. Poi ringrazia il Padre perché si rivela ai piccoli e rivolge un invito: «Venite a me, voi tutti che siete travagliati ed aggravati, e io vi darò riposo».
+
+#cap 12 Il sabato e l'opposizione
+@1 Le spighe in giorno di sabato
+@9 La mano secca
+@15 Il servo di Dio
+@22 Gesù e Beelzebub
+@38 Il segno di Giona
+@46 La vera famiglia di Gesù
+I Farisei accusano i discepoli di violare il sabato; Gesù risponde che «il Figliuol dell'uomo è signore del sabato» e guarisce un uomo con la mano paralizzata. I Farisei decidono di farlo morire. Matteo vede in Gesù il servo mite di Isaia che non spezza la canna rotta. Accusato di scacciare i demoni con il potere di Beelzebub, Gesù risponde che un regno diviso non può reggere. A chi chiede un segno promette solo «il segno del profeta Giona». La sua vera famiglia è chi fa la volontà del Padre.
+
+#cap 13 Le parabole del regno
+@1 Il seminatore
+@10 Perché parlare in parabole
+@24 La zizzania
+@31 Il granel di senape e il lievito
+@44 Il tesoro, la perla e la rete
+@53 Rifiutato a Nazaret
+È il terzo discorso. Il seme del regno cade su terreni diversi: strada, pietre, spine e terra buona; dipende da come si ascolta. La zizzania cresce con il grano fino alla mietitura, quando ci sarà il giudizio. Il regno comincia piccolo come un granel di senape e agisce nascosto come il lievito. Vale più di tutto: è come un tesoro nascosto o una perla preziosa per cui si vende ogni cosa. A Nazaret però i suoi concittadini non credono: «Un profeta non è sprezzato che nella sua patria».
+
+#cap 14 La morte di Giovanni e i pani
+@1 La morte di Giovanni Battista
+@13 La moltiplicazione dei pani
+@22 Gesù cammina sulle acque
+Erode Antipa fa decapitare Giovanni Battista per accontentare la figlia di Erodiada. Gesù si ritira, ma le folle lo seguono; con cinque pani e due pesci sfama cinquemila uomini, oltre a donne e bambini. Di notte cammina sul lago; Pietro prova ad andargli incontro, ma ha paura e affonda; Gesù lo afferra: «O uomo di poca fede, perché hai dubitato?». I discepoli lo adorano: «Veramente tu sei Figliuol di Dio!».
+
+#cap 15 Puro e impuro; la fede della Cananea
+@1 La tradizione degli uomini
+@10 Ciò che contamina l'uomo
+@21 La donna cananea
+@29 La seconda moltiplicazione dei pani
+I Farisei criticano i discepoli che non si lavano le mani secondo la tradizione. Gesù risponde che ciò che rende impuro l'uomo non è il cibo, ma ciò che esce dal cuore: cattivi pensieri, omicidi, adulteri, furti. Una donna cananea, straniera, gli chiede di guarire la figlia; con la sua fede umile e insistente ottiene la guarigione: «O donna, grande è la tua fede». Gesù guarisce molti e sfama quattromila persone con sette pani.
+
+#cap 16 «Tu sei il Cristo»
+@1 I segni dei tempi
+@5 Il lievito dei Farisei
+@13 La confessione di Pietro
+@21 Il primo annuncio della passione
+@24 Rinnegare se stessi
+A Cesarea di Filippo Gesù chiede: «E voi, chi dite ch'io sia?». Pietro risponde: «Tu sei il Cristo, il Figliuol dell'Iddio vivente». Gesù lo chiama beato e dice che su questa pietra edificherà la sua chiesa. Subito dopo annuncia che dovrà soffrire, morire e risuscitare; Pietro protesta e Gesù lo rimprovera duramente. Chi vuole seguirlo deve rinnegare se stesso e prendere la sua croce, perché «che gioverà egli a un uomo se, dopo aver guadagnato tutto il mondo, perde poi l'anima sua?».
+
+#cap 17 La trasfigurazione
+@1 Sul monte alto
+@14 Il ragazzo epilettico
+@22 Il secondo annuncio della passione
+@24 La tassa del tempio
+Su un monte, davanti a Pietro, Giacomo e Giovanni, Gesù si trasfigura: il suo volto risplende come il sole e appaiono Mosè ed Elia. Dalla nube una voce dice: «Questo è il mio diletto Figliuolo... ascoltatelo». Scendendo, Gesù spiega che Elia è già venuto in Giovanni. Libera un ragazzo che i discepoli non erano riusciti a guarire e dice che basta una fede piccola come un granel di senape. Annuncia di nuovo la sua morte e risurrezione e paga la tassa del Tempio con una moneta trovata nella bocca di un pesce.
+
+#cap 18 La vita nella comunità
+@1 Chi è il più grande
+@10 La pecora smarrita
+@15 Correggere il fratello
+@21 Perdonare settanta volte sette
+È il quarto discorso. Il più grande nel regno è chi si fa piccolo come un bambino. Bisogna evitare di scandalizzare i piccoli; il Padre non vuole che se ne perda nemmeno uno, come il pastore che lascia le novantanove pecore per cercare quella smarrita. Gesù insegna come correggere un fratello e promette: «dovunque due o tre son raunati nel nome mio, quivi son io in mezzo a loro». A Pietro, che chiede quante volte perdonare, risponde «fino a settanta volte sette», e racconta la parabola del servo che, perdonato di un debito enorme, non perdona un piccolo debito.
+
+#cap 19 Matrimonio, bambini, ricchezza
+@1 Il divorzio
+@13 Gesù benedice i bambini
+@16 Il giovane ricco
+@23 Lasciare tutto
+Interrogato sul divorzio, Gesù rimanda al progetto originario di Dio: «quello dunque che Iddio ha congiunto, l'uomo nol separi». Accoglie i bambini: «di tali è il regno de' cieli». Un giovane ricco chiede cosa fare per avere la vita eterna; ha osservato i comandamenti, ma quando Gesù gli chiede di vendere tutto e seguirlo se ne va triste. «È più facile a un cammello passare per la cruna d'un ago», dice Gesù, ma aggiunge che a Dio ogni cosa è possibile, e promette ricompensa a chi ha lasciato tutto per lui.
+
+#cap 20 Gli ultimi saranno i primi
+@1 Gli operai della vigna
+@17 Il terzo annuncio della passione
+@20 La richiesta della madre dei figli di Zebedeo
+@29 I due ciechi di Gerico
+Un padrone paga lo stesso salario a chi ha lavorato tutto il giorno e a chi è arrivato all'ultima ora: la bontà di Dio non segue i nostri calcoli, e «gli ultimi saranno primi». Gesù annuncia per la terza volta la croce. La madre di Giacomo e Giovanni chiede per loro i primi posti; Gesù insegna che nel suo regno grande è chi serve, perché il Figlio dell'uomo è venuto «per servire, e per dar la vita sua come prezzo di riscatto per molti». A Gerico ridà la vista a due ciechi.
+
+#cap 21 L'ingresso a Gerusalemme
+@1 L'ingresso del re umile
+@12 La purificazione del tempio
+@18 Il fico senza frutti
+@23 Con quale autorità?
+@28 I due figli e i vignaiuoli malvagi
+Gesù entra a Gerusalemme su un'asina e un puledro, come aveva annunciato Zaccaria, e la folla grida: «Osanna al Figliuol di Davide!». Caccia dal Tempio venditori e cambiavalute: «La mia casa sarà chiamata casa d'orazione». Fa seccare un fico senza frutti, segno di una religione senza frutto. Ai capi che gli chiedono con quale autorità agisce racconta la parabola dei due figli e quella dei vignaioli che uccidono il figlio del padrone: la pietra scartata dai costruttori diventerà pietra angolare.
+
+#cap 22 Il banchetto e le domande trabocchetto
+@1 Il banchetto di nozze
+@15 Il tributo a Cesare
+@23 La risurrezione
+@34 Il grande comandamento
+@41 Il Cristo figlio di Davide
+Il re invita al banchetto di nozze del figlio, ma gli invitati rifiutano; allora chiama chiunque si trovi per le strade. Seguono domande per mettere Gesù in difficoltà. Sul tributo: «Rendete dunque a Cesare quel ch'è di Cesare, e a Dio quel ch'è di Dio». Ai Sadducei, che negano la risurrezione, risponde che Dio «non è l'Iddio de' morti, ma de' viventi». Il più grande comandamento è amare Dio con tutto il cuore, e il secondo è simile: «Ama il tuo prossimo come te stesso».
+
+#cap 23 Guai agli scribi e ai Farisei
+@1 Dicono e non fanno
+@13 I sette guai
+@37 Il lamento su Gerusalemme
+Gesù mette in guardia dagli scribi e dai Farisei, che insegnano bene ma non mettono in pratica e cercano onori: tra i discepoli «uno solo è il vostro Maestro» e il più grande deve essere servo. Pronuncia sette «guai» contro l'ipocrisia: pagano la decima sulle erbe e trascurano «il giudicio, e la misericordia, e la fede», sono come sepolcri imbiancati. Termina con un lamento: quante volte avrebbe voluto raccogliere i figli di Gerusalemme come una chioccia i suoi pulcini.
+
+#cap 24 La fine del tempio e la venuta del Figlio dell'uomo
+@1 La distruzione del tempio
+@3 L'inizio dei dolori
+@15 La grande tribolazione
+@29 La venuta del Figlio dell'uomo
+@36 Vegliate
+È il quinto discorso. Gesù annuncia che del Tempio non resterà pietra su pietra. Parla di guerre, carestie, persecuzioni e falsi cristi, e di una grande tribolazione; ma il vangelo sarà predicato in tutto il mondo. Poi il Figlio dell'uomo verrà sulle nuvole con potenza e gloria. «Il cielo e la terra passeranno, ma le mie parole non passeranno». Nessuno conosce il giorno e l'ora: bisogna vegliare come un servo fedele che aspetta il padrone.
+
+#cap 25 Le parabole dell'attesa e il giudizio finale
+@1 Le dieci vergini
+@14 I talenti
+@31 Il giudizio delle nazioni
+Dieci ragazze aspettano lo sposo: cinque sagge hanno l'olio per le lampade, cinque stolte no e restano fuori. Un padrone affida dei talenti ai servi: chi li fa fruttare è lodato, chi li sotterra per paura è rimproverato. Infine il giudizio: il Figlio dell'uomo separerà le persone come il pastore separa le pecore dai capri. Il criterio è l'amore concreto per gli affamati, gli stranieri, i malati, i carcerati: «in quanto l'avete fatto ad uno di questi miei minimi fratelli, l'avete fatto a me».
+
+#cap 26 L'ultima cena e il Getsemani
+@1 Il complotto
+@6 L'unzione a Betania
+@14 Il tradimento di Giuda
+@17 L'ultima cena
+@36 Nel Getsemani
+@47 L'arresto
+@57 Davanti al sinedrio
+@69 Il rinnegamento di Pietro
+I capi decidono di uccidere Gesù. A Betania una donna gli versa sul capo un profumo prezioso, preparandolo per la sepoltura. Giuda si accorda per tradirlo per trenta sicli d'argento. Durante la cena pasquale Gesù prende il pane e il calice: «questo è il mio sangue, il sangue del patto, il quale è sparso per molti per la remissione dei peccati». Nel Getsemani prega angosciato: «non come voglio io, ma come tu vuoi». Arrestato, è condannato dal sinedrio per aver detto che vedranno il Figlio dell'uomo venire sulle nuvole. Pietro lo rinnega tre volte e piange amaramente.
+
+#cap 27 La crocifissione
+@1 Gesù consegnato a Pilato
+@3 La fine di Giuda
+@11 Gesù davanti a Pilato
+@27 Lo scherno dei soldati
+@32 La crocifissione
+@45 La morte di Gesù
+@57 La sepoltura
+Giuda, pentito, restituisce il denaro e si impicca. Pilato, pur convinto dell'innocenza di Gesù, cede alla folla che preferisce Barabba e si lava le mani. I soldati lo deridono con una corona di spine. Crocifisso al Golgota fra due ladroni, è insultato da passanti e capi. Grida: «Eli, Eli, lamà sabactanì?», cioè «Dio mio, Dio mio, perché mi hai abbandonato?», e muore. Il velo del Tempio si squarcia e il centurione esclama: «Veramente costui era Figliuol di Dio». Giuseppe d'Arimatea lo seppellisce in una tomba nuova, sorvegliata dai soldati.
+
+#cap 28 La risurrezione e il grande mandato
+@1 La tomba vuota
+@11 La menzogna delle guardie
+@16 «Andate dunque»
+All'alba del primo giorno della settimana le donne vanno al sepolcro; un angelo annuncia: «Egli non è qui, poiché è risuscitato come avea detto». Gesù stesso le incontra. I capi pagano le guardie perché dicano che il corpo è stato rubato. In Galilea, sul monte, Gesù risorto manda gli undici: «Andate dunque, ammaestrate tutti i popoli, battezzandoli nel nome del Padre e del Figliuolo e dello Spirito Santo». E promette: «io sono con voi tutti i giorni, sino alla fine dell'età presente».
