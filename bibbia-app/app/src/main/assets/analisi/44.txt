@@ -1,0 +1,206 @@
+#intro
+titolo: Atti degli Apostoli
+sintesi: Gli Atti continuano il Vangelo di Luca e raccontano come la buona notizia di Gesù risorto si diffonde, con la forza dello Spirito Santo, da Gerusalemme fino a Roma, la capitale dell'impero. La prima parte segue soprattutto Pietro e la Chiesa di Gerusalemme; la seconda segue Paolo nei suoi viaggi missionari fra i popoli pagani, fino al suo arrivo prigioniero a Roma.
+autore: Luca, lo stesso autore del terzo vangelo, che dedica anche quest'opera a Teofilo (1:1). In alcuni passi usa il «noi», segno che partecipò personalmente ad alcuni viaggi di Paolo.
+data: Probabilmente fra il 62 e l'85 d.C. Il racconto si ferma quando Paolo è da due anni a Roma, intorno al 62 d.C.
+destinatari: Teofilo e i cristiani del mondo greco-romano.
+contesto: Le prime comunità cristiane nascono dentro il giudaismo e poi si aprono ai non ebrei, suscitando entusiasmo, conflitti e persecuzioni sia da parte delle autorità giudaiche sia di folle pagane. Le autorità romane, invece, non trovano spesso colpe nei cristiani.
+scopo: Mostrare che la Chiesa è opera dello Spirito Santo, che il vangelo è per tutti i popoli e che nulla può fermarlo, nemmeno prigioni e naufragi.
+temi: Lo Spirito Santo; la testimonianza su Gesù risorto; la Chiesa che prega e condivide; la conversione; l'apertura ai pagani; la persecuzione; la parola di Dio che cresce.
+struttura: 1-7 · La Chiesa a Gerusalemme: Pentecoste, vita comunitaria, primi conflitti, Stefano.
+8-12 · L'espansione in Giudea e Samaria; la conversione di Paolo; Cornelio; Antiochia.
+13-14 · Il primo viaggio missionario di Paolo e Barnaba.
+15 · Il concilio di Gerusalemme.
+15:36-18:22 · Il secondo viaggio: verso l'Europa.
+18:23-21:16 · Il terzo viaggio: Efeso e il ritorno.
+21:17-28:31 · Paolo arrestato, processato e portato a Roma.
+cristo: Gesù risorto è il protagonista invisibile: ascende al cielo, dona lo Spirito, appare a Paolo sulla via di Damasco e continua ad agire attraverso i discepoli. La predicazione apostolica annuncia che Dio lo ha costituito «Signore e Cristo» (2:36) e che «in nessun altro è la salvezza» (4:12).
+chiave: At 1:8; At 2:38; At 2:42; At 4:12; At 16:31; At 20:35
+
+#cap 1 L'ascensione e l'attesa
+@1 Il prologo
+@6 L'ascensione
+@12 In preghiera nella sala di sopra
+@15 Mattia scelto al posto di Giuda
+Per quaranta giorni Gesù risorto si mostra agli apostoli e parla del regno. Promette: «voi riceverete potenza quando lo Spirito Santo verrà su voi, e mi sarete testimoni» a Gerusalemme, in Giudea, in Samaria e «fino all'estremità della terra»: è il programma di tutto il libro. Poi è elevato in cielo; due uomini in bianco annunciano che tornerà. I discepoli, con Maria e alcune donne, perseverano nella preghiera. Mattia è scelto per sostituire Giuda.
+
+#cap 2 La Pentecoste
+@1 La discesa dello Spirito Santo
+@14 Il discorso di Pietro
+@37 «Fratelli, che dobbiam fare?»
+@42 La vita della prima comunità
+Nel giorno di Pentecoste, con un vento impetuoso e lingue di fuoco, lo Spirito scende sui discepoli, che cominciano a parlare in altre lingue; pellegrini da molte nazioni li sentono nella loro lingua. Pietro spiega che si compie la profezia di Gioele e annuncia che Gesù, crocifisso, è risorto e Dio lo ha fatto «Signore e Cristo». Molti, colpiti, chiedono cosa fare: «Ravvedetevi, e ciascun di voi sia battezzato nel nome di Gesù Cristo». Circa tremila si uniscono. La comunità persevera nell'insegnamento degli apostoli, nella comunione, nello spezzare il pane e nelle preghiere, e mette i beni in comune.
+
+#cap 3 Lo zoppo guarito
+@1 Alla porta Bella
+@11 Il discorso nel portico di Salomone
+Pietro e Giovanni salgono al Tempio per la preghiera. Uno zoppo dalla nascita chiede l'elemosina; Pietro gli dice: «dell'argento e dell'oro io non ne ho; ma quello che ho, te lo do: Nel nome di Gesù Cristo il Nazareno, cammina!», e l'uomo salta e loda Dio. Alla folla stupita Pietro spiega che non è per la loro potenza: è il nome di Gesù, che hanno rinnegato e che Dio ha risuscitato. Li invita a convertirsi perché i loro peccati siano cancellati.
+
+#cap 4 Davanti al sinedrio
+@1 L'arresto di Pietro e Giovanni
+@5 «In nessun altro è la salvezza»
+@23 La preghiera della comunità
+@32 Un cuor solo e un'anima sola
+Le autorità arrestano gli apostoli, ma il numero dei credenti sale a cinquemila. Davanti al sinedrio Pietro, pieno di Spirito Santo, dichiara che lo zoppo è stato guarito nel nome di Gesù e che «in nessun altro è la salvezza». I capi si meravigliano del coraggio di quegli uomini senza istruzione e ordinano di non parlare più di Gesù; essi rispondono che non possono tacere. La comunità prega per avere franchezza e il luogo trema. I credenti sono «d'un sol cuore e d'un'anima sola»; Barnaba vende un campo e ne porta il ricavato.
+
+#cap 5 Anania e Saffira; gli apostoli perseguitati
+@1 Anania e Saffira
+@12 Segni e prodigi
+@17 Liberati dal carcere
+@27 Ubbidire a Dio
+@33 Il consiglio di Gamaliele
+Anania e Saffira fingono di donare tutto il ricavato di un campo, ma ne trattengono una parte; mentendo allo Spirito Santo cadono morti. Gli apostoli compiono molti segni; la gente porta i malati nelle strade perché almeno l'ombra di Pietro li tocchi. Arrestati, sono liberati da un angelo e tornano a predicare nel Tempio. Davanti al sinedrio Pietro dice: «Bisogna ubbidire a Dio anziché agli uomini». Il rabbino Gamaliele consiglia prudenza: se l'opera viene da Dio, non si potrà distruggere. Gli apostoli, frustati, se ne vanno felici di aver sofferto per il nome di Gesù.
+
+#cap 6 I sette e Stefano
+@1 La scelta dei sette
+@8 Stefano arrestato
+I cristiani di lingua greca lamentano che le loro vedove sono trascurate nella distribuzione quotidiana. Gli apostoli, per dedicarsi alla preghiera e alla parola, fanno scegliere sette uomini pieni di Spirito e di sapienza per il servizio, fra cui Stefano e Filippo. Stefano compie prodigi e discute con sapienza; i suoi avversari lo accusano falsamente di parlare contro il Tempio e la legge. Davanti al sinedrio il suo volto appare come quello di un angelo.
+
+#cap 7 Il discorso e il martirio di Stefano
+@1 La storia d'Israele
+@44 Il tabernacolo e il tempio
+@51 L'accusa finale
+@54 La lapidazione
+Stefano ripercorre la storia d'Israele da Abrahamo a Mosè e a Salomone, mostrando che Dio ha agito anche fuori dalla terra promessa e che il popolo ha spesso rifiutato i suoi inviati. Dio non abita in templi fatti da mani d'uomo. Accusa i capi di resistere allo Spirito Santo come i loro padri. Furiosi, lo trascinano fuori e lo lapidano. Stefano vede il cielo aperto e Gesù alla destra di Dio; muore pregando: «Signore, non imputar loro questo peccato». Ai piedi di un giovane di nome Saulo vengono deposti i mantelli.
+
+#cap 8 Filippo in Samaria e l'eunuco etiope
+@1 La persecuzione
+@4 Filippo in Samaria
+@9 Simone il mago
+@26 L'eunuco etiope
+La persecuzione disperde i credenti, che annunciano la parola ovunque vanno. Filippo predica in Samaria con molti segni e c'è grande gioia; Pietro e Giovanni vengono a pregare perché i Samaritani ricevano lo Spirito. Simone il mago vorrebbe comprare questo potere ed è rimproverato. Poi un angelo guida Filippo su una strada deserta, dove un alto funzionario etiope sta leggendo Isaia. Filippo gli annuncia Gesù partendo da quel passo, e l'Etiope chiede di essere battezzato.
+
+#cap 9 La conversione di Saulo
+@1 Sulla via di Damasco
+@10 Anania
+@19 Saulo predica a Damasco
+@26 A Gerusalemme
+@32 Pietro guarisce Enea e risuscita Tabita
+Saulo, deciso a perseguitare i discepoli, è avvolto da una luce sulla strada di Damasco e sente una voce: «Saulo, Saulo, perché mi perseguiti?». È Gesù. Rimane cieco per tre giorni. Il Signore manda il discepolo Anania, che esita, ma riceve risposta: Saulo è «uno strumento che ho eletto per portare il mio nome davanti ai Gentili». Saulo riacquista la vista, è battezzato e subito predica che Gesù è il Figlio di Dio. Barnaba lo presenta agli apostoli. Intanto Pietro guarisce un paralitico a Lidda e riporta in vita Tabita a Ioppe.
+
+#cap 10 Pietro e Cornelio
+@1 La visione di Cornelio
+@9 La visione di Pietro
+@23 Pietro in casa di Cornelio
+@34 «Dio non ha riguardo alla qualità delle persone»
+@44 Lo Spirito sui pagani
+Cornelio, un centurione romano timorato di Dio, riceve in visione l'ordine di chiamare Pietro. Intanto Pietro vede una tovaglia piena di animali impuri e sente: «Le cose che Dio ha purificate, non le far tu immonde». Capisce che non deve chiamare impuro nessun uomo ed entra nella casa del pagano. Annuncia che Dio accoglie chiunque lo teme, di qualunque popolo, e racconta di Gesù. Mentre parla, lo Spirito scende sui presenti, e Pietro li fa battezzare.
+
+#cap 11 La Chiesa di Antiochia
+@1 Pietro si giustifica a Gerusalemme
+@19 Il vangelo ai Greci di Antiochia
+@27 Aiuto per la Giudea
+A Gerusalemme alcuni criticano Pietro per essere entrato da pagani; lui racconta tutto e la comunità glorifica Dio: anche ai pagani è dato il ravvedimento per la vita. Ad Antiochia di Siria alcuni annunciano Gesù direttamente ai Greci e molti credono. Barnaba va a vedere, si rallegra e va a cercare Saulo. Ad Antiochia, per la prima volta, i discepoli sono chiamati «Cristiani». La comunità raccoglie aiuti per i fratelli della Giudea colpiti dalla carestia.
+
+#cap 12 Pietro liberato
+@1 La morte di Giacomo e l'arresto di Pietro
+@6 L'angelo libera Pietro
+@20 La morte di Erode
+Il re Erode Agrippa fa uccidere Giacomo, fratello di Giovanni, e arresta Pietro. Mentre la Chiesa prega intensamente, un angelo lo sveglia in prigione, le catene cadono e le porte si aprono da sole. Pietro bussa alla casa di Maria, madre di Marco; la serva Rode, per la gioia, corre ad avvisare senza aprirgli. Erode, che accetta di essere acclamato come un dio, muore colpito da un angelo. «Ma la parola di Dio progrediva».
+
+#cap 13 Il primo viaggio missionario
+@1 Mandati dallo Spirito
+@4 A Cipro
+@13 Ad Antiochia di Pisidia
+@44 Verso i pagani
+Mentre la Chiesa di Antiochia prega e digiuna, lo Spirito dice di mettere da parte Barnaba e Saulo per l'opera a cui li ha chiamati. A Cipro il mago Elima si oppone e diventa cieco, e il proconsole crede. Da qui Saulo è chiamato Paolo. Ad Antiochia di Pisidia Paolo predica nella sinagoga, ripercorrendo la storia d'Israele fino a Gesù risorto: per mezzo di lui è annunciato il perdono. Quando i capi giudei si oppongono, Paolo e Barnaba si rivolgono ai pagani, che si rallegrano.
+
+#cap 14 Iconio, Listra e Derba
+@1 Iconio
+@8 Listra: scambiati per dèi
+@19 Lapidato
+@21 Il ritorno ad Antiochia
+A Iconio molti credono, ma una congiura li costringe a fuggire. A Listra Paolo guarisce uno zoppo e la folla, scambiando lui e Barnaba per Ermes e Giove, vuole offrire loro sacrifici; essi si stracciano le vesti e annunciano il Dio vivente che ha fatto il cielo e la terra. Poco dopo Paolo viene lapidato e lasciato per morto, ma si rialza. Tornando indietro rafforzano i discepoli: «dobbiamo entrare nel regno di Dio attraverso molte tribolazioni», e stabiliscono degli anziani in ogni chiesa.
+
+#cap 15 Il concilio di Gerusalemme
+@1 La controversia sulla circoncisione
+@6 Il concilio
+@22 La lettera ai pagani convertiti
+@36 Paolo e Barnaba si separano
+Alcuni insegnano che i pagani convertiti devono farsi circoncidere e osservare la legge di Mosè. Apostoli e anziani si riuniscono a Gerusalemme. Pietro ricorda che Dio ha dato lo Spirito ai pagani senza differenza: siamo salvati «per la grazia del Signor Gesù». Giacomo propone di non imporre altri pesi se non poche regole di convivenza. Una lettera viene inviata ad Antiochia, dove è accolta con gioia. Paolo e Barnaba, in disaccordo su Marco, partono separatamente: Paolo con Sila, Barnaba con Marco.
+
+#cap 16 In Europa: Filippi
+@1 Timoteo
+@6 La visione del Macedone
+@11 Lidia
+@16 La schiava indovina
+@25 Il carceriere di Filippi
+Paolo prende con sé il giovane Timoteo. Lo Spirito impedisce di predicare in Asia; di notte Paolo vede in visione un Macedone che lo prega: «Passa in Macedonia e soccorrici». Così il vangelo arriva in Europa. A Filippi Lidia, commerciante di porpora, crede e accoglie i missionari in casa. Paolo libera una schiava indovina e i padroni, persa la fonte di guadagno, lo fanno frustare e imprigionare con Sila. A mezzanotte, mentre cantano inni, un terremoto apre le porte. Il carceriere chiede cosa fare per essere salvato: «Credi nel Signor Gesù, e sarai salvato tu e la casa tua».
+
+#cap 17 Tessalonica, Berea e Atene
+@1 Tessalonica
+@10 Berea
+@16 Atene
+@22 Il discorso all'Areopago
+A Tessalonica alcuni credono, ma altri provocano tumulti accusando i missionari di aver «messo sossopra il mondo». A Berea gli ascoltatori esaminano ogni giorno le Scritture per verificare ciò che Paolo dice. Ad Atene, città piena di idoli, Paolo parla ai filosofi all'Areopago partendo da un altare dedicato «Al dio sconosciuto»: è il Dio che ha creato il mondo, in cui «viviamo, ci moviamo, e siamo», e che ora chiama tutti a ravvedersi. Quando parla di risurrezione alcuni lo deridono, ma alcuni credono.
+
+#cap 18 Corinto
+@1 Aquila e Priscilla
+@5 Un anno e mezzo a Corinto
+@12 Davanti a Gallione
+@18 Il ritorno ad Antiochia
+@24 Apollo
+A Corinto Paolo lavora come fabbricante di tende con Aquila e Priscilla e predica nella sinagoga. Respinto, si sposta nella casa accanto. Il Signore gli dice in visione: «Non temere ma parla e non tacere... poiché io ho un gran popolo in questa città», e Paolo resta un anno e mezzo. Il proconsole Gallione rifiuta di giudicare una questione religiosa. Paolo torna ad Antiochia e poi riparte. A Efeso Aquila e Priscilla istruiscono Apollo, un predicatore eloquente.
+
+#cap 19 Efeso
+@1 Il battesimo nello Spirito
+@8 Due anni a Efeso
+@13 I figli di Sceva
+@23 La sommossa degli argentieri
+A Efeso Paolo incontra alcuni discepoli che non avevano neppure sentito dello Spirito Santo; battezzati nel nome di Gesù, ricevono lo Spirito. Paolo insegna per due anni e tutta la provincia d'Asia ascolta la parola. Molti che praticavano la magia bruciano pubblicamente i loro libri. L'argentiere Demetrio, che fabbrica tempietti della dea Diana, teme di perdere il guadagno e scatena una sommossa: la folla grida per ore «Grande è la Diana degli Efesini!», finché il cancelliere calma tutti.
+
+#cap 20 Il saluto agli anziani di Efeso
+@1 In Macedonia e in Grecia
+@7 Eutico a Troas
+@17 Il discorso di Mileto
+Paolo visita le chiese di Macedonia e Grecia. A Troas, durante un lungo discorso notturno, il giovane Eutico si addormenta e cade dalla finestra; Paolo lo abbraccia e lo trova vivo. A Mileto saluta gli anziani di Efeso: ricorda il suo servizio umile e senza risparmio, annuncia che lo attendono catene, li esorta a vegliare sul gregge e ricorda le parole di Gesù: «Più felice cosa è il dare che il ricevere». Pregano insieme e si salutano in lacrime.
+
+#cap 21 Verso Gerusalemme e l'arresto
+@1 Il viaggio
+@10 La profezia di Agabo
+@17 Paolo e Giacomo
+@27 L'arresto nel tempio
+Lungo il viaggio i discepoli e il profeta Agabo avvertono Paolo che a Gerusalemme sarà legato, ma lui risponde di essere pronto a morire per il nome del Signore Gesù. A Gerusalemme Giacomo e gli anziani gli consigliano un gesto di rispetto per la legge. Nel Tempio però alcuni Giudei d'Asia lo accusano di averlo profanato portandovi dei pagani; la folla lo picchia e il tribuno romano lo arresta per salvarlo. Paolo chiede di parlare al popolo.
+
+#cap 22 La difesa di Paolo davanti al popolo
+@1 La sua storia
+@17 La missione ai pagani
+@22 Cittadino romano
+Paolo parla in ebraico alla folla: racconta di essere stato un fariseo zelante e persecutore, poi della luce e della voce sulla via di Damasco e del battesimo ricevuto da Anania. Quando dice che il Signore lo ha mandato fra i pagani, la folla esplode. Il tribuno ordina di frustarlo per interrogarlo, ma Paolo dichiara di essere cittadino romano, e nessuno osa toccarlo.
+
+#cap 23 Davanti al sinedrio e il complotto
+@1 Davanti al sinedrio
+@11 «Fatti animo»
+@12 Il complotto
+@23 Trasferito a Cesarea
+Davanti al sinedrio Paolo dichiara di essere giudicato a causa della speranza nella risurrezione dei morti, e Farisei e Sadducei litigano fra loro. Di notte il Signore gli dice: «Sta' di buon animo», perché dovrà testimoniare anche a Roma. Più di quaranta uomini giurano di non mangiare finché non l'avranno ucciso, ma il nipote di Paolo scopre il complotto. Il tribuno lo fa trasferire di notte, con una forte scorta, a Cesarea, dal governatore Felice.
+
+#cap 24 Davanti a Felice
+@1 L'accusa
+@10 La difesa di Paolo
+@22 Due anni di prigione
+L'avvocato Tertullo accusa Paolo di essere una peste e un capo della setta dei Nazarei. Paolo risponde che non ha profanato il Tempio, che crede in tutto ciò che è scritto nella legge e nei profeti e che spera nella risurrezione. Felice e sua moglie Drusilla lo ascoltano parlare di giustizia, autocontrollo e giudizio; Felice si spaventa e rimanda tutto, sperando di ricevere denaro. Paolo resta in prigione per due anni.
+
+#cap 25 Davanti a Festo: l'appello a Cesare
+@1 Il processo davanti a Festo
+@13 Il re Agrippa
+Il nuovo governatore Festo propone di processare Paolo a Gerusalemme; Paolo, sapendo del rischio, si appella all'imperatore: «Io mi appello a Cesare». Quando arrivano il re Agrippa e Berenice, Festo racconta il caso: la questione riguarda «un certo Gesù morto, che Paolo affermava esser vivente».
+
+#cap 26 Davanti ad Agrippa
+@1 La testimonianza di Paolo
+@24 «Paolo, tu vaneggi»
+Paolo racconta ancora la sua conversione: Gesù lo ha mandato ad aprire gli occhi dei pagani, perché passino «dalle tenebre alla luce». Festo lo interrompe: «Paolo, tu vaneggi; la molta dottrina ti mette fuor di senno», ma Paolo risponde che parla con parole di verità e chiede ad Agrippa se crede ai profeti. Agrippa risponde che per poco non lo convince a diventare cristiano. Tutti concordano che Paolo non ha fatto nulla di male e potrebbe essere liberato, se non si fosse appellato a Cesare.
+
+#cap 27 Il viaggio per mare e il naufragio
+@1 La partenza
+@9 Il consiglio non ascoltato
+@13 La tempesta
+@27 Il naufragio
+Paolo parte per Roma sotto la custodia del centurione Giulio. Avverte che continuare il viaggio in quella stagione è pericoloso, ma non viene ascoltato. Una tempesta trascina la nave per quattordici giorni. Quando tutti hanno perso la speranza, Paolo li incoraggia: un angelo gli ha detto che nessuno morirà. Li convince a mangiare e rende grazie a Dio davanti a tutti. La nave si incaglia e si sfascia, ma tutte le duecentosettantasei persone raggiungono la terra sane e salve.
+
+#cap 28 Da Malta a Roma
+@1 A Malta
+@11 L'arrivo a Roma
+@17 Paolo e i Giudei di Roma
+@30 Due anni di predicazione
+L'isola è Malta. Gli abitanti accolgono i naufraghi con gentilezza; Paolo è morso da una vipera ma non subisce alcun danno, e guarisce il padre del governatore Publio e molti malati. Arrivato a Roma, è accolto dai fratelli e gli è permesso di abitare da solo con un soldato di guardia. Parla ai capi dei Giudei: alcuni credono, altri no, e Paolo annuncia che la salvezza è mandata anche ai pagani. Il libro si chiude con Paolo che per due anni accoglie tutti e predica il regno di Dio «con tutta franchezza e senza che alcuno glielo impedisse».
