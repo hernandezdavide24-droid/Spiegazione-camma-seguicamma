@@ -247,9 +247,9 @@ Beato chi si occupa del povero: Dio lo sosterrà nella malattia. Il salmista sof
 
 #cap 42 Come la cerva desidera l'acqua
 @1 L'anima mia ha sete di Dio
-@5 Perché ti abbatti, anima mia?
+@5 Perché t'abbatti, anima mia?
 @6 Un abisso chiama un altro abisso
-Lontano dal Tempio, il salmista desidera Dio come una cerva assetata desidera l'acqua. Ricorda quando saliva in festa alla casa di Dio. Parla alla propria anima: «Perché ti abbatti, anima mia?... Spera in Dio».
+Lontano dal Tempio, il salmista desidera Dio come una cerva assetata desidera l'acqua. Ricorda quando saliva in festa alla casa di Dio. Parla alla propria anima: «Perché t'abbatti anima mia?... Spera in Dio».
 
 #cap 43 Mandami la tua luce
 @1 Difendi la mia causa

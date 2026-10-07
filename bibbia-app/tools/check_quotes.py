@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Verifica che le citazioni tra «» nei file di analisi compaiano nel testo biblico.
-Le citazioni di una sola parola e quelle che contengono "..." non vengono controllate.
+Le citazioni con "..." si controllano pezzo per pezzo; i pezzi di una sola parola si ignorano.
 
 Uso: python3 check_quotes.py <cartella assets> [numeri dei libri...]
 """
@@ -38,12 +38,13 @@ def main():
             if line.startswith('chiave:'):
                 continue
             for q in re.findall(r'«([^»]+)»', line):
-                if '...' in q or '…' in q or len(q.split()) < 2:
-                    continue
-                nq = norm(q)
-                if nq not in all_text.get(bid, '') and nq not in whole:
-                    bad += 1
-                    print(f'{os.path.basename(f)}:{n}: «{q}»')
+                for piece in re.split(r'\.\.\.|…', q):
+                    if len(piece.split()) < 2:
+                        continue
+                    nq = norm(piece)
+                    if nq and nq not in all_text.get(bid, '') and nq not in whole:
+                        bad += 1
+                        print(f'{os.path.basename(f)}:{n}: «{piece.strip()}»')
     print('OK' if bad == 0 else f'{bad} citazioni non trovate')
 
 

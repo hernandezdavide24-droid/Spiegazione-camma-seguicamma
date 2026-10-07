@@ -1,0 +1,45 @@
+#intro
+titolo: Lamentazioni
+sintesi: Cinque poesie di lutto per la distruzione di Gerusalemme da parte dei Babilonesi nel 586 a.C. Descrivono con dolore la città vuota, la fame, le umiliazioni, e riconoscono che la rovina è conseguenza del peccato. Al centro del libro brilla una speranza: «le sue compassioni non sono esaurite; si rinnovano ogni mattina».
+autore: Anonimo; la tradizione lo attribuisce al profeta Geremia, testimone della caduta di Gerusalemme.
+data: Poco dopo il 586 a.C.
+destinatari: I sopravvissuti alla catastrofe, sia rimasti in Giudea sia deportati.
+contesto: Gerusalemme è stata assediata a lungo, il Tempio bruciato, il re accecato e deportato. Sembrava che Dio avesse abbandonato il suo popolo. I primi quattro canti sono acrostici: ogni strofa inizia con una lettera dell'alfabeto ebraico, come per esprimere il dolore “dalla A alla Z”.
+scopo: Dare parole al dolore, confessare il peccato senza nascondersi, e aggrapparsi alla fedeltà di Dio anche quando tutto è perduto.
+temi: Il lutto e il lamento; il peccato e il giudizio; la sofferenza degli innocenti; la speranza nella fedeltà di Dio; la preghiera di ritorno.
+struttura: 1 · Gerusalemme come una vedova abbandonata.
+2 · L'ira di Dio contro Sion.
+3 · Il lamento personale e la speranza.
+4 · Il prima e il dopo dell'assedio.
+5 · Preghiera comune: «Facci tornare a te».
+cristo: Le parole «o voi che passate di qui! Mirate, guardate, se v'è dolore pari al dolore da cui sono oppressa» (1:12) sono state lette nella liturgia del Venerdì Santo come voce di Cristo sofferente. La speranza nella misericordia di Dio che si rinnova ogni mattina trova pieno compimento nella risurrezione.
+chiave: Lam 1:12; Lam 3:22-23; Lam 3:25-26; Lam 5:21
+
+#cap 1 La città sola
+@1 Come una vedova
+@12 «O voi che passate di qui!»
+Gerusalemme, un tempo piena di popolo, siede sola come una vedova; piange di notte e nessuno la consola. I suoi amici l'hanno tradita. Nella seconda parte parla la città stessa: «Mirate, guardate, se v'è dolore pari al dolore da cui sono oppressa», e riconosce: l'Eterno è giusto, io mi sono ribellata.
+
+#cap 2 L'ira del Signore
+@1 Dio come un nemico
+@11 I bambini che svengono per la fame
+@18 Grida al Signore
+Il poeta descrive Dio che, come un nemico, ha abbattuto mura e palazzi e rigettato il suo santuario. I bambini svengono di fame per le strade. I profeti avevano visto visioni false. Invita la città a gridare di notte e a versare il cuore come acqua davanti al Signore.
+
+#cap 3 Le benignità del Signore si rinnovano ogni mattina
+@1 L'uomo che ha visto l'afflizione
+@19 La speranza ritorna
+@40 Esaminiamo le nostre vie
+@55 Dio ha ascoltato
+Un uomo racconta la sua sofferenza come se Dio lo avesse rinchiuso nelle tenebre. Poi, improvvisamente, la memoria si fa speranza: «le sue compassioni non sono esaurite; si rinnovano ogni mattina. Grande è la tua fedeltà!». Buona cosa è aspettare in silenzio la salvezza. Il popolo è invitato a esaminare le proprie vie e tornare a Dio.
+
+#cap 4 L'oro che ha perso il suo splendore
+@1 I figli di Sion come vasi di terra
+@11 La colpa di profeti e sacerdoti
+@21 La fine del castigo
+I figli di Sion, preziosi come oro, sono trattati come vasi di terra; perfino le madri, durante l'assedio, sono state spinte all'orrore. La colpa è dei profeti e dei sacerdoti che hanno versato sangue innocente. Ma il castigo di Sion avrà fine.
+
+#cap 5 Facci tornare a te
+@1 Ricordati di ciò che ci è accaduto
+@19 Tu regni in eterno
+L'ultima poesia è una preghiera comune: Dio ricordi l'umiliazione del popolo, la terra passata agli stranieri, gli orfani, le donne violate, i giovani costretti a lavori forzati. «Ma tu, o Eterno, regni in perpetuo». Supplica: «Facci tornare a te, o Eterno, e noi torneremo».

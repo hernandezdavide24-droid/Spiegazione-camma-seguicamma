@@ -101,6 +101,7 @@ EBIBLE_FIXES = [
     ('perché questo e il tutto dell’uomo', 'perché questo è il tutto dell’uomo'),
     ('il mio capo e coperto di rugiada', 'il mio capo è coperto di rugiada'),
     ('e le me guance, a chi mi strappava', 'e le mie guance, a chi mi strappava'),
+    ('di calcare i mie cortili', 'di calcare i miei cortili'),
 ]
 
 # Rimandi alla numerazione originale italiana, es. "(21:6)" o "(H21-6)".
