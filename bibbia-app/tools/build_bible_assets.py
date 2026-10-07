@@ -102,6 +102,10 @@ EBIBLE_FIXES = [
     ('il mio capo e coperto di rugiada', 'il mio capo è coperto di rugiada'),
     ('e le me guance, a chi mi strappava', 'e le mie guance, a chi mi strappava'),
     ('di calcare i mie cortili', 'di calcare i miei cortili'),
+    ('Questo e un grave lutto', 'Questo è un grave lutto'),
+    ('perch’egli e il nostro Dio', 'perch’egli è il nostro Dio'),
+    ('E chi e il figliuolo d’Isai', 'E chi è il figliuolo d’Isai'),
+    ('Questo e lo scritto', 'Questo è lo scritto'),
 ]
 
 # Rimandi alla numerazione originale italiana, es. "(21:6)" o "(H21-6)".
