@@ -1,0 +1,32 @@
+#intro
+titolo: Tito
+sintesi: Paolo scrive a Tito, suo collaboratore, che ha lasciato sull'isola di Creta per organizzare le chiese. Gli dà istruzioni su come scegliere gli anziani, come contrastare i falsi maestri e come insegnare a ogni categoria di persone una vita coerente con il vangelo. Al centro c'è la grazia di Dio, che salva e insieme educa a vivere in modo nuovo.
+autore: L'apostolo Paolo (con le riserve degli studiosi già ricordate per le lettere a Timoteo).
+data: Circa nel 63-65 d.C., fra la prima e la seconda prigionia romana.
+destinatari: Tito, un collaboratore di origine greca, convertito da Paolo, che lo aveva accompagnato a Gerusalemme (Galati 2:1-3) e gli aveva affidato missioni delicate a Corinto.
+contesto: Le comunità di Creta sono giovani e disorganizzate. Alcuni insegnanti, soprattutto di origine giudaica, propongono miti e regole e cercano guadagni disonesti. I Cretesi avevano fama di essere bugiardi e pigri.
+scopo: Aiutare Tito a stabilire guide affidabili e a promuovere la sana dottrina e le opere buone.
+temi: Gli anziani irreprensibili; la sana dottrina; la vita coerente di anziani, giovani e servi; la grazia che educa; la salvezza per misericordia; il lavacro della rigenerazione; le opere buone.
+struttura: 1 · Gli anziani e i falsi maestri.
+2 · L'insegnamento per ogni categoria; la grazia di Dio.
+3 · La vita nella società; la salvezza per misericordia; saluti.
+cristo: Aspettiamo «l'apparizione della gloria del nostro grande Iddio e Salvatore, Cristo Gesù, il quale ha dato se stesso per noi» per riscattarci (2:13-14). Dio ci ha salvati «non per opere giuste che noi avessimo fatte, ma secondo la sua misericordia», per mezzo dello Spirito sparso su di noi per mezzo di Gesù Cristo (3:5-6).
+chiave: Tt 2:11-12; Tt 2:14; Tt 3:5
+
+#cap 1 Anziani affidabili
+@1 Saluto
+@5 I requisiti degli anziani
+@10 I falsi maestri
+Paolo ha lasciato Tito a Creta per completare l'organizzazione e stabilire anziani in ogni città. Devono essere irreprensibili, fedeli nel matrimonio, con figli credenti, non arroganti, non violenti, non avidi, ospitali, saggi, giusti, santi e ben ancorati alla parola, per poter esortare e correggere. Ci sono infatti molti chiacchieroni e ingannatori che sconvolgono intere famiglie per guadagno: vanno ripresi severamente.
+
+#cap 2 La grazia che educa
+@1 Anziani, donne, giovani
+@9 I servi
+@11 La grazia di Dio è apparsa
+Tito insegni ciò che è conforme alla sana dottrina: gli anziani siano sobri e saldi nella fede, le donne anziane insegnino il bene alle più giovani, i giovani siano assennati, e Tito stesso sia un modello. I servi siano onesti, per rendere onore all'insegnamento di Dio. Il motivo di tutto è che «la grazia di Dio, salutare per tutti gli uomini, è apparsa», e ci insegna a rinunciare all'empietà e a vivere con sobrietà, giustizia e pietà, aspettando il ritorno di Cristo.
+
+#cap 3 Salvati per misericordia
+@1 Buoni cittadini
+@3 La salvezza
+@9 Ultime istruzioni
+I credenti siano sottomessi alle autorità, pronti a ogni opera buona, miti e gentili con tutti. Anche noi un tempo eravamo insensati e pieni di odio, ma quando si è manifestata la bontà di Dio, «Egli ci ha salvati non per opere giuste che noi avessimo fatte, ma secondo la sua misericordia, mediante il lavacro della rigenerazione e il rinnovamento dello Spirito Santo». Tito eviti le dispute inutili, ammonisca chi divide e raggiunga Paolo a Nicopoli.

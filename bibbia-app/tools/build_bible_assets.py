@@ -113,6 +113,7 @@ EBIBLE_FIXES = [
     ('a motivo della grava età', 'a motivo della grave età'),
     ('venuto a chiamare i de’ giusti', 'venuto a chiamare de’ giusti'),
     ('della conoscenza do Cristo Gesù', 'della conoscenza di Cristo Gesù'),
+    ('voglion vivere pienamente in Cristo', 'voglion vivere piamente in Cristo'),
 ]
 
 # Rimandi alla numerazione originale italiana, es. "(21:6)" o "(H21-6)".
