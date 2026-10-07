@@ -1,0 +1,145 @@
+#intro
+titolo: Marco
+sintesi: Il Vangelo secondo Marco è il più breve e il più rapido: racconta soprattutto ciò che Gesù fa, con scene vivaci e la parola «subito» che ritorna spesso. La prima metà mostra la sua autorità su malattie, demoni e natura; dopo la confessione di Pietro, il racconto si dirige verso Gerusalemme e la croce. Gesù è il Figlio di Dio che si rivela pienamente proprio quando muore.
+autore: La tradizione antica lo attribuisce a Giovanni Marco, compagno di Paolo e di Barnaba e poi collaboratore di Pietro a Roma (Atti 12:12; 1 Pietro 5:13), che avrebbe messo per scritto la predicazione di Pietro.
+data: Probabilmente fra il 60 e il 70 d.C. È considerato da molti il più antico dei quattro vangeli.
+destinatari: Cristiani di origine pagana, probabilmente a Roma: Marco spiega le usanze ebraiche e traduce le parole aramaiche.
+contesto: La comunità di Roma vive la persecuzione di Nerone (dal 64 d.C.) e la morte degli apostoli Pietro e Paolo. Ha bisogno di capire che seguire un Messia crocifisso significa anche portare la croce.
+scopo: Annunciare «l'evangelo di Gesù Cristo, Figliuolo di Dio» (1:1) e mostrare che la vera grandezza di Gesù si vede nel servizio e nella croce.
+temi: Il regno di Dio che si avvicina; l'autorità di Gesù; il “segreto messianico” (Gesù chiede spesso di non dire chi è); l'incomprensione dei discepoli; la croce e il servizio; la fede contro la paura.
+struttura: 1:1-13 · Introduzione: Giovanni, il battesimo, le tentazioni.
+1:14-8:26 · Il ministero in Galilea: miracoli, parabole, crescente opposizione.
+8:27-10:52 · In cammino verso Gerusalemme: tre annunci della passione.
+11-13 · Gesù a Gerusalemme: Tempio, controversie, discorso sulla fine.
+14-16 · Passione, morte e risurrezione.
+cristo: Il centro del libro è la domanda «chi è costui?». La risposta arriva prima da Pietro, «Tu sei il Cristo» (8:29), e poi, sorprendentemente, da un centurione pagano sotto la croce: «Veramente quest'uomo era Figliuol di Dio!» (15:39). Il versetto chiave 10:45 riassume la sua missione: servire e dare la vita.
+chiave: Mc 1:15; Mc 8:29; Mc 8:34; Mc 10:45; Mc 15:39; Mc 16:6
+
+#cap 1 L'inizio del vangelo
+@1 Giovanni Battista
+@9 Il battesimo e le tentazioni
+@14 Il regno di Dio è vicino
+@16 I primi discepoli
+@21 Un giorno a Capernaum
+@40 Il lebbroso guarito
+Marco entra subito nel vivo: Giovanni prepara la via, Gesù è battezzato e la voce del cielo lo chiama «il mio diletto Figliuolo». Dopo la prova nel deserto, comincia a predicare: «Il tempo è compiuto e il regno di Dio è vicino; ravvedetevi e credete all'evangelo». Chiama quattro pescatori. A Capernaum insegna con un'autorità nuova, libera un indemoniato, guarisce la suocera di Pietro e molti malati. Al mattino presto prega in un luogo solitario. Guarisce un lebbroso toccandolo.
+
+#cap 2 Nuove controversie
+@1 Il paralitico calato dal tetto
+@13 La chiamata di Levi
+@18 La questione del digiuno
+@23 Il sabato
+Quattro amici scoperchiano un tetto per calare un paralitico davanti a Gesù, che gli perdona i peccati e lo guarisce, scandalizzando gli scribi: solo Dio può perdonare. Gesù chiama Levi, un pubblicano, e mangia con i peccatori, perché è venuto a chiamare non i giusti ma i peccatori. È lo sposo: finché è con loro i discepoli non digiunano. Al sabato dice: «Il sabato è stato fatto per l'uomo e non l'uomo per il sabato».
+
+#cap 3 I dodici e la vera famiglia
+@1 La mano secca
+@7 Le folle
+@13 La scelta dei dodici
+@20 Gesù accusato
+@31 Sua madre e i suoi fratelli
+In giorno di sabato Gesù guarisce un uomo dalla mano paralizzata; i Farisei e gli Erodiani cominciano a complottare per ucciderlo. Le folle accorrono da ogni parte. Gesù sceglie i dodici perché stiano con lui e per mandarli a predicare. I suoi parenti pensano che sia fuori di sé, gli scribi lo accusano di avere Beelzebub. Gesù risponde che chi bestemmia contro lo Spirito Santo non ha perdono, e che sua madre e i suoi fratelli sono quelli che fanno la volontà di Dio.
+
+#cap 4 Le parabole e la tempesta
+@1 Il seminatore
+@21 La lampada sotto il moggio
+@26 Il seme che cresce da sé
+@30 Il granello di senape
+@35 La tempesta sedata
+Dalla barca Gesù insegna in parabole: il seme della parola cade su terreni diversi e porta frutto solo dove è accolto. La lampada si mette sul candeliere: ciò che ora è nascosto sarà rivelato. Il seme cresce da solo, notte e giorno, senza che il contadino sappia come; il piccolo granello di senape diventa una pianta grande. Durante la traversata scoppia una tempesta e Gesù dorme; svegliato, sgrida il vento: «Taci, càlmati!». I discepoli si chiedono: «Chi è dunque costui?».
+
+#cap 5 L'indemoniato, la donna e la bambina
+@1 L'indemoniato di Gerasa
+@21 Iairo e la donna malata
+@35 La figlia di Iairo
+Nel paese dei Geraseni un uomo posseduto da una «Legione» di demoni vive fra le tombe; Gesù lo libera e i demoni entrano nei porci. L'uomo vorrebbe seguirlo, ma Gesù lo manda ad annunciare ai suoi ciò che Dio ha fatto. Una donna malata da dodici anni tocca il suo mantello e guarisce: «la tua fede t'ha salvata». Intanto muore la figlia di Iairo, ma Gesù dice: «Non temere; solo abbi fede», le prende la mano e le dice «Talithà cumì», «Giovinetta, io tel dico, lèvati!».
+
+#cap 6 Rifiutato, mandato, ucciso, nutrito
+@1 Rifiutato a Nazaret
+@7 La missione dei dodici
+@14 La morte di Giovanni Battista
+@30 La moltiplicazione dei pani
+@45 Sulle acque
+@53 Le guarigioni a Gennesaret
+A Nazaret non credono in lui: lo conoscono come il falegname, figlio di Maria. Gesù manda i dodici a due a due. Marco racconta come Erode fece uccidere Giovanni Battista durante un banchetto. Gesù, mosso a compassione per le folle «come pecore che non hanno pastore», sfama cinquemila uomini con cinque pani e due pesci. Di notte cammina sul lago verso i discepoli spaventati: «State di buon animo, son io; non temete!».
+
+#cap 7 Il cuore e la fede degli stranieri
+@1 La tradizione degli anziani
+@14 Ciò che contamina
+@24 La donna sirofenicia
+@31 Il sordomuto
+Gesù rimprovera chi trascura il comandamento di Dio per seguire tradizioni umane, citando Isaia: «Questo popolo mi onora con le labbra, ma il cuor loro è lontano da me». Non sono i cibi che rendono impuro l'uomo, ma ciò che esce dal cuore. In territorio pagano una donna sirofenicia lo convince con la sua fede umile e la figlia è liberata. Gesù guarisce un sordomuto con la parola «Effathà», cioè «Apriti!».
+
+#cap 8 «Tu sei il Cristo»
+@1 Quattromila sfamati
+@11 Nessun segno
+@14 Il lievito e la cecità dei discepoli
+@22 Il cieco di Betsaida
+@27 La confessione di Pietro
+@31 Il primo annuncio della passione
+@34 Seguire Gesù
+Gesù sfama quattromila persone; i discepoli però non capiscono. A Betsaida guarisce un cieco in due tempi: prima vede gli uomini che «mi paion alberi», poi chiaramente, immagine dei discepoli che vedono solo a metà. Pietro dichiara: «Tu sei il Cristo». Gesù comincia a insegnare che deve soffrire, morire e risuscitare; quando Pietro lo rimprovera, Gesù gli dice: «Vattene via da me, Satana». Poi a tutti: «Se uno vuol venire dietro a me, rinunzi a se stesso e prenda la sua croce e mi segua».
+
+#cap 9 La trasfigurazione e la vera grandezza
+@1 Sul monte
+@14 Il ragazzo indemoniato
+@30 Il secondo annuncio
+@33 Chi è il più grande
+@38 Chi non è contro di noi
+Sul monte Gesù si trasfigura davanti a tre discepoli e la voce dice: «Questo è il mio diletto figliuolo; ascoltatelo». Un padre chiede la guarigione del figlio e grida: «Io credo; sovvieni alla mia incredulità». I discepoli discutono su chi sia il più grande; Gesù prende un bambino e insegna che chi vuole essere il primo deve essere il servo di tutti. Avverte di non scandalizzare i piccoli e di togliere dalla propria vita ciò che porta al peccato.
+
+#cap 10 Verso Gerusalemme
+@1 Il matrimonio
+@13 I bambini
+@17 Il ricco
+@32 Il terzo annuncio
+@35 Giacomo e Giovanni
+@46 Il cieco Bartimeo
+Gesù difende l'unità del matrimonio e accoglie i bambini: chi non riceve il regno come un bambino non vi entrerà. Un uomo ricco se ne va triste perché non vuole lasciare i suoi beni; Gesù, che «lo amò», dice che è difficile per i ricchi entrare nel regno, ma tutto è possibile a Dio. Mentre annuncia la terza volta la croce, Giacomo e Giovanni chiedono i primi posti. Gesù risponde: «il Figliuol dell'uomo non è venuto per esser servito, ma per servire, e per dar la vita sua come prezzo di riscatto per molti». A Gerico il cieco Bartimeo grida, è guarito e lo segue per la strada.
+
+#cap 11 Il re entra nella città
+@1 L'ingresso a Gerusalemme
+@12 Il fico e il tempio
+@20 La fede che sposta i monti
+@27 L'autorità di Gesù
+Gesù entra a Gerusalemme su un puledro, tra grida di «Osanna». Il giorno dopo maledice un fico senza frutti e caccia i mercanti dal Tempio, che doveva essere chiamato «casa d'orazione per tutte le genti». Il fico seccato diventa una lezione sulla fede e sulla preghiera, accompagnata dal perdono. I capi gli chiedono con quale autorità agisce; Gesù risponde con una domanda su Giovanni Battista che li mette in difficoltà.
+
+#cap 12 Controversie nel tempio
+@1 I vignaiuoli malvagi
+@13 Il tributo a Cesare
+@18 La risurrezione
+@28 Il primo comandamento
+@35 Il figlio di Davide
+@41 L'offerta della vedova
+Con la parabola dei vignaioli che uccidono il figlio del padrone Gesù smaschera i capi. Alle domande trabocchetto risponde con sapienza: dare a Cesare ciò che è di Cesare e a Dio ciò che è di Dio; Dio è il Dio dei viventi. A uno scriba che chiede il primo comandamento cita lo Shemà: «Ascolta, Israele... ama dunque il Signore Iddio tuo con tutto il tuo cuore», e aggiunge l'amore del prossimo. Infine loda una vedova povera che ha messo nel tesoro due spiccioli, «tutto quanto avea per vivere».
+
+#cap 13 Il discorso sulla fine
+@1 La fine del tempio
+@3 I segni
+@14 La tribolazione
+@24 La venuta del Figlio dell'uomo
+@28 Il fico e la vigilanza
+Uscendo dal Tempio Gesù annuncia che sarà distrutto. Parla di guerre, terremoti e persecuzioni, ma chiede di non farsi ingannare e di perseverare: «chi avrà perseverato sino alla fine sarà salvato». Dopo la tribolazione il Figlio dell'uomo verrà con grande potenza. Nessuno conosce il giorno né l'ora, nemmeno il Figlio, ma solo il Padre. Il discorso termina con un comando per tutti: «Vegliate».
+
+#cap 14 L'unzione, la cena, l'arresto
+@1 L'unzione a Betania
+@10 Giuda
+@12 L'ultima cena
+@26 Nel Getsemani
+@43 L'arresto
+@53 Davanti al sinedrio
+@66 Pietro rinnega Gesù
+Una donna rompe un vaso di profumo prezioso e lo versa su Gesù; criticata, è difesa da lui: ha anticipato la sua sepoltura. Giuda si accorda per tradirlo. Durante la cena Gesù dà il pane e il calice: «Questo è il mio sangue, il sangue del patto». Nel Getsemani prega: «Abba, Padre! ogni cosa ti è possibile; allontana da me questo calice! Ma pure, non quello che io voglio, ma quello che tu vuoi». Viene arrestato; un giovane fugge nudo. Davanti al sommo sacerdote Gesù dichiara «Io lo sono», e Pietro, nel cortile, lo rinnega tre volte prima che il gallo canti due volte.
+
+#cap 15 La croce
+@1 Davanti a Pilato
+@16 Lo scherno
+@21 La crocifissione
+@33 La morte di Gesù
+@42 La sepoltura
+Pilato cede alla folla, libera Barabba e consegna Gesù per la crocifissione. I soldati lo vestono di porpora e lo deridono. Simone di Cirene porta la croce. Al Golgota Gesù è crocifisso fra due ladroni e insultato: «Ha salvato altri e non può salvar se stesso!». Alle tre del pomeriggio grida «Eloì, Eloì, lamà sabactanì?» e muore. Il velo del Tempio si squarcia e il centurione dice: «Veramente quest'uomo era Figliuol di Dio!». Alcune donne guardano da lontano. Giuseppe d'Arimatea lo depone in una tomba scavata nella roccia.
+
+#cap 16 Il sepolcro vuoto
+@1 Le donne al sepolcro
+@9 Le apparizioni
+@14 Il mandato e l'ascensione
+Il mattino della domenica le donne trovano la pietra rotolata via e un giovane vestito di bianco che dice: «Voi cercate Gesù il Nazareno che è stato crocifisso; egli è risuscitato; non è qui». Fuggono piene di paura. I versetti 9-20, assenti in alcuni dei manoscritti più antichi, riassumono le apparizioni a Maria Maddalena, a due discepoli e agli undici, e il mandato: «Andate per tutto il mondo e predicate l'evangelo ad ogni creatura». Gesù è assunto in cielo e i discepoli predicano dappertutto.
