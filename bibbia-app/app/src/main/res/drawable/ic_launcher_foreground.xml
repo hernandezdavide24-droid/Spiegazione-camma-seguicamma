@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Una lampada a olio con la fiamma: "La tua parola è una lampada al mio piè" (Salmo 119:105). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Fiamma -->
+    <path
+        android:fillColor="#FFF2B33D"
+        android:pathData="M54,30 C60,38 62,44 58,50 C56,53 52,53 50,50 C46,44 49,38 54,30 Z" />
+    <path
+        android:fillColor="#FFFFE7A8"
+        android:pathData="M54,39 C57,43 57,46 55.5,48.5 C54.5,50 53.5,50 52.5,48.5 C51,46 52,43 54,39 Z" />
+    <!-- Corpo della lampada -->
+    <path
+        android:fillColor="#FFE9D9B8"
+        android:pathData="M30,60 C30,55 40,53 54,53 C68,53 76,55 80,58 L86,56 C87,55.5 88,56.5 87.4,57.6 L82,64 C78,71 68,74 54,74 C40,74 30,70 30,60 Z" />
+    <path
+        android:fillColor="#FFE9D9B8"
+        android:pathData="M30,60 C24,58 22,62 25,65 C27,67 30,66 32,64 Z" />
+    <!-- Base -->
+    <path
+        android:fillColor="#FFE9D9B8"
+        android:pathData="M44,74 L64,74 L62,79 L46,79 Z" />
+</vector>

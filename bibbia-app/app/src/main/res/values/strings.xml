@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lampada</string>
+    <string name="blocker_service_label">Lampada – limite app</string>
+    <string name="blocker_service_description">Permette a Lampada di accorgersi quando apri un\'app che hai scelto di limitare (per esempio Instagram) e di mostrarti una pausa quando hai superato il tempo o sei in una fascia oraria di blocco. Lampada non legge il contenuto dello schermo e non raccoglie dati.</string>
+</resources>

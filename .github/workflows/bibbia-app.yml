@@ -1,0 +1,44 @@
+name: App Bibbia (Android)
+
+on:
+  push:
+    paths:
+      - "bibbia-app/**"
+      - ".github/workflows/bibbia-app.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: bibbia-app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Test della logica
+        run: ./gradlew --no-daemon testDebugUnitTest
+
+      - name: Compila l'APK
+        run: ./gradlew --no-daemon assembleRelease
+
+      - name: Rinomina l'APK
+        run: cp app/build/outputs/apk/release/app-release.apk Lampada.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Lampada-apk
+          path: bibbia-app/Lampada.apk
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: report-test
+          path: bibbia-app/app/build/reports/tests/
