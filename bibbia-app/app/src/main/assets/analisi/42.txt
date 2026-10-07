@@ -1,0 +1,211 @@
+#intro
+titolo: Luca
+sintesi: Il Vangelo secondo Luca è un racconto ordinato della vita di Gesù, scritto dopo accurate ricerche. Mette in luce la misericordia di Dio verso i poveri, i peccatori, le donne, gli stranieri e gli esclusi. Contiene episodi e parabole che solo Luca riporta, come il buon Samaritano, il figlio prodigo, Zaccheo e i discepoli di Emmaus. È la prima parte di un'opera in due volumi che continua con gli Atti degli Apostoli.
+autore: La tradizione lo attribuisce a Luca, medico e compagno di viaggio di Paolo (Colossesi 4:14; Filemone 24), probabilmente di origine pagana. Non fu testimone diretto, ma raccolse le testimonianze di chi lo era stato (1:1-4).
+data: Probabilmente fra il 60 e l'85 d.C.
+destinatari: Un certo Teofilo, forse un personaggio importante, e con lui i cristiani di cultura greca.
+contesto: Il vangelo si sta diffondendo nel mondo greco-romano. Luca colloca Gesù nella grande storia, nominando imperatori e governatori, e mostra che la salvezza è per tutti i popoli.
+scopo: Dare solide basi alla fede («affinché tu riconosca la certezza delle cose che ti sono state insegnate») e mostrare Gesù come il Salvatore venuto «per cercare e salvare ciò che era perito».
+temi: La salvezza per tutti; la misericordia e la gioia di Dio per chi si converte; i poveri e il pericolo della ricchezza; la preghiera; lo Spirito Santo; le donne vicino a Gesù; il viaggio verso Gerusalemme.
+struttura: 1-2 · I racconti dell'infanzia di Giovanni e di Gesù.
+3:1-4:13 · Preparazione: Giovanni, battesimo, genealogia, tentazioni.
+4:14-9:50 · Il ministero in Galilea.
+9:51-19:27 · Il lungo viaggio verso Gerusalemme, con molte parabole.
+19:28-24:53 · Gerusalemme: passione, morte, risurrezione e ascensione.
+cristo: Luca presenta Gesù come il Salvatore («oggi... v'è nato un Salvatore», 2:11), il profeta unto dallo Spirito per portare la buona notizia ai poveri (4:18), l'amico dei peccatori e colui che perdona anche sulla croce. Dopo la risurrezione spiega ai discepoli che tutta la Scrittura parla di lui (24:27, 44).
+chiave: Lc 1:37; Lc 2:11; Lc 4:18; Lc 15:7; Lc 19:10; Lc 24:46-47
+
+#cap 1 Gli annunci di due nascite
+@1 Il prologo
+@5 L'annuncio a Zaccaria
+@26 L'annuncio a Maria
+@39 Maria visita Elisabetta
+@46 Il Magnificat
+@57 La nascita di Giovanni
+@67 Il cantico di Zaccaria
+Luca spiega a Teofilo di aver fatto ricerche accurate. Al sacerdote Zaccaria l'angelo Gabriele annuncia che la moglie Elisabetta, anziana e sterile, avrà un figlio, Giovanni; poiché dubita, resta muto. A Nazaret Gabriele annuncia a Maria che concepirà per opera dello Spirito Santo il Figlio dell'Altissimo, «poiché nessuna parola di Dio rimarrà inefficace». Maria risponde: «Ecco, io son l'ancella del Signore». Visitando Elisabetta, canta il Magnificat, lode al Dio che innalza gli umili. Nasce Giovanni e Zaccaria, ritrovata la parola, benedice Dio.
+
+#cap 2 La nascita e l'infanzia di Gesù
+@1 La nascita a Betlemme
+@8 I pastori
+@21 La presentazione al tempio
+@25 Simeone e Anna
+@41 Gesù dodicenne nel tempio
+Per un censimento ordinato da Augusto, Giuseppe e Maria vanno a Betlemme; Gesù nasce e viene deposto in una mangiatoia perché non c'era posto per loro. Agli umili pastori un angelo annuncia: «oggi... v'è nato un Salvatore, che è Cristo, il Signore», e un coro canta gloria a Dio e pace in terra. Al Tempio l'anziano Simeone prende il bambino fra le braccia e lo riconosce come «luce da illuminar le genti»; anche la profetessa Anna parla di lui. A dodici anni Gesù resta nel Tempio fra i maestri: «Non sapevate ch'io dovea trovarmi nella casa del Padre mio?».
+
+#cap 3 Giovanni Battista e la genealogia
+@1 La predicazione di Giovanni
+@10 Che dobbiamo fare?
+@21 Il battesimo di Gesù
+@23 La genealogia
+Luca data con precisione l'inizio della predicazione di Giovanni, nel quindicesimo anno dell'imperatore Tiberio. Alle folle che chiedono cosa fare risponde con richieste concrete: condividere vestiti e cibo, non estorcere, non maltrattare. Gesù è battezzato e, mentre prega, lo Spirito scende su di lui. La genealogia risale fino ad «Adamo, di Dio»: Gesù è legato a tutta l'umanità.
+
+#cap 4 Le tentazioni e il discorso di Nazaret
+@1 Le tentazioni
+@14 Nella sinagoga di Nazaret
+@31 A Capernaum
+@38 Molte guarigioni
+Gesù vince le tentazioni nel deserto. Nella sinagoga di Nazaret legge Isaia: «Lo Spirito del Signore è sopra me; per questo egli mi ha unto per evangelizzare i poveri», e dice che oggi si è adempiuta. Quando ricorda che Dio ha aiutato anche degli stranieri, la folla furiosa tenta di gettarlo da un precipizio. A Capernaum libera un indemoniato, guarisce la suocera di Simone e molti malati, e dice che deve annunciare il regno anche in altre città.
+
+#cap 5 La pesca e le prime chiamate
+@1 La pesca miracolosa
+@12 Il lebbroso
+@17 Il paralitico
+@27 La chiamata di Levi
+@33 Vino nuovo
+Dopo una notte senza pesce, Pietro getta le reti sulla parola di Gesù e prende così tanti pesci che le reti si rompono. Spaventato dice: «Signore, dipàrtiti da me, perché son uomo peccatore», ma Gesù gli risponde: «da ora innanzi sarai pescator d'uomini». Gesù guarisce un lebbroso e un paralitico calato dal tetto, al quale perdona i peccati. Chiama Levi e mangia con i pubblicani: «Io non son venuto a chiamare de' giusti, ma de' peccatori a ravvedimento».
+
+#cap 6 Il discorso della pianura
+@1 Il sabato
+@12 I dodici apostoli
+@17 Beatitudini e guai
+@27 Amate i vostri nemici
+@37 Non giudicate
+@46 La casa sulla roccia
+Gesù passa la notte in preghiera e sceglie i dodici. In un luogo pianeggiante proclama beati i poveri, gli affamati, chi piange e chi è odiato a causa sua, e dice «guai» ai ricchi e ai sazi. Chiede di amare i nemici, di fare del bene a chi odia e di prestare senza sperare nulla: «Siate misericordiosi com'è misericordioso il Padre vostro». Non bisogna giudicare né condannare; «date, e vi sarà dato». Chi ascolta e mette in pratica costruisce sulla roccia.
+
+#cap 7 Fede, risurrezione, perdono
+@1 Il servo del centurione
+@11 Il figlio della vedova di Nain
+@18 La domanda di Giovanni
+@36 La peccatrice perdonata
+Un centurione romano mostra una fede che sorprende Gesù. A Nain Gesù vede una vedova che accompagna al sepolcro l'unico figlio; mosso a compassione, le dice «Non piangere» e riporta il ragazzo in vita. Risponde ai messaggeri di Giovanni indicando i segni del regno. In casa di un fariseo, una donna peccatrice bagna di lacrime i suoi piedi e li unge di profumo. Gesù spiega con una parabola che chi è perdonato molto ama molto, e le dice: «La tua fede t'ha salvata; vattene in pace».
+
+#cap 8 Le donne, il seminatore e i miracoli
+@1 Le donne che seguono Gesù
+@4 Il seminatore
+@19 La vera famiglia
+@22 La tempesta
+@26 L'indemoniato geraseno
+@40 Iairo e la donna malata
+Gesù è accompagnato dai dodici e da alcune donne, come Maria Maddalena e Giovanna, che lo sostengono con i loro beni. Spiega la parabola del seminatore: il buon terreno sono quelli che custodiscono la parola «in un cuore onesto e buono». Seguono quattro grandi segni: calma la tempesta, libera l'indemoniato di Gerasa, guarisce una donna malata da dodici anni e risuscita la figlia di Iairo.
+
+#cap 9 Chi è Gesù e cosa significa seguirlo
+@1 La missione dei dodici
+@10 I cinquemila sfamati
+@18 La confessione di Pietro
+@28 La trasfigurazione
+@37 Il ragazzo indemoniato
+@51 Verso Gerusalemme
+Gesù manda i dodici in missione e sfama cinquemila persone. Pietro lo riconosce come «il Cristo di Dio»; Gesù annuncia la passione e chiede di prendere la croce «ogni giorno». Sul monte, mentre prega, si trasfigura e parla con Mosè ed Elia della sua «dipartita» che stava per compiersi a Gerusalemme. Poi «si mise risolutamente in via per andare a Gerusalemme»: inizia il grande viaggio. A chi vuole seguirlo ricorda che non si può guardare indietro.
+
+#cap 10 I settanta, il buon Samaritano, Marta e Maria
+@1 La missione dei settanta
+@17 Il ritorno dei settanta
+@25 Il buon Samaritano
+@38 Marta e Maria
+Gesù manda settanta discepoli; tornano felici perché perfino i demoni si sottomettono, ma Gesù dice di rallegrarsi piuttosto perché i loro nomi sono scritti nei cieli. A un dottore della legge che chiede «chi è il mio prossimo?» racconta la parabola del Samaritano, uno straniero disprezzato, che si ferma a curare un uomo ferito mentre un sacerdote e un levita passano oltre: «Va', e fa' tu il simigliante». A Betania Marta si affanna nel servizio, mentre Maria ascolta Gesù: «Maria ha scelto la buona parte».
+
+#cap 11 La preghiera e le accuse
+@1 Il Padre nostro
+@5 L'amico importuno
+@14 Gesù e Beelzebub
+@29 Il segno di Giona
+@37 Guai ai Farisei e ai dottori della legge
+I discepoli chiedono: «Signore, insegnaci a pregare», e Gesù insegna il Padre nostro. Racconta di un amico che a mezzanotte bussa finché ottiene il pane, e assicura che il Padre darà lo Spirito Santo a chi glielo chiede. Accusato di agire con il potere di Beelzebub, risponde che il regno di Dio è giunto. A pranzo da un fariseo denuncia chi cura l'esterno e trascura la giustizia e l'amore di Dio.
+
+#cap 12 Ricchezza, fiducia e vigilanza
+@1 Il lievito dell'ipocrisia
+@13 Il ricco stolto
+@22 Non siate in ansia
+@35 Servi pronti
+@49 Fuoco sulla terra
+Gesù incoraggia a non temere chi può uccidere il corpo. A uno che chiede aiuto per l'eredità risponde con la parabola del ricco che costruisce granai più grandi e muore quella notte stessa: «Stolto, questa notte stessa l'anima tua ti sarà ridomandata». Invita a non affannarsi, perché il Padre sa di cosa abbiamo bisogno, e ad accumulare un tesoro in cielo. I discepoli devono essere come servi svegli che aspettano il padrone con le lampade accese.
+
+#cap 13 Conversione e porta stretta
+@1 Se non vi ravvedete
+@6 Il fico sterile
+@10 La donna curva
+@18 Senape e lievito
+@22 La porta stretta
+@31 Il lamento su Gerusalemme
+Le disgrazie non sono un castigo per colpe particolari: tutti hanno bisogno di convertirsi. Un fico senza frutti riceve ancora un anno di tempo, segno della pazienza di Dio. In giorno di sabato Gesù guarisce una donna curva da diciotto anni. Il regno cresce come un granel di senape. A chi chiede se sono pochi quelli che si salvano, Gesù risponde: «Sforzatevi d'entrare per la porta stretta». Erode lo minaccia, ma Gesù prosegue verso Gerusalemme, che uccide i profeti.
+
+#cap 14 Il banchetto del regno
+@1 Una guarigione di sabato
+@7 Gli ultimi posti
+@15 La grande cena
+@25 Il costo del discepolato
+A tavola Gesù consiglia di scegliere l'ultimo posto, perché «chiunque s'innalza sarà abbassato», e di invitare poveri, storpi, zoppi e ciechi che non possono ricambiare. Nella parabola della grande cena gli invitati trovano scuse e il padrone fa entrare gli esclusi dalle strade. Seguire Gesù richiede di metterlo al di sopra di tutto, come chi calcola la spesa prima di costruire una torre.
+
+#cap 15 La pecora, la dramma e il figlio perduti
+@1 Gesù accoglie i peccatori
+@3 La pecora smarrita
+@8 La dramma perduta
+@11 Il figliuol prodigo
+I Farisei mormorano perché Gesù accoglie i peccatori. Egli risponde con tre parabole della gioia di ritrovare: un pastore che cerca la pecora perduta, una donna che cerca la moneta, un padre che aspetta il figlio. Il figlio minore sperpera l'eredità e torna pentito; il padre lo vede da lontano, gli corre incontro, lo abbraccia e fa festa, perché «era morto, ed è tornato a vita; era perduto, ed è stato ritrovato». Il figlio maggiore si rifiuta di entrare, e il padre esce a pregarlo. Così c'è gioia in cielo «per un solo peccatore che si ravvede».
+
+#cap 16 L'uso dei beni
+@1 L'amministratore infedele
+@14 La legge e il regno
+@19 Il ricco e Lazzaro
+Un amministratore disonesto, licenziato, usa con astuzia i beni del padrone per farsi degli amici: i figli della luce dovrebbero essere altrettanto saggi con i beni terreni. «Voi non potete servire a Dio ed a Mammona». Nella parabola del ricco che banchettava ogni giorno e del povero Lazzaro alla sua porta, dopo la morte le sorti si rovesciano. Il ricco chiede di avvisare i fratelli, ma Abrahamo risponde che hanno Mosè e i profeti: se non ascoltano loro, non crederanno nemmeno a un morto risuscitato.
+
+#cap 17 Perdono, fede e gratitudine
+@1 Gli scandali e il perdono
+@5 La fede e il servizio
+@11 I dieci lebbrosi
+@20 La venuta del regno
+Gesù chiede di perdonare il fratello anche sette volte al giorno. Agli apostoli che chiedono più fede risponde che basta una fede piccola come un granel di senape. Dieci lebbrosi sono guariti, ma solo uno torna a ringraziare, ed è un samaritano. Il regno di Dio non viene in modo da attirare gli sguardi: «il regno di Dio è dentro di voi»; il giorno del Figlio dell'uomo arriverà all'improvviso, come ai tempi di Noè.
+
+#cap 18 Pregare senza stancarsi
+@1 La vedova insistente
+@9 Il fariseo e il pubblicano
+@15 I bambini
+@18 Il ricco notabile
+@31 Il terzo annuncio
+@35 Il cieco di Gerico
+Una vedova ottiene giustizia da un giudice ingiusto a forza di insistere: bisogna pregare sempre senza stancarsi. Al Tempio un fariseo si vanta delle sue opere, mentre un pubblicano si batte il petto: «O Dio, sii placato verso me peccatore!»; è lui a tornare a casa giustificato. Gesù accoglie i bambini. Un notabile ricco non riesce a lasciare i suoi beni. Gesù annuncia di nuovo la croce e, vicino a Gerico, ridà la vista a un cieco che grida: «Gesù, figliuol di Davide, abbi pietà di me!».
+
+#cap 19 Zaccheo e l'ingresso a Gerusalemme
+@1 Zaccheo
+@11 Le mine
+@28 L'ingresso in Gerusalemme
+@41 Gesù piange sulla città
+@45 Il tempio purificato
+Zaccheo, capo dei pubblicani e piccolo di statura, sale su un sicomoro per vedere Gesù, che si autoinvita a casa sua. Zaccheo cambia vita: darà metà dei beni ai poveri e restituirà quattro volte ciò che ha rubato. Gesù dice: «il Figliuol dell'uomo è venuto per cercare e salvare ciò che era perito». La parabola delle mine insegna a far fruttare ciò che si è ricevuto. Gesù entra a Gerusalemme acclamato dai discepoli, ma piange sulla città che non ha riconosciuto il tempo della sua visita. Poi caccia i mercanti dal Tempio.
+
+#cap 20 Controversie nel tempio
+@1 La domanda sull'autorità
+@9 I vignaiuoli
+@19 Il tributo
+@27 La risurrezione
+@41 Il figlio di Davide
+@45 Attenti agli scribi
+I capi contestano l'autorità di Gesù. Egli racconta la parabola dei vignaioli che uccidono il figlio del padrone. Risponde alla domanda sul tributo: «rendete a Cesare quel ch'è di Cesare, e a Dio quel ch'è di Dio». Ai Sadducei spiega che i risorti saranno come angeli e che per Dio tutti vivono. Mette in guardia dagli scribi che amano gli onori e divorano le case delle vedove.
+
+#cap 21 L'offerta della vedova e il discorso sulla fine
+@1 Due spiccioli
+@5 La distruzione del tempio
+@20 La caduta di Gerusalemme
+@25 La venuta del Figlio dell'uomo
+@34 Vegliate
+Una vedova povera getta nel tesoro due spiccioli, tutto ciò che aveva: ha dato più di tutti. Gesù annuncia la distruzione del Tempio e di Gerusalemme, circondata da eserciti, e persecuzioni per i discepoli: «Con la vostra perseveranza guadagnerete le anime vostre». Poi ci saranno segni nel cielo e il Figlio dell'uomo verrà con potenza. Bisogna vegliare e pregare per non lasciarsi appesantire dalla vita.
+
+#cap 22 L'ultima cena e l'arresto
+@1 Il tradimento
+@7 La cena pasquale
+@24 Chi è il più grande
+@31 «Ho pregato per te»
+@39 Sul monte degli Ulivi
+@47 L'arresto
+@54 Pietro rinnega Gesù
+@66 Davanti al sinedrio
+Satana entra in Giuda, che si accorda con i capi. Durante la Pasqua Gesù prende il pane: «Questo è il mio corpo il quale è dato per voi: fate questo in memoria di me». I discepoli litigano su chi è il più grande e Gesù dice: «io sono in mezzo a voi come colui che serve». A Pietro rivela che lo rinnegherà, ma ha pregato perché la sua fede non venga meno. Sul monte degli Ulivi Gesù prega in agonia, con il sudore come gocce di sangue. All'arresto guarisce l'orecchio del servo ferito. Dopo il terzo rinnegamento, «il Signore, voltatosi, riguardò Pietro», che esce e piange amaramente.
+
+#cap 23 La croce
+@1 Davanti a Pilato
+@6 Davanti a Erode
+@13 La condanna
+@26 La via della croce
+@33 La crocifissione
+@44 La morte
+@50 La sepoltura
+Pilato non trova colpa in Gesù e lo manda da Erode, che lo deride. Alla fine cede alla folla e libera Barabba. Simone di Cirene porta la croce; Gesù consola le donne che piangono. Crocifisso, prega: «Padre, perdona loro, perché non sanno quello che fanno». A uno dei malfattori che gli chiede di ricordarsi di lui promette: «oggi tu sarai meco in paradiso». Muore dicendo: «Padre, nelle tue mani rimetto lo spirito mio». Il centurione riconosce che era un giusto. Giuseppe d'Arimatea lo seppellisce e le donne osservano dove viene posto.
+
+#cap 24 Il Risorto
+@1 Il sepolcro vuoto
+@13 I discepoli di Emmaus
+@36 Gesù appare agli undici
+@50 L'ascensione
+Le donne trovano il sepolcro vuoto; due uomini in vesti splendenti chiedono: «Perché cercate il vivente fra i morti?». Gli apostoli non credono al loro racconto. Due discepoli tristi vanno verso Emmaus; Gesù cammina con loro, spiega le Scritture e lo riconoscono quando spezza il pane: «Non ardeva il cuor nostro in noi mentr'egli ci parlava per la via?». Gesù appare agli undici, mangia davanti a loro e apre la loro mente per capire le Scritture: nel suo nome si predicherà il ravvedimento a tutte le genti. A Betania li benedice e viene portato in cielo; essi tornano a Gerusalemme con grande gioia.

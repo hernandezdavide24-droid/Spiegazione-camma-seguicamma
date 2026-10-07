@@ -243,7 +243,7 @@
 5	29	E Levi gli fece un gran convito in casa sua; e c’era gran folla di pubblicani e d’altri che erano a tavola con loro.
 5	30	E i Farisei ed i loro scribi mormoravano contro i discepoli di Gesù, dicendo: Perché mangiate e bevete coi pubblicani e coi peccatori?
 5	31	E Gesù rispondendo, disse loro: I sani non hanno bisogno del medico, bensì i malati.
-5	32	Io non son venuto a chiamare i de’ giusti, ma de’ peccatori a ravvedimento.
+5	32	Io non son venuto a chiamare de’ giusti, ma de’ peccatori a ravvedimento.
 5	33	Ed essi gli dissero: I discepoli di Giovanni digiunano spesso e fanno orazioni; così pure i discepoli de’ Farisei; mentre i tuoi mangiano e bevono.
 5	34	E Gesù disse loro: Potete voi far digiunare gli amici dello sposo, mentre lo sposo è con loro?
 5	35	Ma verranno i giorni per questo; e quando lo sposo sarà loro tolto, allora, in que’ giorni, digiuneranno.
