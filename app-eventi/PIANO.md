@@ -35,6 +35,34 @@ Prima di attivare il robot: controllare le condizioni d'uso di ogni sito.
 ## Nome
 Nome scelto: **Advent TI** ("TI" = Ticino), così si distingue da "Advent Events", che esiste già sull'App Store. Sottotitolo proposto per lo store (massimo 30 caratteri): "Raduni auto, moto e aerei". Prima di pubblicare va controllato che il nome sia libero su App Store e Google Play.
 
+## Schermate (5 schede)
+Home · Calendario · Mappa · Proponi · Profilo
+
+- **Home**: carosello "In evidenza" con locandine grandi, "Questo weekend", elenco "In arrivo" a post stile Instagram (club, locandina, cuore, recensioni, mappa).
+- **Mappa**: tutti gli eventi colorati per categoria; quelli promossi pulsano. Nell'app vera: react-native-maps (Apple Maps su iPhone, Google Maps su Android) oppure MapLibre + OpenStreetMap. Nel prototipo la mappa è disegnata con dati swisstopo/UST (swiss-maps) e Natural Earth.
+
+## Accesso e ruoli
+- Ospite: guarda tutto senza account.
+- Accesso con **Apple** e **Google** (App Store, regola 4.8: con l'accesso Google serve anche un'alternativa come "Accedi con Apple").
+- Ruoli: appassionato · organizzatore (in verifica → verificato) · amministratore.
+- Organizzatore: nome del club + link ufficiale; dopo la verifica pubblica senza passare dalla coda.
+
+## Recensioni
+- Stelle 1–5 + commento, su eventi e organizzatori; in qualsiasi momento (con l'edizione facoltativa: molti eventi si ripetono).
+- Risposta pubblica dell'organizzatore (una per recensione).
+- Pulsante "Segnala" da aggiungere nell'app vera (richiesto dagli store per i contenuti degli utenti).
+
+## Promozione (gratis per ora)
+- In evidenza nella Home · badge "In evidenza" (elenco, locandine, mappa) · notifica ai vicini (una volta per evento, chi segue la categoria entro 30 km) · statistiche (viste, salvataggi, clic sulle fonti).
+
+## Locandine
+- Caricate dall'organizzatore (ridotte a ~900 px).
+- Generate dall'app se manca l'immagine.
+- Prese dalla fonte solo con permesso: casella obbligatoria + credito visibile. Il robot non copia immagini in automatico.
+
+## Tabelle Supabase
+profiles · organizers · events · event_sources · posters · reviews · promotions · event_stats
+
 ## Architettura
 | Parte | Strumento | Costo |
 |---|---|---|
