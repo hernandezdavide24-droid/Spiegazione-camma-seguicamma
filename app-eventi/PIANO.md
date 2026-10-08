@@ -1,12 +1,12 @@
-# Advent: piano dell'app
+# Advent TI: piano dell'app
 
-App per iPhone e Android con gli eventi di auto e aerei in Ticino, nell'Italia vicina e nella Svizzera interna vicina.
+App per iPhone e Android con gli eventi di auto, moto e aerei in Ticino, nell'Italia vicina e nella Svizzera interna vicina.
 Il prototipo cliccabile è in `prototipo.html`.
 
 ## Decisioni prese
 - Utente: principiante, budget iniziale quasi zero
 - Lingue: italiano e inglese
-- Categorie: raduni auto, tour in auto, eventi aerei, gare e track day
+- Categorie: raduni auto, tour in auto, moto, eventi aerei, gare e track day
 - Area: Ticino, Italia vicina (Lombardia, Piemonte) e Svizzera interna vicina (Uri, Grigioni)
 - Fonti: siti di eventi, inserimento da organizzatori, social (vedi limiti sotto)
 - Promozione: gratuita con approvazione; gli organizzatori verificati pubblicano subito. Gli eventi in evidenza a pagamento arriveranno più avanti.
@@ -33,7 +33,7 @@ Prima di attivare il robot: controllare le condizioni d'uso di ogni sito.
 - Modulo "Proponi": almeno una fonte obbligatoria (sito → link web; Instagram/Facebook/TikTok/YouTube → link del profilo o canale), altre facoltative. Il link viene controllato in base al tipo.
 
 ## Nome
-"Advent Events" esiste già sull'App Store (altra azienda): usare un nome store tipo "Advent – Raduni auto e aerei".
+Nome scelto: **Advent TI** ("TI" = Ticino), così si distingue da "Advent Events", che esiste già sull'App Store. Sottotitolo proposto per lo store (massimo 30 caratteri): "Raduni auto, moto e aerei". Prima di pubblicare va controllato che il nome sia libero su App Store e Google Play.
 
 ## Architettura
 | Parte | Strumento | Costo |

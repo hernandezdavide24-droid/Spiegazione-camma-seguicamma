@@ -1,5 +1,5 @@
-<title>Advent</title>
-<meta name="description" content="Prototipo di Advent: eventi auto e aerei in Ticino e dintorni">
+<title>Advent TI</title>
+<meta name="description" content="Prototipo di Advent TI: eventi auto, moto e aerei in Ticino e dintorni">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -11,7 +11,7 @@
   --bg:#06080E; --bg2:#0B0F19;
   --glass:rgba(255,255,255,.055); --glass-2:rgba(255,255,255,.09); --stroke:rgba(255,255,255,.10); --stroke-2:rgba(255,255,255,.18);
   --ink:#EEF2F8; --muted:#8E99AD; --faint:#5C6678;
-  --red:#FF4D5E; --blue:#4F8CFF; --amber:#FFB547; --green:#3DDC97; --violet:#B48CFF;
+  --red:#FF4D5E; --blue:#4F8CFF; --amber:#FFB547; --green:#3DDC97; --violet:#B48CFF; --orange:#FF7A3D;
   --ok:#3DDC97; --warn:#FFB547;
   --f-display:"Unbounded","Arial Black",system-ui,sans-serif;
   --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -49,6 +49,7 @@ a{color:inherit}
 .logo{width:38px;height:38px;flex:none;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--red),var(--blue));box-shadow:0 6px 24px -6px rgba(79,140,255,.6)}
 .logo svg{width:22px;height:22px}
 .brand h1{font-family:var(--f-display);font-weight:700;font-size:24px;letter-spacing:-.01em;line-height:1;margin:0}
+.brand h1 .ti{background:linear-gradient(135deg,var(--red),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
 .brand small{display:block;margin-top:4px;font-size:11.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
 .lang{position:relative;display:flex;padding:3px;border-radius:999px;flex:none}
 .lang button{position:relative;z-index:1;border:0;background:transparent;padding:5px 11px;font-size:12.5px;font-weight:700;color:var(--muted);transition:color .25s}
@@ -122,7 +123,7 @@ a{color:inherit}
 .src-line svg{width:13px;height:13px;flex:none}
 .empty{border:1px dashed var(--stroke-2);border-radius:20px;padding:24px 16px;text-align:center;color:var(--muted)}
 
-.c-raduno{--c:var(--red)} .c-tour{--c:var(--green)} .c-aerei{--c:var(--blue)} .c-gara{--c:var(--amber)}
+.c-raduno{--c:var(--red)} .c-tour{--c:var(--green)} .c-moto{--c:var(--orange)} .c-aerei{--c:var(--blue)} .c-gara{--c:var(--amber)}
 
 /* Dettaglio: foglio che sale dal basso */
 .sheet{position:fixed;inset:0;z-index:20;pointer-events:none}
@@ -301,7 +302,7 @@ td a{color:var(--blue);text-decoration:none;overflow-wrap:anywhere}
     </div>
     <div class="brand">
       <div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19L12 4l8 15"/><path d="M7.5 13h9"/></svg></div>
-      <div><h1>Advent</h1><small id="t-sub"></small></div>
+      <div><h1>Advent <span class="ti">TI</span></h1><small id="t-sub"></small></div>
     </div>
     <div class="lang glass" role="group" aria-label="Lingua" id="lang" data-l="it">
       <span class="pill" aria-hidden="true"></span>
@@ -378,7 +379,7 @@ td a{color:var(--blue);text-decoration:none;overflow-wrap:anywhere}
   </main>
 
   <main id="view-project" class="view prose" hidden>
-    <h2 class="page-title">Il progetto Advent</h2>
+    <h2 class="page-title">Il progetto Advent TI</h2>
     <p class="lead" style="color:var(--muted)">Come diventa un'app vera, da quali fonti prende gli eventi, quanto costa e in che ordine si costruisce.</p>
     <div class="callout"><b>In breve:</b> un solo codice per iPhone e Android (Expo), un database gratuito (Supabase), un "robot" che ogni mattina legge le fonti e prepara gli eventi, e la tua approvazione con un tocco. Ogni evento mostra in fondo da dove arriva.</div>
 
@@ -391,7 +392,7 @@ td a{color:var(--blue);text-decoration:none;overflow-wrap:anywhere}
         <tr><td><a href="https://www.inagenda.ch" target="_blank" rel="noopener">inagenda.ch</a></td><td><span class="lvl a">Agenda</span></td><td>La piattaforma dietro l'agenda di tio.ch. Conviene chiedere a loro un accesso ai dati: è la strada più pulita.</td></tr>
         <tr><td><a href="https://www.tio.ch/rss" target="_blank" rel="noopener">tio.ch RSS</a></td><td><span class="lvl b">Notizie</span></td><td>I feed RSS sono il formato più facile da leggere per un robot. Da verificare se esiste un feed della sola agenda.</td></tr>
         <tr><td><a href="https://www.tcs.ch/it/il-tcs/sezioni/ticino/news/eventi-mendrisiotto-2026.php" target="_blank" rel="noopener">TCS Sezione Ticino</a></td><td><span class="lvl a">Agenda</span></td><td>Poche voci ma affidabili. Esiste anche la pagina "eventi consigliati 2026".</td></tr>
-        <tr><td><a href="https://automotoclubgeneroso.ch" target="_blank" rel="noopener">Moto Club Generoso</a></td><td><span class="lvl a">Club</span></td><td>Nel 2026 il club ha tolto "Auto" dal nome ed è tornato a chiamarsi Moto Club Generoso: fa soprattutto eventi di <b>moto</b>.</td></tr>
+        <tr><td><a href="https://automotoclubgeneroso.ch" target="_blank" rel="noopener">Moto Club Generoso</a></td><td><span class="lvl a">Club</span></td><td>Nel 2026 il club ha tolto "Auto" dal nome ed è tornato a chiamarsi Moto Club Generoso: fa soprattutto eventi di <b>moto</b>, che ora hanno la loro categoria.</td></tr>
         <tr><td><a href="https://www.vtg.admin.ch/de/patrouille-suisse" target="_blank" rel="noopener">Patrouille Suisse</a> + <a href="https://www.vtg.admin.ch/dam/de/sd-web/Kz8Mx0wcOfVR/PS%20Jahresprogramm%20WEB%202026%20v3.0%20Juli%2026.pdf" target="_blank" rel="noopener">programma PDF</a></td><td><span class="lvl a">Ufficiale</span></td><td>Il PDF cambia nome a ogni versione (v2.0 giugno, v3.0 luglio): il robot deve cercare il link nuovo sulla pagina, non usare quello vecchio. La stagione 2026 è finita il 6 settembre, senza tappe in Ticino.</td></tr>
         <tr><td><a href="https://www.vtg.admin.ch/de/flugaktivitaeten" target="_blank" rel="noopener">Forze aeree, attività di volo</a></td><td><span class="lvl a">Ufficiale</span></td><td>Per esibizioni e manifestazioni militari.</td></tr>
         <tr><td><a href="https://www.localcities.ch" target="_blank" rel="noopener">localcities.ch</a></td><td><span class="lvl a">Agenda</span></td><td>Eventi dei comuni: utile per i raduni locali.</td></tr>
@@ -405,6 +406,7 @@ td a{color:var(--blue);text-decoration:none;overflow-wrap:anywhere}
 
     <h3>Le fonti mostrate su ogni evento</h3>
     <ul>
+      <li>Le categorie sono cinque: raduni auto, tour in auto, <b>moto</b>, aerei, gare e track day.</li>
       <li>In fondo a ogni evento c'è la sezione <b>Fonti</b> con il link a ogni pagina da cui sono state prese le informazioni.</li>
       <li>Se l'evento non ha un sito, si vede da quale social è arrivato (Instagram, Facebook, TikTok...) con il link al profilo o al canale.</li>
       <li>Chi propone un evento deve indicare <b>almeno una fonte</b>: per un sito il link web, per un social il link del profilo o del canale. L'app controlla che il link sia del tipo giusto.</li>
@@ -422,8 +424,8 @@ td a{color:var(--blue);text-decoration:none;overflow-wrap:anywhere}
     <h3>Instagram e Facebook</h3>
     <p>Dal 4 dicembre 2024 Meta non permette di leggere in automatico i post di account altrui. Per questo i social entrano nell'app in tre modi: chi propone un evento incolla il link del profilo, un utente incolla il testo del post, oppure il club diventa organizzatore verificato.</p>
 
-    <h3>Il nome "Advent"</h3>
-    <p>Sull'App Store esistono già app con nomi simili, per esempio "Advent Events" di un'altra azienda. Il nome sullo store deve essere unico, quindi conviene aggiungere un sottotitolo, per esempio <b>"Advent – Raduni auto e aerei"</b>. Ricorda anche che in italiano "Avvento" fa pensare al Natale.</p>
+    <h3>Il nome: Advent TI</h3>
+    <p>"TI" (la sigla del Ticino) rende il nome unico rispetto ad "Advent Events", che esiste già sull'App Store. Sotto il nome, lo store permette un sottotitolo di 30 caratteri: per esempio <b>"Raduni auto, moto e aerei"</b> (25 caratteri). Prima di pubblicare va comunque controllato che il nome sia libero su App Store e Google Play.</p>
 
     <h3>Costi</h3>
     <div class="tbl-wrap"><table>
@@ -491,7 +493,7 @@ const SOCIAL_HOSTS = /instagram\.com|facebook\.com|fb\.com|tiktok\.com|youtube\.
 
 const T = {
   it: {
-    sub:"Motori e volo · Ticino",
+    sub:"Auto · Moto · Volo",
     demo:"Prototipo: gli eventi sono esempi inventati per mostrare come funziona l'app. I luoghi sono reali; i link delle fonti portano alle pagine principali dei siti.",
     radius:"Distanza da Lugano", all:"tutte",
     upcoming:"Prossimi eventi", dayEvents:"Eventi del", showAll:"Mostra tutti",
@@ -524,7 +526,7 @@ const T = {
     socialFrom:"Arrivato da"
   },
   en: {
-    sub:"Motors & flight · Ticino",
+    sub:"Cars · Bikes · Flight",
     demo:"Prototype: the events are made-up examples to show how the app works. Places are real; source links point to each site's main page.",
     radius:"Distance from Lugano", all:"any",
     upcoming:"Upcoming events", dayEvents:"Events on", showAll:"Show all",
@@ -561,6 +563,7 @@ const T = {
 const CATS = {
   raduno:{ it:"Raduni", en:"Meets", one:{it:"Raduno",en:"Meet"} },
   tour:{ it:"Tour", en:"Drives", one:{it:"Tour in auto",en:"Drive"} },
+  moto:{ it:"Moto", en:"Motorbikes", one:{it:"Moto",en:"Motorbikes"} },
   aerei:{ it:"Aerei", en:"Aviation", one:{it:"Evento aereo",en:"Aviation"} },
   gara:{ it:"Gare e track day", en:"Racing & track days", one:{it:"Gara / track day",en:"Racing / track day"} }
 };
@@ -596,6 +599,24 @@ const SEED = [
     program:[["09:00",{it:"Arrivo delle auto",en:"Cars arrive"}],["10:30",{it:"Foto di gruppo",en:"Group photo"}],["11:30",{it:"Premiazione",en:"Award"}],["12:00",{it:"Fine",en:"End"}]],
     route:[], price:{it:"Gratuito",en:"Free"}, signup:{it:"Non necessaria",en:"Not needed"},
     org:"Cars & Coffee TI (esempio)", sources:[S_TIO, S_IG("esempio_carscoffee_lugano")] },
+  { id:"m1", cat:"moto", date:"2026-10-17", time:"09:00", lat:46.170, lng:8.795,
+    title:{it:"Giro in moto delle Centovalli",en:"Centovalli motorbike ride"},
+    place:{it:"Locarno, parcheggio del Lido",en:"Locarno, Lido car park"},
+    summary:{it:"Giro in gruppo tra le curve delle Centovalli e della Valle Vigezzo, fino a Domodossola.",en:"Group ride through the bends of the Centovalli and Valle Vigezzo, all the way to Domodossola."},
+    what:{it:["Briefing di sicurezza e gruppi per livello","Sosta caffè a Santa Maria Maggiore","Pranzo a Domodossola"],en:["Safety briefing and groups by level","Coffee stop in Santa Maria Maggiore","Lunch in Domodossola"]},
+    program:[["09:00",{it:"Ritrovo e briefing",en:"Meet and briefing"}],["09:30",{it:"Partenza",en:"Departure"}],["12:30",{it:"Pranzo a Domodossola",en:"Lunch in Domodossola"}],["16:00",{it:"Rientro libero",en:"Ride home at your own pace"}]],
+    route:[["Locarno",0,"CH"],["Intragna",10,""],["Camedo",22,"CH"],["Re",30,"IT"],["Santa Maria Maggiore",38,""],["Domodossola",52,""]],
+    price:{it:"CHF 20 per moto",en:"CHF 20 per bike"}, signup:{it:"Obbligatoria, massimo 25 moto",en:"Required, 25 bikes max"},
+    notice:{it:"Strada stretta e con molte curve. Si passa la frontiera: porta un documento d'identità valido.",en:"Narrow, twisty road. You cross the border: bring a valid ID."},
+    org:"Gruppo motociclisti Locarnese (esempio)", sources:[S_IG("esempio_moto_locarnese"), S_TIO] },
+  { id:"m2", cat:"moto", date:"2026-11-22", time:"09:30", lat:45.870, lng:8.981,
+    title:{it:"Raduno moto d'epoca del Mendrisiotto",en:"Mendrisiotto vintage motorbike meet"},
+    place:{it:"Mendrisio, piazzale alla Valle",en:"Mendrisio, Piazzale alla Valle"},
+    summary:{it:"Moto costruite prima del 1990 in esposizione, poi un giro corto fino al Monte San Giorgio.",en:"Bikes built before 1990 on display, then a short ride up to Monte San Giorgio."},
+    what:{it:["Esposizione delle moto","Giro panoramico di 30 km","Premio alla moto più vecchia"],en:["Bike display","30 km scenic ride","Award for the oldest bike"]},
+    program:[["09:30",{it:"Arrivo e iscrizione",en:"Arrival and registration"}],["11:00",{it:"Partenza del giro",en:"Ride starts"}],["13:00",{it:"Pranzo e premiazione",en:"Lunch and award"}]],
+    route:[], price:{it:"CHF 15",en:"CHF 15"}, signup:{it:"Sul posto",en:"On site"},
+    org:"Club moto storiche (esempio)", sources:[S_FB("Club moto storiche Mendrisiotto"), S_LOC] },
   { id:"e3", cat:"aerei", date:"2026-10-24", time:"10:00", lat:46.160, lng:8.879, icao:"LSZL",
     title:{it:"Porte aperte all'aeroporto di Locarno",en:"Open day at Locarno airfield"},
     place:{it:"Aeroporto cantonale di Locarno",en:"Locarno cantonal airfield"},
@@ -924,7 +945,7 @@ function aiFill(){
   else if((m=low.match(/(\d{1,2})[./](\d{1,2})[./](\d{4})/))) $("f-date").value=`${m[3]}-${m[2].padStart(2,"0")}-${m[1].padStart(2,"0")}`;
   if((m=low.match(/(?:ore|at|alle)\s*(\d{1,2})[:.](\d{2})/))) $("f-time").value=`${m[1].padStart(2,"0")}:${m[2]}`;
   if((m=txt.match(/\b(?:a|in)\s+([A-ZÀ-Ü][\p{L}' ]+?)(?:,|\.|\n)/u))) $("f-place").value=m[1].trim();
-  $("f-cat").value=/aere|volo|fly|air|elicott|helicop/.test(low)?"aerei":/pista|track|slalom|gara|rally|cronoscalata|race/.test(low)?"gara":/raduno|meet|coffee/.test(low)?"raduno":/giro|tour|drive|itinerar/.test(low)?"tour":"raduno";
+  $("f-cat").value=/\bmoto|motocicl|motorbike|motorcycle|biker/.test(low)?"moto":/aere|volo|fly|air|elicott|helicop/.test(low)?"aerei":/pista|track|slalom|gara|rally|cronoscalata|race/.test(low)?"gara":/raduno|meet|coffee/.test(low)?"raduno":/giro|tour|drive|itinerar/.test(low)?"tour":"raduno";
   if((m=txt.match(/(?:organizza|organised by|organized by)\s*:?\s*(.+)/i))) $("f-org").value=m[1].trim();
   $("f-desc").value=lines.slice(1).filter(l=>!/organizza|organised|organized|^info|instagram\.com|https?:/i.test(l)).join(" ");
   const urls=[...txt.matchAll(/(?:https?:\/\/)?(?:www\.)?[a-z0-9-]+(?:\.[a-z0-9-]+)*\.[a-z]{2,}\/[^\s]*/gi)].map(x=>normUrl(x[0]));
