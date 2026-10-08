@@ -1,7 +1,7 @@
 # Advent TI: piano dell'app
 
 App per iPhone e Android con gli eventi di auto, moto e aerei in Ticino, nell'Italia vicina e nella Svizzera interna vicina.
-Il prototipo cliccabile è in `prototipo.html`.
+Il prototipo cliccabile è in `prototipo.html` (anteprima Claude) e `index.html` (stessa app come pagina normale, per GitHub Pages).
 
 ## Decisioni prese
 - Utente: principiante, budget iniziale quasi zero
@@ -39,7 +39,9 @@ Nome scelto: **Advent TI** ("TI" = Ticino), così si distingue da "Advent Events
 Home · Calendario · Mappa · Proponi · Profilo
 
 - **Home**: carosello "In evidenza" con locandine grandi, "Questo weekend", elenco "In arrivo" a post stile Instagram (club, locandina, cuore, recensioni, mappa).
-- **Mappa**: tutti gli eventi colorati per categoria; quelli promossi pulsano. Nell'app vera: react-native-maps (Apple Maps su iPhone, Google Maps su Android) oppure MapLibre + OpenStreetMap. Nel prototipo la mappa è disegnata con dati swisstopo/UST (swiss-maps) e Natural Earth.
+- **Mappa**: tutti gli eventi colorati per categoria; quelli promossi pulsano. 4 stili: Scura (CARTO), Stradale (OpenStreetMap), Topografica (OpenTopoMap), swisstopo (carta nazionale, dato aperto). Nell'anteprima di Claude le mappe esterne sono bloccate e si vede una mappa disegnata (swisstopo/UST + Natural Earth); da GitHub Pages si vedono le mappe vere.
+- **Google Maps**: le immagini non si possono copiare; nell'app vera react-native-maps mostra Google Maps su Android (chiave gratuita per le app). Ogni evento ha il pulsante "Apri in Google Maps".
+- Licenze tasselli: credito visibile sempre; OSM/OpenTopoMap uso moderato; CARTO gratis fino a 75'000 visualizzazioni/mese non commerciali; swisstopo gratuito.
 
 ## Accesso e ruoli
 - Ospite: guarda tutto senza account.
@@ -50,7 +52,8 @@ Home · Calendario · Mappa · Proponi · Profilo
 ## Recensioni
 - Stelle 1–5 + commento, su eventi e organizzatori; in qualsiasi momento (con l'edizione facoltativa: molti eventi si ripetono).
 - Risposta pubblica dell'organizzatore (una per recensione).
-- Pulsante "Segnala" da aggiungere nell'app vera (richiesto dagli store per i contenuti degli utenti).
+- Pulsante **"Segnala"** su recensioni ed eventi (serve l'accesso). Motivi: offensivo, spam, falso, dati personali, dati sbagliati, annullato, evento falso, altro (nota obbligatoria).
+- Coda **"Segnalazioni"** per l'amministratore: segnalazioni raggruppate per contenuto, con motivi e note; azioni Rimuovi / Mantieni / Apri.
 
 ## Promozione (gratis per ora)
 - In evidenza nella Home · badge "In evidenza" (elenco, locandine, mappa) · notifica ai vicini (una volta per evento, chi segue la categoria entro 30 km) · statistiche (viste, salvataggi, clic sulle fonti).
@@ -61,7 +64,7 @@ Home · Calendario · Mappa · Proponi · Profilo
 - Prese dalla fonte solo con permesso: casella obbligatoria + credito visibile. Il robot non copia immagini in automatico.
 
 ## Tabelle Supabase
-profiles · organizers · events · event_sources · posters · reviews · promotions · event_stats
+profiles · organizers · events · event_sources · posters · reviews · reports · promotions · event_stats
 
 ## Architettura
 | Parte | Strumento | Costo |

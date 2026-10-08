@@ -1,3 +1,13 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#06080E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Advent TI">
 <title>Advent TI</title>
 <meta name="description" content="Prototipo di Advent TI: eventi auto, moto e aerei in Ticino e dintorni">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -480,6 +490,10 @@ td a{color:var(--blue);text-decoration:none;overflow-wrap:anywhere}
   .trail{stroke-dashoffset:0;opacity:.5}
 }
 </style>
+<style>:root{padding-top:env(safe-area-inset-top,0px)}</style>
+</head>
+<body>
+
 
 <div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -1926,3 +1940,6 @@ window.addEventListener("resize",()=>{if(S.view==="map"&&S.mapMode==="svg"&&S.vb
 
 renderAll();
 </script>
+
+</body>
+</html>
