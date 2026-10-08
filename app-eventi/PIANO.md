@@ -1,4 +1,4 @@
-# Ruote e Ali: piano dell'app (nome provvisorio)
+# Advent: piano dell'app
 
 App per iPhone e Android con gli eventi di auto e aerei in Ticino, nell'Italia vicina e nella Svizzera interna vicina.
 Il prototipo cliccabile è in `prototipo.html`.
@@ -10,6 +10,30 @@ Il prototipo cliccabile è in `prototipo.html`.
 - Area: Ticino, Italia vicina (Lombardia, Piemonte) e Svizzera interna vicina (Uri, Grigioni)
 - Fonti: siti di eventi, inserimento da organizzatori, social (vedi limiti sotto)
 - Promozione: gratuita con approvazione; gli organizzatori verificati pubblicano subito. Gli eventi in evidenza a pagamento arriveranno più avanti.
+
+## Fonti segnalate (verificate via ricerca web)
+| Fonte | Tipo | Note |
+|---|---|---|
+| tio.ch/agenda | Agenda | Pagine per giorno `/agenda/day/AAAAMMGG`, filtri per zona; nessuna categoria motori, si filtra per parole chiave |
+| inagenda.ch | Agenda | Piattaforma dietro l'agenda di tio.ch: chiedere accesso ai dati |
+| tio.ch/rss | Notizie | Da verificare se esiste un feed della sola agenda |
+| TCS Sezione Ticino | Agenda | Poche voci ma affidabili |
+| automotoclubgeneroso.ch | Club | Dal 2026 si chiama "Moto Club Generoso": eventi soprattutto di moto |
+| Patrouille Suisse (pagina + PDF) | Ufficiale | Il PDF cambia nome a ogni versione: leggere il link dalla pagina. Stagione 2026 finita il 6 settembre, senza tappe in Ticino |
+| Forze aeree – attività di volo | Ufficiale | Esibizioni militari |
+| localcities.ch, freizeit.ch | Agenda | Comuni / Svizzera tedesca |
+| swissactivities.com | Secondaria | Attività prenotabili più che eventi |
+| laRegione, RSI, aeroTELEGRAPH | Notizie | Solo fatti + link, niente testi o foto copiati |
+
+Prima di attivare il robot: controllare le condizioni d'uso di ogni sito.
+
+## Fonti su ogni evento
+- In fondo al dettaglio: sezione "Fonti" con il link di ogni pagina usata.
+- Se l'evento arriva da un social: icona e link del profilo o del canale.
+- Modulo "Proponi": almeno una fonte obbligatoria (sito → link web; Instagram/Facebook/TikTok/YouTube → link del profilo o canale), altre facoltative. Il link viene controllato in base al tipo.
+
+## Nome
+"Advent Events" esiste già sull'App Store (altra azienda): usare un nome store tipo "Advent – Raduni auto e aerei".
 
 ## Architettura
 | Parte | Strumento | Costo |

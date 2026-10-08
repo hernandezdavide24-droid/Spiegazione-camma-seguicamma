@@ -1,223 +1,330 @@
-<title>Ruote e Ali</title>
-<meta name="description" content="Prototipo dell'app con eventi auto e aerei in Ticino e dintorni">
+<title>Advent</title>
+<meta name="description" content="Prototipo di Advent: eventi auto e aerei in Ticino e dintorni">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: una colonna "telefono" centrata, barra di navigazione fissa in basso; rosso e blu come la bandiera ticinese (rosso = auto, blu = aerei) */
+/* Layout: colonna "telefono" su sfondo notturno con aloni rosso/blu; schede in vetro smerigliato; barra di navigazione flottante.
+   Scelta deliberata a tema unico scuro (richiesta dell'utente). Rosso = auto, blu = aerei, come la bandiera ticinese. */
 :root{
-  --bg:#EDF0F4; --surface:#FFFFFF; --sunk:#E3E8EF; --ink:#121A26; --muted:#5A6575; --line:#D3DAE4;
-  --red:#C81E36; --blue:#1F4E9B; --amber:#A65F0A; --green:#2A7552;
-  --red-soft:#FBE7EA; --blue-soft:#E4ECF9; --amber-soft:#FBEFDF; --green-soft:#E1F1E8;
-  --ok:#2A7552; --warn:#A65F0A;
-  --f-display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
-  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
-  --nav-h:64px;
+  color-scheme:dark;
+  --bg:#06080E; --bg2:#0B0F19;
+  --glass:rgba(255,255,255,.055); --glass-2:rgba(255,255,255,.09); --stroke:rgba(255,255,255,.10); --stroke-2:rgba(255,255,255,.18);
+  --ink:#EEF2F8; --muted:#8E99AD; --faint:#5C6678;
+  --red:#FF4D5E; --blue:#4F8CFF; --amber:#FFB547; --green:#3DDC97; --violet:#B48CFF;
+  --ok:#3DDC97; --warn:#FFB547;
+  --f-display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  --ease:cubic-bezier(.2,.8,.2,1); --spring:cubic-bezier(.34,1.56,.64,1);
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0D131B; --surface:#161F2A; --sunk:#1E2936; --ink:#E7ECF2; --muted:#94A1B3; --line:#2A3746;
-  --red:#F0596D; --blue:#77A2EE; --amber:#E2A24E; --green:#5DBB8E;
-  --red-soft:#3A1A20; --blue-soft:#18284A; --amber-soft:#382714; --green-soft:#16302A;
-  --ok:#5DBB8E; --warn:#E2A24E; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0D131B; --surface:#161F2A; --sunk:#1E2936; --ink:#E7ECF2; --muted:#94A1B3; --line:#2A3746;
-  --red:#F0596D; --blue:#77A2EE; --amber:#E2A24E; --green:#5DBB8E;
-  --red-soft:#3A1A20; --blue-soft:#18284A; --amber-soft:#382714; --green-soft:#16302A;
-  --ok:#5DBB8E; --warn:#E2A24E; color-scheme:dark}
-
 *{box-sizing:border-box}
 html,body{height:100%}
-body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 button,input,select,textarea{font:inherit;color:inherit}
-button{cursor:pointer}
-:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:6px}
-.app{max-width:460px;margin:0 auto;min-height:100%;padding-inline:16px;padding-bottom:calc(var(--nav-h) + 24px + env(safe-area-inset-bottom,0px))}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:10px}
 
-/* Header */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:14px 10px;display:flex;align-items:center;gap:12px}
-.brand{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
-.mark{width:34px;height:34px;flex:none;border-radius:9px;overflow:hidden;display:grid;grid-template-rows:1fr 1fr}
-.mark i:first-child{background:var(--red)} .mark i:last-child{background:var(--blue)}
-.brand h1{font-family:var(--f-display);font-size:26px;line-height:1;margin:0;letter-spacing:.01em}
-.brand small{display:block;font-size:12px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
-.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;flex:none}
-.lang button{border:0;background:transparent;padding:5px 10px;font-size:13px;font-weight:600;color:var(--muted)}
-.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+/* Aloni di sfondo */
+.aura{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aura i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.38}
+.aura i:nth-child(1){width:340px;height:340px;background:var(--red);top:-120px;left:-120px}
+.aura i:nth-child(2){width:380px;height:380px;background:var(--blue);top:30%;right:-180px;opacity:.30}
+.aura i:nth-child(3){width:260px;height:260px;background:var(--violet);bottom:-120px;left:10%;opacity:.18}
 
-.demo-note{font-size:12.5px;color:var(--muted);background:var(--sunk);border-radius:8px;padding:8px 10px;margin-block:2px 14px}
+.app{position:relative;z-index:1;max-width:460px;margin:0 auto;padding-inline:16px;padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))}
 
-/* Filters */
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px 5px 9px;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:7px}
-.chip .dot{width:9px;height:9px;border-radius:50%;background:var(--c)}
-.chip[aria-pressed="true"]{border-color:var(--c);background:var(--c-soft)}
-.chip[aria-pressed="false"]{color:var(--muted)}
-.chip[aria-pressed="false"] .dot{background:transparent;box-shadow:inset 0 0 0 1.5px var(--c)}
-.radius{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:14px}
-.radius input{flex:1;accent-color:var(--red)}
-.radius output{font-family:var(--f-mono);font-size:13px;min-width:7ch;text-align:right}
+/* Glass */
+.glass{background:var(--glass);border:1px solid var(--stroke);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border-radius:20px}
 
-/* Calendar */
-.cal{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:14px}
-.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
-.cal-head h2{font-family:var(--f-display);font-size:21px;margin:0;text-transform:capitalize}
-.icon-btn{border:1px solid var(--line);background:transparent;width:34px;height:34px;border-radius:9px;font-size:18px;line-height:1;display:grid;place-items:center}
-.icon-btn:disabled{opacity:.35;cursor:default}
+/* Header animato */
+.top{position:relative;padding-block:18px 8px;display:flex;align-items:center;gap:12px;min-height:84px}
+.sky{position:absolute;inset:0 -16px;pointer-events:none;overflow:hidden}
+.sky svg{width:100%;height:100%;display:block}
+.trail{fill:none;stroke:url(#trailGrad);stroke-width:2;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:420}
+.plane{offset-path:path("M -20 52 C 90 44, 170 6, 300 18 S 460 40, 520 10");offset-rotate:auto;width:14px;height:14px;position:absolute;left:0;top:0;opacity:0}
+.road{position:absolute;left:-16px;right:-16px;bottom:2px;height:2px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.22) 0 18px,transparent 18px 34px);background-size:34px 2px;opacity:.5}
+.brand{position:relative;display:flex;align-items:center;gap:12px;flex:1;min-width:0}
+.logo{width:38px;height:38px;flex:none;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--red),var(--blue));box-shadow:0 6px 24px -6px rgba(79,140,255,.6)}
+.logo svg{width:22px;height:22px}
+.brand h1{font-family:var(--f-display);font-weight:700;font-size:24px;letter-spacing:-.01em;line-height:1;margin:0}
+.brand small{display:block;margin-top:4px;font-size:11.5px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.lang{position:relative;display:flex;padding:3px;border-radius:999px;flex:none}
+.lang button{position:relative;z-index:1;border:0;background:transparent;padding:5px 11px;font-size:12.5px;font-weight:700;color:var(--muted);transition:color .25s}
+.lang button[aria-pressed="true"]{color:#0A0D14}
+.lang .pill{position:absolute;top:3px;bottom:3px;left:3px;width:calc(50% - 3px);border-radius:999px;background:var(--ink);transition:transform .35s var(--spring)}
+.lang[data-l="en"] .pill{transform:translateX(100%)}
+
+.demo-note{font-size:12.5px;color:var(--muted);padding:9px 12px;margin-block:6px 16px;border-radius:14px}
+
+/* Viste con transizione */
+.view{animation:viewIn .45s var(--ease) both}
+@keyframes viewIn{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+
+/* Filtri */
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding:2px 16px 4px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--stroke);background:var(--glass);border-radius:999px;padding:7px 14px 7px 10px;font-size:13.5px;font-weight:600;display:inline-flex;align-items:center;gap:8px;color:var(--muted);transition:all .25s var(--ease)}
+.chip .dot{width:9px;height:9px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--c);transition:all .25s}
+.chip[aria-pressed="true"]{color:var(--ink);border-color:color-mix(in srgb,var(--c) 60%,transparent);background:color-mix(in srgb,var(--c) 16%,transparent)}
+.chip[aria-pressed="true"] .dot{background:var(--c);box-shadow:0 0 10px var(--c)}
+.press{transition:transform .18s var(--ease)}
+.press:active{transform:scale(.95)}
+.radius{display:flex;align-items:center;gap:12px;margin-top:14px;font-size:13.5px;color:var(--muted)}
+.radius input{flex:1;accent-color:var(--red);min-width:0}
+.radius output{font-family:var(--f-mono);font-size:12.5px;color:var(--ink);min-width:7ch;text-align:right}
+
+/* Calendario */
+.cal{padding:14px;margin-top:16px}
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.cal-head h2{font-family:var(--f-display);font-weight:500;font-size:16px;margin:0;text-transform:capitalize;letter-spacing:.01em}
+.icon-btn{border:1px solid var(--stroke);background:var(--glass);width:36px;height:36px;border-radius:12px;display:grid;place-items:center;transition:transform .18s var(--ease),background .2s}
+.icon-btn:active{transform:scale(.9)}
+.icon-btn:disabled{opacity:.3;cursor:default}
+.icon-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cal-body{overflow:hidden}
 .grid7{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center}
-.dow{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding-bottom:4px}
-.day{border:0;background:transparent;border-radius:9px;padding:5px 0 6px;min-height:42px;display:flex;flex-direction:column;align-items:center;gap:3px;font-variant-numeric:tabular-nums;font-size:14px}
+.grid7.slide-l{animation:slideL .35s var(--ease)}
+.grid7.slide-r{animation:slideR .35s var(--ease)}
+@keyframes slideL{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+@keyframes slideR{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:none}}
+.dow{font-size:10.5px;color:var(--faint);text-transform:uppercase;letter-spacing:.1em;padding-bottom:6px;font-weight:700}
+.day{border:0;background:transparent;border-radius:12px;padding:6px 0;min-height:42px;display:flex;flex-direction:column;align-items:center;gap:3px;font-variant-numeric:tabular-nums;font-size:13.5px;color:var(--muted);transition:background .2s,transform .18s var(--ease),color .2s}
 .day.out{visibility:hidden}
-.day.has{font-weight:600}
-.day.today{box-shadow:inset 0 0 0 1.5px var(--line)}
-.day[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
-.day .dots{display:flex;gap:3px;height:6px}
-.day .dots i{width:6px;height:6px;border-radius:50%;background:var(--c)}
-.day:disabled{cursor:default;color:var(--muted)}
-.day.has:disabled{color:inherit}
+.day.has{color:var(--ink);font-weight:700}
+.day.has:active{transform:scale(.88)}
+.day.today{box-shadow:inset 0 0 0 1px var(--stroke-2)}
+.day[aria-pressed="true"]{background:linear-gradient(135deg,var(--red),var(--blue));color:#fff}
+.day .dots{display:flex;gap:3px;height:5px}
+.day .dots i{width:5px;height:5px;border-radius:50%;background:var(--c);box-shadow:0 0 6px var(--c)}
+.day[aria-pressed="true"] .dots i{background:#fff;box-shadow:none}
+.day:disabled{cursor:default}
 
-/* List */
-.list-head{display:flex;align-items:baseline;justify-content:space-between;margin:22px 0 8px;gap:12px}
-.list-head h2{font-family:var(--f-display);font-size:22px;margin:0}
-.link-btn{border:0;background:none;color:var(--blue);font-weight:600;padding:0;font-size:14px}
-.events{display:flex;flex-direction:column;gap:10px}
-.ev{display:grid;grid-template-columns:58px 1fr;gap:12px;align-items:start;text-align:left;width:100%;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;position:relative}
-.ev::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:0 3px 3px 0;background:var(--c)}
-.date-block{text-align:center;border-radius:10px;background:var(--c-soft);padding:6px 0;font-variant-numeric:tabular-nums}
-.date-block b{display:block;font-family:var(--f-display);font-size:26px;line-height:1}
-.date-block span{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-.ev-body{min-width:0}
-.ev-title{font-weight:600;font-size:16px;line-height:1.3;margin:0 0 3px}
+/* Lista */
+.list-head{display:flex;align-items:baseline;justify-content:space-between;margin:26px 0 10px;gap:12px}
+.list-head h2{font-family:var(--f-display);font-weight:500;font-size:17px;margin:0}
+.link-btn{border:0;background:none;color:var(--blue);font-weight:700;padding:0;font-size:13.5px}
+.events{display:flex;flex-direction:column;gap:12px}
+.ev{display:grid;grid-template-columns:60px 1fr;gap:14px;align-items:start;text-align:left;width:100%;padding:14px;position:relative;overflow:hidden;transition:transform .25s var(--ease),border-color .25s}
+.ev::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 0% 0%,color-mix(in srgb,var(--c) 18%,transparent),transparent 60%);pointer-events:none}
+.ev:hover{border-color:var(--stroke-2)}
+.ev:active{transform:scale(.98)}
+.date-block{position:relative;z-index:1;text-align:center;border-radius:14px;padding:8px 0;background:color-mix(in srgb,var(--c) 16%,transparent);border:1px solid color-mix(in srgb,var(--c) 35%,transparent);font-variant-numeric:tabular-nums}
+.date-block b{display:block;font-family:var(--f-display);font-weight:700;font-size:22px;line-height:1.05}
+.date-block span{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700}
+.ev-body{position:relative;z-index:1;min-width:0}
+.ev-title{font-weight:700;font-size:16px;line-height:1.3;margin:2px 0 4px}
 .meta{display:flex;flex-wrap:wrap;gap:4px 10px;font-size:13px;color:var(--muted)}
-.mono{font-family:var(--f-mono);font-size:12.5px}
-.tag{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--c)}
-.src{display:inline-flex;align-items:center;gap:5px;font-size:12px;margin-top:6px;color:var(--muted)}
-.src .b{width:7px;height:7px;border-radius:50%;background:var(--ok)}
-.src.auto .b{background:var(--blue)}
-.empty{background:var(--surface);border:1px dashed var(--line);border-radius:14px;padding:22px 16px;text-align:center;color:var(--muted)}
+.mono{font-family:var(--f-mono);font-size:12px}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
+.src-line{display:flex;align-items:center;gap:6px;font-size:12px;margin-top:8px;color:var(--faint)}
+.src-line svg{width:13px;height:13px;flex:none}
+.empty{border:1px dashed var(--stroke-2);border-radius:20px;padding:24px 16px;text-align:center;color:var(--muted)}
 
-/* Categories */
-.c-raduno{--c:var(--red);--c-soft:var(--red-soft)}
-.c-tour{--c:var(--green);--c-soft:var(--green-soft)}
-.c-aerei{--c:var(--blue);--c-soft:var(--blue-soft)}
-.c-gara{--c:var(--amber);--c-soft:var(--amber-soft)}
+.c-raduno{--c:var(--red)} .c-tour{--c:var(--green)} .c-aerei{--c:var(--blue)} .c-gara{--c:var(--amber)}
 
-/* Detail sheet */
-.sheet{position:fixed;inset:0;z-index:20;background:var(--bg);overflow-y:auto;padding-top:env(safe-area-inset-top,0px)}
-.sheet-inner{max-width:460px;margin:0 auto;padding-inline:16px;padding-bottom:calc(32px + env(safe-area-inset-bottom,0px))}
-.sheet-bar{position:sticky;top:0;background:var(--bg);padding-block:12px;display:flex;align-items:center;gap:10px;z-index:2}
-.hero{border-radius:16px;padding:18px 16px;background:var(--c-soft);border:1px solid var(--line)}
-.hero h2{font-family:var(--f-display);font-size:30px;line-height:1.05;margin:6px 0 8px;text-wrap:balance}
-.hero p{margin:0}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
-.fact{background:var(--surface);border-radius:10px;padding:8px 10px;min-width:0}
-.fact span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-.fact b{font-weight:600;font-size:14px;overflow-wrap:anywhere}
-.sec{margin-top:22px}
-.sec h3{font-family:var(--f-display);font-size:20px;margin:0 0 8px;letter-spacing:.01em}
-.sec ul{margin:0;padding-left:18px}
-.sec li{margin-bottom:4px}
-.prog{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0}
-.prog dt{font-family:var(--f-mono);font-size:13px;color:var(--muted);padding-top:1px}
-.prog dd{margin:0}
-.route{list-style:none;padding:0!important;margin:0;position:relative}
-.route li{display:grid;grid-template-columns:18px 1fr auto;gap:10px;align-items:start;padding-bottom:12px;margin:0;position:relative}
-.route li::before{content:"";position:absolute;left:8px;top:14px;bottom:-2px;width:2px;background:var(--line)}
+/* Dettaglio: foglio che sale dal basso */
+.sheet{position:fixed;inset:0;z-index:20;pointer-events:none}
+.sheet .scrim{position:absolute;inset:0;background:rgba(3,5,10,.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;transition:opacity .35s var(--ease)}
+.sheet .panel{position:absolute;left:0;right:0;bottom:0;top:calc(env(safe-area-inset-top,0px) + 18px);max-width:460px;margin:0 auto;background:linear-gradient(180deg,#121826,#0A0E17);border:1px solid var(--stroke);border-bottom:0;border-radius:26px 26px 0 0;overflow-y:auto;transform:translateY(105%);transition:transform .5s var(--ease);overscroll-behavior:contain}
+.sheet.open{pointer-events:auto}
+.sheet.open .scrim{opacity:1}
+.sheet.open .panel{transform:none}
+.sheet-inner{padding:0 16px calc(36px + env(safe-area-inset-bottom,0px))}
+.grabber{position:sticky;top:0;z-index:3;display:flex;align-items:center;gap:10px;padding:10px 0 12px;margin-inline:-16px;padding-inline:16px;background:rgba(18,24,38,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.grabber::before{content:"";position:absolute;top:6px;left:50%;width:40px;height:4px;margin-left:-20px;border-radius:4px;background:var(--stroke-2)}
+.grabber .icon-btn{margin-top:10px}
+.hero{position:relative;border-radius:22px;padding:20px 16px;overflow:hidden;border:1px solid var(--stroke);background:radial-gradient(140% 100% at 0% 0%,color-mix(in srgb,var(--c) 30%,transparent),transparent 65%),var(--glass)}
+.hero h2{font-family:var(--f-display);font-weight:700;font-size:24px;line-height:1.15;margin:8px 0 10px;text-wrap:balance;letter-spacing:-.01em}
+.hero p{margin:0;color:#C9D1DE}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+.fact{background:rgba(0,0,0,.25);border:1px solid var(--stroke);border-radius:14px;padding:9px 11px;min-width:0}
+.fact span{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700}
+.fact b{font-weight:600;font-size:13.5px;overflow-wrap:anywhere}
+.reveal>*{animation:rise .5s var(--ease) both}
+.reveal>*:nth-child(2){animation-delay:.05s}.reveal>*:nth-child(3){animation-delay:.1s}.reveal>*:nth-child(4){animation-delay:.15s}
+.reveal>*:nth-child(5){animation-delay:.2s}.reveal>*:nth-child(6){animation-delay:.25s}.reveal>*:nth-child(n+7){animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.sec{margin-top:24px}
+.sec h3{font-family:var(--f-display);font-weight:500;font-size:15px;margin:0 0 10px;letter-spacing:.01em;display:flex;align-items:center;gap:8px}
+.sec ul{margin:0;padding-left:18px;color:#C9D1DE}
+.sec li{margin-bottom:5px}
+.sec li::marker{color:var(--c)}
+.prog{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;margin:0}
+.prog dt{font-family:var(--f-mono);font-size:12.5px;color:var(--c);padding-top:2px}
+.prog dd{margin:0;color:#C9D1DE}
+.route{list-style:none;padding:0!important;margin:0 0 12px}
+.route li{display:grid;grid-template-columns:18px 1fr auto;gap:12px;align-items:start;padding-bottom:14px;margin:0;position:relative}
+.route li::before{content:"";position:absolute;left:8px;top:16px;bottom:-2px;width:2px;background:linear-gradient(var(--c),color-mix(in srgb,var(--c) 20%,transparent))}
 .route li:last-child::before{display:none}
-.route .pin{width:18px;height:18px;border-radius:50%;border:3px solid var(--c);background:var(--surface);position:relative;z-index:1}
-.route li:first-child .pin,.route li:last-child .pin{background:var(--c)}
-.route small{display:block;color:var(--muted);font-size:13px}
-.route .km{font-family:var(--f-mono);font-size:12.5px;color:var(--muted);white-space:nowrap}
+.route .pin{width:18px;height:18px;border-radius:50%;border:3px solid var(--c);background:#0A0E17;position:relative;z-index:1}
+.route li:first-child .pin,.route li:last-child .pin{background:var(--c);box-shadow:0 0 12px var(--c)}
+.route small{display:block;color:var(--muted);font-size:12.5px}
+.route .km{font-family:var(--f-mono);font-size:12px;color:var(--muted);white-space:nowrap}
 .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-.btn{border:0;border-radius:10px;padding:10px 16px;font-weight:600;font-size:15px;background:var(--ink);color:var(--bg);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
-.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
-.btn.ok{background:var(--ok);color:var(--surface)}
-.btn.small{padding:7px 12px;font-size:14px}
-.notice{font-size:13.5px;background:var(--amber-soft);border-radius:10px;padding:10px 12px;margin-top:12px}
+.btn{border:0;border-radius:14px;padding:11px 18px;font-weight:700;font-size:14.5px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--red),#E0365F 40%,var(--blue));color:#fff;box-shadow:0 8px 24px -10px rgba(255,77,94,.7);transition:transform .18s var(--ease),box-shadow .2s}
+.btn:active{transform:scale(.95)}
+.btn.ghost{background:var(--glass);color:var(--ink);border:1px solid var(--stroke);box-shadow:none}
+.btn.ok{background:var(--ok);color:#04150D;box-shadow:none}
+.btn.small{padding:8px 13px;font-size:13.5px;border-radius:12px}
+.btn svg{width:17px;height:17px;flex:none}
+.heart svg{fill:none;stroke:currentColor;stroke-width:2;transition:fill .2s}
+.heart.on svg{fill:#fff;stroke:#fff}
+.heart.pop svg{animation:pop .45s var(--spring)}
+@keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.45)}100%{transform:scale(1)}}
+.notice{font-size:13.5px;border-radius:14px;padding:11px 13px;margin-top:14px;background:color-mix(in srgb,var(--amber) 12%,transparent);border:1px solid color-mix(in srgb,var(--amber) 35%,transparent);color:#F3DDB8}
 
-/* Forms */
-.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
-.page-title{font-family:var(--f-display);font-size:28px;margin:6px 0 4px}
-.lead{color:var(--muted);margin:0 0 16px}
-.field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
-.field label{font-size:13px;font-weight:600}
-.field input,.field select,.field textarea{border:1.5px solid var(--line);background:var(--bg);border-radius:9px;padding:9px 11px;width:100%}
-.field textarea{min-height:84px;resize:vertical}
+/* Fonti */
+.sources{display:flex;flex-direction:column;gap:8px}
+.source{display:grid;grid-template-columns:36px 1fr auto;gap:12px;align-items:center;padding:10px 12px;border-radius:14px;background:var(--glass);border:1px solid var(--stroke);text-decoration:none;transition:border-color .2s,transform .18s var(--ease)}
+.source:active{transform:scale(.98)}
+.source:hover{border-color:var(--stroke-2)}
+.s-ico{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;background:color-mix(in srgb,var(--s) 18%,transparent);color:var(--s)}
+.s-ico svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.source b{display:block;font-size:14px;font-weight:700}
+.source span{display:block;font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.source>div{min-width:0}
+.source .go{color:var(--faint)}
+.st-web{--s:var(--blue)} .st-instagram{--s:#FF5FA2} .st-facebook{--s:#5B8DEF} .st-tiktok{--s:#3EE6E0} .st-youtube{--s:var(--red)} .st-other{--s:var(--violet)}
+
+/* Form */
+.page-title{font-family:var(--f-display);font-weight:700;font-size:24px;margin:8px 0 6px;letter-spacing:-.01em}
+.lead{color:var(--muted);margin:0 0 18px}
+.card{padding:16px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.field label,.lbl{font-size:12.5px;font-weight:700;color:#C9D1DE}
+.req{color:var(--red)}
+.field input,.field select,.field textarea,.src-row input,.src-row select{border:1px solid var(--stroke);background:rgba(0,0,0,.28);border-radius:12px;padding:10px 12px;width:100%;transition:border-color .2s,box-shadow .2s}
+.field input:focus,.field select:focus,.field textarea:focus,.src-row input:focus,.src-row select:focus{outline:none;border-color:color-mix(in srgb,var(--blue) 70%,transparent);box-shadow:0 0 0 4px color-mix(in srgb,var(--blue) 18%,transparent)}
+.field textarea{min-height:88px;resize:vertical}
+select option{background:#121826}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .row2>*{min-width:0}
 .hint{font-size:12.5px;color:var(--muted)}
-.ai-box{background:var(--blue-soft);border-radius:12px;padding:12px;margin-bottom:16px}
-.ai-box h3{margin:0 0 4px;font-size:15px}
-.ai-box textarea{background:var(--surface)}
+.ai-box{padding:14px;margin-bottom:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--blue) 14%,transparent),color-mix(in srgb,var(--violet) 10%,transparent));border:1px solid color-mix(in srgb,var(--blue) 30%,transparent);border-radius:20px}
+.ai-box h3{margin:0 0 4px;font-size:15px;display:flex;align-items:center;gap:8px}
+.ai-box h3 svg{width:18px;height:18px;stroke:var(--blue);fill:none;stroke-width:2}
+.src-block{border:1px solid var(--stroke);border-radius:16px;padding:12px;margin-bottom:14px;background:rgba(0,0,0,.18)}
+.src-row{display:grid;grid-template-columns:118px 1fr 36px;gap:8px;margin-top:8px;animation:rise .35s var(--ease) both}
+.src-row>*{min-width:0}
+.src-row .rm{border:1px solid var(--stroke);background:transparent;border-radius:12px;color:var(--muted);font-size:18px;line-height:1}
+.src-row .rm:disabled{opacity:.25;cursor:default}
+.src-row.bad input{border-color:var(--red);box-shadow:0 0 0 3px color-mix(in srgb,var(--red) 18%,transparent)}
+.src-err{font-size:12px;color:var(--red);grid-column:1/-1;margin-top:-2px}
+.add-src{margin-top:10px;border:1px dashed var(--stroke-2);background:transparent;border-radius:12px;padding:8px 12px;font-weight:700;font-size:13px;color:var(--ink);width:100%}
+.shake{animation:shake .4s}
+@keyframes shake{25%{transform:translateX(-6px)}50%{transform:translateX(5px)}75%{transform:translateX(-3px)}}
 
-/* Admin queue */
+/* Coda di verifica */
 .q{display:flex;flex-direction:column;gap:12px}
-.q-item{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px}
+.q-item{padding:14px;animation:rise .4s var(--ease) both}
+.q-item.leaving{animation:leave .35s var(--ease) forwards}
+@keyframes leave{to{opacity:0;transform:translateX(40px) scale(.96)}}
 .q-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
-.conf{font-family:var(--f-mono);font-size:12px;padding:2px 8px;border-radius:999px;white-space:nowrap}
-.conf.hi{background:var(--green-soft);color:var(--ok)}
-.conf.mid{background:var(--amber-soft);color:var(--warn)}
-.flags{font-size:13px;color:var(--warn);margin-top:6px}
-.q-actions{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.conf{font-family:var(--f-mono);font-size:11.5px;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.conf.hi{background:color-mix(in srgb,var(--ok) 16%,transparent);color:var(--ok)}
+.conf.mid{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
+.flags{font-size:13px;color:var(--warn);margin-top:8px}
+.q-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
 
-/* Project page */
-.prose h3{font-family:var(--f-display);font-size:22px;margin:26px 0 8px}
-.prose p,.prose li{max-width:62ch}
+/* Progetto */
+.prose h3{font-family:var(--f-display);font-weight:500;font-size:17px;margin:30px 0 10px}
+.prose p,.prose li{max-width:62ch;color:#C9D1DE}
 .prose ul,.prose ol{padding-left:20px}
-.flow{display:flex;flex-direction:column;gap:0;margin-top:8px}
-.flow .step{display:grid;grid-template-columns:34px 1fr;gap:12px;padding-bottom:14px;position:relative}
-.flow .step::before{content:"";position:absolute;left:16px;top:34px;bottom:0;width:2px;background:var(--line)}
+.prose b{color:var(--ink)}
+.flow{display:flex;flex-direction:column}
+.flow .step{display:grid;grid-template-columns:34px 1fr;gap:12px;padding-bottom:16px;position:relative}
+.flow .step::before{content:"";position:absolute;left:16px;top:34px;bottom:0;width:2px;background:var(--stroke)}
 .flow .step:last-child::before{display:none}
-.flow .n{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-size:18px;background:var(--ink);color:var(--bg)}
+.flow .n{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-size:14px;background:linear-gradient(135deg,var(--red),var(--blue));color:#fff}
 .flow b{display:block}
 .flow p{margin:2px 0 0;color:var(--muted);font-size:14px}
-.tbl-wrap{overflow-x:auto}
-table{border-collapse:collapse;width:100%;font-size:14px}
-th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.tbl-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--stroke);background:var(--glass)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--stroke);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 td.num{font-family:var(--f-mono);white-space:nowrap;font-variant-numeric:tabular-nums}
-.callout{border-left:3px solid var(--red);background:var(--surface);padding:10px 12px;border-radius:0 10px 10px 0;margin-top:10px}
+td a{color:var(--blue);text-decoration:none;overflow-wrap:anywhere}
+.lvl{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.lvl.a{background:color-mix(in srgb,var(--ok) 16%,transparent);color:var(--ok)}
+.lvl.b{background:color-mix(in srgb,var(--blue) 18%,transparent);color:var(--blue)}
+.lvl.c{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
+.callout{padding:12px 14px;margin-top:10px;border-radius:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--red) 14%,transparent),color-mix(in srgb,var(--blue) 14%,transparent));border:1px solid var(--stroke)}
 
-/* Bottom nav */
-.nav{position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--surface);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
-.nav-inner{max-width:460px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);height:var(--nav-h)}
-.nav button{border:0;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:12px;font-weight:600;color:var(--muted);position:relative}
-.nav button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.nav button[aria-current="page"]{color:var(--red)}
-.badge{position:absolute;top:8px;left:calc(50% + 6px);background:var(--red);color:var(--surface);font-size:10.5px;border-radius:999px;min-width:17px;height:17px;display:grid;place-items:center;padding:0 4px}
+/* Navigazione flottante */
+.nav{position:fixed;left:0;right:0;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:10;padding-inline:16px;pointer-events:none}
+.nav-inner{pointer-events:auto;position:relative;max-width:428px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);height:64px;padding:6px;border-radius:24px;background:rgba(16,21,33,.72);border:1px solid var(--stroke);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);box-shadow:0 20px 40px -18px rgba(0,0,0,.8)}
+.nav .ind{position:absolute;top:6px;bottom:6px;left:6px;width:calc((100% - 12px)/4);border-radius:18px;background:rgba(255,255,255,.08);border:1px solid var(--stroke);transition:transform .45s var(--spring)}
+.nav button{position:relative;z-index:1;border:0;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:11px;font-weight:700;color:var(--muted);transition:color .25s}
+.nav button svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s var(--spring)}
+.nav button[aria-current="page"]{color:var(--ink)}
+.nav button[aria-current="page"] svg{transform:translateY(-1px) scale(1.08);stroke:url(#navGrad)}
+.badge{position:absolute;top:4px;left:calc(50% + 5px);background:var(--red);color:#fff;font-size:10px;border-radius:999px;min-width:17px;height:17px;display:grid;place-items:center;padding:0 4px;box-shadow:0 0 0 2px #10151F}
+.badge.bump{animation:pop .45s var(--spring)}
 
-.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(var(--nav-h) + 16px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;z-index:30;max-width:calc(100% - 32px)}
-@media (prefers-reduced-motion:no-preference){.ev,.chip,.day{transition:background .15s,border-color .15s}}
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:30;max-width:calc(100% - 32px);padding:11px 16px;border-radius:14px;font-size:13.5px;font-weight:600;background:rgba(238,242,248,.95);color:#0A0D14;transform:translate(-50%,20px);opacity:0;transition:all .35s var(--spring);pointer-events:none}
+.toast.show{transform:translate(-50%,0);opacity:1}
+
+@media (prefers-reduced-motion:no-preference){
+  .trail{animation:draw 7s var(--ease) infinite}
+  .plane{animation:fly 7s var(--ease) infinite}
+  .road{animation:roll 1.2s linear infinite}
+}
+@keyframes draw{0%{stroke-dashoffset:420;opacity:0}8%{opacity:1}55%{stroke-dashoffset:0;opacity:.9}85%{opacity:0}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes fly{0%{offset-distance:0%;opacity:0}8%{opacity:1}55%{offset-distance:100%;opacity:1}56%,100%{opacity:0;offset-distance:100%}}
+@keyframes roll{to{background-position:-34px 0}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .trail{stroke-dashoffset:0;opacity:.5}
+}
 </style>
+
+<div class="aura" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="navGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF4D5E"/><stop offset="1" stop-color="#4F8CFF"/></linearGradient>
+  </defs>
+</svg>
 
 <div class="app" id="app">
   <header class="top">
-    <div class="brand">
-      <div class="mark" aria-hidden="true"><i></i><i></i></div>
-      <div><h1>Ruote e Ali</h1><small id="t-sub">Ticino e dintorni</small></div>
+    <div class="sky" aria-hidden="true">
+      <svg viewBox="0 0 500 84" preserveAspectRatio="none">
+        <defs><linearGradient id="trailGrad" x1="0" x2="1"><stop offset="0" stop-color="#4F8CFF" stop-opacity="0"/><stop offset=".7" stop-color="#9CC0FF" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity=".9"/></linearGradient></defs>
+        <path class="trail" d="M -20 52 C 90 44, 170 6, 300 18 S 460 40, 520 10"/>
+      </svg>
+      <svg class="plane" viewBox="0 0 24 24"><path d="M2 12h20M14 5l8 7-8 7M6 8l3 4-3 4" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div class="road"></div>
     </div>
-    <div class="lang" role="group" aria-label="Lingua">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19L12 4l8 15"/><path d="M7.5 13h9"/></svg></div>
+      <div><h1>Advent</h1><small id="t-sub"></small></div>
+    </div>
+    <div class="lang glass" role="group" aria-label="Lingua" id="lang" data-l="it">
+      <span class="pill" aria-hidden="true"></span>
       <button id="lang-it" aria-pressed="true">IT</button>
       <button id="lang-en" aria-pressed="false">EN</button>
     </div>
   </header>
 
-  <!-- EXPLORE -->
-  <main id="view-explore">
-    <p class="demo-note" id="t-demo"></p>
+  <main id="view-explore" class="view">
+    <p class="demo-note glass" id="t-demo"></p>
     <div class="chips" id="chips"></div>
     <div class="radius">
       <label for="radius" id="t-radius"></label>
       <input type="range" id="radius" min="25" max="200" step="25" value="200">
       <output id="radius-out" for="radius"></output>
     </div>
-    <section class="cal" aria-label="Calendario">
+    <section class="cal glass" aria-label="Calendario">
       <div class="cal-head">
-        <button class="icon-btn" id="prev" aria-label="Mese precedente">‹</button>
+        <button class="icon-btn" id="prev" aria-label="Mese precedente"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
         <h2 id="month-label"></h2>
-        <button class="icon-btn" id="next" aria-label="Mese successivo">›</button>
+        <button class="icon-btn" id="next" aria-label="Mese successivo"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
       </div>
-      <div class="grid7" id="cal-grid"></div>
+      <div class="cal-body"><div class="grid7" id="cal-grid"></div></div>
     </section>
     <div class="list-head">
       <h2 id="list-title"></h2>
@@ -226,200 +333,250 @@ td.num{font-family:var(--f-mono);white-space:nowrap;font-variant-numeric:tabular
     <div class="events" id="events"></div>
   </main>
 
-  <!-- PROPOSE -->
-  <main id="view-propose" hidden>
+  <main id="view-propose" class="view" hidden>
     <h2 class="page-title" id="t-prop-title"></h2>
     <p class="lead" id="t-prop-lead"></p>
     <div class="ai-box">
-      <h3 id="t-ai-title"></h3>
-      <p class="hint" id="t-ai-hint" style="margin:0 0 8px"></p>
-      <div class="field" style="margin-bottom:8px">
+      <h3><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg><span id="t-ai-title"></span></h3>
+      <p class="hint" id="t-ai-hint" style="margin:0 0 10px"></p>
+      <div class="field" style="margin-bottom:10px">
         <label for="ai-text" id="t-ai-label"></label>
         <textarea id="ai-text"></textarea>
       </div>
       <button class="btn small" id="ai-fill" type="button"></button>
     </div>
-    <form class="card" id="prop-form" novalidate>
-      <div class="field"><label for="f-title" id="t-f-title"></label><input id="f-title" required></div>
+    <form class="card glass" id="prop-form" novalidate>
+      <div class="field"><label for="f-title"><span id="t-f-title"></span> <span class="req">*</span></label><input id="f-title"></div>
       <div class="row2">
         <div class="field"><label for="f-cat" id="t-f-cat"></label><select id="f-cat"></select></div>
-        <div class="field"><label for="f-date" id="t-f-date"></label><input id="f-date" type="date" required></div>
+        <div class="field"><label for="f-date"><span id="t-f-date"></span> <span class="req">*</span></label><input id="f-date" type="date"></div>
       </div>
       <div class="row2">
         <div class="field"><label for="f-time" id="t-f-time"></label><input id="f-time" type="time"></div>
-        <div class="field"><label for="f-place" id="t-f-place"></label><input id="f-place" required></div>
+        <div class="field"><label for="f-place"><span id="t-f-place"></span> <span class="req">*</span></label><input id="f-place"></div>
       </div>
       <div class="field"><label for="f-desc" id="t-f-desc"></label><textarea id="f-desc"></textarea></div>
       <div class="field"><label for="f-route" id="t-f-route"></label><input id="f-route"><span class="hint" id="t-f-route-hint"></span></div>
-      <div class="field"><label for="f-org" id="t-f-org"></label><input id="f-org" required></div>
+      <div class="field"><label for="f-org"><span id="t-f-org"></span> <span class="req">*</span></label><input id="f-org"></div>
+
+      <div class="src-block" id="src-block">
+        <span class="lbl"><span id="t-src-title"></span> <span class="req">*</span></span>
+        <p class="hint" id="t-src-hint" style="margin:4px 0 0"></p>
+        <div id="src-rows"></div>
+        <button type="button" class="add-src press" id="add-src"></button>
+      </div>
+
       <p class="hint" id="form-err" role="alert" style="color:var(--red)" hidden></p>
       <button class="btn" type="submit" id="t-f-submit"></button>
     </form>
   </main>
 
-  <!-- ADMIN -->
-  <main id="view-admin" hidden>
+  <main id="view-admin" class="view" hidden>
     <h2 class="page-title" id="t-adm-title"></h2>
     <p class="lead" id="t-adm-lead"></p>
     <div class="q" id="queue"></div>
   </main>
 
-  <!-- PROJECT -->
-  <main id="view-project" hidden class="prose">
-    <h2 class="page-title">Il progetto</h2>
-    <p class="lead">Come diventa un'app vera, quanto costa e in che ordine si costruisce. Le scelte partono dalle tue risposte: sei principiante, il budget iniziale è quasi zero, le lingue sono italiano e inglese e la promozione per ora è gratuita.</p>
+  <main id="view-project" class="view prose" hidden>
+    <h2 class="page-title">Il progetto Advent</h2>
+    <p class="lead" style="color:var(--muted)">Come diventa un'app vera, da quali fonti prende gli eventi, quanto costa e in che ordine si costruisce.</p>
+    <div class="callout"><b>In breve:</b> un solo codice per iPhone e Android (Expo), un database gratuito (Supabase), un "robot" che ogni mattina legge le fonti e prepara gli eventi, e la tua approvazione con un tocco. Ogni evento mostra in fondo da dove arriva.</div>
 
-    <div class="callout"><b>In breve:</b> un solo codice per iPhone e Android (Expo), un database gratuito (Supabase), un "robot" che ogni mattina legge i siti degli eventi e li prepara per te, e una tua approvazione con un tocco prima che l'evento diventi pubblico.</div>
+    <h3>Le fonti che hai trovato</h3>
+    <p>Le ho controllate una per una. Non sono tutte uguali: alcune sono agende vere, altre sono giornali, utili solo per scoprire un annuncio prima degli altri.</p>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Fonte</th><th>Uso nel robot</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://www.tio.ch/agenda" target="_blank" rel="noopener">tio.ch Agenda</a></td><td><span class="lvl a">Agenda</span></td><td>Pagine per giorno (<span class="mono">/agenda/day/AAAAMMGG</span>) e filtri per zona (Luganese, Locarnese, Bellinzonese, Mendrisiotto, Italia). Non c'è una categoria "motori": il robot filtra per parole chiave.</td></tr>
+        <tr><td><a href="https://www.inagenda.ch" target="_blank" rel="noopener">inagenda.ch</a></td><td><span class="lvl a">Agenda</span></td><td>La piattaforma dietro l'agenda di tio.ch. Conviene chiedere a loro un accesso ai dati: è la strada più pulita.</td></tr>
+        <tr><td><a href="https://www.tio.ch/rss" target="_blank" rel="noopener">tio.ch RSS</a></td><td><span class="lvl b">Notizie</span></td><td>I feed RSS sono il formato più facile da leggere per un robot. Da verificare se esiste un feed della sola agenda.</td></tr>
+        <tr><td><a href="https://www.tcs.ch/it/il-tcs/sezioni/ticino/news/eventi-mendrisiotto-2026.php" target="_blank" rel="noopener">TCS Sezione Ticino</a></td><td><span class="lvl a">Agenda</span></td><td>Poche voci ma affidabili. Esiste anche la pagina "eventi consigliati 2026".</td></tr>
+        <tr><td><a href="https://automotoclubgeneroso.ch" target="_blank" rel="noopener">Moto Club Generoso</a></td><td><span class="lvl a">Club</span></td><td>Nel 2026 il club ha tolto "Auto" dal nome ed è tornato a chiamarsi Moto Club Generoso: fa soprattutto eventi di <b>moto</b>.</td></tr>
+        <tr><td><a href="https://www.vtg.admin.ch/de/patrouille-suisse" target="_blank" rel="noopener">Patrouille Suisse</a> + <a href="https://www.vtg.admin.ch/dam/de/sd-web/Kz8Mx0wcOfVR/PS%20Jahresprogramm%20WEB%202026%20v3.0%20Juli%2026.pdf" target="_blank" rel="noopener">programma PDF</a></td><td><span class="lvl a">Ufficiale</span></td><td>Il PDF cambia nome a ogni versione (v2.0 giugno, v3.0 luglio): il robot deve cercare il link nuovo sulla pagina, non usare quello vecchio. La stagione 2026 è finita il 6 settembre, senza tappe in Ticino.</td></tr>
+        <tr><td><a href="https://www.vtg.admin.ch/de/flugaktivitaeten" target="_blank" rel="noopener">Forze aeree, attività di volo</a></td><td><span class="lvl a">Ufficiale</span></td><td>Per esibizioni e manifestazioni militari.</td></tr>
+        <tr><td><a href="https://www.localcities.ch" target="_blank" rel="noopener">localcities.ch</a></td><td><span class="lvl a">Agenda</span></td><td>Eventi dei comuni: utile per i raduni locali.</td></tr>
+        <tr><td><a href="https://www.freizeit.ch" target="_blank" rel="noopener">freizeit.ch</a></td><td><span class="lvl a">Agenda</span></td><td>Soprattutto Svizzera tedesca: copre la "Svizzera interna vicina".</td></tr>
+        <tr><td><a href="https://www.swissactivities.com" target="_blank" rel="noopener">Swiss Activities</a></td><td><span class="lvl c">Secondaria</span></td><td>Vende attività prenotabili più che eventi con una data (per esempio i voli panoramici).</td></tr>
+        <tr><td><a href="https://www.laregione.ch" target="_blank" rel="noopener">laRegione</a>, <a href="https://www.rsi.ch/info/ticino-grigioni-e-insubria" target="_blank" rel="noopener">RSI Info</a></td><td><span class="lvl b">Notizie</span></td><td>Utili per scoprire gli annunci. Si prendono solo i fatti (data, luogo) con il link all'articolo, senza copiare testi o foto.</td></tr>
+        <tr><td><a href="https://www.aerotelegraph.com" target="_blank" rel="noopener">aeroTELEGRAPH</a></td><td><span class="lvl b">Notizie</span></td><td>Notizie di aviazione in tedesco. Pochi eventi locali: priorità bassa.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="hint">Non ho potuto aprire direttamente i siti da qui, perché la rete di questo ambiente li blocca. I dati vengono dalla ricerca web. Prima di attivare il robot va controllato che le condizioni d'uso di ogni sito permettano la lettura automatica.</p>
+
+    <h3>Le fonti mostrate su ogni evento</h3>
+    <ul>
+      <li>In fondo a ogni evento c'è la sezione <b>Fonti</b> con il link a ogni pagina da cui sono state prese le informazioni.</li>
+      <li>Se l'evento non ha un sito, si vede da quale social è arrivato (Instagram, Facebook, TikTok...) con il link al profilo o al canale.</li>
+      <li>Chi propone un evento deve indicare <b>almeno una fonte</b>: per un sito il link web, per un social il link del profilo o del canale. L'app controlla che il link sia del tipo giusto.</li>
+    </ul>
 
     <h3>Come arriva un evento nell'app</h3>
     <div class="flow">
-      <div class="step"><span class="n">1</span><div><b>Il robot legge le fonti</b><p>Ogni mattina un programma gratuito (GitHub Actions) visita i siti che hai scelto: il portale eventi di ticino.ch, gli aeroclub, i calendari degli autodromi e i club auto. Rilegge solo le pagine che sono cambiate dall'ultima volta.</p></div></div>
-      <div class="step"><span class="n">2</span><div><b>L'AI estrae i dati</b><p>Un modello AI trasforma il testo dell'annuncio in campi ordinati: titolo, data, orari, luogo, tipo, programma e itinerario. Se manca qualcosa (per esempio l'orario) lo segnala.</p></div></div>
-      <div class="step"><span class="n">3</span><div><b>Va in "Da verificare"</b><p>L'evento non è ancora pubblico. Riceve un punteggio di affidabilità e i doppioni vengono riconosciuti (stesso giorno, stesso luogo).</p></div></div>
-      <div class="step"><span class="n">4</span><div><b>Tu approvi</b><p>Con un tocco nella scheda "Verifica". Gli organizzatori verificati possono pubblicare direttamente, senza attesa.</p></div></div>
-      <div class="step"><span class="n">5</span><div><b>Notifica agli utenti</b><p>Chi segue quella categoria o quella zona riceve subito una notifica push (gratuita con Expo).</p></div></div>
+      <div class="step"><span class="n">1</span><div><b>Il robot legge le fonti</b><p>Ogni mattina GitHub Actions visita le fonti della tabella. Rilegge solo le pagine cambiate.</p></div></div>
+      <div class="step"><span class="n">2</span><div><b>L'AI estrae i dati</b><p>Titolo, data, orari, luogo, tipo, programma, itinerario e il link della fonte. Se manca qualcosa lo segnala.</p></div></div>
+      <div class="step"><span class="n">3</span><div><b>Doppioni uniti</b><p>Se lo stesso evento compare su tio.ch e su un sito di club, diventa un solo evento con due fonti.</p></div></div>
+      <div class="step"><span class="n">4</span><div><b>Tu approvi</b><p>Gli organizzatori verificati pubblicano subito.</p></div></div>
+      <div class="step"><span class="n">5</span><div><b>Notifica</b><p>Chi segue quella categoria o zona riceve una notifica push.</p></div></div>
     </div>
 
-    <h3>Instagram e Facebook: la verità</h3>
-    <p>Dal dicembre 2024 Meta non permette più di leggere in automatico i post di account altrui. L'API rimasta funziona solo per gestire il <i>proprio</i> account aziendale. Copiare i post con programmi non autorizzati viola le regole di Meta e rischia il blocco.</p>
-    <p>Le soluzioni legali, che il prototipo mostra già:</p>
-    <ul>
-      <li><b>"Incolla l'annuncio"</b>: un utente o un organizzatore incolla il testo del post (o in futuro la foto della locandina) e l'AI compila il modulo da sola. È nella scheda "Proponi".</li>
-      <li><b>Organizzatori verificati</b>: i club pubblicano direttamente nell'app e spesso sono felici di farlo, perché è pubblicità gratuita.</li>
-      <li><b>Pagine Facebook pubbliche con un sito o un calendario</b>: molti club pubblicano lo stesso evento anche sul loro sito, che il robot può leggere.</li>
-    </ul>
+    <h3>Instagram e Facebook</h3>
+    <p>Dal 4 dicembre 2024 Meta non permette di leggere in automatico i post di account altrui. Per questo i social entrano nell'app in tre modi: chi propone un evento incolla il link del profilo, un utente incolla il testo del post, oppure il club diventa organizzatore verificato.</p>
 
-    <h3>Tecnologie scelte</h3>
-    <div class="tbl-wrap"><table>
-      <thead><tr><th>Parte</th><th>Strumento</th><th>Perché</th></tr></thead>
-      <tbody>
-        <tr><td>App</td><td>Expo (React Native)</td><td>Un solo codice per iOS, Android e versione web. Ottima documentazione e molti esempi.</td></tr>
-        <tr><td>Database e login</td><td>Supabase</td><td>Gratuito fino a 50'000 utenti attivi al mese. Ha già il login e i permessi (utente, organizzatore, amministratore).</td></tr>
-        <tr><td>Robot di raccolta</td><td>GitHub Actions</td><td>Esegue lo script ogni mattina, gratis.</td></tr>
-        <tr><td>Lettura annunci</td><td>API di un modello AI</td><td>Trasforma il testo libero in dati ordinati.</td></tr>
-        <tr><td>Notifiche</td><td>Expo Push</td><td>Gratuite, funzionano su iOS e Android.</td></tr>
-        <tr><td>Mappe e itinerari</td><td>Link a Google Maps / Apple Maps</td><td>Nessun costo. Una mappa integrata si può aggiungere più avanti.</td></tr>
-      </tbody>
-    </table></div>
-    <p class="hint">Attenzione: un progetto Supabase gratuito si mette in pausa dopo 7 giorni senza attività. Il robot giornaliero lo tiene attivo da solo.</p>
+    <h3>Il nome "Advent"</h3>
+    <p>Sull'App Store esistono già app con nomi simili, per esempio "Advent Events" di un'altra azienda. Il nome sullo store deve essere unico, quindi conviene aggiungere un sottotitolo, per esempio <b>"Advent – Raduni auto e aerei"</b>. Ricorda anche che in italiano "Avvento" fa pensare al Natale.</p>
 
     <h3>Costi</h3>
     <div class="tbl-wrap"><table>
-      <thead><tr><th>Voce</th><th>Costo</th><th>Quando</th></tr></thead>
+      <thead><tr><th>Voce</th><th>Costo</th></tr></thead>
       <tbody>
-        <tr><td>Account sviluppatore Apple</td><td class="num">99 USD / anno</td><td>Solo per pubblicare sull'App Store</td></tr>
-        <tr><td>Account sviluppatore Google Play</td><td class="num">25 USD una volta</td><td>Solo per pubblicare su Google Play</td></tr>
-        <tr><td>Supabase, GitHub, Expo</td><td class="num">0</td><td>Nel piano gratuito</td></tr>
-        <tr><td>AI per leggere gli annunci</td><td class="num">~1–5 CHF / mese</td><td>Stima, dipende da quante pagine nuove ci sono</td></tr>
-        <tr><td>Dominio web (facoltativo)</td><td class="num">~15 CHF / anno</td><td>Utile per la privacy policy e il sito</td></tr>
+        <tr><td>Apple Developer</td><td class="num">99 USD / anno</td></tr>
+        <tr><td>Google Play</td><td class="num">25 USD una volta</td></tr>
+        <tr><td>Supabase, GitHub, Expo</td><td class="num">0</td></tr>
+        <tr><td>AI che legge gli annunci (stima)</td><td class="num">~1–5 CHF / mese</td></tr>
       </tbody>
     </table></div>
-    <p class="hint">Le fasi 1 e 2 costano praticamente zero. Le quote degli store servono solo quando pubblichi l'app (fase 3).</p>
 
     <h3>Le fasi</h3>
     <ol>
-      <li><b>Fase 1, base (2–4 settimane):</b> app con calendario, filtri, dettaglio, itinerario, modulo "Proponi" e approvazione. Gli eventi li inserisci a mano. Si prova sul telefono con l'app Expo Go, senza pagare gli store.</li>
-      <li><b>Fase 2, automazione (2–3 settimane):</b> robot giornaliero sulle prime 10–15 fonti, AI che estrae i dati, riconoscimento dei doppioni, coda "Da verificare".</li>
-      <li><b>Fase 3, pubblicazione:</b> account degli store, privacy policy, test con 10–20 appassionati (TestFlight per iPhone, test chiuso su Android), poi pubblicazione.</li>
-      <li><b>Fase 4, crescita:</b> notifiche per zona e categoria, preferiti, account per gli organizzatori, e più avanti gli eventi in evidenza a pagamento.</li>
+      <li><b>Base:</b> calendario, filtri, dettaglio, itinerario, fonti, modulo "Proponi" con fonte obbligatoria, approvazione.</li>
+      <li><b>Automazione:</b> robot sulle fonti "Agenda" e "Ufficiale" della tabella, poi le "Notizie".</li>
+      <li><b>Pubblicazione:</b> privacy policy, test chiuso, store.</li>
+      <li><b>Crescita:</b> notifiche, preferiti, organizzatori verificati, eventi in evidenza a pagamento.</li>
     </ol>
-
-    <h3>Aspetti legali da non dimenticare</h3>
-    <ul>
-      <li><b>Privacy:</b> serve una privacy policy (obbligatoria per gli store). Valgono la legge svizzera (nLPD) e, per gli utenti in Italia, il GDPR.</li>
-      <li><b>Fonti:</b> rispetta le condizioni d'uso dei siti, cita sempre la fonte con il link e non copiare le foto senza permesso.</li>
-      <li><b>Responsabilità:</b> mostra un avviso del tipo "Verifica sempre con l'organizzatore". Date e passi alpini possono cambiare.</li>
-    </ul>
-
-    <h3>Prossimo passo</h3>
-    <p>Scegliere il nome definitivo, preparare la lista delle prime fonti (siti di club, aeroclub e autodromi che conosci) e creare il progetto Expo con il database, partendo dalle schermate di questo prototipo.</p>
   </main>
 </div>
 
-<!-- DETAIL SHEET -->
-<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="d-title">
-  <div class="sheet-inner" id="sheet-inner"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="d-title" aria-hidden="true">
+  <div class="scrim" id="scrim"></div>
+  <div class="panel" id="panel"><div class="sheet-inner" id="sheet-inner"></div></div>
 </div>
 
 <nav class="nav" aria-label="Navigazione">
-  <div class="nav-inner">
-    <button data-view="explore" aria-current="page"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span id="n-explore"></span></button>
-    <button data-view="propose"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span id="n-propose"></span></button>
+  <div class="nav-inner" id="nav-inner">
+    <span class="ind" id="nav-ind" aria-hidden="true"></span>
+    <button data-view="explore" aria-current="page"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span id="n-explore"></span></button>
+    <button data-view="propose"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg><span id="n-propose"></span></button>
     <button data-view="admin"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/></svg><span id="n-admin"></span><span class="badge" id="q-badge" hidden></span></button>
-    <button data-view="project"><svg viewBox="0 0 24 24"><path d="M4 4h12l4 4v12H4z"/><path d="M8 12h8M8 16h5"/></svg><span id="n-project"></span></button>
+    <button data-view="project"><svg viewBox="0 0 24 24"><path d="M5 4h10l4 4v12H5z"/><path d="M9 12h6M9 16h4"/></svg><span id="n-project"></span></button>
   </div>
 </nav>
-<div class="toast" id="toast" hidden role="status"></div>
+<div class="toast" id="toast" role="status"></div>
 
 <script>
 const HOME = { lat: 46.0037, lng: 8.9511 }; // Lugano
-const TODAY = new Date(2026, 9, 7);
+const TODAY = new Date(2026, 9, 8);
+
+const ICONS = {
+  web:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>',
+  instagram:'<svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg>',
+  facebook:'<svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg>',
+  tiktok:'<svg viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2.2 4.4 5 4.6"/></svg>',
+  youtube:'<svg viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.5l4 2.5-4 2.5z" fill="currentColor"/></svg>',
+  other:'<svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>',
+  ext:'<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>',
+  heart:'<svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>',
+  pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg>',
+  route:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3.5 3.5 0 0 0 0-7H9a3.5 3.5 0 0 1 0-7h7"/></svg>'
+};
+const STYPES = ["web","instagram","facebook","tiktok","youtube","other"];
+const SRC_RULES = {
+  web:/^https?:\/\/[^\s\/]+\.[a-z]{2,}(\/\S*)?$/i,
+  instagram:/^https?:\/\/(www\.)?instagram\.com\/[A-Za-z0-9._]+\/?(\?\S*)?$/i,
+  facebook:/^https?:\/\/(www\.|m\.)?(facebook\.com|fb\.com)\/\S+$/i,
+  tiktok:/^https?:\/\/(www\.)?tiktok\.com\/@[A-Za-z0-9._]+\/?(\?\S*)?$/i,
+  youtube:/^https?:\/\/(www\.)?(youtube\.com\/(@|channel\/|c\/)\S+|youtu\.be\/\S+)$/i,
+  other:/^https?:\/\/[^\s\/]+\.[a-z]{2,}(\/\S*)?$/i
+};
+const SOCIAL_HOSTS = /instagram\.com|facebook\.com|fb\.com|tiktok\.com|youtube\.com|youtu\.be/i;
 
 const T = {
   it: {
-    sub: "Ticino e dintorni",
-    demo: "Prototipo: gli eventi sono esempi inventati per mostrare come funziona l'app. Luoghi e distanze sono reali.",
-    radius: "Distanza da Lugano", all: "tutte",
-    upcoming: "Prossimi eventi", dayEvents: "Eventi del", showAll: "Mostra tutti",
-    none: "Nessun evento con questi filtri. Prova ad allargare la distanza o a scegliere altre categorie.",
-    srcAuto: "Importato in automatico da", srcOrg: "Pubblicato da organizzatore verificato", srcUser: "Proposto da",
-    back: "Indietro", what: "Cosa si fa", program: "Programma", route: "Itinerario", details: "Dettagli",
-    when: "Quando", where: "Dove", price: "Prezzo", signup: "Iscrizione", org: "Organizzatore", dist: "Da Lugano",
-    openMaps: "Apri l'itinerario in Google Maps", openPlace: "Apri in Google Maps",
-    save: "Salva", saved: "Salvato", savedToast: "Evento salvato nei preferiti",
-    disclaimer: "Verifica sempre i dettagli con l'organizzatore prima di partire.",
-    navExplore: "Eventi", navPropose: "Proponi", navAdmin: "Verifica", navProject: "Progetto",
-    propTitle: "Proponi un evento", propLead: "La proposta è gratuita. Prima di essere pubblicata viene controllata. Gli organizzatori verificati pubblicano subito.",
-    aiTitle: "Hai già un annuncio? Incollalo qui", aiHint: "Per esempio il testo di un post Instagram o Facebook. Nell'app vera un'AI compila il modulo da sola; qui lo simula una regola semplice.",
-    aiLabel: "Testo dell'annuncio", aiBtn: "Compila automaticamente", aiDone: "Modulo compilato: controlla i campi",
-    aiSample: "🚗 RADUNO YOUNGTIMER 🚗\nDomenica 15 novembre 2026 ore 9:30 a Mendrisio, piazzale del Mercato Coperto.\nAuto dal 1980 al 2000, colazione offerta. Giro panoramico fino al Monte Generoso!\nOrganizza: Youngtimer Club Mendrisiotto",
-    fTitle: "Nome dell'evento", fCat: "Tipo", fDate: "Data", fTime: "Ora di inizio", fPlace: "Luogo",
-    fDesc: "Cosa si fa", fRoute: "Tappe dell'itinerario (facoltativo)", fRouteHint: "Separa le tappe con una virgola, per esempio: Lugano, Melide, Morcote",
-    fOrg: "Organizzatore", fSubmit: "Invia per approvazione", fErr: "Compila nome, data, luogo e organizzatore.",
-    sentToast: "Inviato. Lo trovi in \"Verifica\" in attesa di approvazione.",
-    admTitle: "Da verificare", admLead: "Eventi trovati dal robot o proposti dagli utenti. Diventano pubblici solo dopo l'approvazione.",
-    approve: "Approva", reject: "Scarta", approved: "Approvato e pubblicato", rejected: "Scartato",
-    queueEmpty: "Niente da verificare. Il robot controllerà di nuovo le fonti domattina alle 06:00.",
-    conf: "affidabilità", missing: "Da controllare", preview: "Anteprima",
-    free: "Gratuito"
+    sub:"Motori e volo · Ticino",
+    demo:"Prototipo: gli eventi sono esempi inventati per mostrare come funziona l'app. I luoghi sono reali; i link delle fonti portano alle pagine principali dei siti.",
+    radius:"Distanza da Lugano", all:"tutte",
+    upcoming:"Prossimi eventi", dayEvents:"Eventi del", showAll:"Mostra tutti",
+    none:"Nessun evento con questi filtri. Prova ad allargare la distanza o a scegliere altre categorie.",
+    from:"Da", back:"Indietro", what:"Cosa si fa", program:"Programma", route:"Itinerario", details:"Dettagli",
+    sources:"Fonti", sourcesHint:"Informazioni prese da queste pagine. Verifica sempre lì gli aggiornamenti.",
+    when:"Quando", where:"Dove", price:"Prezzo", signup:"Iscrizione", org:"Organizzatore", dist:"Da Lugano",
+    openMaps:"Itinerario in Google Maps", openPlace:"Mappa",
+    save:"Salva", saved:"Salvato", savedToast:"Aggiunto ai preferiti",
+    disclaimer:"Date, orari e apertura dei passi possono cambiare: verifica sempre con l'organizzatore prima di partire.",
+    navExplore:"Eventi", navPropose:"Proponi", navAdmin:"Verifica", navProject:"Progetto",
+    propTitle:"Proponi un evento", propLead:"La proposta è gratuita. Prima di essere pubblicata viene controllata. Gli organizzatori verificati pubblicano subito.",
+    aiTitle:"Hai già un annuncio? Incollalo qui", aiHint:"Per esempio il testo di un post. Nell'app vera un'AI compila il modulo, fonte compresa; qui lo simula una regola semplice.",
+    aiLabel:"Testo dell'annuncio", aiBtn:"Compila automaticamente", aiDone:"Modulo compilato: controlla i campi",
+    aiSample:"🚗 RADUNO YOUNGTIMER 🚗\nDomenica 15 novembre 2026 ore 9:30 a Mendrisio, piazzale del Mercato Coperto.\nAuto dal 1980 al 2000, colazione offerta. Giro panoramico fino al Monte Generoso!\nOrganizza: Youngtimer Club (esempio)\nInfo: instagram.com/esempio_youngtimer",
+    fTitle:"Nome dell'evento", fCat:"Tipo", fDate:"Data", fTime:"Ora di inizio", fPlace:"Luogo",
+    fDesc:"Cosa si fa", fRoute:"Tappe dell'itinerario (facoltativo)", fRouteHint:"Separa le tappe con una virgola, per esempio: Lugano, Melide, Morcote",
+    fOrg:"Organizzatore", fSubmit:"Invia per approvazione",
+    srcTitle:"Fonte dell'annuncio", srcHint:"Dove è stato pubblicato l'evento. Per un sito incolla il link della pagina; per Instagram, Facebook o TikTok il link del profilo o del canale.",
+    addSrc:"+ Aggiungi un'altra fonte", remove:"Rimuovi",
+    stype:{web:"Sito web",instagram:"Instagram",facebook:"Facebook",tiktok:"TikTok",youtube:"YouTube",other:"Altro social"},
+    sph:{web:"https://www.sito-del-club.ch/eventi",instagram:"https://www.instagram.com/nomeprofilo",facebook:"https://www.facebook.com/nomepagina",tiktok:"https://www.tiktok.com/@nomeprofilo",youtube:"https://www.youtube.com/@canale",other:"https://..."},
+    serr:{empty:"Inserisci il link.",web:"Inserisci un indirizzo web valido, per esempio https://www.sito.ch/eventi",webSocial:"Questo è un link social: scegli il tipo giusto nel menu (Instagram, Facebook...).",instagram:"Serve il link di un profilo Instagram: https://www.instagram.com/nomeprofilo",facebook:"Serve il link di una pagina o di un profilo Facebook: https://www.facebook.com/...",tiktok:"Serve il link di un profilo TikTok: https://www.tiktok.com/@nomeprofilo",youtube:"Serve il link di un canale YouTube: https://www.youtube.com/@canale",other:"Inserisci il link del profilo o del canale."},
+    fErr:"Compila i campi con l'asterisco e correggi le fonti segnate in rosso.",
+    sentToast:"Inviato. È in \"Verifica\" in attesa di approvazione.",
+    admTitle:"Da verificare", admLead:"Eventi trovati dal robot o proposti dagli utenti. Diventano pubblici solo dopo l'approvazione.",
+    approve:"Approva", reject:"Scarta", approved:"Approvato e pubblicato", rejected:"Scartato",
+    queueEmpty:"Niente da verificare. Il robot controllerà di nuovo le fonti domattina alle 06:00.",
+    conf:"affidabilità", missing:"Da controllare", preview:"Anteprima",
+    socialFrom:"Arrivato da"
   },
   en: {
-    sub: "Ticino and around",
-    demo: "Prototype: the events are made-up examples to show how the app works. Places and distances are real.",
-    radius: "Distance from Lugano", all: "any",
-    upcoming: "Upcoming events", dayEvents: "Events on", showAll: "Show all",
-    none: "No events match these filters. Try a larger distance or other categories.",
-    srcAuto: "Imported automatically from", srcOrg: "Posted by a verified organiser", srcUser: "Submitted by",
-    back: "Back", what: "What happens", program: "Schedule", route: "Route", details: "Details",
-    when: "When", where: "Where", price: "Price", signup: "Sign-up", org: "Organiser", dist: "From Lugano",
-    openMaps: "Open the route in Google Maps", openPlace: "Open in Google Maps",
-    save: "Save", saved: "Saved", savedToast: "Event saved to favourites",
-    disclaimer: "Always check the details with the organiser before you set off.",
-    navExplore: "Events", navPropose: "Submit", navAdmin: "Review", navProject: "Project",
-    propTitle: "Submit an event", propLead: "Submitting is free. Events are checked before they go live. Verified organisers publish instantly.",
-    aiTitle: "Already have an announcement? Paste it here", aiHint: "For example the text of an Instagram or Facebook post. In the real app an AI fills in the form; here a simple rule simulates it.",
-    aiLabel: "Announcement text", aiBtn: "Fill in automatically", aiDone: "Form filled in: check the fields",
-    aiSample: "🚗 YOUNGTIMER MEET 🚗\nSunday 15 November 2026 at 9:30 in Mendrisio, Mercato Coperto car park.\nCars from 1980 to 2000, free breakfast. Scenic drive up to Monte Generoso!\nOrganised by: Youngtimer Club Mendrisiotto",
-    fTitle: "Event name", fCat: "Type", fDate: "Date", fTime: "Start time", fPlace: "Place",
-    fDesc: "What happens", fRoute: "Route stops (optional)", fRouteHint: "Separate stops with a comma, e.g. Lugano, Melide, Morcote",
-    fOrg: "Organiser", fSubmit: "Send for approval", fErr: "Fill in name, date, place and organiser.",
-    sentToast: "Sent. You'll find it under \"Review\" awaiting approval.",
-    admTitle: "To review", admLead: "Events found by the robot or submitted by users. They go live only after approval.",
-    approve: "Approve", reject: "Discard", approved: "Approved and published", rejected: "Discarded",
-    queueEmpty: "Nothing to review. The robot will check the sources again tomorrow at 06:00.",
-    conf: "confidence", missing: "To check", preview: "Preview",
-    free: "Free"
+    sub:"Motors & flight · Ticino",
+    demo:"Prototype: the events are made-up examples to show how the app works. Places are real; source links point to each site's main page.",
+    radius:"Distance from Lugano", all:"any",
+    upcoming:"Upcoming events", dayEvents:"Events on", showAll:"Show all",
+    none:"No events match these filters. Try a larger distance or other categories.",
+    from:"From", back:"Back", what:"What happens", program:"Schedule", route:"Route", details:"Details",
+    sources:"Sources", sourcesHint:"Information taken from these pages. Always check them for updates.",
+    when:"When", where:"Where", price:"Price", signup:"Sign-up", org:"Organiser", dist:"From Lugano",
+    openMaps:"Route in Google Maps", openPlace:"Map",
+    save:"Save", saved:"Saved", savedToast:"Added to favourites",
+    disclaimer:"Dates, times and pass openings can change: always check with the organiser before you set off.",
+    navExplore:"Events", navPropose:"Submit", navAdmin:"Review", navProject:"Project",
+    propTitle:"Submit an event", propLead:"Submitting is free. Events are checked before they go live. Verified organisers publish instantly.",
+    aiTitle:"Already have an announcement? Paste it here", aiHint:"For example the text of a post. In the real app an AI fills in the form, source included; here a simple rule simulates it.",
+    aiLabel:"Announcement text", aiBtn:"Fill in automatically", aiDone:"Form filled in: check the fields",
+    aiSample:"🚗 YOUNGTIMER MEET 🚗\nSunday 15 November 2026 at 9:30 in Mendrisio, Mercato Coperto car park.\nCars from 1980 to 2000, free breakfast. Scenic drive up to Monte Generoso!\nOrganised by: Youngtimer Club (example)\nInfo: instagram.com/esempio_youngtimer",
+    fTitle:"Event name", fCat:"Type", fDate:"Date", fTime:"Start time", fPlace:"Place",
+    fDesc:"What happens", fRoute:"Route stops (optional)", fRouteHint:"Separate stops with a comma, e.g. Lugano, Melide, Morcote",
+    fOrg:"Organiser", fSubmit:"Send for approval",
+    srcTitle:"Where it was announced", srcHint:"Where the event was published. For a website paste the page link; for Instagram, Facebook or TikTok the profile or channel link.",
+    addSrc:"+ Add another source", remove:"Remove",
+    stype:{web:"Website",instagram:"Instagram",facebook:"Facebook",tiktok:"TikTok",youtube:"YouTube",other:"Other social"},
+    sph:{web:"https://www.club-site.ch/events",instagram:"https://www.instagram.com/profile",facebook:"https://www.facebook.com/page",tiktok:"https://www.tiktok.com/@profile",youtube:"https://www.youtube.com/@channel",other:"https://..."},
+    serr:{empty:"Enter the link.",web:"Enter a valid web address, e.g. https://www.site.ch/events",webSocial:"This is a social link: pick the right type in the menu (Instagram, Facebook...).",instagram:"Needs an Instagram profile link: https://www.instagram.com/profile",facebook:"Needs a Facebook page or profile link: https://www.facebook.com/...",tiktok:"Needs a TikTok profile link: https://www.tiktok.com/@profile",youtube:"Needs a YouTube channel link: https://www.youtube.com/@channel",other:"Enter the profile or channel link."},
+    fErr:"Fill in the starred fields and fix the sources marked in red.",
+    sentToast:"Sent. It's under \"Review\" awaiting approval.",
+    admTitle:"To review", admLead:"Events found by the robot or submitted by users. They go live only after approval.",
+    approve:"Approve", reject:"Discard", approved:"Approved and published", rejected:"Discarded",
+    queueEmpty:"Nothing to review. The robot will check the sources again tomorrow at 06:00.",
+    conf:"confidence", missing:"To check", preview:"Preview",
+    socialFrom:"Came from"
   }
 };
 
 const CATS = {
-  raduno: { it: "Raduni", en: "Meets", one: { it: "Raduno", en: "Meet" } },
-  tour:   { it: "Tour", en: "Drives", one: { it: "Tour in auto", en: "Drive" } },
-  aerei:  { it: "Aerei", en: "Aviation", one: { it: "Evento aereo", en: "Aviation" } },
-  gara:   { it: "Gare e track day", en: "Racing & track days", one: { it: "Gara / track day", en: "Racing / track day" } }
+  raduno:{ it:"Raduni", en:"Meets", one:{it:"Raduno",en:"Meet"} },
+  tour:{ it:"Tour", en:"Drives", one:{it:"Tour in auto",en:"Drive"} },
+  aerei:{ it:"Aerei", en:"Aviation", one:{it:"Evento aereo",en:"Aviation"} },
+  gara:{ it:"Gare e track day", en:"Racing & track days", one:{it:"Gara / track day",en:"Racing / track day"} }
 };
 
-// Esempi inventati: luoghi e coordinate reali
+// Fonti reali (pagine principali). Gli eventi sono esempi.
+const S_TIO = {type:"web",label:"tio.ch – Agenda",url:"https://www.tio.ch/agenda"};
+const S_TCS = {type:"web",label:"TCS Sezione Ticino",url:"https://www.tcs.ch/it/il-tcs/sezioni/ticino/news/eventi-mendrisiotto-2026.php"};
+const S_LOC = {type:"web",label:"localcities.ch",url:"https://www.localcities.ch"};
+const S_FRE = {type:"web",label:"freizeit.ch",url:"https://www.freizeit.ch"};
+const S_REG = {type:"web",label:"laRegione",url:"https://www.laregione.ch"};
+const S_RSI = {type:"web",label:"RSI Info – Ticino e Grigioni",url:"https://www.rsi.ch/info/ticino-grigioni-e-insubria"};
+const S_AEROT = {type:"web",label:"aeroTELEGRAPH",url:"https://www.aerotelegraph.com"};
+const S_SWA = {type:"web",label:"Swiss Activities",url:"https://www.swissactivities.com"};
+const S_IG = h => ({type:"instagram",label:"@"+h+" (profilo di esempio)",url:"https://www.instagram.com/"});
+const S_FB = n => ({type:"facebook",label:n+" (pagina di esempio)",url:"https://www.facebook.com/"});
+
 const SEED = [
   { id:"e1", cat:"tour", date:"2026-10-11", time:"08:00", lat:46.195, lng:9.023,
     title:{it:"Giro dei tre passi d'autunno",en:"Three-pass autumn drive"},
@@ -430,7 +587,7 @@ const SEED = [
     route:[["Bellinzona",0,""],["Biasca",21,""],["Passo del Lucomagno",61,"1915 m"],["Disentis",82,""],["Passo dell'Oberalp",104,"2044 m"],["Andermatt",114,""],["Passo del San Gottardo",126,"2106 m"],["Airolo",139,""]],
     price:{it:"CHF 40 per auto, pranzo incluso",en:"CHF 40 per car, lunch included"}, signup:{it:"Obbligatoria, massimo 30 auto",en:"Required, 30 cars max"},
     notice:{it:"I passi alpini possono chiudere per neve. In caso di chiusura il giro viene accorciato.",en:"Alpine passes can close for snow. If they do, the route is shortened."},
-    org:"Club Auto Sportive Ticino (esempio)", source:{type:"org"} },
+    org:"Club Auto Sportive Ticino (esempio)", sources:[S_IG("esempio_autosportive_ti"), S_FB("Club Auto Sportive Ticino")] },
   { id:"e2", cat:"raduno", date:"2026-10-18", time:"09:00", lat:46.0225, lng:8.9600,
     title:{it:"Cars & Coffee Lugano",en:"Cars & Coffee Lugano"},
     place:{it:"Lugano, parcheggio Cornaredo",en:"Lugano, Cornaredo car park"},
@@ -438,7 +595,7 @@ const SEED = [
     what:{it:["Esposizione libera, senza iscrizione","Caffè e cornetti","Premio \"auto del giorno\" votata dal pubblico"],en:["Open display, no sign-up","Coffee and pastries","\"Car of the day\" voted by visitors"]},
     program:[["09:00",{it:"Arrivo delle auto",en:"Cars arrive"}],["10:30",{it:"Foto di gruppo",en:"Group photo"}],["11:30",{it:"Premiazione",en:"Award"}],["12:00",{it:"Fine",en:"End"}]],
     route:[], price:{it:"Gratuito",en:"Free"}, signup:{it:"Non necessaria",en:"Not needed"},
-    org:"Cars & Coffee TI (esempio)", source:{type:"auto",label:"ticino.ch"} },
+    org:"Cars & Coffee TI (esempio)", sources:[S_TIO, S_IG("esempio_carscoffee_lugano")] },
   { id:"e3", cat:"aerei", date:"2026-10-24", time:"10:00", lat:46.160, lng:8.879, icao:"LSZL",
     title:{it:"Porte aperte all'aeroporto di Locarno",en:"Open day at Locarno airfield"},
     place:{it:"Aeroporto cantonale di Locarno",en:"Locarno cantonal airfield"},
@@ -446,17 +603,17 @@ const SEED = [
     what:{it:["Esposizione statica di aerei ed elicotteri","Voli panoramici sul Lago Maggiore (a pagamento)","Simulatore di volo per i ragazzi"],en:["Static display of planes and helicopters","Scenic flights over Lake Maggiore (paid)","Flight simulator for kids"]},
     program:[["10:00",{it:"Apertura",en:"Gates open"}],["11:00",{it:"Primi voli panoramici",en:"First scenic flights"}],["14:00",{it:"Presentazione scuola di volo",en:"Flying school talk"}],["17:00",{it:"Chiusura",en:"Close"}]],
     route:[], price:{it:"Entrata gratuita, voli da CHF 80",en:"Free entry, flights from CHF 80"}, signup:{it:"Solo per i voli, sul posto",en:"Flights only, on site"},
-    org:"Aeroclub Locarno (esempio)", source:{type:"auto",label:"sito dell'aeroclub"} },
+    org:"Aeroclub Locarno (esempio)", sources:[S_TIO, S_REG, S_SWA] },
   { id:"e4", cat:"tour", date:"2026-10-25", time:"09:00", lat:46.170, lng:8.795,
     title:{it:"Giro del Lago Maggiore",en:"Lake Maggiore loop"},
     place:{it:"Locarno, piazza Grande",en:"Locarno, Piazza Grande"},
     summary:{it:"Giro completo del lago tra Svizzera e Italia, con pranzo sul lungolago di Stresa.",en:"Full loop of the lake between Switzerland and Italy, with lunch on the Stresa waterfront."},
     what:{it:["Partenza in colonna da Locarno","Pranzo a Stresa","Rientro dalla sponda lombarda"],en:["Convoy start from Locarno","Lunch in Stresa","Return along the Lombardy shore"]},
     program:[["09:00",{it:"Ritrovo",en:"Meet"}],["09:30",{it:"Partenza",en:"Departure"}],["12:30",{it:"Pranzo a Stresa",en:"Lunch in Stresa"}],["17:30",{it:"Rientro a Locarno",en:"Back in Locarno"}]],
-    route:[["Locarno",0,""],["Cannobio",22,"IT"],["Verbania",43,""],["Stresa",60,""],["Arona",77,""],["Luino",115,""],["Locarno",152,"CH"]],
+    route:[["Locarno",0,"CH"],["Cannobio",22,"IT"],["Verbania",43,""],["Stresa",60,""],["Arona",77,""],["Luino",115,""],["Locarno",152,"CH"]],
     price:{it:"CHF 25 per auto",en:"CHF 25 per car"}, signup:{it:"Obbligatoria",en:"Required"},
     notice:{it:"Si passa due volte la frontiera: porta un documento d'identità valido.",en:"You cross the border twice: bring a valid ID."},
-    org:"Scuderia Verbano (esempio)", source:{type:"org"} },
+    org:"Scuderia Verbano (esempio)", sources:[S_FB("Scuderia Verbano")] },
   { id:"e5", cat:"gara", date:"2026-11-02", time:"09:00", lat:45.618, lng:9.281,
     title:{it:"Track day all'Autodromo di Monza",en:"Track day at Monza"},
     place:{it:"Autodromo Nazionale Monza (MB)",en:"Monza circuit, Italy"},
@@ -464,7 +621,7 @@ const SEED = [
     what:{it:["Turni da 20 minuti","Briefing di sicurezza obbligatorio","Istruttori disponibili su richiesta"],en:["20-minute sessions","Mandatory safety briefing","Instructors on request"]},
     program:[["08:00",{it:"Verifiche e briefing",en:"Checks and briefing"}],["09:00",{it:"Primo turno",en:"First session"}],["13:00",{it:"Pausa pranzo",en:"Lunch break"}],["17:30",{it:"Ultimo turno",en:"Last session"}]],
     route:[], price:{it:"Da EUR 290 (esempio)",en:"From EUR 290 (example)"}, signup:{it:"Online, casco obbligatorio",en:"Online, helmet required"},
-    org:"Organizzatore track day (esempio)", source:{type:"auto",label:"calendario autodromo"} },
+    org:"Organizzatore track day (esempio)", sources:[S_IG("esempio_trackday_monza")] },
   { id:"e6", cat:"raduno", date:"2026-11-08", time:"10:00", lat:45.842, lng:9.074,
     title:{it:"Raduno auto d'epoca sul Lago di Como",en:"Classic car meet on Lake Como"},
     place:{it:"Cernobbio (CO), lungolago",en:"Cernobbio, lakefront"},
@@ -472,7 +629,7 @@ const SEED = [
     what:{it:["Esposizione delle auto","Sfilata fino a Como","Aperitivo finale"],en:["Car display","Parade to Como","Closing aperitivo"]},
     program:[["10:00",{it:"Arrivo",en:"Arrival"}],["14:30",{it:"Sfilata",en:"Parade"}],["17:00",{it:"Aperitivo",en:"Aperitivo"}]],
     route:[], price:{it:"EUR 15 per equipaggio",en:"EUR 15 per crew"}, signup:{it:"Consigliata",en:"Recommended"},
-    org:"Club Auto Storiche Lario (esempio)", source:{type:"org"} },
+    org:"Club Auto Storiche Lario (esempio)", sources:[S_TIO, S_LOC] },
   { id:"e7", cat:"aerei", date:"2026-11-15", time:"10:00", lat:45.640, lng:8.711,
     title:{it:"Giornata degli elicotteri a Volandia",en:"Helicopter day at Volandia"},
     place:{it:"Volandia, Somma Lombardo (VA)",en:"Volandia museum, Somma Lombardo"},
@@ -480,7 +637,7 @@ const SEED = [
     what:{it:["Elicotteri aperti da visitare","Incontri con piloti","Visita al museo inclusa"],en:["Helicopters open to visit","Meet the pilots","Museum entry included"]},
     program:[["10:00",{it:"Apertura",en:"Opening"}],["15:00",{it:"Incontro con i piloti",en:"Pilot talk"}],["18:00",{it:"Chiusura",en:"Close"}]],
     route:[], price:{it:"Biglietto del museo",en:"Museum ticket"}, signup:{it:"Non necessaria",en:"Not needed"},
-    org:"Volandia (esempio)", source:{type:"auto",label:"sito del museo"} },
+    org:"Volandia (esempio)", sources:[S_AEROT, S_TIO] },
   { id:"e8", cat:"aerei", date:"2027-01-23", time:"10:00", lat:46.534, lng:9.884, icao:"LSZS",
     title:{it:"Fly-in invernale a Samedan",en:"Winter fly-in at Samedan"},
     place:{it:"Aeroporto Engadin, Samedan",en:"Engadin airport, Samedan"},
@@ -488,7 +645,7 @@ const SEED = [
     what:{it:["Arrivo degli aerei da tutta la Svizzera","Pranzo in hangar","Pubblico benvenuto"],en:["Aircraft arrive from all over Switzerland","Lunch in the hangar","Visitors welcome"]},
     program:[["10:00",{it:"Arrivi",en:"Arrivals"}],["12:30",{it:"Pranzo",en:"Lunch"}],["15:00",{it:"Partenze",en:"Departures"}]],
     route:[], price:{it:"Gratuito per il pubblico",en:"Free for visitors"}, signup:{it:"Solo per i piloti",en:"Pilots only"},
-    org:"Gruppo volo Engadina (esempio)", source:{type:"auto",label:"sito dell'aeroporto"} },
+    org:"Gruppo volo Engadina (esempio)", sources:[S_FRE, S_AEROT] },
   { id:"e9", cat:"gara", date:"2027-04-17", time:"08:30", lat:46.512, lng:8.690, icao:"LSPM",
     title:{it:"Slalom di primavera ad Ambrì",en:"Spring slalom at Ambrì"},
     place:{it:"Aerodromo di Ambrì",en:"Ambrì airfield"},
@@ -496,7 +653,7 @@ const SEED = [
     what:{it:["Manche di prova e due manche cronometrate","Classi per auto di serie e da corsa","Zona pubblico lungo la pista"],en:["Practice run and two timed runs","Classes for road and race cars","Spectator area along the runway"]},
     program:[["07:30",{it:"Verifiche tecniche",en:"Scrutineering"}],["08:30",{it:"Manche di prova",en:"Practice"}],["13:00",{it:"Manche cronometrate",en:"Timed runs"}],["17:00",{it:"Premiazione",en:"Awards"}]],
     route:[], price:{it:"Pubblico gratuito",en:"Free for spectators"}, signup:{it:"Piloti con licenza",en:"Licensed drivers"},
-    org:"Scuderia Leventina (esempio)", source:{type:"auto",label:"ticino.ch"} },
+    org:"Scuderia Leventina (esempio)", sources:[S_TIO, S_RSI, S_TCS] },
   { id:"e10", cat:"raduno", date:"2027-05-29", time:"10:00", lat:46.509, lng:8.607,
     title:{it:"Raduno supercar del Gottardo",en:"Gotthard supercar meet"},
     place:{it:"Airolo, piazzale della stazione",en:"Airolo, station square"},
@@ -504,9 +661,9 @@ const SEED = [
     what:{it:["Esposizione delle auto","Salita in colonna sulla Tremola","Pranzo al passo"],en:["Car display","Convoy up the Tremola","Lunch at the pass"]},
     program:[["10:00",{it:"Esposizione",en:"Display"}],["13:30",{it:"Salita sulla Tremola",en:"Tremola climb"}],["15:00",{it:"Arrivo al passo",en:"At the pass"}]],
     route:[["Airolo",0,"1141 m"],["Strada della Tremola",6,""],["Passo del San Gottardo",13,"2106 m"]],
-    price:{it:"CHF 60 per auto",en:"CHF 60 per car"}, signup:{it:"Su invito / iscrizione online",en:"By invitation / online"},
+    price:{it:"CHF 60 per auto",en:"CHF 60 per car"}, signup:{it:"Iscrizione online",en:"Online sign-up"},
     notice:{it:"La strada del Gottardo apre di solito tra fine maggio e inizio giugno.",en:"The Gotthard road usually opens between late May and early June."},
-    org:"Supercar Owners Circle (esempio)", source:{type:"auto",label:"ticino.ch"} }
+    org:"Supercar Owners Circle (esempio)", sources:[S_TIO, S_IG("esempio_supercar_gottardo")] }
 ];
 
 const PENDING_SEED = [
@@ -515,139 +672,147 @@ const PENDING_SEED = [
     place:{it:"Mendrisio",en:"Mendrisio"},
     summary:{it:"Testo incollato da un utente (post Instagram).",en:"Text pasted by a user (Instagram post)."},
     what:{it:["Auto dal 1980 al 2000"],en:["Cars from 1980 to 2000"]}, program:[], route:[],
-    price:{it:"—",en:"—"}, signup:{it:"—",en:"—"}, org:"Youngtimer Club (esempio)", source:{type:"user",label:"utente"} },
+    price:{it:"—",en:"—"}, signup:{it:"—",en:"—"}, org:"Youngtimer Club (esempio)", sources:[S_IG("esempio_youngtimer")] },
   { id:"p2", cat:"aerei", date:"2026-11-21", time:"10:00", lat:46.300, lng:8.990, conf:0.91, flags:null,
     title:{it:"Aerei storici in mostra a Lodrino",en:"Vintage aircraft display at Lodrino"},
     place:{it:"Aerodromo di Lodrino",en:"Lodrino airfield"},
-    summary:{it:"Trovato dal robot sul sito di un club di volo.",en:"Found by the robot on a flying club's website."},
+    summary:{it:"Trovato dal robot nell'agenda di tio.ch e su laRegione: unito in un solo evento.",en:"Found by the robot in the tio.ch agenda and on laRegione: merged into one event."},
     what:{it:["Aerei storici in esposizione","Visita agli hangar"],en:["Vintage aircraft on display","Hangar tour"]}, program:[["10:00",{it:"Apertura",en:"Opening"}]], route:[],
-    price:{it:"Gratuito",en:"Free"}, signup:{it:"Non necessaria",en:"Not needed"}, org:"Club di volo (esempio)", source:{type:"auto",label:"sito di un club di volo"} }
+    price:{it:"Gratuito",en:"Free"}, signup:{it:"Non necessaria",en:"Not needed"}, org:"Club di volo (esempio)", sources:[S_TIO, S_REG] }
 ];
 
-// ---- State ----
+// ---- Stato ----
 const S = { lang:"it", view:"explore", cats:new Set(Object.keys(CATS)), radius:200, month:new Date(2026,9,1), day:null,
-  live: SEED.map(e=>({...e})), pending: PENDING_SEED.map(e=>({...e})), saved:new Set() };
+  live:SEED.map(e=>({...e})), pending:PENDING_SEED.map(e=>({...e})), saved:new Set(), srcRows:[{type:"web",url:""}] };
 
 const store = {
-  get(k){ try{ return JSON.parse(localStorage.getItem("rea-"+k)); }catch(e){ return null; } },
-  set(k,v){ try{ localStorage.setItem("rea-"+k, JSON.stringify(v)); }catch(e){} }
+  get(k){ try{ return JSON.parse(localStorage.getItem("advent-"+k)); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem("advent-"+k, JSON.stringify(v)); }catch(e){} }
 };
 (function restore(){
-  const l = store.get("lang"); if (l==="it"||l==="en") S.lang = l;
-  const extra = store.get("extra"); // eventi proposti o approvati in questa sessione
-  if (extra && Array.isArray(extra.live) && Array.isArray(extra.pending)) {
-    const known = new Set(SEED.map(e=>e.id));
-    extra.live.forEach(e=>{ if(!known.has(e.id)) S.live.push(e); });
-    S.pending = extra.pending;
+  const l=store.get("lang"); if(l==="it"||l==="en") S.lang=l;
+  const extra=store.get("extra");
+  if(extra && Array.isArray(extra.live) && Array.isArray(extra.pending)){
+    const known=new Set(SEED.map(e=>e.id));
+    extra.live.forEach(e=>{ if(!known.has(e.id) && Array.isArray(e.sources)) S.live.push(e); });
+    S.pending=extra.pending.filter(e=>Array.isArray(e.sources));
   }
-  const sv = store.get("saved"); if (Array.isArray(sv)) S.saved = new Set(sv);
+  const sv=store.get("saved"); if(Array.isArray(sv)) S.saved=new Set(sv);
 })();
 function persist(){
-  const seedIds = new Set(SEED.map(e=>e.id));
-  store.set("extra", { live:S.live.filter(e=>!seedIds.has(e.id)), pending:S.pending });
-  store.set("saved", [...S.saved]);
+  const seedIds=new Set(SEED.map(e=>e.id));
+  store.set("extra",{live:S.live.filter(e=>!seedIds.has(e.id)),pending:S.pending});
+  store.set("saved",[...S.saved]);
 }
 
-// ---- Helpers ----
-const $ = id => document.getElementById(id);
-const t = k => T[S.lang][k];
-const L = o => (o && typeof o==="object" && !Array.isArray(o)) ? (o[S.lang] ?? o.it) : o;
-const esc = s => String(s ?? "").replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const locale = () => S.lang==="it" ? "it-CH" : "en-GB";
-const parseD = s => { const [y,m,d] = s.split("-").map(Number); return new Date(y,m-1,d); };
-const iso = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
-function km(a,b){ const R=6371, r=x=>x*Math.PI/180; const dLa=r(b.lat-a.lat), dLo=r(b.lng-a.lng);
+// ---- Utilità ----
+const $=id=>document.getElementById(id);
+const t=k=>T[S.lang][k];
+const L=o=>(o && typeof o==="object" && !Array.isArray(o)) ? (o[S.lang] ?? o.it) : o;
+const esc=s=>String(s ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const locale=()=>S.lang==="it"?"it-CH":"en-GB";
+const parseD=s=>{ const [y,m,d]=s.split("-").map(Number); return new Date(y,m-1,d); };
+const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+function km(a,b){ const R=6371,r=x=>x*Math.PI/180,dLa=r(b.lat-a.lat),dLo=r(b.lng-a.lng);
   const h=Math.sin(dLa/2)**2+Math.cos(r(a.lat))*Math.cos(r(b.lat))*Math.sin(dLo/2)**2; return 2*R*Math.asin(Math.sqrt(h)); }
-const dist = e => Math.round(km(HOME,e)*1.25); // circa km su strada
-function toast(msg){ const el=$("toast"); el.textContent=msg; el.hidden=false; clearTimeout(toast._t); toast._t=setTimeout(()=>el.hidden=true,2600); }
+const dist=e=>Math.round(km(HOME,e)*1.25); // circa km su strada
+const host=u=>{ try{ return new URL(u).hostname.replace(/^www\./,""); }catch(e){ return u; } };
+function toast(msg){ const el=$("toast"); el.textContent=msg; el.classList.add("show"); clearTimeout(toast._t); toast._t=setTimeout(()=>el.classList.remove("show"),2600); }
+const filtered=()=>S.live.filter(e=>S.cats.has(e.cat)&&(S.radius>=200||dist(e)<=S.radius)&&parseD(e.date)>=TODAY).sort((a,b)=>a.date.localeCompare(b.date));
 
-function filtered(){
-  return S.live.filter(e=>S.cats.has(e.cat) && (S.radius>=200 || dist(e)<=S.radius) && parseD(e.date)>=TODAY)
-    .sort((a,b)=>a.date.localeCompare(b.date));
+function srcSummary(e){
+  const s=e.sources||[]; if(!s.length) return "";
+  const first=s[0], more=s.length>1?` +${s.length-1}`:"";
+  const name=first.type==="web" ? host(first.url) : `${T[S.lang].stype[first.type]} ${first.label.split(" ")[0]}`;
+  return `<span class="src-line st-${first.type}"><span style="color:var(--s);display:inline-flex">${ICONS[first.type].replace("<svg",'<svg fill="none" stroke="currentColor" stroke-width="2"')}</span>${esc(first.type==="web"?t("from"):t("socialFrom"))} ${esc(name)}${more}</span>`;
 }
 
-// ---- Static texts ----
+// ---- Testi fissi ----
 function texts(){
-  document.documentElement.lang = S.lang;
-  $("t-sub").textContent=t("sub"); $("t-demo").textContent=t("demo"); $("t-radius").textContent=t("radius");
-  $("n-explore").textContent=t("navExplore"); $("n-propose").textContent=t("navPropose"); $("n-admin").textContent=t("navAdmin"); $("n-project").textContent=t("navProject");
-  $("t-prop-title").textContent=t("propTitle"); $("t-prop-lead").textContent=t("propLead");
-  $("t-ai-title").textContent=t("aiTitle"); $("t-ai-hint").textContent=t("aiHint"); $("t-ai-label").textContent=t("aiLabel"); $("ai-fill").textContent=t("aiBtn");
-  if (!$("ai-text").dataset.touched) $("ai-text").value=t("aiSample");
-  $("t-f-title").textContent=t("fTitle"); $("t-f-cat").textContent=t("fCat"); $("t-f-date").textContent=t("fDate"); $("t-f-time").textContent=t("fTime");
-  $("t-f-place").textContent=t("fPlace"); $("t-f-desc").textContent=t("fDesc"); $("t-f-route").textContent=t("fRoute"); $("t-f-route-hint").textContent=t("fRouteHint");
-  $("t-f-org").textContent=t("fOrg"); $("t-f-submit").textContent=t("fSubmit");
-  $("f-cat").innerHTML = Object.keys(CATS).map(k=>`<option value="${k}">${esc(L(CATS[k].one))}</option>`).join("");
-  $("t-adm-title").textContent=t("admTitle"); $("t-adm-lead").textContent=t("admLead");
-  $("lang-it").setAttribute("aria-pressed", S.lang==="it"); $("lang-en").setAttribute("aria-pressed", S.lang==="en");
+  document.documentElement.lang=S.lang;
+  const set=(id,k)=>{ $(id).textContent=t(k); };
+  set("t-sub","sub"); set("t-demo","demo"); set("t-radius","radius");
+  set("n-explore","navExplore"); set("n-propose","navPropose"); set("n-admin","navAdmin"); set("n-project","navProject");
+  set("t-prop-title","propTitle"); set("t-prop-lead","propLead");
+  set("t-ai-title","aiTitle"); set("t-ai-hint","aiHint"); set("t-ai-label","aiLabel"); set("ai-fill","aiBtn");
+  if(!$("ai-text").dataset.touched) $("ai-text").value=t("aiSample");
+  set("t-f-title","fTitle"); set("t-f-cat","fCat"); set("t-f-date","fDate"); set("t-f-time","fTime"); set("t-f-place","fPlace");
+  set("t-f-desc","fDesc"); set("t-f-route","fRoute"); set("t-f-route-hint","fRouteHint"); set("t-f-org","fOrg"); set("t-f-submit","fSubmit");
+  set("t-src-title","srcTitle"); set("t-src-hint","srcHint"); set("add-src","addSrc");
+  const cur=$("f-cat").value;
+  $("f-cat").innerHTML=Object.keys(CATS).map(k=>`<option value="${k}">${esc(L(CATS[k].one))}</option>`).join("");
+  if(cur) $("f-cat").value=cur;
+  set("t-adm-title","admTitle"); set("t-adm-lead","admLead");
+  $("lang").dataset.l=S.lang;
+  $("lang-it").setAttribute("aria-pressed",S.lang==="it"); $("lang-en").setAttribute("aria-pressed",S.lang==="en");
+  renderSrcRows();
 }
 
-// ---- Explore ----
+// ---- Esplora ----
 function renderChips(){
-  $("chips").innerHTML = Object.keys(CATS).map(k=>
-    `<button class="chip c-${k}" data-cat="${k}" aria-pressed="${S.cats.has(k)}"><span class="dot"></span>${esc(L(CATS[k]))}</button>`).join("");
-  $("radius-out").textContent = S.radius>=200 ? t("all") : `${S.radius} km`;
+  $("chips").innerHTML=Object.keys(CATS).map(k=>`<button class="chip press c-${k}" data-cat="${k}" aria-pressed="${S.cats.has(k)}"><span class="dot"></span>${esc(L(CATS[k]))}</button>`).join("");
+  $("radius-out").textContent=S.radius>=200?t("all"):`${S.radius} km`;
 }
-function renderCal(){
-  const m=S.month, y=m.getFullYear(), mo=m.getMonth();
-  $("month-label").textContent = m.toLocaleDateString(locale(),{month:"long",year:"numeric"});
-  $("prev").disabled = (y===2026 && mo<=9);
-  $("next").disabled = (y===2027 && mo>=5);
+function renderCal(dir){
+  const m=S.month,y=m.getFullYear(),mo=m.getMonth();
+  $("month-label").textContent=m.toLocaleDateString(locale(),{month:"long",year:"numeric"});
+  $("prev").disabled=(y===2026&&mo<=9); $("next").disabled=(y===2027&&mo>=5);
   const first=(new Date(y,mo,1).getDay()+6)%7, days=new Date(y,mo+1,0).getDate();
-  const evs=filtered(); const byDay={};
-  evs.forEach(e=>{ (byDay[e.date] ||= []).push(e); });
+  const byDay={}; filtered().forEach(e=>{ (byDay[e.date] ||= []).push(e); });
   const dows=[...Array(7)].map((_,i)=>new Date(2026,9,5+i).toLocaleDateString(locale(),{weekday:"narrow"}));
   let h=dows.map(d=>`<div class="dow">${d}</div>`).join("");
   for(let i=0;i<first;i++) h+=`<div class="day out"></div>`;
-  for(let d=1; d<=days; d++){
+  for(let d=1;d<=days;d++){
     const key=iso(new Date(y,mo,d)), list=byDay[key]||[];
-    const isToday = key===iso(TODAY);
-    h+=`<button class="day${list.length?" has":""}${isToday?" today":""}" data-day="${key}" ${list.length?"":"disabled"} aria-pressed="${S.day===key}" aria-label="${d}${list.length?", "+list.length+" evento":""}">
-      ${d}<span class="dots">${list.slice(0,3).map(e=>`<i class="c-${e.cat}"></i>`).join("")}</span></button>`;
+    h+=`<button class="day${list.length?" has":""}${key===iso(TODAY)?" today":""}" data-day="${key}" ${list.length?"":"disabled"} aria-pressed="${S.day===key}">${d}<span class="dots">${list.slice(0,3).map(e=>`<i class="c-${e.cat}"></i>`).join("")}</span></button>`;
   }
-  $("cal-grid").innerHTML=h;
+  const g=$("cal-grid"); g.innerHTML=h;
+  if(dir){ g.classList.remove("slide-l","slide-r"); void g.offsetWidth; g.classList.add(dir>0?"slide-l":"slide-r"); }
 }
-function evCard(e){
+function evCard(e,i){
   const d=parseD(e.date);
-  const src = e.source.type==="auto" ? `<span class="src auto"><i class="b"></i>${esc(t("srcAuto"))} ${esc(e.source.label)}</span>`
-    : e.source.type==="org" ? `<span class="src"><i class="b"></i>${esc(t("srcOrg"))}</span>`
-    : `<span class="src"><i class="b"></i>${esc(t("srcUser"))} ${esc(e.org)}</span>`;
-  return `<button class="ev c-${e.cat}" data-ev="${e.id}">
+  return `<button class="ev glass c-${e.cat}" data-ev="${e.id}" style="animation:rise .45s ${i*0.05}s var(--ease) both">
     <div class="date-block"><b>${d.getDate()}</b><span>${d.toLocaleDateString(locale(),{month:"short"}).replace(".","")}</span></div>
     <div class="ev-body">
       <span class="tag">${esc(L(CATS[e.cat].one))}${e.icao?` · <span class="mono">${e.icao}</span>`:""}</span>
       <p class="ev-title">${esc(L(e.title))}</p>
-      <div class="meta"><span>${esc(L(e.place))}</span><span class="mono">${e.time||"--:--"} · ${dist(e)} km</span></div>
-      ${src}
+      <div class="meta"><span>${esc(L(e.place))}</span><span class="mono">${esc(e.time||"--:--")} · ${dist(e)} km</span></div>
+      ${srcSummary(e)}
     </div></button>`;
 }
 function renderList(){
   let evs=filtered();
-  if (S.day){ evs=evs.filter(e=>e.date===S.day);
-    $("list-title").textContent = `${t("dayEvents")} ${parseD(S.day).toLocaleDateString(locale(),{day:"numeric",month:"long"})}`;
+  if(S.day){ evs=evs.filter(e=>e.date===S.day);
+    $("list-title").textContent=`${t("dayEvents")} ${parseD(S.day).toLocaleDateString(locale(),{day:"numeric",month:"long"})}`;
     $("clear-day").hidden=false; $("clear-day").textContent=t("showAll");
   } else { $("list-title").textContent=t("upcoming"); $("clear-day").hidden=true; }
-  $("events").innerHTML = evs.length ? evs.map(evCard).join("") : `<div class="empty">${esc(t("none"))}</div>`;
+  $("events").innerHTML=evs.length?evs.map(evCard).join(""):`<div class="empty">${esc(t("none"))}</div>`;
 }
 function renderExplore(){ renderChips(); renderCal(); renderList(); }
 
-// ---- Detail ----
+// ---- Dettaglio ----
 function mapsDir(route){
-  const p=route.map(r=>r[0]);
-  const enc=s=>encodeURIComponent(s);
+  const p=route.map(r=>r[0]), enc=encodeURIComponent;
   let u=`https://www.google.com/maps/dir/?api=1&origin=${enc(p[0])}&destination=${enc(p[p.length-1])}&travelmode=driving`;
   if(p.length>2) u+=`&waypoints=${p.slice(1,-1).map(enc).join("%7C")}`;
   return u;
 }
+function sourceItem(s){
+  const sub=s.type==="web" ? s.url.replace(/^https?:\/\//,"") : `${t("socialFrom")} ${T[S.lang].stype[s.type]}`;
+  return `<a class="source st-${s.type}" href="${esc(s.url)}" target="_blank" rel="noopener">
+    <span class="s-ico">${ICONS[s.type]}</span><div><b>${esc(s.label)}</b><span>${esc(sub)}</span></div><span class="go">${ICONS.ext}</span></a>`;
+}
+let lastFocus=null;
 function openDetail(id){
   const e=[...S.live,...S.pending].find(x=>x.id===id); if(!e) return;
   const d=parseD(e.date);
   const when=d.toLocaleDateString(locale(),{weekday:"long",day:"numeric",month:"long",year:"numeric"})+(e.time?` · ${e.time}`:"");
-  const placeUrl=`https://www.google.com/maps/search/?api=1&query=${e.lat},${e.lng}`;
   const isSaved=S.saved.has(e.id);
-  $("sheet-inner").className=`sheet-inner c-${e.cat}`;
-  $("sheet-inner").innerHTML=`
-    <div class="sheet-bar"><button class="icon-btn" id="close-sheet" aria-label="${esc(t("back"))}">‹</button><b>${esc(t("back"))}</b></div>
+  const inner=$("sheet-inner");
+  inner.className=`sheet-inner c-${e.cat}`;
+  inner.innerHTML=`
+    <div class="grabber"><button class="icon-btn" id="close-sheet" aria-label="${esc(t("back"))}"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button></div>
+    <div class="reveal">
     <div class="hero">
       <span class="tag">${esc(L(CATS[e.cat].one))}${e.icao?` · <span class="mono">${e.icao}</span>`:""}</span>
       <h2 id="d-title">${esc(L(e.title))}</h2>
@@ -660,110 +825,188 @@ function openDetail(id){
       </div>
     </div>
     <div class="actions">
-      <button class="btn" id="save-btn" data-id="${e.id}">${isSaved?"★ "+esc(t("saved")):"☆ "+esc(t("save"))}</button>
-      <a class="btn ghost" href="${placeUrl}" target="_blank" rel="noopener">${esc(t("openPlace"))}</a>
+      <button class="btn heart${isSaved?" on":""}" id="save-btn" data-id="${esc(e.id)}">${ICONS.heart}<span>${esc(isSaved?t("saved"):t("save"))}</span></button>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=${e.lat},${e.lng}" target="_blank" rel="noopener">${ICONS.pin}${esc(t("openPlace"))}</a>
     </div>
     ${e.notice?`<div class="notice">${esc(L(e.notice))}</div>`:""}
     ${L(e.what)?.length?`<section class="sec"><h3>${esc(t("what"))}</h3><ul>${L(e.what).map(w=>`<li>${esc(w)}</li>`).join("")}</ul></section>`:""}
-    ${e.program?.length?`<section class="sec"><h3>${esc(t("program"))}</h3><dl class="prog">${e.program.map(p=>`<dt>${p[0]}</dt><dd>${esc(L(p[1]))}</dd>`).join("")}</dl></section>`:""}
-    ${e.route?.length?`<section class="sec"><h3>${esc(t("route"))} · <span class="mono">${e.route[e.route.length-1][1]} km</span></h3>
-      <ol class="route">${e.route.map(r=>`<li><span class="pin"></span><div>${esc(r[0])}${r[2]?`<small>${esc(r[2])}</small>`:""}</div><span class="km">${r[1]} km</span></li>`).join("")}</ol>
-      <a class="btn ghost small" href="${mapsDir(e.route)}" target="_blank" rel="noopener">${esc(t("openMaps"))}</a></section>`:""}
+    ${e.program?.length?`<section class="sec"><h3>${esc(t("program"))}</h3><dl class="prog">${e.program.map(p=>`<dt>${esc(p[0])}</dt><dd>${esc(L(p[1]))}</dd>`).join("")}</dl></section>`:""}
+    ${e.route?.length?`<section class="sec"><h3>${esc(t("route"))}${typeof e.route[e.route.length-1][1]==="number"?` <span class="mono" style="color:var(--muted)">${e.route[e.route.length-1][1]} km</span>`:""}</h3>
+      <ol class="route">${e.route.map(r=>`<li><span class="pin"></span><div>${esc(r[0])}${r[2]?`<small>${esc(r[2])}</small>`:""}</div><span class="km">${typeof r[1]==="number"?r[1]+" km":""}</span></li>`).join("")}</ol>
+      <a class="btn ghost small" href="${mapsDir(e.route)}" target="_blank" rel="noopener">${ICONS.route}${esc(t("openMaps"))}</a></section>`:""}
     <section class="sec"><h3>${esc(t("details"))}</h3>
-      <dl class="prog"><dt>${esc(t("signup"))}</dt><dd>${esc(L(e.signup))}</dd><dt>${esc(t("org"))}</dt><dd>${esc(e.org)}</dd></dl>
-      <p class="hint" style="margin-top:12px">${esc(t("disclaimer"))}</p></section>`;
-  $("sheet").hidden=false; $("sheet").scrollTop=0; document.body.style.overflow="hidden";
-  $("close-sheet").focus();
+      <dl class="prog"><dt>${esc(t("signup"))}</dt><dd>${esc(L(e.signup))}</dd><dt>${esc(t("org"))}</dt><dd>${esc(e.org)}</dd></dl></section>
+    <section class="sec"><h3>${esc(t("sources"))}</h3>
+      <p class="hint" style="margin:-4px 0 10px">${esc(t("sourcesHint"))}</p>
+      <div class="sources">${(e.sources||[]).map(sourceItem).join("")}</div>
+      <p class="hint" style="margin-top:14px">${esc(t("disclaimer"))}</p></section>
+    </div>`;
+  lastFocus=document.activeElement;
+  $("panel").scrollTop=0;
+  $("sheet").classList.add("open"); $("sheet").setAttribute("aria-hidden","false");
+  document.body.style.overflow="hidden";
+  setTimeout(()=>$("close-sheet")?.focus({preventScroll:true}),50);
 }
-function closeDetail(){ $("sheet").hidden=true; document.body.style.overflow=""; }
+function closeDetail(){
+  $("sheet").classList.remove("open"); $("sheet").setAttribute("aria-hidden","true");
+  document.body.style.overflow="";
+  lastFocus?.focus?.({preventScroll:true});
+}
 
-// ---- Admin ----
-function renderAdmin(){
-  $("q-badge").hidden = !S.pending.length; $("q-badge").textContent=S.pending.length;
+// ---- Verifica ----
+function renderAdmin(bump){
+  const b=$("q-badge"); b.hidden=!S.pending.length; b.textContent=S.pending.length;
+  if(bump){ b.classList.remove("bump"); void b.offsetWidth; b.classList.add("bump"); }
   if(S.view!=="admin") return;
-  $("queue").innerHTML = S.pending.length ? S.pending.map(e=>{
+  $("queue").innerHTML=S.pending.length?S.pending.map((e,i)=>{
     const c=Math.round((e.conf??0.8)*100);
-    return `<div class="q-item c-${e.cat}">
+    return `<div class="q-item glass c-${e.cat}" id="q-${esc(e.id)}" style="animation-delay:${i*0.06}s">
       <div class="q-top"><div style="min-width:0"><span class="tag">${esc(L(CATS[e.cat].one))}</span>
         <p class="ev-title">${esc(L(e.title))}</p>
         <div class="meta"><span>${esc(parseD(e.date).toLocaleDateString(locale(),{day:"numeric",month:"short",year:"numeric"}))}</span><span>${esc(L(e.place))}</span></div>
-        <span class="src ${e.source.type==="auto"?"auto":""}"><i class="b"></i>${esc(e.source.type==="auto"?t("srcAuto")+" "+e.source.label:t("srcUser")+" "+e.org)}</span></div>
+        ${srcSummary(e)}</div>
         <span class="conf ${c>=85?"hi":"mid"}">${c}% ${esc(t("conf"))}</span></div>
       ${e.flags?`<div class="flags">⚠ ${esc(t("missing"))}: ${esc(L(e.flags))}</div>`:""}
       <div class="q-actions">
-        <button class="btn ok small" data-approve="${e.id}">${esc(t("approve"))}</button>
-        <button class="btn ghost small" data-preview="${e.id}">${esc(t("preview"))}</button>
-        <button class="btn ghost small" data-reject="${e.id}">${esc(t("reject"))}</button>
+        <button class="btn ok small" data-approve="${esc(e.id)}">${esc(t("approve"))}</button>
+        <button class="btn ghost small" data-preview="${esc(e.id)}">${esc(t("preview"))}</button>
+        <button class="btn ghost small" data-reject="${esc(e.id)}">${esc(t("reject"))}</button>
       </div></div>`;
-  }).join("") : `<div class="empty">${esc(t("queueEmpty"))}</div>`;
+  }).join(""):`<div class="empty">${esc(t("queueEmpty"))}</div>`;
+}
+function leaveThen(id,fn){
+  const el=$("q-"+id);
+  if(!el || matchMedia("(prefers-reduced-motion: reduce)").matches){ fn(); return; }
+  el.classList.add("leaving"); setTimeout(fn,330);
 }
 
-// ---- Propose ----
-const MONTHS = {gennaio:1,febbraio:2,marzo:3,aprile:4,maggio:5,giugno:6,luglio:7,agosto:8,settembre:9,ottobre:10,novembre:11,dicembre:12,
+// ---- Fonti nel modulo ----
+function renderSrcRows(){
+  const box=$("src-rows"); if(!box) return;
+  box.innerHTML=S.srcRows.map((r,i)=>`
+    <div class="src-row${r.err?" bad":""}">
+      <select id="src-type-${i}" aria-label="${esc(t("srcTitle"))}">${STYPES.map(k=>`<option value="${k}" ${r.type===k?"selected":""}>${esc(T[S.lang].stype[k])}</option>`).join("")}</select>
+      <input id="src-url-${i}" type="url" inputmode="url" autocomplete="off" value="${esc(r.url)}" placeholder="${esc(T[S.lang].sph[r.type])}" aria-label="Link">
+      <button type="button" class="rm" data-rm="${i}" aria-label="${esc(t("remove"))}" ${S.srcRows.length<2?"disabled":""}>×</button>
+      ${r.err?`<span class="src-err">${esc(T[S.lang].serr[r.err])}</span>`:""}
+    </div>`).join("");
+}
+function normUrl(u){ u=u.trim(); if(u && !/^https?:\/\//i.test(u)) u="https://"+u.replace(/^\/+/,""); return u; }
+function checkSource(r){
+  const u=normUrl(r.url);
+  if(!u) return "empty";
+  if((r.type==="web"||r.type==="other") && SOCIAL_HOSTS.test(u)) return r.type==="web"?"webSocial":null;
+  return SRC_RULES[r.type].test(u)?null:r.type;
+}
+function sourceLabel(type,url){
+  if(type==="web"||type==="other") return host(url);
+  const m=url.match(/(?:instagram\.com|tiktok\.com|facebook\.com|fb\.com|youtube\.com)\/(@?[^\/?#]+)/i);
+  const h=m?m[1]:host(url);
+  return (type==="instagram"||type==="tiktok") ? (h.startsWith("@")?h:"@"+h) : h;
+}
+function guessType(url){
+  if(/instagram\.com/i.test(url)) return "instagram";
+  if(/facebook\.com|fb\.com/i.test(url)) return "facebook";
+  if(/tiktok\.com/i.test(url)) return "tiktok";
+  if(/youtube\.com|youtu\.be/i.test(url)) return "youtube";
+  return "web";
+}
+
+// ---- Proponi ----
+const MONTHS={gennaio:1,febbraio:2,marzo:3,aprile:4,maggio:5,giugno:6,luglio:7,agosto:8,settembre:9,ottobre:10,novembre:11,dicembre:12,
   january:1,february:2,march:3,april:4,may:5,june:6,july:7,august:8,september:9,october:10,november:11,december:12};
 function aiFill(){
-  const txt=$("ai-text").value; const low=txt.toLowerCase();
-  const lines=txt.split("\n").map(s=>s.replace(/[^\p{L}\p{N}\s'&.,:\/-]/gu,"").trim()).filter(Boolean);
-  if(lines[0]) $("f-title").value = lines[0].replace(/\b\w+/g, w=>w[0].toUpperCase()+w.slice(1).toLowerCase());
-  let m = low.match(/(\d{1,2})\s+([a-z]+)\s+(\d{4})/);
-  if(m && MONTHS[m[2]]) $("f-date").value=`${m[3]}-${String(MONTHS[m[2]]).padStart(2,"0")}-${m[1].padStart(2,"0")}`;
+  const txt=$("ai-text").value, low=txt.toLowerCase();
+  const lines=txt.split("\n").map(s=>s.replace(/[^\p{L}\p{N}\s'&.,:\/@()_-]/gu,"").trim()).filter(Boolean);
+  if(lines[0]) $("f-title").value=lines[0].replace(/\p{L}+/gu,w=>w[0].toUpperCase()+w.slice(1).toLowerCase());
+  let m=low.match(/(\d{1,2})\s+([a-z]+)\s+(\d{4})/);
+  if(m&&MONTHS[m[2]]) $("f-date").value=`${m[3]}-${String(MONTHS[m[2]]).padStart(2,"0")}-${m[1].padStart(2,"0")}`;
   else if((m=low.match(/(\d{1,2})[./](\d{1,2})[./](\d{4})/))) $("f-date").value=`${m[3]}-${m[2].padStart(2,"0")}-${m[1].padStart(2,"0")}`;
   if((m=low.match(/(?:ore|at|alle)\s*(\d{1,2})[:.](\d{2})/))) $("f-time").value=`${m[1].padStart(2,"0")}:${m[2]}`;
   if((m=txt.match(/\b(?:a|in)\s+([A-ZÀ-Ü][\p{L}' ]+?)(?:,|\.|\n)/u))) $("f-place").value=m[1].trim();
-  const cat = /aere|volo|fly|air|elicott|helicop/.test(low)?"aerei" : /pista|track|slalom|gara|rally|cronoscalata|race/.test(low)?"gara" : /raduno|meet|coffee/.test(low)?"raduno" : /giro|tour|drive|itinerar/.test(low)?"tour" : "raduno";
-  $("f-cat").value=cat;
+  $("f-cat").value=/aere|volo|fly|air|elicott|helicop/.test(low)?"aerei":/pista|track|slalom|gara|rally|cronoscalata|race/.test(low)?"gara":/raduno|meet|coffee/.test(low)?"raduno":/giro|tour|drive|itinerar/.test(low)?"tour":"raduno";
   if((m=txt.match(/(?:organizza|organised by|organized by)\s*:?\s*(.+)/i))) $("f-org").value=m[1].trim();
-  const body=lines.slice(1).filter(l=>!/organizza|organised|organized/i.test(l)).join(" ");
-  $("f-desc").value=body;
+  $("f-desc").value=lines.slice(1).filter(l=>!/organizza|organised|organized|^info|instagram\.com|https?:/i.test(l)).join(" ");
+  const urls=[...txt.matchAll(/(?:https?:\/\/)?(?:www\.)?[a-z0-9-]+(?:\.[a-z0-9-]+)*\.[a-z]{2,}\/[^\s]*/gi)].map(x=>normUrl(x[0]));
+  if(urls.length){ S.srcRows=urls.map(u=>({type:guessType(u),url:u})); renderSrcRows(); }
   toast(t("aiDone"));
 }
 function submitProposal(ev){
   ev.preventDefault();
   const v=id=>$(id).value.trim();
-  if(!v("f-title")||!v("f-date")||!v("f-place")||!v("f-org")){ $("form-err").textContent=t("fErr"); $("form-err").hidden=false; return; }
+  S.srcRows.forEach(r=>{ r.err=checkSource(r); });
+  renderSrcRows();
+  const okFields=v("f-title")&&v("f-date")&&v("f-place")&&v("f-org");
+  const okSrc=S.srcRows.every(r=>!r.err);
+  if(!okFields||!okSrc){
+    $("form-err").textContent=t("fErr"); $("form-err").hidden=false;
+    const f=$("prop-form"); f.classList.remove("shake"); void f.offsetWidth; f.classList.add("shake");
+    if(!okSrc) $("src-block").scrollIntoView({behavior:"smooth",block:"center"});
+    return;
+  }
   $("form-err").hidden=true;
   const stops=v("f-route")?v("f-route").split(",").map(s=>s.trim()).filter(Boolean):[];
   const both=x=>({it:x,en:x});
+  const sources=S.srcRows.map(r=>{ const u=normUrl(r.url); return {type:r.type,url:u,label:sourceLabel(r.type,u)}; });
   S.pending.push({ id:"u"+Date.now(), cat:$("f-cat").value, date:v("f-date"), time:v("f-time"),
-    lat:46.0037, lng:8.9511, conf:0.95, flags:null,
+    lat:HOME.lat, lng:HOME.lng, conf:0.95, flags:null,
     title:both(v("f-title")), place:both(v("f-place")), summary:both(v("f-desc")||"—"),
     what:both([]), program:v("f-time")?[[v("f-time"),{it:"Inizio",en:"Start"}]]:[],
-    route:stops.map((s,i)=>[s,0,""]).filter((_,i,a)=>a.length>1),
-    price:both("—"), signup:both("—"), org:v("f-org"), source:{type:"user",label:v("f-org")} });
-  persist(); $("prop-form").reset(); renderAdmin(); toast(t("sentToast"));
+    route:stops.length>1?stops.map(s=>[s,null,""]):[],
+    price:both("—"), signup:both("—"), org:v("f-org"), sources });
+  persist(); $("prop-form").reset(); S.srcRows=[{type:"web",url:""}]; renderSrcRows();
+  renderAdmin(true); toast(t("sentToast"));
 }
 
-// ---- Navigation ----
+// ---- Navigazione ----
+const VIEWS=["explore","propose","admin","project"];
 function go(view){
+  if(view===S.view) return;
   S.view=view;
-  ["explore","propose","admin","project"].forEach(v=>$("view-"+v).hidden = v!==view);
+  VIEWS.forEach(v=>{ const el=$("view-"+v); el.hidden=v!==view; if(v===view){ el.classList.remove("view"); void el.offsetWidth; el.classList.add("view"); } });
   document.querySelectorAll(".nav button").forEach(b=>{ if(b.dataset.view===view) b.setAttribute("aria-current","page"); else b.removeAttribute("aria-current"); });
-  renderAdmin(); window.scrollTo(0,0);
+  $("nav-ind").style.transform=`translateX(${VIEWS.indexOf(view)*100}%)`;
+  renderAdmin(); if(view==="explore") renderList();
+  window.scrollTo({top:0,behavior:"instant"});
 }
 function renderAll(){ texts(); renderExplore(); renderAdmin(); }
 
-// ---- Events ----
-document.addEventListener("click", ev=>{
+// ---- Eventi ----
+document.addEventListener("click",ev=>{
+  if(ev.target.id==="scrim"){ closeDetail(); return; }
   const b=ev.target.closest("button"); if(!b) return;
   if(b.dataset.cat){ const k=b.dataset.cat; S.cats.has(k)?S.cats.delete(k):S.cats.add(k); S.day=null; renderExplore(); }
-  else if(b.dataset.day){ S.day = S.day===b.dataset.day?null:b.dataset.day; renderCal(); renderList(); }
+  else if(b.dataset.day){ S.day=S.day===b.dataset.day?null:b.dataset.day; renderCal(); renderList(); }
   else if(b.dataset.ev){ openDetail(b.dataset.ev); }
   else if(b.dataset.view){ go(b.dataset.view); }
   else if(b.dataset.preview){ openDetail(b.dataset.preview); }
-  else if(b.dataset.approve){ const i=S.pending.findIndex(e=>e.id===b.dataset.approve); if(i>-1){ const [e]=S.pending.splice(i,1); S.live.push(e); persist(); renderAll(); toast(t("approved")); } }
-  else if(b.dataset.reject){ S.pending=S.pending.filter(e=>e.id!==b.dataset.reject); persist(); renderAdmin(); toast(t("rejected")); }
+  else if(b.dataset.approve){ const id=b.dataset.approve; leaveThen(id,()=>{ const i=S.pending.findIndex(e=>e.id===id); if(i>-1){ const [e]=S.pending.splice(i,1); S.live.push(e); persist(); renderExplore(); renderAdmin(true); toast(t("approved")); } }); }
+  else if(b.dataset.reject){ const id=b.dataset.reject; leaveThen(id,()=>{ S.pending=S.pending.filter(e=>e.id!==id); persist(); renderAdmin(true); toast(t("rejected")); }); }
+  else if(b.dataset.rm){ S.srcRows.splice(+b.dataset.rm,1); renderSrcRows(); }
+  else if(b.id==="add-src"){ S.srcRows.push({type:"web",url:""}); renderSrcRows(); $("src-url-"+(S.srcRows.length-1))?.focus(); }
   else if(b.id==="close-sheet"){ closeDetail(); }
-  else if(b.id==="save-btn"){ const id=b.dataset.id; if(S.saved.has(id)) S.saved.delete(id); else { S.saved.add(id); toast(t("savedToast")); } persist(); b.textContent = S.saved.has(id)?"★ "+t("saved"):"☆ "+t("save"); }
-  else if(b.id==="prev"){ S.month=new Date(S.month.getFullYear(),S.month.getMonth()-1,1); S.day=null; renderCal(); renderList(); }
-  else if(b.id==="next"){ S.month=new Date(S.month.getFullYear(),S.month.getMonth()+1,1); S.day=null; renderCal(); renderList(); }
+  else if(b.id==="save-btn"){ const id=b.dataset.id; const on=!S.saved.has(id); on?S.saved.add(id):S.saved.delete(id); persist();
+    b.classList.toggle("on",on); b.classList.remove("pop"); void b.offsetWidth; if(on){ b.classList.add("pop"); toast(t("savedToast")); }
+    b.querySelector("span").textContent=on?t("saved"):t("save"); }
+  else if(b.id==="prev"){ S.month=new Date(S.month.getFullYear(),S.month.getMonth()-1,1); S.day=null; renderCal(-1); renderList(); }
+  else if(b.id==="next"){ S.month=new Date(S.month.getFullYear(),S.month.getMonth()+1,1); S.day=null; renderCal(1); renderList(); }
   else if(b.id==="clear-day"){ S.day=null; renderCal(); renderList(); }
   else if(b.id==="lang-it"||b.id==="lang-en"){ S.lang=b.id.slice(5); store.set("lang",S.lang); renderAll(); }
   else if(b.id==="ai-fill"){ aiFill(); }
 });
-$("radius").addEventListener("input", e=>{ S.radius=+e.target.value; S.day=null; renderExplore(); });
-$("ai-text").addEventListener("input", e=>{ e.target.dataset.touched="1"; });
-$("prop-form").addEventListener("submit", submitProposal);
-document.addEventListener("keydown", e=>{ if(e.key==="Escape" && !$("sheet").hidden) closeDetail(); });
+document.addEventListener("input",e=>{
+  const m=e.target.id.match(/^src-url-(\d+)$/);
+  if(m){ const r=S.srcRows[+m[1]]; r.url=e.target.value;
+    if(r.err){ r.err=null; const row=e.target.closest(".src-row"); row.classList.remove("bad"); row.querySelector(".src-err")?.remove(); } }
+  if(e.target.id==="ai-text") e.target.dataset.touched="1";
+});
+document.addEventListener("change",e=>{
+  const m=e.target.id.match(/^src-type-(\d+)$/);
+  if(m){ const r=S.srcRows[+m[1]]; r.type=e.target.value; r.err=null; renderSrcRows(); }
+});
+$("radius").addEventListener("input",e=>{ S.radius=+e.target.value; S.day=null; renderExplore(); });
+$("prop-form").addEventListener("submit",submitProposal);
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&$("sheet").classList.contains("open")) closeDetail(); });
 
 renderAll();
 </script>
