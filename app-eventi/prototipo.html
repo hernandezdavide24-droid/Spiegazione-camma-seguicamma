@@ -668,9 +668,9 @@ td a{color:var(--blue);text-decoration:none;overflow-wrap:anywhere}
     </ul>
 
     <h3>Mappa</h3>
-    <p>La mappa ha <b>4 stili</b>: Scura (CARTO), Stradale (OpenStreetMap), Topografica con curve di livello (OpenTopoMap) e la carta nazionale <b>swisstopo</b>, gratuita e molto dettagliata in Svizzera. Mostrano strade, edifici, sentieri e rilievo fino al singolo edificio.</p>
+    <p>La mappa ha <b>3 stili</b>, tutti gratuiti e senza chiavi: Stradale (OpenStreetMap), Topografica con curve di livello (OpenTopoMap) e la carta nazionale <b>swisstopo</b>, molto dettagliata in Svizzera. Mostrano strade, edifici, sentieri e rilievo fino al singolo edificio.</p>
     <p><b>Google Maps:</b> le sue immagini non si possono copiare o usare fuori dagli strumenti ufficiali di Google. Nell'app vera si usa <b>react-native-maps</b>, che mostra Google Maps su Android (e su iPhone se vuoi), con chiave gratuita per le app. Ogni evento ha già il pulsante che apre Google Maps per la navigazione.</p>
-    <p class="hint">Licenze: OpenStreetMap e OpenTopoMap chiedono il credito visibile e un uso moderato; CARTO è gratuito fino a 75'000 visualizzazioni al mese per progetti non commerciali, oltre serve un piano; swisstopo è dato aperto e gratuito con credito. Nell'anteprima di Claude le mappe esterne sono bloccate: lì si vede la mappa disegnata con confini e laghi veri.</p>
+    <p class="hint">Licenze: OpenStreetMap e OpenTopoMap chiedono il credito visibile e un uso moderato (per un'app con molti utenti conviene un servizio di mappe dedicato, anche gratuito come OpenFreeMap); swisstopo è dato aperto e gratuito con credito. Nell'anteprima di Claude le mappe esterne sono bloccate: lì si vede la mappa disegnata con confini e laghi veri.</p>
 
     <h3>Le fonti che hai trovato</h3>
     <div class="tbl-wrap"><table>
@@ -853,8 +853,8 @@ it:{
   approve:"Approva", reject:"Scarta", approved:"Approvato e pubblicato", rejected:"Scartato",
   queueEmpty:"Niente da verificare. Il robot controllerà di nuovo le fonti domattina alle 06:00.",
   conf:"affidabilità", missing:"Da controllare", preview:"Anteprima",
-  stDark:"Scura", stStreet:"Stradale", stTopo:"Topografica", stSwiss:"swisstopo",
-  mapBlocked:"Qui nell'anteprima di Claude le mappe esterne sono bloccate, quindi vedi la mappa disegnata. Apri il prototipo dal link GitHub Pages per vedere strade, edifici e rilievo nei 4 stili.",
+  styleFallback:"Questo stile non si carica: torno alla mappa Stradale", stStreet:"Stradale", stTopo:"Topografica", stSwiss:"swisstopo",
+  mapBlocked:"Qui nell'anteprima di Claude le mappe esterne sono bloccate, quindi vedi la mappa disegnata. Apri il prototipo dal link GitHub Pages per vedere strade, edifici e rilievo nei 3 stili.",
   report:"Segnala", reported:"Segnalato", reportEvent:"Segnala un problema con questo evento",
   repTitleReview:"Segnala la recensione", repTitleEvent:"Segnala l'evento", repWhy:"Perché la segnali?",
   repNote:"Aggiungi dettagli (obbligatorio per \"Altro\")", repSend:"Invia segnalazione", repInfo:"Chi ha scritto il contenuto non saprà chi l'ha segnalato. Un amministratore la controlla e decide se rimuoverlo.",
@@ -931,8 +931,8 @@ en:{
   approve:"Approve", reject:"Discard", approved:"Approved and published", rejected:"Discarded",
   queueEmpty:"Nothing to review. The robot will check the sources again tomorrow at 06:00.",
   conf:"confidence", missing:"To check", preview:"Preview",
-  stDark:"Dark", stStreet:"Streets", stTopo:"Topographic", stSwiss:"swisstopo",
-  mapBlocked:"External maps are blocked in Claude's preview, so you see the drawn map. Open the prototype from the GitHub Pages link to see streets, buildings and terrain in all 4 styles.",
+  styleFallback:"This style won't load: switching back to Streets", stStreet:"Streets", stTopo:"Topographic", stSwiss:"swisstopo",
+  mapBlocked:"External maps are blocked in Claude's preview, so you see the drawn map. Open the prototype from the GitHub Pages link to see streets, buildings and terrain in all 3 styles.",
   report:"Report", reported:"Reported", reportEvent:"Report a problem with this event",
   repTitleReview:"Report review", repTitleEvent:"Report event", repWhy:"Why are you reporting it?",
   repNote:"Add details (required for \"Other\")", repSend:"Send report", repInfo:"The author won't know who reported it. An admin checks it and decides whether to remove it.",
@@ -1123,7 +1123,7 @@ const REPORTS_SEED=[
 // ---- Stato ----
 const S={lang:"it",view:"home",cats:new Set(Object.keys(CATS)),radius:200,month:new Date(2026,9,1),day:null,
   live:SEED.map(e=>({...e})),pending:PENDING_SEED.map(e=>({...e})),reviews:REVIEWS_SEED.map(r=>({...r})),orgs:JSON.parse(JSON.stringify(ORGS)),
-  reports:REPORTS_SEED.map(r=>({...r})),adminTab:"events",mapStyle:"dark",mapMode:null,saved:new Set(),user:null,srcRows:[{type:"web",url:""}],poster:null,sheetStack:[],vb:null,mapSel:null};
+  reports:REPORTS_SEED.map(r=>({...r})),adminTab:"events",mapStyle:"street",mapMode:null,saved:new Set(),user:null,srcRows:[{type:"web",url:""}],poster:null,sheetStack:[],vb:null,mapSel:null};
 
 const store={
   get(k){try{return JSON.parse(localStorage.getItem("adventti-"+k));}catch(e){return null;}},
@@ -1142,7 +1142,7 @@ const store={
     if(x.user) S.user=x.user;
     if(Array.isArray(x.reports)) S.reports=x.reports;
     if(Array.isArray(x.removed)) S.live=S.live.filter(e=>!x.removed.includes(e.id));
-    if(x.mapStyle) S.mapStyle=x.mapStyle;
+    if(x.mapStyle&&["street","topo","swiss"].includes(x.mapStyle)) S.mapStyle=x.mapStyle;
   }
   const sv=store.get("saved"); if(Array.isArray(sv)) S.saved=new Set(sv);
 })();
@@ -1305,12 +1305,11 @@ const proj=(lat,lng)=>[(lng-GEO.B.w)*GEO.C*GEO.K,(GEO.B.n-lat)*GEO.K];
 // Mappa a tasselli: Leaflet + 4 stili. Se i tasselli non arrivano (es. anteprima di Claude) si passa alla mappa disegnata.
 const LF=()=>window.L; // "L" è già usato per le traduzioni
 const TILES={
-  dark:{url:"https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",sub:"abcd",max:20,attr:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'},
   street:{url:"https://tile.openstreetmap.org/{z}/{x}/{y}.png",max:19,attr:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'},
   topo:{url:"https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",sub:"abc",max:17,attr:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, SRTM &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)'},
   swiss:{url:"https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.pixelkarte-farbe/default/current/3857/{z}/{x}/{y}.jpeg",max:18,attr:'&copy; <a href="https://www.swisstopo.admin.ch">swisstopo</a>'}
 };
-const STYLE_KEYS=[["dark","stDark","#1B2333"],["street","stStreet","#F2EFE9"],["topo","stTopo","#CFE3B4"],["swiss","stSwiss","#E8E2CF"]];
+const STYLE_KEYS=[["street","stStreet","#F2EFE9"],["topo","stTopo","#CFE3B4"],["swiss","stSwiss","#E8E2CF"]];
 let LMAP=null,LLAYER=null,LMK=null,tileOk=false,tileErr=0,tileTimer=null;
 function loadLeaflet(){
   return new Promise((res,rej)=>{
@@ -1343,13 +1342,21 @@ function startTiles(){
   S.mapMode="tiles"; setTileLayer(); renderMarkers(); afterMapReady();
 }
 function setTileLayer(){
-  const c=TILES[S.mapStyle]||TILES.dark;
+  if(!TILES[S.mapStyle]) S.mapStyle="street";
+  const c=TILES[S.mapStyle]; tileOk=false; tileErr=0;
   if(LLAYER) LMAP.removeLayer(LLAYER);
   LLAYER=LF().tileLayer(c.url,{subdomains:c.sub||"abc",maxZoom:18,maxNativeZoom:c.max,attribution:c.attr});
   LLAYER.on("tileload",()=>{tileOk=true;});
-  LLAYER.on("tileerror",()=>{tileErr++; if(!tileOk&&tileErr>=6) useSvg();});
+  LLAYER.on("tileerror",()=>{tileErr++; if(!tileOk&&tileErr>=6) styleFailed();});
   LLAYER.addTo(LMAP);
-  clearTimeout(tileTimer); if(!tileOk) tileTimer=setTimeout(()=>{if(!tileOk) useSvg();},9000);
+  clearTimeout(tileTimer); tileTimer=setTimeout(()=>{if(!tileOk) styleFailed();},12000);
+}
+// Se uno stile non carica si torna a "Stradale"; solo se anche quello fallisce si usa la mappa disegnata
+function styleFailed(){
+  clearTimeout(tileTimer);
+  if(S.mapMode!=="tiles") return;
+  if(S.mapStyle!=="street"){ S.mapStyle="street"; renderMapStyles(); setTileLayer(); toast(t("styleFallback")); }
+  else useSvg();
 }
 function useSvg(){
   if(S.mapMode==="svg") return;
