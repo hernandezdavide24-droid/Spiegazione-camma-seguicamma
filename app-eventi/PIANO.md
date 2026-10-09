@@ -43,6 +43,15 @@ Home · Calendario · Mappa · Proponi · Profilo
 - **Google Maps**: le immagini non si possono copiare; nell'app vera react-native-maps mostra Google Maps su Android (chiave gratuita per le app). Ogni evento ha il pulsante "Portami lì" (anche nella scheda della mappa): scelta dell'app di navigazione, link gratuiti senza chiave, percorso dalla posizione attuale al ritrovo. iPhone: Apple Maps, Google Maps, Waze. Android: "Scegli l'app sul telefono" (link geo:, mostra le app di mappe installate), Google Maps, Waze. Computer: Google Maps, Apple Maps, Waze.
 - Licenze tasselli: credito visibile sempre; OSM/OpenTopoMap uso moderato (con molti utenti passare a un servizio dedicato, anche gratuito come OpenFreeMap); swisstopo gratuito.
 
+## Design (v2, regole Taste Skill)
+- Tema che segue il telefono (chiaro grigio caldo / antracite), mai nero o bianco puro.
+- Un solo accento: rosso Ticino. I colori di categoria sono solo codifica (puntini e tag), mai superfici o sfumature.
+- Caratteri: Schibsted Grotesk (titoli), Geist (testi), Geist Mono (orari e numeri).
+- Un solo sistema di angoli (10 / 14 / 20 px), ombre leggere tinte, schede solo dove separano davvero i contenuti.
+- Locandine generate tipografiche: tag di categoria, titolo grande, data e luogo in basso.
+- Movimento equilibrato: transizioni a molla tra schermate, foglio che sale, indicatore della barra che scivola; solo transform/opacity; rispetta "riduci movimento".
+- Tolti: aloni colorati, effetto vetro, bagliori, gradienti sui pulsanti, aereo animato nell'intestazione, trattini lunghi nei testi.
+
 ## Accesso e ruoli
 - Ospite: guarda tutto senza account.
 - Accesso con **Apple** e **Google** (App Store, regola 4.8: con l'accesso Google serve anche un'alternativa come "Accedi con Apple").
