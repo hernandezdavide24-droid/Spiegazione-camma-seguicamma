@@ -306,6 +306,7 @@ a{color:inherit}
 .btn.ok{background:var(--ok);color:#04150D;box-shadow:none}
 .btn.small{padding:8px 13px;font-size:13.5px;border-radius:12px}
 .btn.block{width:100%}
+.btn.gnav{background:linear-gradient(135deg,#1A73E8,#34A853);box-shadow:0 8px 24px -10px rgba(26,115,232,.7)}
 .btn svg{width:17px;height:17px;flex:none}
 .heart svg{fill:none;stroke:currentColor;stroke-width:2}
 .heart.on svg{fill:#fff}
@@ -776,6 +777,7 @@ const ICONS = {
   pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg>',
   route:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3.5 3.5 0 0 0 0-7H9a3.5 3.5 0 0 1 0-7h7"/></svg>',
   star:'<svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.3L12 17.1l-5.7 3.1 1.2-6.3L2.8 9.5l6.4-.8z"/></svg>',
+  nav:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8z"/></svg>',
   flag:'<svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg>',
   verified:'<svg class="verified" viewBox="0 0 24 24"><path fill="#4F8CFF" d="M12 1.5l2.6 1.9 3.2-.2 1 3.1 2.6 1.9-1 3.1 1 3.1-2.6 1.9-1 3.1-3.2-.2L12 22.5l-2.6-1.9-3.2.2-1-3.1-2.6-1.9 1-3.1-1-3.1 2.6-1.9 1-3.1 3.2.2z"/><path d="M8 12.2l2.6 2.6L16.2 9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
   apple:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.5 2-3.7 2.1-3.8-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.3.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-2.8-1.1-2.8-4.2zM13.9 5.2c.7-.8 1.2-2 1-3.2-1 .1-2.2.7-3 1.5-.6.7-1.2 1.9-1.1 3.1 1.2.1 2.4-.6 3.1-1.4z"/></svg>',
@@ -867,6 +869,7 @@ it:{
   approve:"Approva", reject:"Scarta", approved:"Approvato e pubblicato", rejected:"Scartato",
   queueEmpty:"Niente da verificare. Il robot controllerà di nuovo le fonti domattina alle 06:00.",
   conf:"affidabilità", missing:"Da controllare", preview:"Anteprima",
+  navGo:"Portami lì con Google Maps", navShort:"Portami lì", navGoHint:"Apre Google Maps con il percorso dalla tua posizione al punto di ritrovo.",
   styleFallback:"Questo stile non si carica: torno alla mappa Stradale", stStreet:"Stradale", stTopo:"Topografica", stSwiss:"swisstopo",
   mapBlocked:"Qui nell'anteprima di Claude le mappe esterne sono bloccate, quindi vedi la mappa disegnata. Apri il prototipo dal link GitHub Pages per vedere strade, edifici e rilievo nei 3 stili.",
   report:"Segnala", reported:"Segnalato", reportEvent:"Segnala un problema con questo evento",
@@ -945,6 +948,7 @@ en:{
   approve:"Approve", reject:"Discard", approved:"Approved and published", rejected:"Discarded",
   queueEmpty:"Nothing to review. The robot will check the sources again tomorrow at 06:00.",
   conf:"confidence", missing:"To check", preview:"Preview",
+  navGo:"Take me there with Google Maps", navShort:"Take me there", navGoHint:"Opens Google Maps with directions from where you are to the meeting point.",
   styleFallback:"This style won't load: switching back to Streets", stStreet:"Streets", stTopo:"Topographic", stSwiss:"swisstopo",
   mapBlocked:"External maps are blocked in Claude's preview, so you see the drawn map. Open the prototype from the GitHub Pages link to see streets, buildings and terrain in all 3 styles.",
   report:"Report", reported:"Reported", reportEvent:"Report a problem with this event",
@@ -1474,7 +1478,7 @@ function selectMarker(id){
   const e=S.live.find(x=>x.id===id); if(!e) return;
   card.innerHTML=`${posterHTML(e,{sm:true})}<div><span class="tag c-${e.cat}">${esc(L(CATS[e.cat].one))}</span><p class="ev-title">${esc(L(e.title))}</p>
     <div class="meta"><span>${esc(parseD(e.date).toLocaleDateString(locale(),{day:"numeric",month:"short"}))}${e.time?" · "+esc(e.time):""}</span><span>~${dist(e)} km</span></div>
-    <button class="btn small" data-ev="${esc(e.id)}" style="margin-top:8px">${esc(t("open"))}</button></div>`;
+    <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap"><button class="btn small" data-ev="${esc(e.id)}">${esc(t("open"))}</button><a class="btn ghost small" href="${gmapsFromHere(e)}" target="_blank" rel="noopener">${ICONS.nav}${esc(t("navShort"))}</a></div></div>`;
   card.classList.remove("show"); void card.offsetWidth; card.classList.add("show");
 }
 function mapTo(id){
@@ -1484,6 +1488,8 @@ function mapTo(id){
 }
 
 // ---- Dettaglio evento ----
+// Google Maps URLs (gratis, senza chiave): senza "origin" il percorso parte dalla posizione attuale del telefono
+const gmapsFromHere=e=>`https://www.google.com/maps/dir/?api=1&destination=${e.lat},${e.lng}&travelmode=driving`;
 function mapsDir(route){const p=route.map(r=>r[0]),enc=encodeURIComponent;let u=`https://www.google.com/maps/dir/?api=1&origin=${enc(p[0])}&destination=${enc(p[p.length-1])}&travelmode=driving`;if(p.length>2) u+=`&waypoints=${p.slice(1,-1).map(enc).join("%7C")}`;return u;}
 function sourceItem(s){
   const sub=s.type==="web"?s.url.replace(/^https?:\/\//,""):`${t("socialFrom")} ${T[S.lang].stype[s.type]}`;
@@ -1551,6 +1557,8 @@ function eventSheet(e,focus){
       <button class="btn heart${saved?" on":""}" data-like="${esc(e.id)}">${ICONS.heart}<span>${esc(saved?t("saved"):t("save"))}</span></button>
       <button class="btn ghost" data-mapto="${esc(e.id)}">${ICONS.pin}${esc(t("openPlace"))}</button>
     </div>
+    <a class="btn block gnav" href="${gmapsFromHere(e)}" target="_blank" rel="noopener" style="margin-top:10px">${ICONS.nav}${esc(t("navGo"))}</a>
+    <p class="hint" style="margin:6px 2px 0">${esc(t("navGoHint"))}</p>
     ${canManage(e)&&S.live.includes(e)?promoBlock(e):""}
     ${e.notice?`<div class="notice">${esc(L(e.notice))}</div>`:""}
     ${L(e.what)?.length?`<section class="sec"><h3>${esc(t("what"))}</h3><ul>${L(e.what).map(w=>`<li>${esc(w)}</li>`).join("")}</ul></section>`:""}

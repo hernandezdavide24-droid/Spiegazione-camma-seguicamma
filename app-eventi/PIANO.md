@@ -40,7 +40,7 @@ Home · Calendario · Mappa · Proponi · Profilo
 
 - **Home**: carosello "In evidenza" con locandine grandi, "Questo weekend", elenco "In arrivo" a post stile Instagram (club, locandina, cuore, recensioni, mappa).
 - **Mappa**: tutti gli eventi colorati per categoria; quelli promossi pulsano. 3 stili gratuiti senza chiavi: Stradale (OpenStreetMap, predefinito), Topografica (OpenTopoMap), swisstopo (carta nazionale). La Scura (CARTO) è stata tolta perché non caricava; se uno stile non carica l'app torna da sola a Stradale. Nell'anteprima di Claude le mappe esterne sono bloccate e si vede una mappa disegnata (swisstopo/UST + Natural Earth); da GitHub Pages si vedono le mappe vere.
-- **Google Maps**: le immagini non si possono copiare; nell'app vera react-native-maps mostra Google Maps su Android (chiave gratuita per le app). Ogni evento ha il pulsante "Apri in Google Maps".
+- **Google Maps**: le immagini non si possono copiare; nell'app vera react-native-maps mostra Google Maps su Android (chiave gratuita per le app). Ogni evento ha il pulsante "Portami lì con Google Maps" (link gratuito senza chiave: percorso dalla posizione attuale del telefono al punto di ritrovo), presente anche nella scheda della mappa.
 - Licenze tasselli: credito visibile sempre; OSM/OpenTopoMap uso moderato (con molti utenti passare a un servizio dedicato, anche gratuito come OpenFreeMap); swisstopo gratuito.
 
 ## Accesso e ruoli
