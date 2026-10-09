@@ -307,6 +307,8 @@ a{color:inherit}
 .btn.small{padding:8px 13px;font-size:13.5px;border-radius:12px}
 .btn.block{width:100%}
 .btn.gnav{background:linear-gradient(135deg,#1A73E8,#34A853);box-shadow:0 8px 24px -10px rgba(26,115,232,.7)}
+.reason.navapp{align-items:center;color:var(--ink)}
+.reason.navapp:hover{border-color:var(--stroke-2)}
 .btn svg{width:17px;height:17px;flex:none}
 .heart svg{fill:none;stroke:currentColor;stroke-width:2}
 .heart.on svg{fill:#fff}
@@ -869,7 +871,10 @@ it:{
   approve:"Approva", reject:"Scarta", approved:"Approvato e pubblicato", rejected:"Scartato",
   queueEmpty:"Niente da verificare. Il robot controllerà di nuovo le fonti domattina alle 06:00.",
   conf:"affidabilità", missing:"Da controllare", preview:"Anteprima",
-  navGo:"Portami lì con Google Maps", navShort:"Portami lì", navGoHint:"Apre Google Maps con il percorso dalla tua posizione al punto di ritrovo.",
+  navGo:"Portami lì", navShort:"Portami lì", navGoHint:"Scegli l'app di navigazione: il percorso parte dalla tua posizione e arriva al punto di ritrovo.",
+  navTitle:"Con quale app vuoi andarci?", navOther:"Scegli l'app sul telefono",
+  navSubApple:"Già presente su ogni iPhone", navSubGoogle:"Percorso dettagliato dalla tua posizione", navSubWaze:"Navigazione con traffico in tempo reale", navSubOther:"Mostra le app di mappe installate (Waze, Here, OsmAnd…)",
+  navNote:"Se un'app non è installata si apre il suo sito. Le coordinate del ritrovo, da copiare se ti servono:",
   styleFallback:"Questo stile non si carica: torno alla mappa Stradale", stStreet:"Stradale", stTopo:"Topografica", stSwiss:"swisstopo",
   mapBlocked:"Qui nell'anteprima di Claude le mappe esterne sono bloccate, quindi vedi la mappa disegnata. Apri il prototipo dal link GitHub Pages per vedere strade, edifici e rilievo nei 3 stili.",
   report:"Segnala", reported:"Segnalato", reportEvent:"Segnala un problema con questo evento",
@@ -948,7 +953,10 @@ en:{
   approve:"Approve", reject:"Discard", approved:"Approved and published", rejected:"Discarded",
   queueEmpty:"Nothing to review. The robot will check the sources again tomorrow at 06:00.",
   conf:"confidence", missing:"To check", preview:"Preview",
-  navGo:"Take me there with Google Maps", navShort:"Take me there", navGoHint:"Opens Google Maps with directions from where you are to the meeting point.",
+  navGo:"Take me there", navShort:"Take me there", navGoHint:"Pick your navigation app: directions start where you are and end at the meeting point.",
+  navTitle:"Which app do you want to use?", navOther:"Choose an app on this phone",
+  navSubApple:"Built into every iPhone", navSubGoogle:"Detailed directions from where you are", navSubWaze:"Navigation with live traffic", navSubOther:"Shows the map apps you have installed (Waze, Here, OsmAnd…)",
+  navNote:"If an app isn't installed, its website opens. Meeting point coordinates, to copy if you need them:",
   styleFallback:"This style won't load: switching back to Streets", stStreet:"Streets", stTopo:"Topographic", stSwiss:"swisstopo",
   mapBlocked:"External maps are blocked in Claude's preview, so you see the drawn map. Open the prototype from the GitHub Pages link to see streets, buildings and terrain in all 3 styles.",
   report:"Report", reported:"Reported", reportEvent:"Report a problem with this event",
@@ -1478,7 +1486,7 @@ function selectMarker(id){
   const e=S.live.find(x=>x.id===id); if(!e) return;
   card.innerHTML=`${posterHTML(e,{sm:true})}<div><span class="tag c-${e.cat}">${esc(L(CATS[e.cat].one))}</span><p class="ev-title">${esc(L(e.title))}</p>
     <div class="meta"><span>${esc(parseD(e.date).toLocaleDateString(locale(),{day:"numeric",month:"short"}))}${e.time?" · "+esc(e.time):""}</span><span>~${dist(e)} km</span></div>
-    <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap"><button class="btn small" data-ev="${esc(e.id)}">${esc(t("open"))}</button><a class="btn ghost small" href="${gmapsFromHere(e)}" target="_blank" rel="noopener">${ICONS.nav}${esc(t("navShort"))}</a></div></div>`;
+    <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap"><button class="btn small" data-ev="${esc(e.id)}">${esc(t("open"))}</button><button class="btn ghost small" data-navto="${esc(e.id)}">${ICONS.nav}${esc(t("navShort"))}</button></div></div>`;
   card.classList.remove("show"); void card.offsetWidth; card.classList.add("show");
 }
 function mapTo(id){
@@ -1490,6 +1498,32 @@ function mapTo(id){
 // ---- Dettaglio evento ----
 // Google Maps URLs (gratis, senza chiave): senza "origin" il percorso parte dalla posizione attuale del telefono
 const gmapsFromHere=e=>`https://www.google.com/maps/dir/?api=1&destination=${e.lat},${e.lng}&travelmode=driving`;
+// Altre app di navigazione, tutte senza chiave. Senza punto di partenza il percorso parte dalla posizione attuale.
+const UA=navigator.userAgent||"";
+const IS_IOS=/iPhone|iPad|iPod/.test(UA)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+const IS_ANDROID=/Android/i.test(UA);
+function navApps(e){
+  const name=encodeURIComponent(L(e.title));
+  const apps={
+    apple:{label:"Apple Maps",sub:"navSubApple",url:`https://maps.apple.com/?daddr=${e.lat},${e.lng}&dirflg=d`,c:"#9AA4B5"},
+    google:{label:"Google Maps",sub:"navSubGoogle",url:gmapsFromHere(e),c:"#34A853"},
+    waze:{label:"Waze",sub:"navSubWaze",url:`https://waze.com/ul?ll=${e.lat},${e.lng}&navigate=yes`,c:"#33CCFF"},
+    other:{label:t("navOther"),sub:"navSubOther",url:`geo:${e.lat},${e.lng}?q=${e.lat},${e.lng}(${name})`,c:"#B48CFF"}
+  };
+  const order=IS_IOS?["apple","google","waze"]:IS_ANDROID?["other","google","waze"]:["google","apple","waze"];
+  return order.map(k=>apps[k]);
+}
+function navSheet(id){
+  const e=findEv(id); if(!e) return;
+  openSheet({type:"html",html:`<div class="reveal c-${e.cat}">
+    <h2 class="d-title">${esc(t("navTitle"))}</h2>
+    <p class="d-sum">${esc(L(e.title))} · ${esc(L(e.place))}</p>
+    <div class="reasons" style="margin-top:16px">${navApps(e).map(a=>`<a class="reason navapp" href="${esc(a.url)}" ${a.url.startsWith("geo:")?"":'target="_blank" rel="noopener"'} style="text-decoration:none">
+      <span class="s-ico" style="--s:${a.c};flex:none">${ICONS.nav.replace('stroke="currentColor"','stroke="currentColor" style="width:18px;height:18px"')}</span>
+      <div><b>${esc(a.label)}</b><span>${esc(t(a.sub))}</span></div></a>`).join("")}</div>
+    <p class="hint" style="margin-top:12px">${esc(t("navNote"))}</p>
+    <p class="mono" style="margin-top:6px;color:var(--muted);user-select:all">${e.lat}, ${e.lng}</p></div>`});
+}
 function mapsDir(route){const p=route.map(r=>r[0]),enc=encodeURIComponent;let u=`https://www.google.com/maps/dir/?api=1&origin=${enc(p[0])}&destination=${enc(p[p.length-1])}&travelmode=driving`;if(p.length>2) u+=`&waypoints=${p.slice(1,-1).map(enc).join("%7C")}`;return u;}
 function sourceItem(s){
   const sub=s.type==="web"?s.url.replace(/^https?:\/\//,""):`${t("socialFrom")} ${T[S.lang].stype[s.type]}`;
@@ -1557,7 +1591,7 @@ function eventSheet(e,focus){
       <button class="btn heart${saved?" on":""}" data-like="${esc(e.id)}">${ICONS.heart}<span>${esc(saved?t("saved"):t("save"))}</span></button>
       <button class="btn ghost" data-mapto="${esc(e.id)}">${ICONS.pin}${esc(t("openPlace"))}</button>
     </div>
-    <a class="btn block gnav" href="${gmapsFromHere(e)}" target="_blank" rel="noopener" style="margin-top:10px">${ICONS.nav}${esc(t("navGo"))}</a>
+    <button class="btn block gnav" data-navto="${esc(e.id)}" style="margin-top:10px">${ICONS.nav}${esc(t("navGo"))}</button>
     <p class="hint" style="margin:6px 2px 0">${esc(t("navGoHint"))}</p>
     ${canManage(e)&&S.live.includes(e)?promoBlock(e):""}
     ${e.notice?`<div class="notice">${esc(L(e.notice))}</div>`:""}
@@ -1886,6 +1920,7 @@ document.addEventListener("click",ev=>{
   if(d.view){closeSheet();go(d.view);if(d.view==="admin") renderAdmin();return;}
   if(d.atab){S.adminTab=d.atab;renderAdmin();return;}
   if(d.mstyle){setMapStyle(d.mstyle);return;}
+  if(d.navto){navSheet(d.navto);return;}
   if(d.report){ if(needLogin("report")) return; const [k,id]=d.report.split(":"); reportSheet(k,id); return;}
   if(d.sendreport){const [k,id]=d.sendreport.split(":"); const reason=document.querySelector('input[name="rep-reason"]:checked')?.value; const note=$("rep-note").value.trim();
     if(!reason||(reason==="other"&&!note)){toast(t("repNeed"));bump(b.closest(".reveal"),"shake");return;}
