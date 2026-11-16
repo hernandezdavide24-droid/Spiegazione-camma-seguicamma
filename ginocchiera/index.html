@@ -25,7 +25,7 @@
   <aside class="panel3">
     <header>
       <h1>Pressa a ginocchiera</h1>
-      <p class="sub">Il modello di Sam Schillerwein, ricostruito dai suoi render CAD.</p>
+      <p class="sub">Modello 3D ricostruito dai render CAD del dispositivo.</p>
     </header>
 
     <section>
@@ -198,7 +198,7 @@
   </section>
 
   <section class="reveal">
-    <h2>La formula del modello di Sam</h2>
+    <h2>La formula del dispositivo</h2>
     <div class="formula">
       <span class="f">F_out = F_in · L_A · cos φ / (L₁ · sin(θ + φ))</span>
       <p>θ è l&#x27;angolo della manovella rispetto all&#x27;allineamento, φ quello della biella, L_A la leva e L₁ la manovella. All&#x27;inizio della pressatura (θ = 37,6°) la forza è circa 4 volte quella sulla leva, a fine corsa (θ = 2,51°) circa 51 volte. Con le aste allineate tenderebbe all&#x27;infinito.</p>
@@ -217,11 +217,11 @@
   </section>
 
   <section class="reveal">
-    <h2>Il modello di Sam</h2>
+    <h2>Il modello</h2>
     <p class="lead">Il meccanismo costruito per l'Open Day.</p>
     <div class="model">
-      <img src="render.jpg" alt="Render CAD del modello di Sam Schillerwein" style="border-radius:14px;display:block;width:100%">
-      <p class="lead" style="margin:0">Il modello di Sam è una pressa con leva, manovella e biella: abbassando la leva la manovella si avvicina all&#x27;allineamento e il punzone preme sul piattello, che è sostenuto da una molla. Una battuta meccanica ferma la leva vicino al punto morto.</p>
+      <img src="render.jpg" alt="Render CAD dell’assieme completo" style="border-radius:14px;display:block;width:100%">
+      <p class="lead" style="margin:0">Il dispositivo è una pressa a leva: abbassando la leva, la manovella si avvicina all&#x27;allineamento con la biella e il punzone preme sul piattello, sostenuto da una molla. Una battuta meccanica ferma la leva vicino al punto morto.</p>
       <dl>
         <dt>Leva (L_A)</dt><dd>circa 150 mm</dd>
         <dt>Manovella (L₁)</dt><dd>40 mm</dd>
@@ -358,7 +358,7 @@ Mecc.reveal();
 <script src="../assets/lib/OrbitControls.js"></script>
 <script>
 window.addEventListener("error", e => { const m = document.getElementById("loadmsg"); if (m) m.textContent = "Errore nel modello 3D: " + e.message; });
-/* Modello 3D interattivo della pressa a ginocchiera di Sam Schillerwein.
+/* Modello 3D interattivo della pressa a ginocchiera.
    Quote ricavate dai render CAD; scala fissata con la corsa utile del punzone (13,4 mm).
    Leva LA = 150 mm, manovella L1 = 40 mm, biella L2 = 60 mm. Unità: mm. */
 (function(){
