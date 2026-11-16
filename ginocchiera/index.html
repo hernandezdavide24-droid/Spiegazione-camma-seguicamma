@@ -7,7 +7,7 @@
 <meta name="description" content="Come funziona il meccanismo a ginocchiera: animazione interattiva e spiegazione.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap">
-<link rel="stylesheet" href="../assets/stile.css">
+<link rel="stylesheet" href="../assets/stile.css?v=3">
 </head>
 <body>
 <nav class="topbar" aria-label="Navigazione">
@@ -17,8 +17,8 @@
   <a class="tab" href="../meccanismi/" aria-label="Tutti i meccanismi">Tutti</a>
 </nav>
 <main class="m3d view" id="modello">
-<div class="app">
-  <div class="stage3" id="stage3">
+<div class="app" style="min-height:560px">
+  <div class="stage3" id="stage3" style="min-height:360px">
     <div class="loadmsg" id="loadmsg">Caricamento del modello 3D…</div>
     <div class="hint3">Trascina la manopola arancione della leva · trascina altrove per ruotare la vista</div>
   </div>
@@ -249,7 +249,7 @@
   <p class="foot">Open Day · Scuola d'arti e mestieri Bellinzona<br><a href="../meccanismi/">← Tutti i meccanismi</a></p>
 </main>
 
-<script src="../assets/comune.js"></script>
+<script src="../assets/comune.js?v=3"></script>
 <script>
 (function(){
 "use strict";
@@ -354,9 +354,10 @@ Mecc.quiz("Esatto! Più α si avvicina a 0°, più la forza si moltiplica.", "No
 Mecc.reveal();
 })();
 </script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/controls/OrbitControls.js"></script>
+<script src="../assets/lib/three.min.js"></script>
+<script src="../assets/lib/OrbitControls.js"></script>
 <script>
+window.addEventListener("error", e => { const m = document.getElementById("loadmsg"); if (m) m.textContent = "Errore nel modello 3D: " + e.message; });
 /* Modello 3D interattivo della pressa a ginocchiera di Sam Schillerwein.
    Quote ricavate dai render CAD; scala fissata con la corsa utile del punzone (13,4 mm).
    Leva LA = 150 mm, manovella L1 = 40 mm, biella L2 = 60 mm. Unità: mm. */
