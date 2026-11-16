@@ -12,9 +12,61 @@
 <body>
 <nav class="topbar" aria-label="Navigazione">
   <a class="brand" href="../meccanismi/">Meccanismi<small>Open Day SAM</small></a>
-  <a class="tab" href="../meccanismi/">Tutti i meccanismi</a>
+  <button class="tab on" type="button" data-view="modello" aria-selected="true">Il modello 3D</button>
+  <button class="tab" type="button" data-view="spiega" aria-selected="false">Come funziona</button>
+  <a class="tab" href="../meccanismi/" aria-label="Tutti i meccanismi">Tutti</a>
 </nav>
-<main class="page">
+<main class="m3d view" id="modello">
+<div class="app" style="min-height:560px">
+  <div class="stage3" id="stage3" style="min-height:360px">
+    <div class="loadmsg" id="loadmsg">Caricamento del modello 3D…</div>
+    <div class="hint3">Trascina la ruota panoramica o la manovella dietro · trascina altrove per ruotare la vista</div>
+  </div>
+  <aside class="panel3">
+    <header>
+      <h1>Riduttore epicicloidale</h1>
+      <p class="sub">Modello 3D ricostruito dai render CAD del dispositivo: il riduttore fa girare una ruota panoramica.</p>
+    </header>
+
+    <section>
+      <p class="label">Motore (sul solare)</p>
+      <div class="row3" style="margin-top:0">
+        <button class="btn3" id="motBtn" type="button" aria-pressed="false">▶ Avvia</button>
+        <button class="btn3 ghost" id="turnBtn" type="button">Un giro della ruota</button>
+      </div>
+      <label class="spd3">Lento<input type="range" id="rpm" min="10" max="140" step="5" value="60">Veloce<output id="rpmOut">60 giri/min</output></label>
+      <div class="row3">
+        <button class="btn3 ghost" id="coverBtn" type="button" aria-pressed="false">Togli il coperchio</button>
+        <button class="btn3 ghost" id="wheelBtn" type="button" aria-pressed="false">Nascondi la ruota</button>
+      </div>
+    </section>
+
+    <section>
+      <p class="label">Valori in questo istante</p>
+      <div class="nums">
+        <div><b id="vS">0,00</b><span>giri del solare (ingresso)</span></div>
+        <div><b id="vC">0,00</b><span>giri della ruota (uscita)</span></div>
+        <div><b id="vRin">0</b><span>giri/min solare</span></div>
+        <div><b id="vRout">0</b><span>giri/min ruota</span></div>
+        <div class="wide"><b id="vI">i = 4,67</b><span>rapporto di riduzione con la corona ferma</span></div>
+      </div>
+    </section>
+
+    <section>
+      <p class="label">Ruote dentate</p>
+      <div class="gears3">
+        <div><span class="sw3" style="background:#f08a1c"></span><b>Solare</b><span>18 denti · ingresso</span></div>
+        <div><span class="sw3" style="background:#22c55e"></span><b>Satelliti</b><span>3 × 24 denti</span></div>
+        <div><span class="sw3" style="background:#1d7fe0"></span><b>Corona</b><span>66 denti · ferma</span></div>
+        <div><span class="sw3" style="background:#9aa3ad"></span><b>Portasatelliti</b><span>uscita → ruota</span></div>
+      </div>
+      <p class="note3">i = 1 + Z<sub>corona</sub> / Z<sub>solare</sub> = 1 + 66 / 18 ≈ 4,67: la ruota panoramica gira circa 4,67 volte più piano del solare, nello stesso verso. I satelliti girano su sé stessi al contrario.</p>
+    </section>
+  </aside>
+</div>
+
+</main>
+<main class="page view" id="spiega" hidden>
 
   <header class="hero">
     <span class="eyebrow">Ruotismo epicicloidale</span>
@@ -27,14 +79,14 @@
 <div class="mode-row">
   <div class="seg" id="modeSeg">
     <button data-v="ring">Corona ferma</button>
-    <button data-v="carrier">Portatreno fermo</button>
-    <button data-v="sun">Sole fermo</button>
+    <button data-v="carrier">Portasatelliti fermo</button>
+    <button data-v="sun">Solare fermo</button>
     <button data-v="direct">Presa diretta</button>
   </div>
 </div>
 <div class="phase-bar" id="roles">
-  <div class="phase" id="roleS">Sole</div>
-  <div class="phase" id="roleC">Portatreno</div>
+  <div class="phase" id="roleS">Solare</div>
+  <div class="phase" id="roleC">Portasatelliti</div>
   <div class="phase" id="roleR">Corona</div>
 </div>
 
@@ -93,9 +145,9 @@
     <h2>In 3 passi</h2>
     <p class="lead">Tre parti che possono girare, una che blocchi.</p>
     <div class="steps">
-      <div class="step"><div class="ico">☀️</div><b>Il sole</b><span>la ruota al centro</span></div>
-      <div class="step"><div class="ico">🪐</div><b>I satelliti</b><span>girano attorno al sole, portati dal portatreno</span></div>
-      <div class="step"><div class="ico">⭕</div><b>La corona</b><span>con i denti all&#x27;interno, chiude tutto</span></div>
+      <div class="step"><div class="ico">☀️</div><b>Il solare</b><span>riceve il moto in entrata, al centro</span></div>
+      <div class="step"><div class="ico">🪐</div><b>I satelliti</b><span>ingranano con solare e corona e si dividono il carico</span></div>
+      <div class="step"><div class="ico">⭕</div><b>La corona</b><span>è ferma: il portasatelliti porta fuori il moto ridotto</span></div>
     </div>
   </section>
 
@@ -103,10 +155,10 @@
     <h2>Tocca una parte</h2>
     <p class="lead">Si illumina nell'animazione qui sopra.</p>
     <div class="chips" id="chips">
-      <button class="chip" data-p="sun">Sole</button>
+      <button class="chip" data-p="sun">Solare</button>
       <button class="chip" data-p="planet">Satelliti</button>
       <button class="chip" data-p="ring">Corona</button>
-      <button class="chip" data-p="carrier">Portatreno</button>
+      <button class="chip" data-p="carrier">Portasatelliti</button>
     </div>
     <div class="chip-info" id="chipInfo">Scegli una parte per scoprire a cosa serve.</div>
   </section>
@@ -118,10 +170,10 @@
   </section>
 
   <section class="reveal">
-    <h2>La formula di Willis</h2>
+    <h2>Il rapporto di riduzione</h2>
     <div class="formula">
-      <span class="f">(ω_sole − ω_port.) / (ω_corona − ω_port.) = − Z_corona / Z_sole</span>
-      <p>Qui il sole ha 18 denti e la corona 54. Con la corona ferma il portatreno gira 4 volte più piano del sole; con il portatreno fermo la corona gira 3 volte più piano e al contrario; con il sole fermo il rapporto è 1,33.</p>
+      <span class="f">i = 1 + Z_corona / Z_solare = (Z_solare + Z_corona) / Z_solare</span>
+      <p>Vale con la corona ferma e il moto in entrata dal solare. Esempio: con 50 denti sul solare e 200 sulla corona, i = 1 + 200/50 = 5, cioè il portasatelliti gira 5 volte più lentamente del solare. Nel dispositivo (18 e 66 denti) i = 1 + 66/18 ≈ 4,67.</p>
     </div>
   </section>
 
@@ -140,12 +192,15 @@
     <h2>Il modello</h2>
     <p class="lead">Il meccanismo costruito per l'Open Day.</p>
     <div class="model">
-      <div class="ph">Foto o render del modello<br>(in arrivo)</div>
+      <img src="render-assieme.jpg" alt="Render CAD dell’assieme completo" style="border-radius:14px;display:block;width:100%">
+      <p class="lead" style="margin:0">Il dispositivo è un riduttore planetario con la corona fissa: il moto entra dal solare, i tre satelliti si dividono il carico e il portasatelliti trasmette il moto, ridotto, a una ruota panoramica con sei cabine.</p>
       <dl>
-        <dt>Denti del sole</dt><dd>—</dd>
-        <dt>Denti dei satelliti</dt><dd>—</dd>
-        <dt>Denti della corona</dt><dd>—</dd>
-        <dt>Rapporto</dt><dd>—</dd>
+        <dt>Solare (ingresso)</dt><dd>18 denti</dd>
+        <dt>Satelliti</dt><dd>3 × 24 denti</dd>
+        <dt>Corona (fissa)</dt><dd>66 denti</dd>
+        <dt>Uscita</dt><dd>portasatelliti → ruota panoramica</dd>
+        <dt>Rapporto</dt><dd>i = 1 + 66/18 ≈ 4,67</dd>
+        <dt>Cabine</dt><dd>6</dd>
       </dl>
     </div>
   </section>
@@ -153,10 +208,10 @@
   <section class="reveal">
     <h2>Hai capito?</h2>
     <div class="quiz">
-      <p>Con la corona bloccata, se il sole fa 4 giri, quanti giri fa il portatreno?</p>
-      <button class="opt" data-ok="0">4 giri</button>
-      <button class="opt" data-ok="1">1 giro</button>
-      <button class="opt" data-ok="0">3 giri al contrario</button>
+      <p>Con la corona ferma, se il solare fa 14 giri, quanti giri fa il portasatelliti?</p>
+      <button class="opt" data-ok="0">14 giri</button>
+      <button class="opt" data-ok="1">3 giri</button>
+      <button class="opt" data-ok="0">4,67 giri</button>
       <div class="fb" id="fb" aria-live="polite"></div>
     </div>
   </section>
@@ -169,7 +224,7 @@
 (function(){
 "use strict";
 const M = Mecc, $ = M.$;
-const C = { x:180, y:158 }, MOD = 4.5, ZS = 18, ZP = 18, ZR = 54;   // ZR = ZS + 2·ZP
+const C = { x:180, y:158 }, MOD = 4, ZS = 18, ZP = 24, ZR = 66;   // ZR = ZS + 2·ZP, come il modello
 const rS = MOD*ZS/2, rP = MOD*ZP/2, rR = MOD*ZR/2, rC = rS + rP;
 let mode = 'ring', inp = 0, speed = 110, dragging = false;
 
@@ -201,19 +256,19 @@ for (let k = 0; k < 3; k++){
 });
 
 const ROLE = {
-  ring:    { inp:'s', out:'c', fix:'r', i:4,     lbl:'4 : 1',   range:[0, 90] },
-  carrier: { inp:'s', out:'r', fix:'c', i:-3,    lbl:'−3 : 1',  range:[-120, 0] },
-  sun:     { inp:'r', out:'c', fix:'s', i:4/3,   lbl:'1,33 : 1', range:[0, 270] },
+  ring:    { inp:'s', out:'c', fix:'r', i:(ZS + ZR)/ZS, lbl:'4,67 : 1', range:[0, 80] },
+  carrier: { inp:'s', out:'r', fix:'c', i:-ZR/ZS,       lbl:'−3,67 : 1', range:[-100, 0] },
+  sun:     { inp:'r', out:'c', fix:'s', i:(ZS + ZR)/ZR, lbl:'1,27 : 1', range:[0, 290] },
   direct:  { inp:'s', out:'c', fix:'',  i:1,     lbl:'1 : 1',   range:[0, 360] }
 };
-const NAME = { s:'Sole', c:'Portatreno', r:'Corona' };
+const NAME = { s:'Solare', c:'Portasatelliti', r:'Corona' };
 const G = M.graph('graph', 360, 0, 90);
 
 function angles(){
   const R = ROLE[mode]; let s = 0, c = 0, r = 0;
-  if (mode === 'ring'){ s = inp; c = inp/4; }
-  else if (mode === 'carrier'){ s = inp; r = -inp/3; }
-  else if (mode === 'sun'){ r = inp; c = 3*inp/4; }
+  if (mode === 'ring'){ s = inp; c = inp*ZS/(ZS + ZR); }
+  else if (mode === 'carrier'){ s = inp; r = -inp*ZS/ZR; }
+  else if (mode === 'sun'){ r = inp; c = inp*ZR/(ZS + ZR); }
   else { s = c = r = inp; }
   return { s, c, r };
 }
@@ -270,15 +325,269 @@ $('tryBtn').addEventListener('click', () => { document.querySelector('#modeSeg [
 M.loop(dt => { if (!dragging) inp += speed*dt; render(); });
 
 const INFO = {
-  sun: '<b>Sole</b> — la ruota dentata al centro. Qui ha 18 denti.',
-  planet: '<b>Satelliti</b> — tre ruote che ingranano sia con il sole sia con la corona. Girano su sé stesse e, intanto, girano attorno al sole come pianeti.',
-  ring: '<b>Corona</b> — la ruota con i denti all\'interno (54 denti). Avvolge tutto il ruotismo.',
-  carrier: '<b>Portatreno</b> — il telaio (in blu) che porta i perni dei satelliti. Quando gira, trascina i satelliti attorno al sole.'
+  sun: '<b>Solare</b> — la ruota dentata al centro, da cui entra il moto. Qui ha 18 denti.',
+  planet: '<b>Satelliti</b> — tre ruote da 24 denti che ingranano sia con il sole sia con la corona. Girano su sé stesse e, intanto, girano attorno al sole come pianeti.',
+  ring: '<b>Corona</b> — la ruota con i denti all\'interno (66 denti). Avvolge tutto il ruotismo.',
+  carrier: '<b>Portasatelliti</b> — il telaio (in blu) che porta i perni dei satelliti. Quando gira, trascina i satelliti attorno al sole.'
 };
 
 Mecc.parts('stage', 'chips', 'chipInfo', INFO, 'Scegli una parte per scoprire a cosa serve.');
-Mecc.quiz("Esatto! Rapporto 4 : 1, perché (18 + 54) / 18 = 4.", "Non proprio: scegli «Corona ferma» e guarda il rapporto.");
+Mecc.quiz("Esatto! 14 / 4,67 = 3, perché i = 1 + 66/18 ≈ 4,67.", "Non proprio: con la corona ferma il portasatelliti gira i volte più piano del solare.");
 Mecc.reveal();
+})();
+</script>
+<script src="../assets/lib/three.min.js"></script>
+<script src="../assets/lib/OrbitControls.js"></script>
+<script>
+window.addEventListener("error", e => { const m = document.getElementById("loadmsg"); if (m) m.textContent = "Errore nel modello 3D: " + e.message; });
+/* Modello 3D interattivo del riduttore epicicloidale con ruota panoramica.
+   Denti contati sui render: solare 18, satelliti 24, corona 66 (modulo 2 mm). Unità: mm. */
+(function(){
+"use strict";
+const $ = id => document.getElementById(id);
+const rad = d => d*Math.PI/180, deg = r => r*180/Math.PI;
+const ZS = 18, ZP = 24, ZR = 66, MOD = 2;
+const rS = MOD*ZS/2, rP = MOD*ZP/2, rR = MOD*ZR/2, rC = rS + rP;
+const I = 1 + ZR/ZS;
+const fmt = (v, n=0) => v.toLocaleString('it-IT', { minimumFractionDigits:n, maximumFractionDigits:n });
+
+let ths = 0, motor = false, rpm = 60, dragging = null, turn = null, wOut = 0, wIn = 0;
+const motBtn = $('motBtn');
+function setMotor(on){ motor = on; motBtn.textContent = on ? '■ Ferma' : '▶ Avvia'; motBtn.setAttribute('aria-pressed', on); motBtn.classList.toggle('ghost', on); }
+motBtn.addEventListener('click', () => { turn = null; setMotor(!motor); });
+$('rpm').addEventListener('input', e => { rpm = +e.target.value; $('rpmOut').value = rpm + ' giri/min'; });
+$('turnBtn').addEventListener('click', () => { setMotor(false); turn = { from: ths, t: 0 }; });
+let coverOff = false, wheelOff = false;
+$('coverBtn').addEventListener('click', e => { coverOff = !coverOff; e.currentTarget.classList.toggle('on', coverOff); e.currentTarget.setAttribute('aria-pressed', coverOff); e.currentTarget.textContent = coverOff ? 'Rimetti il coperchio' : 'Togli il coperchio'; if (window.__cover) window.__cover.visible = !coverOff; });
+$('wheelBtn').addEventListener('click', e => { wheelOff = !wheelOff; e.currentTarget.classList.toggle('on', wheelOff); e.currentTarget.setAttribute('aria-pressed', wheelOff); e.currentTarget.textContent = wheelOff ? 'Mostra la ruota' : 'Nascondi la ruota'; if (window.__wheel) window.__wheel.visible = !wheelOff; });
+
+function panel(){
+  $('vS').textContent = fmt(ths/360, 2);
+  $('vC').textContent = fmt(ths/I/360, 2);
+  $('vRin').textContent = fmt(Math.abs(wIn)/6, 0);
+  $('vRout').textContent = fmt(Math.abs(wIn)/6/I, 1);
+  $('vI').textContent = 'i = ' + fmt(I, 2);
+}
+
+if (!window.THREE){ $('loadmsg').textContent = 'Il modello 3D non si è caricato. Prova a ricaricare la pagina.'; panel(); return; }
+$('loadmsg').remove();
+const S = 0.05;
+const stage = $('stage3');
+const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+stage.prepend(renderer.domElement);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 400);
+camera.position.set(-17, 7, 26);
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.target.set(0, -1.6, 1.4);
+controls.enableDamping = true; controls.dampingFactor = 0.08;
+controls.minDistance = 8; controls.maxDistance = 80; controls.maxPolarAngle = Math.PI*0.52;
+scene.add(new THREE.HemisphereLight(0xf4f7ff, 0x707888, 0.9));
+const sun = new THREE.DirectionalLight(0xffffff, 1.0);
+sun.position.set(-12, 22, 18); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+Object.assign(sun.shadow.camera, { left:-16, right:16, top:16, bottom:-16, near:1, far:70 }); sun.shadow.bias = -0.0004;
+scene.add(sun);
+const fill = new THREE.DirectionalLight(0xdfe8ff, 0.45); fill.position.set(14, 6, -10); scene.add(fill);
+
+const M = (c, m, r) => new THREE.MeshStandardMaterial({ color:new THREE.Color(c).convertSRGBToLinear(), metalness:m, roughness:r });
+const mat = {
+  grey:  M(0xd6dbe1, 0.25, 0.42), grey2: M(0xbfc6ce, 0.3, 0.36), steel: M(0xeef1f4, 0.4, 0.22), dark: M(0x3b414a, 0.4, 0.45),
+  red:   M(0xb8565c, 0.15, 0.55), blue: M(0x1d7fe0, 0.15, 0.45), green: M(0x22c55e, 0.1, 0.5), orange: M(0xf08a1c, 0.2, 0.4),
+  wheel: M(0xf59e1b, 0.2, 0.4), cup: M(0xf7f8fa, 0.05, 0.5), black: M(0x15171a, 0.2, 0.5)
+};
+const dev = new THREE.Group(); dev.scale.setScalar(S); scene.add(dev);
+function mesh(g, m, parent){ const o = new THREE.Mesh(g, m); o.castShadow = true; o.receiveShadow = true; (parent || dev).add(o); return o; }
+function ext(shape, z0, z1, m, parent, bevel){
+  const g = new THREE.ExtrudeGeometry(shape, { depth:z1 - z0, bevelEnabled:!!bevel, bevelThickness:0.6, bevelSize:0.5, bevelSegments:2, curveSegments:24 });
+  const o = mesh(g, m, parent); o.position.z = z0; return o;
+}
+function boxX(x0, x1, y0, y1, z0, z1, m, parent){ const o = mesh(new THREE.BoxGeometry(x1 - x0, y1 - y0, z1 - z0), m, parent); o.position.set((x0 + x1)/2, (y0 + y1)/2, (z0 + z1)/2); return o; }
+function cylZ(r, z0, z1, x, y, m, parent, seg){ const o = mesh(new THREE.CylinderGeometry(r, r, z1 - z0, seg || 32), m, parent); o.rotation.x = Math.PI/2; o.position.set(x, y, (z0 + z1)/2); return o; }
+function ringShape(ro, ri){ const s = new THREE.Shape(); s.absarc(0, 0, ro, 0, Math.PI*2, false); const h = new THREE.Path(); h.absarc(0, 0, ri, 0, Math.PI*2, true); s.holes.push(h); return s; }
+// profilo dentato (denti trapezoidali): punti nel piano XY
+function toothPts(Z, rp, inward){
+  const T = 2*Math.PI/Z, tip = inward ? rp - MOD : rp + MOD, root = inward ? rp + 1.25*MOD : rp - 1.25*MOD, pts = [];
+  for (let k = 0; k < Z; k++){
+    const a = k*T;
+    [[-0.5, root], [-0.27, root], [-0.14, tip], [0.14, tip], [0.27, root]].forEach(([f, r]) => pts.push(new THREE.Vector2(r*Math.cos(a + f*T), r*Math.sin(a + f*T))));
+  }
+  return pts;
+}
+function gearMesh(Z, rp, bore, m, parent){
+  const s = new THREE.Shape(toothPts(Z, rp, false));
+  const h = new THREE.Path(); h.absarc(0, 0, bore, 0, Math.PI*2, true); s.holes.push(h);
+  const g = new THREE.ExtrudeGeometry(s, { depth:10, bevelEnabled:false, curveSegments:24 });
+  return mesh(g, m, parent);
+}
+
+// --- basamento ---
+const BASE = -150;
+{
+  const s = new THREE.Shape(); s.moveTo(-100, -50); s.lineTo(100, -50); s.lineTo(100, 115); s.lineTo(-100, 115); s.lineTo(-100, -50);
+  const h1 = new THREE.Path(); h1.moveTo(-70, 30); h1.lineTo(-30, 30); h1.lineTo(-30, 100); h1.lineTo(-70, 100); h1.lineTo(-70, 30);
+  const h2 = new THREE.Path(); h2.moveTo(30, 30); h2.lineTo(70, 30); h2.lineTo(70, 100); h2.lineTo(30, 100); h2.lineTo(30, 30);
+  s.holes.push(h1, h2);
+  const o = ext(s, 0, 10, mat.grey, null, true); o.rotation.x = Math.PI/2; o.position.set(0, BASE, 0);
+  for (const x of [-96, 96]) boxX(x - 6, x + 6, BASE - 18, BASE - 10, -50, 115, mat.grey2);
+}
+// --- supporto verticale (a "lapide") con nervature ---
+{
+  const s = new THREE.Shape(); s.moveTo(-92, BASE); s.lineTo(92, BASE); s.lineTo(92, 0); s.absarc(0, 0, 92, 0, Math.PI, false); s.lineTo(-92, BASE);
+  const h = new THREE.Path(); h.moveTo(-40, BASE + 18); h.lineTo(40, BASE + 18); h.lineTo(40, BASE + 52); h.lineTo(-40, BASE + 52); h.lineTo(-40, BASE + 18); s.holes.push(h);
+  ext(s, -34, -22, mat.grey, null, true);
+  for (const x of [-86, 86]) boxX(x - 5, x + 5, BASE, -40, -22, -4, mat.grey2);
+  boxX(-92, 92, BASE, BASE + 12, -22, 10, mat.grey2);
+}
+// --- cassa: tamburo grigio, corona blu ferma, coperchio rosso ---
+ext(ringShape(92, rR + 1.25*MOD + 0.5), -22, 0, mat.grey, null, true);
+{
+  const s = new THREE.Shape(); s.absarc(0, 0, rR + 5, 0, Math.PI*2, false);
+  s.holes.push(new THREE.Path(toothPts(ZR, rR, true).reverse()));
+  ext(s, 0, 10, mat.blue);
+  ext(ringShape(92, rR + 5), 0, 10, mat.grey);
+}
+const cover = ext(ringShape(92, 60), 10, 14, mat.red, null, true);
+window.__cover = cover;
+
+// --- solare con l'albero d'ingresso e la manovella dietro ---
+const sunG = new THREE.Group(); dev.add(sunG);
+gearMesh(ZS, rS, 5, mat.orange, sunG);
+cylZ(5, -60, 10, 0, 0, mat.steel, sunG);
+const crank = new THREE.Group(); crank.position.z = -60; sunG.add(crank);
+boxX(-6, 40, -6, 6, -4, 4, mat.grey2, crank);
+cylZ(8, -4, 4, 0, 0, mat.grey2, crank);
+cylZ(7, -34, -4, 34, 0, mat.orange, crank);
+cylZ(8.5, -32, -26, 34, 0, mat.orange, crank); cylZ(8.5, -14, -8, 34, 0, mat.orange, crank);
+// --- satelliti ---
+const planets = [];
+for (let k = 0; k < 3; k++){
+  const g = new THREE.Group(); dev.add(g);
+  gearMesh(ZP, rP, 5, mat.green, g);
+  planets.push(g);
+}
+// --- portasatelliti (tre bracci, perni e dadi) con l'albero d'uscita ---
+const carrier = new THREE.Group(); dev.add(carrier);
+{
+  const s = new THREE.Shape();
+  const pts = [];
+  for (let k = 0; k < 3; k++){
+    const a = rad(90 + 120*k), b = a + rad(60);
+    pts.push([rC*Math.cos(a), rC*Math.sin(a)], [13*Math.cos(b), 13*Math.sin(b)]);
+  }
+  s.moveTo(pts[0][0], pts[0][1]); pts.slice(1).forEach(p => s.lineTo(p[0], p[1])); s.lineTo(pts[0][0], pts[0][1]);
+  ext(s, 15, 22, mat.grey2, carrier, true);
+  for (let k = 0; k < 3; k++){
+    const a = rad(90 + 120*k), x = rC*Math.cos(a), y = rC*Math.sin(a);
+    cylZ(9, 15, 22, x, y, mat.grey2, carrier);
+    cylZ(4.5, -2, 28, x, y, mat.steel, carrier);
+    const nut = mesh(new THREE.CylinderGeometry(7, 7, 5, 6), mat.steel, carrier); nut.rotation.x = Math.PI/2; nut.position.set(x, y, 25);
+  }
+  cylZ(9, 15, 70, 0, 0, mat.steel, carrier);
+}
+// --- ruota panoramica con sei cabine ---
+const wheel = new THREE.Group(); wheel.position.z = 0; carrier.add(wheel);
+window.__wheel = wheel;
+const RW = 102, cups = [];
+{
+  ext(ringShape(RW + 4, RW - 4), 62, 68, mat.wheel, wheel, true);
+  ext(ringShape(18, 9.5), 60, 70, mat.wheel, wheel, true);
+  for (let k = 0; k < 6; k++){
+    const a = rad(90 + 60*k);
+    const sp = mesh(new THREE.BoxGeometry(RW - 18, 6, 5), mat.wheel, wheel);
+    sp.position.set(Math.cos(a)*(RW/2 + 7), Math.sin(a)*(RW/2 + 7), 65); sp.rotation.z = a;
+    const x = Math.cos(a)*RW, y = Math.sin(a)*RW;
+    cylZ(3, 52, 80, x, y, mat.steel, wheel);
+    const c = new THREE.Group(); c.position.set(x, y, 0); wheel.add(c);
+    // cabina: bicchiere tronco di cono appeso al perno, con la staffa nera
+    const cup = mesh(new THREE.CylinderGeometry(17, 12, 38, 32, 1, true), mat.cup, c); cup.position.set(0, -26, 76); cup.material.side = THREE.DoubleSide;
+    const bottom = mesh(new THREE.CircleGeometry(12, 32), mat.cup, c); bottom.rotation.x = Math.PI/2; bottom.position.set(0, -45, 76);
+    const rim = mesh(new THREE.TorusGeometry(17, 1.2, 8, 32), mat.cup, c); rim.rotation.x = Math.PI/2; rim.position.set(0, -7, 76);
+    const path = new THREE.CatmullRomCurve3([[-19,-8],[-19,0],[-9,7],[9,7],[19,0],[19,-8]].map(p => new THREE.Vector3(p[0], p[1], 76)), false, 'catmullrom', 0.2);
+    mesh(new THREE.TubeGeometry(path, 40, 1.6, 8, false), mat.black, c);
+    cylZ(6, 72, 80, 0, 0, mat.steel, c);
+    cups.push(c);
+  }
+}
+{ const g = new THREE.Mesh(new THREE.PlaneGeometry(1400, 1400), new THREE.ShadowMaterial({ opacity:0.16 })); g.rotation.x = -Math.PI/2; g.position.y = BASE - 18; g.receiveShadow = true; dev.add(g); }
+
+function pose(){
+  const thc = ths / I;
+  sunG.rotation.z = rad(ths);
+  carrier.rotation.z = rad(thc);
+  for (let k = 0; k < 3; k++){
+    const gam = rad(thc + 90 + 120*k), sa = rad(ths);
+    // rotazione del satellite (formula di Willis), fase scelta perché i denti ingranino
+    const thp = gam + Math.PI + Math.PI/ZP + (ZS/ZP)*(gam - sa);
+    planets[k].position.set(rC*Math.cos(gam), rC*Math.sin(gam), 0);
+    planets[k].rotation.z = thp;
+  }
+  cups.forEach(c => { c.rotation.z = -rad(thc); });        // le cabine restano dritte
+}
+
+// --- trascinamento: ruota (uscita) o manovella (ingresso) ---
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(), hit = new THREE.Vector3();
+const wheelMeshes = [], crankMeshes = [];
+wheel.traverse(o => { if (o.isMesh) wheelMeshes.push(o); });
+crank.traverse(o => { if (o.isMesh) crankMeshes.push(o); });
+function setRay(e){ const r = renderer.domElement.getBoundingClientRect(); ndc.set(((e.clientX - r.left)/r.width)*2 - 1, -((e.clientY - r.top)/r.height)*2 + 1); ray.setFromCamera(ndc, camera); }
+function angOn(z){ const pl = new THREE.Plane(new THREE.Vector3(0, 0, 1), -z*S); if (!ray.ray.intersectPlane(pl, hit)) return null; return deg(Math.atan2(hit.y, hit.x)); }
+let lastA = 0;
+renderer.domElement.addEventListener('pointerdown', e => {
+  setRay(e);
+  const hw = !wheelOff && ray.intersectObjects(wheelMeshes, false)[0], hc = ray.intersectObjects(crankMeshes, false)[0];
+  const pick = hw && (!hc || hw.distance < hc.distance) ? 'wheel' : (hc ? 'crank' : null);
+  if (!pick) return;
+  const a = angOn(pick === 'wheel' ? 65 : -80); if (a === null) return;
+  dragging = pick; lastA = a; turn = null; setMotor(false); controls.enabled = false;
+  renderer.domElement.setPointerCapture(e.pointerId); renderer.domElement.style.cursor = 'grabbing';
+});
+renderer.domElement.addEventListener('pointermove', e => {
+  setRay(e);
+  if (!dragging){
+    const over = (!wheelOff && ray.intersectObjects(wheelMeshes, false).length) || ray.intersectObjects(crankMeshes, false).length;
+    renderer.domElement.style.cursor = over ? 'grab' : ''; return;
+  }
+  const a = angOn(dragging === 'wheel' ? 65 : -80); if (a === null) return;
+  let d = a - lastA; d = ((d + 540) % 360) - 180; lastA = a;
+  ths += dragging === 'wheel' ? d*I : d;
+});
+const endDrag = () => { if (!dragging) return; dragging = null; controls.enabled = true; renderer.domElement.style.cursor = ''; };
+renderer.domElement.addEventListener('pointerup', endDrag); renderer.domElement.addEventListener('pointercancel', endDrag);
+
+function resize(){
+  const w = stage.clientWidth, h = stage.clientHeight; if (!w || !h) return;
+  renderer.setSize(w, h, false); camera.aspect = w/h; camera.updateProjectionMatrix();
+  if (!resize.done){ resize.done = true; const f = Math.max(1, Math.pow(1.45/camera.aspect, 0.55)); camera.position.sub(controls.target).multiplyScalar(f).add(controls.target); }
+}
+new ResizeObserver(resize).observe(stage); resize();
+document.addEventListener('vista', e => { if (e.detail === 'modello') resize(); });
+
+let last = performance.now(), prev = 0;
+function loop(t){
+  const dt = Math.min(0.05, (t - last)/1000); last = t;
+  if (turn){ turn.t += dt; const k = Math.min(1, turn.t/6); ths = turn.from + 360*I*(0.5 - 0.5*Math.cos(Math.PI*k)); if (k >= 1) turn = null; }
+  else if (motor && !dragging) ths += rpm*6*dt;
+  wIn += ((ths - prev)/Math.max(dt, 1e-3) - wIn)*Math.min(1, dt*4); prev = ths;
+  pose(); panel(); controls.update(); renderer.render(scene, camera);
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+})();
+
+</script>
+<script>
+(function(){
+  const tabs = [...document.querySelectorAll('.topbar button.tab')];
+  function show(v){
+    tabs.forEach(t => { const on = t.dataset.view === v; t.classList.toggle('on', on); t.setAttribute('aria-selected', on); document.getElementById(t.dataset.view).hidden = !on; });
+    document.dispatchEvent(new CustomEvent('vista', { detail:v }));
+    window.scrollTo(0, 0);
+  }
+  tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.view)));
+  if (location.hash === '#spiega') show('spiega');
 })();
 </script>
 </body>
