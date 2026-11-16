@@ -12,9 +12,66 @@
 <body>
 <nav class="topbar" aria-label="Navigazione">
   <a class="brand" href="../meccanismi/">Meccanismi<small>Open Day SAM</small></a>
-  <a class="tab" href="../meccanismi/">Tutti i meccanismi</a>
+  <button class="tab on" type="button" data-view="modello" aria-selected="true">Il modello 3D</button>
+  <button class="tab" type="button" data-view="spiega" aria-selected="false">Come funziona</button>
+  <a class="tab" href="../meccanismi/" aria-label="Tutti i meccanismi">Tutti</a>
 </nav>
-<main class="page">
+<main class="m3d view" id="modello">
+<div class="app">
+  <div class="stage3" id="stage3">
+    <div class="loadmsg" id="loadmsg">Caricamento del modello 3D…</div>
+    <div class="hint3">Trascina la manopola arancione della leva · trascina altrove per ruotare la vista</div>
+  </div>
+  <aside class="panel3">
+    <header>
+      <h1>Pressa a ginocchiera</h1>
+      <p class="sub">Il modello di Sam Schillerwein, ricostruito dai suoi render CAD.</p>
+    </header>
+
+    <section>
+      <p class="label">Leva</p>
+      <input type="range" id="lev" min="0" max="1000" value="0" aria-label="Posizione della leva">
+      <div class="row3">
+        <button class="btn3" id="pressBtn" type="button">▶ Premi e rilascia</button>
+        <button class="btn3 ghost" id="manBtn" type="button" aria-pressed="false">Tieni le manopole (40 kg)</button>
+        <button class="btn3 ghost" id="frameBtn" type="button" aria-pressed="false">Telaio trasparente</button>
+      </div>
+      <div class="pills3" id="ph3">
+        <span data-ph="0">Corsa libera</span><span data-ph="1">Pressatura</span><span data-ph="2">Fine corsa</span>
+      </div>
+    </section>
+
+    <section>
+      <p class="label">Valori in questo istante</p>
+      <div class="nums">
+        <div><b id="vTh">0°</b><span>angolo θ dall'allineamento</span></div>
+        <div><b id="vM">×0</b><span>moltiplicazione della forza</span></div>
+        <div><b id="vS">0 mm</b><span>corsa utile del punzone (max 13,4)</span></div>
+        <div><b id="vF">0 N</b><span>forza della molla (max 400 N)</span></div>
+        <div class="wide"><b id="vL">0 N</b><span id="vLl">forza che serve sulla leva</span></div>
+      </div>
+    </section>
+
+    <section>
+      <p class="label">Moltiplicazione durante la pressatura</p>
+      <svg class="g3" id="g3" viewBox="0 0 340 120" aria-label="Moltiplicazione della forza in funzione dell'angolo θ">
+        <line class="ax" x1="30" y1="96" x2="330" y2="96"/><line class="ax" x1="30" y1="8" x2="30" y2="96"/>
+        <path id="g3c" class="cv" d=""/><circle id="g3d" class="dt" r="5" cx="30" cy="96"/>
+        <text class="tl" x="30" y="112" text-anchor="middle">37,6°</text>
+        <text class="tl" x="180" y="112" text-anchor="middle">θ</text>
+        <text class="tl" x="330" y="112" text-anchor="end">2,5°</text>
+        <text class="tl" x="26" y="100" text-anchor="end">0</text>
+        <text class="tl" x="26" y="13" text-anchor="end">55</text>
+        <text class="tl" x="40" y="86">×4</text>
+        <text class="tl" id="g3e" x="300" y="20" text-anchor="end">×51</text>
+      </svg>
+      <p class="note3">F<sub>out</sub> = F<sub>in</sub> · L<sub>A</sub> · cos φ / (L<sub>1</sub> · sin(θ + φ)), con leva L<sub>A</sub> = 150 mm, manovella L<sub>1</sub> = 40 mm e biella 60 mm. Vicino all'allineamento la forza tende all'infinito e la battuta ferma la leva a 2,5°.</p>
+    </section>
+  </aside>
+</div>
+
+</main>
+<main class="page view" id="spiega" hidden>
 
   <header class="hero">
     <span class="eyebrow">Meccanismo a ginocchiera</span>
@@ -141,10 +198,10 @@
   </section>
 
   <section class="reveal">
-    <h2>La formula</h2>
+    <h2>La formula del modello di Sam</h2>
     <div class="formula">
-      <span class="f">F_uscita = F_ingresso / (2 · tan α)</span>
-      <p>α è l&#x27;angolo tra ciascuna asta e la verticale. A 30° la forza resta quasi uguale (×0,9); a 10° diventa quasi tripla (×2,8); a 2° è 14 volte più grande. A 0°, aste in linea, il punzone è al punto morto.</p>
+      <span class="f">F_out = F_in · L_A · cos φ / (L₁ · sin(θ + φ))</span>
+      <p>θ è l&#x27;angolo della manovella rispetto all&#x27;allineamento, φ quello della biella, L_A la leva e L₁ la manovella. All&#x27;inizio della pressatura (θ = 37,6°) la forza è circa 4 volte quella sulla leva, a fine corsa (θ = 2,51°) circa 51 volte. Con le aste allineate tenderebbe all&#x27;infinito.</p>
     </div>
   </section>
 
@@ -163,12 +220,17 @@
     <h2>Il modello di Sam</h2>
     <p class="lead">Il meccanismo costruito per l'Open Day.</p>
     <div class="model">
-      <div class="ph">Foto o render del modello<br>(in arrivo)</div>
+      <img src="render.jpg" alt="Render CAD del modello di Sam Schillerwein" style="border-radius:14px;display:block;width:100%">
+      <p class="lead" style="margin:0">Il modello di Sam è una pressa con leva, manovella e biella: abbassando la leva la manovella si avvicina all&#x27;allineamento e il punzone preme sul piattello, che è sostenuto da una molla. Una battuta meccanica ferma la leva vicino al punto morto.</p>
       <dl>
-        <dt>Lunghezza aste</dt><dd>—</dd>
-        <dt>Corsa del punzone</dt><dd>—</dd>
-        <dt>Forza in ingresso</dt><dd>—</dd>
-        <dt>Materiale</dt><dd>—</dd>
+        <dt>Leva (L_A)</dt><dd>circa 150 mm</dd>
+        <dt>Manovella (L₁)</dt><dd>40 mm</dd>
+        <dt>Biella</dt><dd>60 mm</dd>
+        <dt>Corsa utile del punzone</dt><dd>13,4 mm</dd>
+        <dt>Corsa della leva</dt><dd>160° in totale, 40° utili</dd>
+        <dt>Moltiplicazione</dt><dd>×4 (a 37,6°) → ×51 (a 2,51°)</dd>
+        <dt>Molla del piattello</dt><dd>400 N al massimo</dd>
+        <dt>Forza sulle manopole</dt><dd>circa 40 kg</dd>
       </dl>
     </div>
   </section>
@@ -290,6 +352,350 @@ const INFO = {
 Mecc.parts('stage', 'chips', 'chipInfo', INFO, 'Scegli una parte per scoprire a cosa serve.');
 Mecc.quiz("Esatto! Più α si avvicina a 0°, più la forza si moltiplica.", "Non proprio: guarda il grafico mentre trascini la leva.");
 Mecc.reveal();
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+/* Modello 3D interattivo della pressa a ginocchiera di Sam Schillerwein.
+   Quote ricavate dai render CAD; scala fissata con la corsa utile del punzone (13,4 mm).
+   Leva LA = 150 mm, manovella L1 = 40 mm, biella L2 = 60 mm. Unità: mm. */
+(function(){
+"use strict";
+const $ = id => document.getElementById(id);
+const rad = d => d*Math.PI/180, deg = r => r*180/Math.PI;
+const L1 = 40, L2 = 60, LA = 150, PUNCH = 72;
+const TH_MIN = 2.51, TH_START = 37.6, TH_MAX = 70;
+const K = 400/13.4, FMAN = 40*9.81;
+const LEV_OFF = 2.6;                       // la leva è a 87,4° dalla manovella
+const phi = t => Math.asin(L1*Math.sin(rad(t))/L2);
+const yB = t => L1*Math.cos(rad(t)) + Math.sqrt(L2*L2 - Math.pow(L1*Math.sin(rad(t)), 2));
+const CONTACT = yB(TH_START) + PUNCH;
+const comp = t => Math.max(0, yB(t) + PUNCH - CONTACT);
+const mult = t => LA*Math.cos(phi(t)) / (L1*Math.sin(rad(t) + phi(t)));
+const fmt = (v, n=0) => v.toLocaleString('it-IT', { minimumFractionDigits:n, maximumFractionDigits:n });
+
+let th = 55, dragging = false, man = false, anim = null;
+
+// ---------- pannello ----------
+const lev = $('lev');
+const thToSlider = t => Math.round((TH_MAX - t)/(TH_MAX - TH_MIN)*1000);
+lev.addEventListener('input', () => { anim = null; th = TH_MAX - (+lev.value/1000)*(TH_MAX - TH_MIN); });
+const manBtn = $('manBtn');
+manBtn.addEventListener('click', () => { man = !man; manBtn.setAttribute('aria-pressed', man); manBtn.classList.toggle('on', man); });
+let frameTr = false;
+$('frameBtn').addEventListener('click', e => { frameTr = !frameTr; e.currentTarget.setAttribute('aria-pressed', frameTr); e.currentTarget.classList.toggle('on', frameTr); setFrame(); });
+$('pressBtn').addEventListener('click', () => { anim = { t:0, from: th }; });
+
+// grafico della moltiplicazione
+(function(){
+  let d = '';
+  for (let i = 0; i <= 120; i++){
+    const t = TH_START - (TH_START - TH_MIN)*i/120;
+    d += (i ? 'L' : 'M') + gx(t).toFixed(1) + ',' + gy(mult(t)).toFixed(1);
+  }
+  $('g3c').setAttribute('d', d);
+})();
+function gx(t){ return 30 + (TH_START - t)/(TH_START - TH_MIN)*300; }
+function gy(m){ return 96 - Math.min(55, m)/55*88; }
+
+function updatePanel(){
+  const c = comp(th), m = mult(th), inContact = th < TH_START;
+  const fs = K*c, fres = fs + (man && inContact ? FMAN : 0);
+  const fl = inContact ? fres/m : 0;
+  $('vTh').textContent = fmt(th, 1) + '°';
+  $('vM').textContent = '×' + fmt(m, m < 10 ? 1 : 0);
+  $('vS').textContent = fmt(c, 1) + ' mm';
+  $('vF').textContent = fmt(fs, 0) + ' N';
+  $('vL').textContent = inContact ? fmt(fl, 0) + ' N  (' + fmt(fl/9.81, 1) + ' kg)' : '—';
+  $('vLl').textContent = man ? 'forza che serve sulla leva (molla + 40 kg sulle manopole)' : 'forza che serve sulla leva (solo molla)';
+  document.querySelectorAll('#ph3 span').forEach(s => s.classList.toggle('on', +s.dataset.ph === (th > TH_START ? 0 : (th > TH_MIN + 0.3 ? 1 : 2))));
+  const dt = $('g3d');
+  dt.style.opacity = inContact ? 1 : 0.25;
+  const tt = Math.max(TH_MIN, Math.min(TH_START, th));
+  dt.setAttribute('cx', gx(tt).toFixed(1)); dt.setAttribute('cy', gy(mult(tt)).toFixed(1));
+  if (document.activeElement !== lev) lev.value = thToSlider(th);
+}
+
+// ---------- 3D ----------
+if (!window.THREE){ $('loadmsg').textContent = 'Il modello 3D non si è caricato. Prova a ricaricare la pagina.'; updatePanel(); return; }
+$('loadmsg').remove();
+const S = 0.05;                                   // 1 mm = 0,05 unità
+const stage = $('stage3');
+const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+stage.prepend(renderer.domElement);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 400);
+camera.position.set(27, 7, 36);
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.target.set(-1, -4.6, 2.5);
+controls.enableDamping = true; controls.dampingFactor = 0.08;
+controls.minDistance = 10; controls.maxDistance = 90; controls.maxPolarAngle = Math.PI*0.52;
+
+scene.add(new THREE.HemisphereLight(0xf4f7ff, 0x707888, 0.9));
+const sun = new THREE.DirectionalLight(0xffffff, 1.05);
+sun.position.set(10, 22, 14); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+Object.assign(sun.shadow.camera, { left:-16, right:16, top:16, bottom:-16, near:1, far:70 });
+sun.shadow.bias = -0.0004;
+scene.add(sun);
+const fill = new THREE.DirectionalLight(0xdfe8ff, 0.4); fill.position.set(-12, 6, -10); scene.add(fill);
+
+const M = (c, m, r, extra) => { const o = new THREE.MeshStandardMaterial(Object.assign({ color:new THREE.Color(c).convertSRGBToLinear(), metalness:m, roughness:r }, extra || {})); return o; };
+const mat = {
+  alu:   M(0xdfe3e8, 0.22, 0.42),
+  alu2:  M(0xcfd5dc, 0.28, 0.36),
+  steel: M(0xf2f4f7, 0.35, 0.2),
+  dark:  M(0x3b414a, 0.4, 0.45),
+  orange:M(0xf08a1c, 0.2, 0.35, { emissive:new THREE.Color(0xf08a1c).convertSRGBToLinear(), emissiveIntensity:0 }),
+  spring:M(0x2b3d86, 0.3, 0.4),
+  blue:  M(0x1f3fc0, 0.1, 0.5)
+};
+const frameMats = [mat.alu];
+function setFrame(){ frameMats.forEach(m => { m.transparent = frameTr; m.opacity = frameTr ? 0.22 : 1; m.depthWrite = !frameTr; m.needsUpdate = true; }); }
+
+const dev = new THREE.Group(); dev.scale.setScalar(S); scene.add(dev);
+function mesh(geo, m, parent){ const o = new THREE.Mesh(geo, m); o.castShadow = true; o.receiveShadow = true; (parent || dev).add(o); return o; }
+// scatola dati gli estremi
+function boxX(x0, x1, y0, y1, z0, z1, m, parent){
+  const o = mesh(new THREE.BoxGeometry(x1 - x0, y1 - y0, z1 - z0), m, parent);
+  o.position.set((x0 + x1)/2, (y0 + y1)/2, (z0 + z1)/2); return o;
+}
+// cilindro lungo Z
+function cylZ(r, z0, z1, x, y, m, parent, seg){
+  const o = mesh(new THREE.CylinderGeometry(r, r, z1 - z0, seg || 32), m, parent);
+  o.rotation.x = Math.PI/2; o.position.set(x, y, (z0 + z1)/2); return o;
+}
+function rr(path, x, y, w, h, r){
+  path.moveTo(x + r, y); path.lineTo(x + w - r, y); path.quadraticCurveTo(x + w, y, x + w, y + r);
+  path.lineTo(x + w, y + h - r); path.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  path.lineTo(x + r, y + h); path.quadraticCurveTo(x, y + h, x, y + h - r);
+  path.lineTo(x, y + r); path.quadraticCurveTo(x, y, x + r, y);
+  return path;
+}
+// lastra estrusa lungo Z a partire da una forma nel piano XY
+function plateXY(shape, z0, z1, m){
+  const g = new THREE.ExtrudeGeometry(shape, { depth:z1 - z0, bevelEnabled:true, bevelThickness:0.6, bevelSize:0.6, bevelSegments:2, curveSegments:12 });
+  const o = mesh(g, m); o.position.z = z0; return o;
+}
+// lastra orizzontale (forma nel piano XZ, spessore lungo Y)
+function plateXZ(shape, y0, y1, m){
+  const g = new THREE.ExtrudeGeometry(shape, { depth:y1 - y0, bevelEnabled:true, bevelThickness:0.6, bevelSize:0.6, bevelSegments:2, curveSegments:12 });
+  const o = mesh(g, m); o.rotation.x = Math.PI/2; o.position.y = y1; return o;   // la forma usa (x, z)
+}
+// manopola arancione con le gole
+function knobGeo(len, r){
+  const pts = [new THREE.Vector2(0, 0), new THREE.Vector2(r - 1, 0), new THREE.Vector2(r, 1)];
+  const n = 4;
+  for (let i = 0; i < n; i++){
+    const y0 = 3 + i*(len - 6)/n, y1 = y0 + (len - 6)/n;
+    pts.push(new THREE.Vector2(r, y0), new THREE.Vector2(r, y0 + (y1 - y0)*0.62), new THREE.Vector2(r - 1.6, y0 + (y1 - y0)*0.72), new THREE.Vector2(r - 1.6, y1 - (y1 - y0)*0.1), new THREE.Vector2(r, y1));
+  }
+  pts.push(new THREE.Vector2(r, len - 1), new THREE.Vector2(r - 1, len), new THREE.Vector2(0, len));
+  return new THREE.LatheGeometry(pts, 48);
+}
+
+// --- basamento ---
+const BASE = -220;
+{
+  const s = rr(new THREE.Shape(), -80, -66, 160, 132, 7);
+  plateXZ(s, BASE - 12, BASE, mat.alu);
+  plateXZ(rr(new THREE.Shape(), -74, -60, 148, 120, 6), BASE - 20, BASE - 12, mat.alu2);
+  // prolunga con due tasche e il porta-cartellino
+  const e = rr(new THREE.Shape(), -80, 60, 76, 190, 7);
+  e.holes.push(rr(new THREE.Path(), -62, 88, 40, 38, 6), rr(new THREE.Path(), -62, 136, 40, 38, 6));
+  plateXZ(e, BASE - 8, BASE, mat.alu);
+}
+// --- montanti laterali con le asole ---
+for (const z of [56, -64]){
+  const s = new THREE.Shape();
+  s.moveTo(-74, BASE); s.lineTo(-36, BASE); s.lineTo(-36, 9); s.quadraticCurveTo(-36, 17, -44, 17);
+  s.lineTo(-66, 17); s.quadraticCurveTo(-74, 17, -74, 9); s.lineTo(-74, BASE);
+  s.holes.push(rr(new THREE.Path(), -60, -58, 10, 36, 5), rr(new THREE.Path(), -60, -196, 10, 44, 5));
+  plateXY(s, z, z + 8, mat.alu);
+  // viti a esagono incassato
+  const zf = z > 0 ? z + 8.7 : z - 0.7;
+  for (const y of [0, -110, -140]) for (const x of [-65, -46]){
+    cylZ(3.4, zf - 0.6, zf + 0.6, x, y, mat.dark, null, 18);
+  }
+}
+// --- ponte superiore con le orecchie del perno e la battuta ---
+boxX(-36, -12, -14, 14, -56, 56, mat.alu);
+for (const [z0, z1] of [[12, 20], [-20, -12]]){
+  boxX(-12, 0, -14, 14, z0, z1, mat.alu);
+  cylZ(14, z0, z1, 0, 0, mat.alu);
+  boxX(4, 24, -24, -10, z0, z1, mat.alu);          // battuta: ferma la leva
+}
+cylZ(4, -24, 24, 0, 0, mat.steel);
+// --- guida del punzone: due anelli ---
+for (const yc of [-109, -141]){
+  const s = new THREE.Shape(); s.absarc(0, 0, 26, 0, Math.PI*2, false);
+  const h = new THREE.Path(); h.absarc(0, 0, 14.6, 0, Math.PI*2, true); s.holes.push(h);
+  const g = new THREE.ExtrudeGeometry(s, { depth:12, bevelEnabled:true, bevelThickness:0.6, bevelSize:0.6, bevelSegments:2, curveSegments:40 });
+  const o = mesh(g, mat.alu); o.rotation.x = Math.PI/2; o.position.y = yc + 6;
+  boxX(-36, -22, yc - 6, yc + 6, -56, 56, mat.alu);
+  boxX(-26, -18, yc - 6, yc + 6, -14, 14, mat.alu);
+}
+// --- scatola della molla: quattro colonnine ---
+for (const x of [-30, 30]) for (const z of [-30, 30]) boxX(x - 6, x + 6, BASE, -158, z - 6, z + 6, mat.alu);
+
+// --- parti mobili ---
+const lever = new THREE.Group(); lever.scale.setScalar(1); dev.add(lever);
+cylZ(10, -11, 11, 0, 0, mat.alu2, lever);
+boxX(8, 30, -9, 9, -9, 9, mat.alu2, lever);
+boxX(18, 30, -9, 9, -22, 22, mat.alu2, lever);      // ali che battono sulla battuta
+{ const r = mesh(new THREE.CylinderGeometry(7, 7, 92, 32), mat.steel, lever); r.rotation.z = -Math.PI/2; r.position.x = 30 + 46; }
+{ const k = mesh(knobGeo(40, 15), mat.orange, lever); k.rotation.z = -Math.PI/2; k.position.x = 118; lever.userData.knob = k; }
+const crank = new THREE.Group(); crank.rotation.z = rad(-90 + LEV_OFF); lever.add(crank);
+boxX(0, L1, -7, 7, -5, 5, mat.alu2, crank);
+cylZ(7, -5, 5, L1, 0, mat.alu2, crank);
+const kneePin = cylZ(3.5, -11, 11, 0, 0, mat.steel);
+const link = new THREE.Group(); dev.add(link);
+for (const z of [5.5, -9.5]){ boxX(0, L2, -6, 6, z, z + 4, mat.alu, link); cylZ(6, z, z + 4, 0, 0, mat.alu, link); cylZ(6, z, z + 4, L2, 0, mat.alu, link); }
+const punch = new THREE.Group(); dev.add(punch);
+{ const c = mesh(new THREE.CylinderGeometry(14, 14, PUNCH - 8, 40), mat.steel, punch); c.position.y = -(8 + (PUNCH - 8)/2); }
+boxX(-7, 7, -10, 8, -5, 5, mat.alu2, punch);
+cylZ(3.5, -12, 12, 0, 0, mat.steel, punch);
+const plate = new THREE.Group(); dev.add(plate);
+boxX(-22, 22, -181, -158.5, -22, 22, mat.alu2, plate);
+cylZ(8, -92, 92, 0, -173.5, mat.steel, plate);
+for (const s of [1, -1]){ const k = mesh(knobGeo(40, 15), mat.orange, plate); k.rotation.x = s > 0 ? Math.PI/2 : -Math.PI/2; k.position.set(0, -173.5, s*90); }
+// molla: elica ricostruita quando cambia lunghezza (scalarla deformerebbe il filo)
+const spring = mesh(new THREE.BufferGeometry(), mat.spring); spring.position.y = BASE;
+let springLen = -1;
+function setSpring(len){
+  if (Math.abs(len - springLen) < 0.25) return;
+  springLen = len;
+  const turns = 7, R = 12, n = turns*36, pts = [];
+  for (let i = 0; i <= n; i++){ const a = i/36*2*Math.PI; pts.push(new THREE.Vector3(R*Math.cos(a), 1.6 + (len - 3.2)*i/n, R*Math.sin(a))); }
+  spring.geometry.dispose();
+  spring.geometry = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), n, 1.6, 8, false);
+}
+// --- porta-cartellino blu con il cartellino QR ---
+{
+  const h = new THREE.Group(); h.position.set(-30, BASE, 205); dev.add(h);
+  boxX(-22, 22, 0, 8, -36, 36, mat.blue, h);
+  boxX(-22, -14, 0, 30, -36, -28, mat.blue, h); boxX(-22, -14, 0, 30, 28, 36, mat.blue, h);
+  const cv = document.createElement('canvas'); cv.width = 696; cv.height = 576;
+  const tex = new THREE.CanvasTexture(cv); tex.encoding = THREE.sRGBEncoding; tex.anisotropy = 8;
+  const imgs = {};
+  function draw(){
+    const g = cv.getContext('2d');
+    g.fillStyle = '#ffffff'; g.fillRect(0, 0, 696, 576);
+    g.fillStyle = '#f49712'; g.fillRect(0, 0, 696, 156);
+    g.fillStyle = '#000'; g.font = 'bold 44px Helvetica, Arial, sans-serif'; g.textBaseline = 'middle';
+    g.fillText('Meccanismo a ginocchiera', 34, 80);
+    if (imgs.qr) g.drawImage(imgs.qr, 26, 190, 350, 350); else { g.fillStyle = '#ddd'; g.fillRect(30, 186, 348, 348); }
+    g.fillStyle = '#5a6a90'; g.font = '28px Helvetica, Arial, sans-serif'; g.fillText('di', 408, 220);
+    g.fillStyle = '#000'; g.font = 'bold 38px Helvetica, Arial, sans-serif'; g.fillText('Sam', 408, 266); g.fillText('Schillerwein', 408, 308);
+    g.font = 'bold 30px Helvetica, Arial, sans-serif'; g.fillText('Scansiona e', 408, 362); g.fillText('muovi', 408, 396);
+    g.fillStyle = '#5a6a90'; g.font = '26px Helvetica, Arial, sans-serif'; g.fillText('Open Day', 408, 432);
+    if (imgs.logo) g.drawImage(imgs.logo, 408, 448, 262, 102);
+    tex.needsUpdate = true;
+  }
+  [['qr', '../qr/ginocchiera.png'], ['logo', '../assets/logo_cpt.png']].forEach(([k, src]) => {
+    const im = new Image(); im.onload = () => { imgs[k] = im; draw(); }; im.src = src;
+  });
+  draw();
+  const card = new THREE.Mesh(new THREE.PlaneGeometry(58, 48), new THREE.MeshStandardMaterial({ map:tex, roughness:0.6 }));
+  card.castShadow = true;
+  const cg = new THREE.Group(); cg.position.set(-10, 8, 0); cg.rotation.z = rad(14); h.add(cg);
+  card.rotation.y = Math.PI/2; card.position.set(0, 24, 0); cg.add(card);
+  const back = new THREE.Mesh(new THREE.BoxGeometry(3, 50, 62), mat.blue); back.position.set(-2, 24, 0); back.castShadow = true; cg.add(back);
+}
+// pavimento che riceve l'ombra
+{ const g = new THREE.Mesh(new THREE.PlaneGeometry(1200, 1200), new THREE.ShadowMaterial({ opacity:0.16 })); g.rotation.x = -Math.PI/2; g.position.y = BASE - 20; g.receiveShadow = true; dev.add(g); }
+
+function pose(){
+  const lam = th - LEV_OFF;
+  lever.rotation.z = rad(lam);
+  const kx = L1*Math.sin(rad(th)), ky = -L1*Math.cos(rad(th)), by = -yB(th);
+  kneePin.position.set(kx, ky, 0);
+  link.position.set(kx, ky, 0);
+  link.rotation.z = Math.atan2(by - ky, 0 - kx);
+  punch.position.y = by;
+  const c = comp(th);
+  plate.position.y = -c;
+  setSpring((-181 - c) - BASE);
+  mat.orange.emissiveIntensity = man ? 0.18 : 0;
+}
+
+// --- trascinamento della leva ---
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(), planeZ = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0), hit = new THREE.Vector3();
+const grabbable = [];
+lever.traverse(o => { if (o.isMesh) grabbable.push(o); });
+function setRay(e){
+  const r = renderer.domElement.getBoundingClientRect();
+  ndc.set(((e.clientX - r.left)/r.width)*2 - 1, -((e.clientY - r.top)/r.height)*2 + 1);
+  ray.setFromCamera(ndc, camera);
+}
+let grabOff = 0;
+function angleFromRay(){
+  if (!ray.ray.intersectPlane(planeZ, hit)) return null;
+  return deg(Math.atan2(hit.y/S, hit.x/S));
+}
+renderer.domElement.addEventListener('pointerdown', e => {
+  setRay(e);
+  if (ray.intersectObjects(grabbable, false).length){
+    const a = angleFromRay(); if (a === null) return;
+    dragging = true; anim = null; controls.enabled = false; grabOff = (th - LEV_OFF) - a;
+    renderer.domElement.setPointerCapture(e.pointerId); renderer.domElement.style.cursor = 'grabbing';
+  }
+});
+renderer.domElement.addEventListener('pointermove', e => {
+  setRay(e);
+  if (!dragging){ renderer.domElement.style.cursor = ray.intersectObjects(grabbable, false).length ? 'grab' : ''; return; }
+  const a = angleFromRay(); if (a === null) return;
+  th = Math.max(TH_MIN, Math.min(TH_MAX, a + grabOff + LEV_OFF));
+});
+const endDrag = () => { if (!dragging) return; dragging = false; controls.enabled = true; renderer.domElement.style.cursor = ''; };
+renderer.domElement.addEventListener('pointerup', endDrag);
+renderer.domElement.addEventListener('pointercancel', endDrag);
+
+function resize(){
+  const w = stage.clientWidth, h = stage.clientHeight;
+  if (!w || !h) return;
+  renderer.setSize(w, h, false); camera.aspect = w/h; camera.updateProjectionMatrix();
+  // su schermi stretti (telefono) la camera si allontana per far stare tutto il modello
+  if (!resize.done){ resize.done = true; const f = Math.max(1, Math.pow(1.45/camera.aspect, 0.55)); camera.position.sub(controls.target).multiplyScalar(f).add(controls.target); }
+}
+new ResizeObserver(resize).observe(stage); resize();
+
+let last = performance.now();
+function loop(t){
+  const dt = Math.min(0.05, (t - last)/1000); last = t;
+  if (anim){
+    anim.t += dt;
+    const a = anim.t;
+    if (a < 1.6) th = anim.from + (TH_MIN - anim.from)*(0.5 - 0.5*Math.cos(Math.PI*a/1.6));
+    else if (a < 2.4) th = TH_MIN;
+    else if (a < 3.8) th = TH_MIN + (55 - TH_MIN)*(0.5 - 0.5*Math.cos(Math.PI*(a - 2.4)/1.4));
+    else { th = 55; anim = null; }
+  } else if (!dragging && document.activeElement !== lev && th < TH_START && th > 5){
+    // la molla spinge il punzone in alto e fa risalire la leva, finché non è vicina al punto morto
+    th = Math.min(TH_START, th + 22*dt);
+  }
+  pose(); updatePanel();
+  controls.update(); renderer.render(scene, camera);
+  requestAnimationFrame(loop);
+}
+document.addEventListener('vista', e => { if (e.detail === 'modello') resize(); });
+requestAnimationFrame(loop);
+})();
+
+</script>
+<script>
+(function(){
+  const tabs = [...document.querySelectorAll('.topbar button.tab')];
+  function show(v){
+    tabs.forEach(t => { const on = t.dataset.view === v; t.classList.toggle('on', on); t.setAttribute('aria-selected', on); document.getElementById(t.dataset.view).hidden = !on; });
+    document.dispatchEvent(new CustomEvent('vista', { detail:v }));
+    window.scrollTo(0, 0);
+  }
+  tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.view)));
+  if (location.hash === '#spiega') show('spiega');
 })();
 </script>
 </body>
