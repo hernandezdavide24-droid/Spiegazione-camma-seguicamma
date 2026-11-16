@@ -484,7 +484,7 @@ cylLocalZ(32, -333, 0, 0, 0, mat.part, spinner);
 cylLocalZ(40, -12, 0, 0, 0, mat.part2, spinner); cylLocalZ(40, -333, -321, 0, 0, mat.part2, spinner);
 cylLocalZ(10, -392, 147, 0, 0, mat.steel, spinner);
 {
-  const photo = new Image();
+  const photos = [1, 2, 3, 4].map(i => { const im = new Image(); im.src = 'foto' + i + '.jpg?v=2'; return im; });
   const texs = [];
   for (let k = 0; k < N; k++){
     const cv = document.createElement('canvas'); cv.width = 574; cv.height = 422;
@@ -494,13 +494,12 @@ cylLocalZ(10, -392, 147, 0, 0, mat.steel, spinner);
     texs.forEach(([cv, tx], k) => {
       const g = cv.getContext('2d');
       g.fillStyle = '#cfd5dc'; g.fillRect(0, 0, 574, 422);
-      if (photo.complete && photo.naturalWidth) g.drawImage(photo, 0, 0, 574, 422);
-      g.fillStyle = 'rgba(15,26,51,.82)'; g.beginPath(); g.arc(538, 36, 24, 0, Math.PI*2); g.fill();
-      g.fillStyle = '#fff'; g.font = 'bold 30px Arial, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(String(k + 1), 538, 37);
+      const ph = photos[k];
+      if (ph.complete && ph.naturalWidth) g.drawImage(ph, 0, 0, 574, 422);
       tx.needsUpdate = true;
     });
   }
-  photo.onload = draw; photo.src = 'foto1.jpg'; draw();
+  photos.forEach(im => { im.onload = draw; }); draw();
   for (let k = 0; k < N; k++){
     const pg = new THREE.Group(); pg.rotation.z = k*Math.PI/2; spinner.add(pg);
     const b = mesh(new THREE.BoxGeometry(225, 10, 307), [mat.frame, mat.frame, mat.back, mat.frame, mat.frame, mat.frame], pg); b.position.set(172.5, 0, -161.5);
