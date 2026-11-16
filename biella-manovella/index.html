@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Biella-manovella — Come funziona</title>
+<meta name="description" content="Come funziona il meccanismo biella-manovella: animazione interattiva e spiegazione.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="../assets/stile.css">
+</head>
+<body>
+<nav class="topbar" aria-label="Navigazione">
+  <a class="brand" href="../meccanismi/">Meccanismi<small>Open Day SAM</small></a>
+  <a class="tab" href="../meccanismi/">Tutti i meccanismi</a>
+</nav>
+<main class="page">
+
+  <header class="hero">
+    <span class="eyebrow">Meccanismo biella-manovella</span>
+    <h1>Un giro diventa<br><span>avanti e indietro</span></h1>
+    <p>Trascina la manovella col dito e guarda il pistone.</p>
+    <p class="by">Pagina di <b>Manuel Gori</b></p>
+  </header>
+
+  <div class="stage" id="stage">
+<div class="mode-row">
+  <div class="seg" id="driveSeg">
+    <button data-v="crank">↻ Giri la manovella</button>
+    <button data-v="piston">↔ Spingi il pistone</button>
+  </div>
+</div>
+<div class="phase-bar" id="phases">
+  <div class="phase" data-ph="0">● PMS</div>
+  <div class="phase" data-ph="1">← Andata</div>
+  <div class="phase" data-ph="2">● PMI</div>
+  <div class="phase" data-ph="3">→ Ritorno</div>
+</div>
+
+<svg id="mech" class="mech" viewBox="0 0 360 290" aria-label="Animazione del meccanismo biella-manovella">
+  <rect class="sv-frame" x="20" y="248" width="320" height="6" rx="2"/>
+  <g id="hatch"></g>
+  <g class="part p-guide">
+    <path class="sv-bush" d="M80,250 L110,250 L102,172 L88,172 Z"/>
+    <g id="cyl"></g>
+  </g>
+  <g class="part p-volano" id="volano" style="display:none">
+    <circle class="sv-body3" cx="95" cy="160" r="78" fill-opacity=".85"/>
+    <circle class="sv-dash" cx="95" cy="160" r="64"/>
+    <g id="volSpokes"></g>
+  </g>
+  <circle class="sv-dash" cx="95" cy="160" r="50"/>
+  <g class="part p-rod"><line id="rod" class="sv-lever" x1="0" y1="0" x2="0" y2="0"/></g>
+  <g class="part p-piston">
+    <rect id="piston" class="sv-body2" x="0" y="137" width="44" height="46" rx="5"/>
+    <line id="ring1" class="sv-line" x1="0" y1="0" x2="0" y2="0"/>
+    <circle id="pinB" class="sv-fg" cx="0" cy="160" r="5"/>
+  </g>
+  <g class="part p-crank">
+    <line id="crank" class="sv-acc-stroke" x1="95" y1="160" x2="0" y2="0" style="stroke-width:12"/>
+    <circle class="sv-body" cx="95" cy="160" r="12"/>
+    <circle id="pinA" class="sv-roller" cx="0" cy="0" r="7"/>
+  </g>
+  <circle class="sv-fg" cx="95" cy="160" r="4.5"/>
+  <g id="marks"></g>
+  <text class="sv-text" x="95" y="272" text-anchor="middle">telaio</text>
+</svg>
+
+<div class="drag-hint" id="hint">👆 Trascina la manovella</div>
+<div class="flash" id="flash"></div>
+
+<svg id="graph" class="graph" viewBox="0 0 340 92" aria-label="Grafico della posizione del pistone in funzione dell'angolo">
+  <line class="g-axis" x1="24" y1="72" x2="330" y2="72"/>
+  <line class="g-axis" x1="24" y1="8" x2="24" y2="72"/>
+  <path class="g-ghost" d=""/><path class="g-trace" d=""/>
+  <circle class="g-dot" r="5" cx="24" cy="72"/>
+  <text class="g-lbl" x="24" y="86" text-anchor="middle">0°</text>
+  <text class="g-lbl" x="177" y="86" text-anchor="middle">180°</text>
+  <text class="g-lbl" x="330" y="86" text-anchor="middle">360°</text>
+  <text class="g-lbl" x="2" y="14">pist.</text>
+</svg>
+
+<div class="readout">
+  <div><b id="outA">0°</b><span>angolo manovella</span></div>
+  <div><b id="outS">0 mm</b><span>spostamento pistone</span></div>
+</div>
+
+<div class="ctrl">
+  <div class="seg" id="speedSeg">
+    <button data-v="0">Pausa</button>
+    <button data-v="45">Lento</button>
+    <button data-v="120">Normale</button>
+    <button data-v="400">Veloce</button>
+  </div>
+  <div class="seg" id="lenSeg">
+    <button data-v="140">Biella lunga</button>
+    <button data-v="95">Biella corta</button>
+  </div>
+  <button class="pill" id="volBtn" aria-pressed="false"><span class="sw"></span>Volano</button>
+</div>
+
+  </div>
+
+  <section class="reveal">
+    <h2>In 3 passi</h2>
+    <p class="lead">Tutto il meccanismo, in un colpo d&#x27;occhio.</p>
+    <div class="steps">
+      <div class="step"><div class="ico">🔄</div><b>Giri</b><span>la manovella ruota attorno al suo perno</span></div>
+      <div class="step"><div class="ico">🦴</div><b>La biella</b><span>collega la manovella al pistone e lo spinge</span></div>
+      <div class="step"><div class="ico">↔️</div><b>Avanti e indietro</b><span>il pistone va e viene in linea retta</span></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Tocca una parte</h2>
+    <p class="lead">Si illumina nell'animazione qui sopra.</p>
+    <div class="chips" id="chips">
+      <button class="chip" data-p="crank">Manovella</button>
+      <button class="chip" data-p="rod">Biella</button>
+      <button class="chip" data-p="piston">Pistone</button>
+      <button class="chip" data-p="guide">Cilindro</button>
+      <button class="chip" data-p="volano">Volano</button>
+    </div>
+    <div class="chip-info" id="chipInfo">Scegli una parte per scoprire a cosa serve.</div>
+  </section>
+
+  <section class="reveal">
+    <h2>Esperimento: spingi tu il pistone</h2>
+    <p class="lead">Nel motore è il pistone a far girare la manovella. Prova a spingerlo avanti e indietro: ai punti morti (PMS e PMI) la manovella non sa da che parte girare. Poi accendi il volano.</p>
+    <button class="chip" id="tryBtn">▶ Fammelo provare</button>
+  </section>
+
+  <section class="reveal">
+    <h2>La formula</h2>
+    <div class="formula">
+      <span class="f">x = r·cos θ + √(l² − r²·sin² θ)</span>
+      <p>x è la distanza del pistone dal perno della manovella, r il raggio della manovella, l la lunghezza della biella, θ l&#x27;angolo. La corsa è sempre 2·r. Con la biella corta il pistone non si muove in modo regolare: guarda come cambia il grafico.</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Dove lo trovi</h2>
+    <p class="lead">Scorri di lato →</p>
+    <div class="uses">
+      <div class="use"><div class="ico">🚗</div><b>Motori delle auto</b><span>I pistoni spinti dallo scoppio fanno girare l&#x27;albero motore attraverso le bielle.</span></div>
+      <div class="use"><div class="ico">🧊</div><b>Compressori</b><span>Il motore elettrico fa girare la manovella e il pistone comprime l&#x27;aria.</span></div>
+      <div class="use"><div class="ico">🚂</div><b>Locomotive a vapore</b><span>Il vapore spinge il pistone, la biella fa girare le grandi ruote.</span></div>
+      <div class="use"><div class="ico">🪚</div><b>Seghetti alternativi</b><span>Il motore gira e la lama va su e giù.</span></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Il modello di Manuel</h2>
+    <p class="lead">Il meccanismo costruito per l'Open Day.</p>
+    <div class="model">
+      <div class="ph">Foto o render del modello<br>(in arrivo)</div>
+      <dl>
+        <dt>Raggio manovella</dt><dd>—</dd>
+        <dt>Lunghezza biella</dt><dd>—</dd>
+        <dt>Corsa</dt><dd>—</dd>
+        <dt>Materiale</dt><dd>—</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Hai capito?</h2>
+    <div class="quiz">
+      <p>Di quanto si sposta il pistone in un giro, se la manovella ha raggio 25 mm?</p>
+      <button class="opt" data-ok="0">25 mm</button>
+      <button class="opt" data-ok="1">50 mm</button>
+      <button class="opt" data-ok="0">Dipende dalla lunghezza della biella</button>
+      <div class="fb" id="fb" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <p class="foot">Open Day · Scuola d'arti e mestieri Bellinzona<br><a href="../meccanismi/">← Tutti i meccanismi</a></p>
+</main>
+
+<script src="../assets/comune.js"></script>
+<script>
+(function(){
+"use strict";
+const M = Mecc, $ = M.$;
+const O = { x:95, y:160 }, R = 50, MM = 0.5;      // 1 px = 0,5 mm -> manovella r = 25 mm, corsa = 50 mm
+let L = 140, th = 30, speed = 120, drive = 'crank', volano = false;
+let w = 0, lastD = 0, dragging = false, grabOff = 0;
+
+const bx = t => { const a = M.rad(t); return O.x + R*Math.cos(a) + Math.sqrt(L*L - Math.pow(R*Math.sin(a), 2)); };
+const sMM = t => (L + R - (bx(t) - O.x)) * MM;
+
+// tratteggio del telaio
+for (let x = 26; x < 340; x += 10) M.el('line', { class:'sv-hatch', x1:x, y1:254, x2:x-8, y2:264 }, $('hatch'));
+// raggi del volano
+for (let k = 0; k < 6; k++) M.el('line', { class:'sv-line', x1:95, y1:160, x2:95, y2:160, 'data-k':k }, $('volSpokes'));
+
+const G = M.graph('graph', 360, 0, 2*R*MM);
+function drawCylinder(){
+  const c = $('cyl'); c.innerHTML = '';
+  const xs = O.x + L - R - 30, xe = O.x + L + R + 30;
+  M.el('line', { class:'sv-line', x1:xs, y1:134, x2:xe, y2:134 }, c);
+  M.el('line', { class:'sv-line', x1:xs, y1:186, x2:xe, y2:186 }, c);
+  M.el('rect', { class:'sv-bush', x:xe, y:128, width:10, height:64, rx:3 }, c);
+  M.el('line', { class:'sv-line', x1:xe+5, y1:192, x2:xe+5, y2:248 }, c);
+  const m = $('marks'); m.innerHTML = '';
+  const pms = O.x + L + R, pmi = O.x + L - R;
+  [[pms,'PMS'],[pmi,'PMI']].forEach(([x,t]) => {
+    M.el('line', { class:'sv-tick', x1:x, y1:118, x2:x, y2:128 }, m);
+    const tx = M.el('text', { class:'sv-text', x:x, y:113, 'text-anchor':'middle' }, m); tx.textContent = t;
+  });
+  M.el('line', { class:'sv-pointer', x1:pmi, y1:123, x2:pms, y2:123 }, m);
+  const tc = M.el('text', { class:'sv-text-b', x:(pms+pmi)/2, y:206+2, 'text-anchor':'middle' }, m);
+  tc.textContent = 'corsa = 2·r = ' + (2*R*MM) + ' mm';
+  G.curve(sMM);
+}
+
+function render(){
+  const a = M.rad(th), A = { x:O.x + R*Math.cos(a), y:O.y - R*Math.sin(a) }, B = bx(th);
+  $('crank').setAttribute('x2', A.x.toFixed(1)); $('crank').setAttribute('y2', A.y.toFixed(1));
+  $('pinA').setAttribute('cx', A.x.toFixed(1)); $('pinA').setAttribute('cy', A.y.toFixed(1));
+  $('rod').setAttribute('x1', A.x.toFixed(1)); $('rod').setAttribute('y1', A.y.toFixed(1));
+  $('rod').setAttribute('x2', B.toFixed(1)); $('rod').setAttribute('y2', O.y);
+  $('piston').setAttribute('x', (B - 22).toFixed(1)); $('pinB').setAttribute('cx', B.toFixed(1));
+  $('ring1').setAttribute('x1', (B + 14).toFixed(1)); $('ring1').setAttribute('x2', (B + 14).toFixed(1));
+  $('ring1').setAttribute('y1', 139); $('ring1').setAttribute('y2', 181);
+  document.querySelectorAll('#volSpokes line').forEach(l => {
+    const b = a + (+l.dataset.k) * Math.PI / 3;
+    l.setAttribute('x2', (O.x + 76*Math.cos(b)).toFixed(1)); l.setAttribute('y2', (O.y - 76*Math.sin(b)).toFixed(1));
+  });
+  const t = ((th % 360) + 360) % 360, s = sMM(th);
+  $('outA').textContent = Math.round(t) + '°';
+  $('outS').textContent = M.fmt(s, 1) + ' mm';
+  G.at(t, s);
+  M.phases('phases', (t < 8 || t > 352) ? 0 : (Math.abs(t - 180) < 8 ? 2 : (t < 180 ? 1 : 3)));
+}
+
+// --- trascinamento: manovella (rotazione) oppure pistone (orizzontale) ---
+const svg = $('mech');
+const angOf = p => M.deg(Math.atan2(-(p.y - O.y), p.x - O.x));
+let lastAng = 0;
+M.hint('hint');
+M.drag(svg, {
+  start: p => { dragging = true; if (drive === 'crank') lastAng = angOf(p); else grabOff = bx(th) - p.x; },
+  move: p => {
+    if (drive === 'crank'){ const a = angOf(p); th += M.wrap180(a - lastAng); lastAng = a; return; }
+    pushPiston(p.x + grabOff);
+  },
+  end: () => { dragging = false; }
+});
+
+function pushPiston(targetX){
+  const X = Math.min(O.x + L + R, Math.max(O.x + L - R, targetX)) - O.x;
+  const c = Math.max(-1, Math.min(1, (X*X + R*R - L*L) / (2*X*R)));
+  const t0 = M.deg(Math.acos(c));
+  const k = Math.round(th / 360) * 360, cands = [];
+  for (const kk of [k - 360, k, k + 360]) cands.push(kk + t0, kk - t0);
+  let next;
+  if (volano){
+    // il volano porta la manovella sempre avanti: si prende la soluzione successiva
+    const fw = cands.filter(v => v >= th - 0.01).sort((p, q) => p - q)[0];
+    next = (fw - th > 170) ? th : fw;
+  } else {
+    next = cands.reduce((b, v) => Math.abs(v - th) < Math.abs(b - th) ? v : b, cands[0]);
+  }
+  const d = next - th;
+  if (!volano && Math.abs(d) > 0.05){
+    if (lastD && Math.sign(d) !== Math.sign(lastD) && Math.abs(Math.sin(M.rad(th))) < 0.25)
+      M.flash('flash', 'Punto morto! La manovella torna indietro');
+    lastD = d;
+  }
+  if (volano) w = w*0.7 + d*0.3*60;
+  th = next;
+}
+
+M.seg('driveSeg', v => {
+  drive = v; dragging = false;
+  $('hint').textContent = v === 'crank' ? '👆 Trascina la manovella' : '👆 Trascina il pistone a destra e sinistra';
+  if (v === 'piston') w = 0;
+}, 'crank');
+M.seg('speedSeg', v => { speed = +v; }, 120);
+M.seg('lenSeg', v => { L = +v; drawCylinder(); }, 140);
+const setVol = M.toggle('volBtn', false, v => { volano = v; $('volano').style.display = v ? '' : 'none'; w = 0; });
+
+$('tryBtn').addEventListener('click', () => {
+  document.querySelector('#driveSeg [data-v="piston"]').click(); setVol(false); th = 20; lastD = 0;
+  M.scrollToStage('stage');
+});
+
+M.loop(dt => {
+  if (!dragging){
+    if (drive === 'crank') th += speed * dt;
+    else if (volano){ th += w * dt; w *= Math.exp(-0.35 * dt); }
+  }
+  render();
+});
+
+const INFO = {
+  crank: '<b>Manovella</b> — il braccio che gira attorno a un perno fisso. Il suo raggio r decide la corsa: il pistone si sposta di 2·r.',
+  rod: '<b>Biella</b> — l\'asta che collega la manovella al pistone. Ha un perno a ogni estremità e trasmette la spinta in tutte e due le direzioni.',
+  piston: '<b>Pistone</b> (corsoio) — scorre avanti e indietro in linea retta. È lui che "lavora": comprime l\'aria, spinge, pompa.',
+  guide: '<b>Cilindro e telaio</b> — tengono fermo il perno della manovella e guidano il pistone, che può solo andare avanti e indietro.',
+  volano: () => '<b>Volano</b> — una ruota pesante sull\'asse della manovella. Con la sua inerzia la porta oltre i punti morti.' + (volano ? '' : ' Accendilo con il pulsante «Volano».')
+};
+
+Mecc.parts('stage', 'chips', 'chipInfo', INFO, 'Scegli una parte per scoprire a cosa serve.');
+Mecc.quiz("Esatto! La corsa è il doppio del raggio: 2 · 25 = 50 mm.", "Non proprio: guarda i segni PMS e PMI nell'animazione.");
+Mecc.reveal();
+})();
+</script>
+</body>
+</html>

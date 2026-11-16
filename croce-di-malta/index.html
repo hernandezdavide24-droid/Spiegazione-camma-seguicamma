@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Meccanismo di Ginevra — Come funziona</title>
+<meta name="description" content="Come funziona il meccanismo di Ginevra (croce di Malta): animazione interattiva e spiegazione.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="../assets/stile.css">
+</head>
+<body>
+<nav class="topbar" aria-label="Navigazione">
+  <a class="brand" href="../meccanismi/">Meccanismi<small>Open Day SAM</small></a>
+  <a class="tab" href="../meccanismi/">Tutti i meccanismi</a>
+</nav>
+<main class="page">
+
+  <header class="hero">
+    <span class="eyebrow">Meccanismo di Ginevra · croce di Malta</span>
+    <h1>Un giro continuo,<br><span>un passo alla volta</span></h1>
+    <p>Trascina la ruota motrice e guarda la croce avanzare a scatti.</p>
+    <p class="by">Pagina di <b>Julian Fenaroli</b></p>
+  </header>
+
+  <div class="stage" id="stage">
+<div class="mode-row">
+  <div class="seg" id="nSeg">
+    <button data-v="4">4 cave</button>
+    <button data-v="6">6 cave</button>
+    <button data-v="8">8 cave</button>
+  </div>
+</div>
+<div class="phase-bar" id="phases">
+  <div class="phase" data-ph="0">↻ La croce gira</div>
+  <div class="phase" data-ph="1">⏸ La croce è ferma</div>
+</div>
+
+<svg id="mech" class="mech" viewBox="0 0 360 300" aria-label="Animazione del meccanismo di Ginevra">
+  <defs>
+    <mask id="wheelMask" maskUnits="userSpaceOnUse" x="-160" y="-160" width="320" height="320"><g id="wheelMaskG"></g></mask>
+    <mask id="discMask" maskUnits="userSpaceOnUse" x="-160" y="-160" width="320" height="320"><g id="discMaskG"></g></mask>
+  </defs>
+  <g class="part p-cross">
+    <g id="wheel"><circle id="wheelBody" class="sv-body2" cx="0" cy="0" r="100" mask="url(#wheelMask)"/><g id="wheelMarks"></g></g>
+    <circle class="sv-fg" cx="240" cy="150" r="6"/>
+  </g>
+  <g class="part p-driver" id="driver">
+    <g class="part p-lock"><circle id="disc" class="sv-body" cx="0" cy="0" r="60" mask="url(#discMask)"/></g>
+    <line id="arm" class="sv-acc-stroke" x1="0" y1="0" x2="90" y2="0" style="stroke-width:10"/>
+  </g>
+  <g class="part p-pin"><circle id="pin" class="sv-roller" cx="0" cy="0" r="7.5"/></g>
+  <circle id="o1" class="sv-fg" cx="100" cy="150" r="6"/>
+  <text class="sv-text" id="lbl1" x="0" y="286" text-anchor="middle">ruota motrice</text>
+  <text class="sv-text" x="240" y="286" text-anchor="middle">croce di Malta</text>
+</svg>
+
+<div class="drag-hint" id="hint">👆 Trascina la ruota motrice</div>
+<div class="flash" id="flash"></div>
+
+<svg id="graph" class="graph" viewBox="0 0 340 92" aria-label="Grafico della rotazione della croce durante un giro della ruota motrice">
+  <line class="g-axis" x1="24" y1="72" x2="330" y2="72"/>
+  <line class="g-axis" x1="24" y1="8" x2="24" y2="72"/>
+  <path class="g-ghost" d=""/><path class="g-trace" d=""/>
+  <circle class="g-dot" r="5" cx="24" cy="72"/>
+  <text class="g-lbl" x="24" y="86" text-anchor="middle">0°</text>
+  <text class="g-lbl" x="177" y="86" text-anchor="middle">1 giro motrice: 180°</text>
+  <text class="g-lbl" x="330" y="86" text-anchor="middle">360°</text>
+  <text class="g-lbl" x="2" y="14">croce</text>
+</svg>
+
+<div class="readout">
+  <div><b id="outA">0°</b><span>angolo motrice</span></div>
+  <div><b id="outW">0°</b><span>rotazione croce</span></div>
+  <div><b id="outP">1 / 4</b><span>posizione</span></div>
+</div>
+
+<div class="ctrl">
+  <div class="seg" id="speedSeg">
+    <button data-v="0">Pausa</button>
+    <button data-v="40">Lento</button>
+    <button data-v="110">Normale</button>
+    <button data-v="360">Veloce</button>
+  </div>
+  <button class="pill on" id="lockBtn" aria-pressed="true"><span class="sw"></span>Disco di bloccaggio</button>
+</div>
+
+  </div>
+
+  <section class="reveal">
+    <h2>In 3 passi</h2>
+    <p class="lead">Tutto il meccanismo, in un colpo d&#x27;occhio.</p>
+    <div class="steps">
+      <div class="step"><div class="ico">🔄</div><b>Gira</b><span>la ruota motrice gira sempre</span></div>
+      <div class="step"><div class="ico">📍</div><b>Il perno entra</b><span>si infila in una cava e trascina la croce</span></div>
+      <div class="step"><div class="ico">⏸️</div><b>Si ferma</b><span>il perno esce e il disco blocca la croce</span></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Tocca una parte</h2>
+    <p class="lead">Si illumina nell'animazione qui sopra.</p>
+    <div class="chips" id="chips">
+      <button class="chip" data-p="driver">Ruota motrice</button>
+      <button class="chip" data-p="pin">Perno</button>
+      <button class="chip" data-p="cross">Croce</button>
+      <button class="chip" data-p="lock">Disco di bloccaggio</button>
+    </div>
+    <div class="chip-info" id="chipInfo">Scegli una parte per scoprire a cosa serve.</div>
+  </section>
+
+  <section class="reveal">
+    <h2>Esperimento: togli il disco di bloccaggio</h2>
+    <p class="lead">Mentre il perno è fuori dalla cava, è il disco di bloccaggio a tenere ferma la croce. Senza il disco la croce è libera e le vibrazioni la spostano.</p>
+    <button class="chip" id="tryBtn">▶ Fammelo vedere</button>
+  </section>
+
+  <section class="reveal">
+    <h2>Le regole</h2>
+    <div class="formula">
+      <span class="f">passo = 360° / n      sosta = (180° + 360°/n) / 360°</span>
+      <p>n è il numero di cave. Con 4 cave la croce gira di 90° a ogni giro della motrice e resta ferma per 3/4 del giro; con 6 cave gira di 60° e resta ferma per 2/3 del giro. Perché il perno entri senza urti, l&#x27;interasse vale a = r / sin(180°/n).</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Dove lo trovi</h2>
+    <p class="lead">Scorri di lato →</p>
+    <div class="uses">
+      <div class="use"><div class="ico">🎞️</div><b>Proiettori cinematografici</b><span>Fanno avanzare la pellicola un fotogramma alla volta, 24 volte al secondo.</span></div>
+      <div class="use"><div class="ico">🏭</div><b>Tavole rotanti</b><span>Nelle macchine automatiche portano il pezzo da una stazione di lavoro all&#x27;altra.</span></div>
+      <div class="use"><div class="ico">⌚</div><b>Orologi</b><span>Nei vecchi orologi limitava i giri della chiave di carica.</span></div>
+      <div class="use"><div class="ico">📦</div><b>Nastri a passo</b><span>Avanzano di un tratto fisso, si fermano, e intanto si lavora il pezzo.</span></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Il modello di Julian</h2>
+    <p class="lead">Il meccanismo costruito per l'Open Day.</p>
+    <div class="model">
+      <div class="ph">Foto o render del modello<br>(in arrivo)</div>
+      <dl>
+        <dt>Numero di cave</dt><dd>—</dd>
+        <dt>Interasse</dt><dd>—</dd>
+        <dt>Raggio del perno</dt><dd>—</dd>
+        <dt>Materiale</dt><dd>—</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Hai capito?</h2>
+    <div class="quiz">
+      <p>Con una croce a 6 cave, di quanto gira la croce a ogni giro della ruota motrice?</p>
+      <button class="opt" data-ok="0">360°</button>
+      <button class="opt" data-ok="1">60°</button>
+      <button class="opt" data-ok="0">6°</button>
+      <div class="fb" id="fb" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <p class="foot">Open Day · Scuola d'arti e mestieri Bellinzona<br><a href="../meccanismi/">← Tutti i meccanismi</a></p>
+</main>
+
+<script src="../assets/comune.js"></script>
+<script>
+(function(){
+"use strict";
+const M = Mecc, $ = M.$;
+const O2 = { x:240, y:150 }, PIN = 7.5;
+let n = 4, a = 0, r = 0, R = 0, RW = 0, RL = 0, O1 = { x:0, y:150 };
+let th = -70, speed = 110, lock = true, dragging = false, t = 0, warned = false;
+
+function build(){
+  a = 95 / Math.cos(Math.PI/n); r = a*Math.sin(Math.PI/n); R = a*Math.cos(Math.PI/n);
+  RW = Math.hypot(R, 12); RL = 0.72*r; O1 = { x: O2.x - a, y: O2.y };
+  $('o1').setAttribute('cx', O1.x.toFixed(1)); $('lbl1').setAttribute('x', O1.x.toFixed(1));
+  $('wheelBody').setAttribute('r', RW.toFixed(1));
+  // croce: disco con n cave radiali e n incavi per il disco di bloccaggio
+  const wm = $('wheelMaskG'); wm.innerHTML = '';
+  M.el('circle', { cx:0, cy:0, r:RW + 1, fill:'#fff' }, wm);
+  const rin = a - r - PIN - 2;
+  for (let k = 0; k < n; k++){
+    const s = 180 + k*360/n, m = s + 180/n;
+    M.el('rect', { x:rin, y:-(PIN + 2), width:RW - rin + 10, height:2*(PIN + 2), rx:PIN + 2, fill:'#000', transform:`rotate(${s})` }, wm);
+    M.el('rect', { x:rin + PIN + 2, y:-(PIN + 2), width:RW, height:2*(PIN + 2), fill:'#000', transform:`rotate(${s})` }, wm);
+    const mr = M.rad(m);
+    M.el('circle', { cx:(a*Math.cos(mr)).toFixed(1), cy:(a*Math.sin(mr)).toFixed(1), r:(RL + 2).toFixed(1), fill:'#000' }, wm);
+  }
+  M.el('circle', { cx:0, cy:0, r:7, fill:'#000' }, wm);
+  const mk = $('wheelMarks'); mk.innerHTML = '';
+  M.el('circle', { cx:(-(rin - 14)).toFixed(1), cy:0, r:4, class:'sv-hot' }, mk);
+  // disco di bloccaggio con lo scarico dalla parte del perno
+  const dm = $('discMaskG'); dm.innerHTML = '';
+  M.el('circle', { cx:0, cy:0, r:RL, fill:'#fff' }, dm);
+  M.el('circle', { cx:a.toFixed(1), cy:0, r:(RW + 3).toFixed(1), fill:'#000' }, dm);
+  $('disc').setAttribute('r', RL.toFixed(1));
+  $('arm').setAttribute('x2', r.toFixed(1));
+  G.range(0, 360/n); G.curve(cycle);
+  $('outP').textContent = '1 / ' + n;
+}
+
+// rotazione della croce in funzione dell'angolo della motrice (gradi, senso orario sullo schermo)
+const te = () => 90 - 180/n;
+function local(tt){ const k = Math.round(tt/360); return { k, loc: tt - 360*k }; }
+function delta(loc){
+  if (Math.abs(loc) < te()){
+    const q = M.rad(loc);
+    return M.wrap180(M.deg(Math.atan2(r*Math.sin(q), r*Math.cos(q) - a)) - 180);
+  }
+  return loc > 0 ? -180/n : 180/n;
+}
+const wheelAngle = tt => { const { k, loc } = local(tt); return -k*360/n + delta(loc); };
+const cycle = x => 180/n - delta(x - 180);
+const G = M.graph('graph', 360, 0, 90);
+
+function render(){
+  const W0 = wheelAngle(th), { loc } = local(th);
+  const engaged = Math.abs(loc) < te();
+  let W = W0;
+  if (!lock && !engaged){
+    // senza disco di bloccaggio la croce, durante la sosta, è libera e si sposta per le vibrazioni
+    W += 9*Math.sin(t*6.5) * Math.sin(t*1.7);
+    if (!warned){ warned = true; M.flash('flash', 'Senza disco la croce non sta ferma!'); }
+  }
+  $('wheel').setAttribute('transform', `translate(${O2.x},${O2.y}) rotate(${W.toFixed(2)})`);
+  $('driver').setAttribute('transform', `translate(${O1.x.toFixed(1)},${O1.y}) rotate(${th.toFixed(2)})`);
+  const q = M.rad(th);
+  $('pin').setAttribute('cx', (O1.x + r*Math.cos(q)).toFixed(1)); $('pin').setAttribute('cy', (O1.y + r*Math.sin(q)).toFixed(1));
+  const ta = ((th % 360) + 360) % 360;
+  $('outA').textContent = Math.round(ta) + '°';
+  const turned = ((-(W0 + 180/n)) % 360 + 360) % 360;
+  $('outW').textContent = Math.round(turned) + '°';
+  $('outP').textContent = (Math.round(turned / (360/n)) % n + 1) + ' / ' + n;
+  M.phases('phases', engaged ? 0 : 1);
+  G.at(loc + 180, cycle(loc + 180));
+}
+
+M.hint('hint');
+M.dragRotate($('mech'), () => O1, d => { th -= d; }, { start: () => { dragging = true; }, end: () => { dragging = false; } });
+M.seg('nSeg', v => { n = +v; build(); }, 4);
+M.seg('speedSeg', v => { speed = +v; }, 110);
+const setLock = M.toggle('lockBtn', true, v => { lock = v; warned = false; $('disc').style.display = v ? '' : 'none'; });
+$('tryBtn').addEventListener('click', () => { setLock(false); M.scrollToStage('stage'); });
+
+M.loop(dt => { t += dt; if (!dragging) th += speed*dt; render(); });
+
+const INFO = {
+  driver: '<b>Ruota motrice</b> — gira sempre, a velocità costante. Porta il perno e il disco di bloccaggio.',
+  pin: '<b>Perno</b> — entra in una cava della croce, la trascina per un tratto e poi esce. Un giro della motrice = un passo della croce.',
+  cross: () => '<b>Croce di Malta</b> — la ruota condotta, con ' + n + ' cave. A ogni giro della motrice gira di 360°/' + n + ' = ' + (360/n) + '° e poi si ferma.',
+  lock: '<b>Disco di bloccaggio</b> — la parte rotonda della motrice. Mentre il perno è fuori, si appoggia nell\'incavo della croce e la tiene ferma con precisione.'
+};
+
+Mecc.parts('stage', 'chips', 'chipInfo', INFO, 'Scegli una parte per scoprire a cosa serve.');
+Mecc.quiz("Esatto! 360° / 6 = 60° a ogni giro, poi si ferma.", "Non proprio: scegli «6 cave» e guarda la posizione.");
+Mecc.reveal();
+})();
+</script>
+</body>
+</html>

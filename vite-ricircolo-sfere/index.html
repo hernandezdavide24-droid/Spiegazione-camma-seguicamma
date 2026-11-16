@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vite a ricircolo di sfere — Come funziona</title>
+<meta name="description" content="Come funziona la vite a ricircolo di sfere: animazione interattiva e spiegazione.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="../assets/stile.css">
+</head>
+<body>
+<nav class="topbar" aria-label="Navigazione">
+  <a class="brand" href="../meccanismi/">Meccanismi<small>Open Day SAM</small></a>
+  <a class="tab" href="../meccanismi/">Tutti i meccanismi</a>
+</nav>
+<main class="page">
+
+  <header class="hero">
+    <span class="eyebrow">Vite–madrevite a ricircolo di sfere</span>
+    <h1>Un giro di vite,<br><span>un passo avanti</span></h1>
+    <p>Gira il volantino col dito e guarda la slitta e le sfere.</p>
+    <p class="by">Pagina di <b>Ruben Zazzeri</b></p>
+  </header>
+
+  <div class="stage" id="stage">
+<div class="mode-row">
+  <div class="seg" id="driveSeg">
+    <button data-v="wheel">↻ Giri il volantino</button>
+    <button data-v="slide">↔ Spingi la slitta</button>
+  </div>
+</div>
+
+<svg id="mech" class="mech" viewBox="0 0 360 290" aria-label="Animazione della vite a ricircolo di sfere">
+  <defs>
+    <clipPath id="screwClip"><rect x="44" y="164" width="286" height="32"/></clipPath>
+  </defs>
+  <rect class="sv-frame" x="16" y="250" width="328" height="6" rx="2"/>
+  <g id="hatch"></g>
+  <g class="part p-guide">
+    <rect class="sv-bush" x="30" y="232" width="300" height="10" rx="3"/>
+    <rect class="sv-bush" x="36" y="158" width="14" height="44" rx="3"/>
+    <rect class="sv-bush" x="326" y="158" width="14" height="44" rx="3"/>
+    <line class="sv-line" x1="43" y1="202" x2="43" y2="250"/>
+    <line class="sv-line" x1="333" y1="202" x2="333" y2="250"/>
+  </g>
+  <g class="part p-wheel">
+    <circle class="sv-body" cx="62" cy="62" r="30"/>
+    <g id="spokes"></g>
+    <circle id="knob" class="sv-acc" cx="62" cy="38" r="6"/>
+    <circle class="sv-fg" cx="62" cy="62" r="4"/>
+    <text class="sv-text" x="102" y="40">volantino</text>
+    <text class="sv-text" x="102" y="53">(visto di fronte)</text>
+    <rect class="sv-body" x="22" y="150" width="9" height="60" rx="3"/>
+    <line id="edgeHandle" class="sv-acc-stroke" x1="18" y1="180" x2="10" y2="180"/>
+  </g>
+  <g class="part p-screw">
+    <rect class="sv-body3" x="31" y="164" width="300" height="32" rx="4"/>
+    <g clip-path="url(#screwClip)" id="thread"></g>
+  </g>
+  <g class="part p-table">
+    <rect id="table" class="sv-body2" x="0" y="208" width="116" height="22" rx="4"/>
+    <text id="tableLbl" class="sv-text-b" x="0" y="223" text-anchor="middle">slitta</text>
+  </g>
+  <g class="part p-nut">
+    <rect id="nut" class="sv-body" x="0" y="150" width="84" height="60" rx="6" fill-opacity=".6"/>
+  </g>
+  <g class="part p-return" id="returnG">
+    <path id="tube" d="" style="fill:none;stroke:#223766;stroke-width:12;stroke-linecap:round"/>
+    <path id="tubeIn" d="" style="fill:none;stroke:#3a4f82;stroke-width:2;stroke-dasharray:2 4"/>
+  </g>
+  <g class="part p-balls" id="balls"></g>
+  <line id="ptr" class="sv-pointer" x1="0" y1="242" x2="0" y2="272"/>
+  <g id="ruler"></g>
+</svg>
+
+<div class="drag-hint" id="hint">👆 Trascina il volantino</div>
+<div class="flash" id="flash"></div>
+
+<svg id="graph" class="graph" viewBox="0 0 340 92" aria-label="Grafico della posizione della slitta in funzione dei giri">
+  <line class="g-axis" x1="24" y1="72" x2="330" y2="72"/>
+  <line class="g-axis" x1="24" y1="8" x2="24" y2="72"/>
+  <path class="g-ghost" d=""/><path class="g-trace" d=""/>
+  <circle class="g-dot" r="5" cx="24" cy="72"/>
+  <text class="g-lbl" x="24" y="86" text-anchor="middle">0</text>
+  <text class="g-lbl" id="gMid" x="177" y="86" text-anchor="middle"></text>
+  <text class="g-lbl" id="gMax" x="330" y="86" text-anchor="end"></text>
+  <text class="g-lbl" x="2" y="14">mm</text>
+</svg>
+
+<div class="readout">
+  <div><b id="outG">0</b><span>giri della vite</span></div>
+  <div><b id="outX">0 mm</b><span>posizione slitta</span></div>
+  <div><b id="outT">0</b><span>coppia per spingere 1000 N</span></div>
+</div>
+
+<div class="ctrl">
+  <div class="seg" id="speedSeg">
+    <button data-v="0">Pausa</button>
+    <button data-v="200">Lento</button>
+    <button data-v="600">Normale</button>
+    <button data-v="1600">Veloce</button>
+  </div>
+  <div class="seg" id="pitchSeg">
+    <button data-v="5">Passo 5 mm</button>
+    <button data-v="10">10 mm</button>
+    <button data-v="20">20 mm</button>
+  </div>
+  <div class="seg" id="typeSeg">
+    <button data-v="ball">A sfere</button>
+    <button data-v="trap">Trapezia</button>
+  </div>
+</div>
+
+  </div>
+
+  <section class="reveal">
+    <h2>In 3 passi</h2>
+    <p class="lead">Tutto il meccanismo, in un colpo d&#x27;occhio.</p>
+    <div class="steps">
+      <div class="step"><div class="ico">🔄</div><b>Giri la vite</b><span>la vite ruota ma resta al suo posto</span></div>
+      <div class="step"><div class="ico">⚪</div><b>Le sfere</b><span>rotolano nella gola tra vite e madrevite</span></div>
+      <div class="step"><div class="ico">➡️</div><b>Avanza</b><span>la madrevite e la slitta si spostano di un passo a giro</span></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Tocca una parte</h2>
+    <p class="lead">Si illumina nell'animazione qui sopra.</p>
+    <div class="chips" id="chips">
+      <button class="chip" data-p="screw">Vite</button>
+      <button class="chip" data-p="nut">Madrevite</button>
+      <button class="chip" data-p="balls">Sfere</button>
+      <button class="chip" data-p="return">Ricircolo</button>
+      <button class="chip" data-p="table">Slitta</button>
+      <button class="chip" data-p="wheel">Volantino</button>
+    </div>
+    <div class="chip-info" id="chipInfo">Scegli una parte per scoprire a cosa serve.</div>
+  </section>
+
+  <section class="reveal">
+    <h2>Esperimento: spingi la slitta</h2>
+    <p class="lead">Con le sfere l&#x27;attrito è così basso che, se spingi la slitta, è la vite a girare. Una vite trapezia invece resta bloccata: è autobloccante. Prova con tutte e due.</p>
+    <button class="chip" id="tryBtn">▶ Fammelo provare</button>
+  </section>
+
+  <section class="reveal">
+    <h2>La formula</h2>
+    <div class="formula">
+      <span class="f">spostamento = passo × giri       coppia = F · passo / (2π · η)</span>
+      <p>Con un passo di 5 mm, 10 giri spostano la slitta di 50 mm. Il rendimento η è circa 0,9 con le sfere e circa 0,35 con una vite trapezia: per spingere 1000 N servono 0,88 N·m invece di 2,27 N·m.</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Dove lo trovi</h2>
+    <p class="lead">Scorri di lato →</p>
+    <div class="uses">
+      <div class="use"><div class="ico">🏭</div><b>Macchine CNC</b><span>Muovono la tavola e l&#x27;utensile al centesimo di millimetro.</span></div>
+      <div class="use"><div class="ico">🤖</div><b>Robot e attuatori</b><span>Trasformano il giro di un motore elettrico in una spinta lineare.</span></div>
+      <div class="use"><div class="ico">🚘</div><b>Sterzo delle auto</b><span>Nella scatola dello sterzo a ricircolo di sfere il volante muove le ruote.</span></div>
+      <div class="use"><div class="ico">💉</div><b>Strumenti medicali</b><span>Pompe e lettini che si muovono piano e con precisione.</span></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Il modello di Ruben</h2>
+    <p class="lead">Il meccanismo costruito per l'Open Day.</p>
+    <div class="model">
+      <div class="ph">Foto o render del modello<br>(in arrivo)</div>
+      <dl>
+        <dt>Diametro vite</dt><dd>—</dd>
+        <dt>Passo</dt><dd>—</dd>
+        <dt>Corsa</dt><dd>—</dd>
+        <dt>Numero di sfere</dt><dd>—</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Hai capito?</h2>
+    <div class="quiz">
+      <p>Perché si mettono le sfere tra vite e madrevite?</p>
+      <button class="opt" data-ok="1">Per far rotolare al posto di strisciare, con meno attrito</button>
+      <button class="opt" data-ok="0">Per far girare la vite più veloce</button>
+      <button class="opt" data-ok="0">Per bloccare la slitta quando si ferma</button>
+      <div class="fb" id="fb" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <p class="foot">Open Day · Scuola d'arti e mestieri Bellinzona<br><a href="../meccanismi/">← Tutti i meccanismi</a></p>
+</main>
+
+<script src="../assets/comune.js"></script>
+<script>
+(function(){
+"use strict";
+const M = Mecc, $ = M.$;
+const PX = 2, X0 = 106, TRAVEL = 90;               // 1 mm = 2 px, corsa utile 90 mm
+const H = { x:62, y:62 };
+let P = 5, th = 0, speed = 600, dir = 1, drive = 'wheel', type = 'ball', dragging = false, grabOff = 0, ballPhase = 0, warned = false;
+
+for (let x = 22; x < 344; x += 10) M.el('line', { class:'sv-hatch', x1:x, y1:256, x2:x-8, y2:266 }, $('hatch'));
+for (let k = 0; k < 3; k++) M.el('line', { class:'sv-line', x1:H.x, y1:H.y, x2:H.x, y2:H.y, 'data-k':k }, $('spokes'));
+for (let mm = 0; mm <= TRAVEL; mm += 10){
+  const x = X0 + mm*PX;
+  M.el('line', { class:'sv-tick', x1:x, y1:262, x2:x, y2:mm % 30 ? 266 : 270 }, $('ruler'));
+  if (mm % 30 === 0){ const t = M.el('text', { class:'sv-text', x:x, y:282, 'text-anchor':'middle' }, $('ruler')); t.textContent = mm; }
+}
+const G = M.graph('graph', 1, 0, TRAVEL);
+const maxTh = () => TRAVEL / P * 360;
+const pos = () => P * th / 360;
+const eta = () => type === 'ball' ? 0.9 : 0.35;
+const turnsIn = () => P === 5 ? 3.5 : (P === 10 ? 2.5 : 1.5);
+const balls = [];
+
+function setupPitch(){
+  th = Math.min(th, maxTh());
+  const maxT = TRAVEL / P;
+  Object.assign(G, M.graph('graph', maxT, 0, TRAVEL));
+  G.curve(g => g * P);
+  $('gMid').textContent = M.fmt(maxT/2, maxT % 2 ? 1 : 0) + ' giri';
+  $('gMax').textContent = M.fmt(maxT, maxT % 1 ? 1 : 0) + ' giri';
+  $('balls').innerHTML = ''; balls.length = 0;
+  const Pp = P*PX, rb = Math.min(4.5, Pp*0.3), total = 2*Math.PI*(turnsIn() + 0.9), sp = 2*Math.PI/10;
+  for (let u = 0; u < total - sp*0.5; u += sp) balls.push({ u, c: M.el('circle', { class:'sv-ball', r:rb, cx:0, cy:0, style:'stroke-width:1.2' }, $('balls')) });
+  balls.total = total;
+}
+
+function bez(a, b, c, d, t){ const s = 1 - t; return s*s*s*a + 3*s*s*t*b + 3*s*t*t*c + t*t*t*d; }
+
+function render(){
+  const x = pos(), cx = X0 + x*PX, Pp = P*PX;
+  // filetto: si sposta insieme alla madrevite (un passo per giro)
+  const g = $('thread'); g.innerHTML = '';
+  for (let k = -40; k <= 40; k++){
+    const xc = cx + (k + 0.5)*Pp;
+    if (xc < 30 || xc > 345) continue;
+    M.el('line', { x1:(xc - Pp/4).toFixed(1), y1:164, x2:(xc + Pp/4).toFixed(1), y2:196, style:'stroke:#8ea3d3;stroke-width:' + (type === 'trap' ? 3 : 2) }, g);
+  }
+  $('nut').setAttribute('x', (cx - 42).toFixed(1));
+  $('table').setAttribute('x', (cx - 58).toFixed(1)); $('tableLbl').setAttribute('x', cx.toFixed(1));
+  $('ptr').setAttribute('x1', cx.toFixed(1)); $('ptr').setAttribute('x2', cx.toFixed(1));
+  // sfere: girano nella gola a metà velocità e tornano indietro nel tubo di ricircolo
+  const Nt = turnsIn(), xa = cx - Pp*Math.floor(Nt/2 + 0.5), xe = xa + Nt*Pp;
+  const tube = `M${xe.toFixed(1)},152 C${xe.toFixed(1)},116 ${xa.toFixed(1)},116 ${xa.toFixed(1)},152`;
+  $('tube').setAttribute('d', tube); $('tubeIn').setAttribute('d', tube);
+  const hel = 2*Math.PI*Nt;
+  balls.forEach(b => {
+    const u = (((b.u + ballPhase) % balls.total) + balls.total) % balls.total;
+    let bx, by, op = 1;
+    if (u < hel){ bx = xa + Pp*u/(2*Math.PI); by = 180 + 16*Math.sin(u); op = Math.cos(u) > 0 ? 1 : 0.25; }
+    else { const t = (u - hel) / (balls.total - hel); bx = bez(xe, xe, xa, xa, t); by = bez(152, 116, 116, 152, t); }
+    b.c.setAttribute('cx', bx.toFixed(1)); b.c.setAttribute('cy', by.toFixed(1)); b.c.style.opacity = op;
+  });
+  const a = M.rad(th);
+  $('knob').setAttribute('cx', (H.x + 22*Math.sin(a)).toFixed(1)); $('knob').setAttribute('cy', (H.y - 22*Math.cos(a)).toFixed(1));
+  document.querySelectorAll('#spokes line').forEach(l => {
+    const b = a + (+l.dataset.k)*2*Math.PI/3;
+    l.setAttribute('x2', (H.x + 28*Math.sin(b)).toFixed(1)); l.setAttribute('y2', (H.y - 28*Math.cos(b)).toFixed(1));
+  });
+  const hy = 180 - 24*Math.cos(a);
+  $('edgeHandle').setAttribute('y1', hy.toFixed(1)); $('edgeHandle').setAttribute('y2', hy.toFixed(1));
+  const turns = th / 360;
+  $('outG').textContent = M.fmt(turns, 1);
+  $('outX').textContent = M.fmt(x, 1) + ' mm';
+  $('outT').textContent = M.fmt(1000 * P/1000 / (2*Math.PI*eta()), 2) + ' N·m';
+  G.at(turns, x);
+}
+
+function setTh(v){
+  const old = th; th = Math.max(0, Math.min(maxTh(), v));
+  if (type === 'ball') ballPhase += M.rad(th - old) / 2;
+}
+
+const svg = $('mech');
+const angOf = p => M.deg(Math.atan2(-(p.y - H.y), p.x - H.x));
+let lastAng = 0;
+M.hint('hint');
+M.drag(svg, {
+  start: p => { dragging = true; warned = false; if (drive === 'wheel') lastAng = angOf(p); else grabOff = X0 + pos()*PX - p.x; },
+  move: p => {
+    if (drive === 'wheel'){ const a = angOf(p); setTh(th - M.wrap180(a - lastAng)); lastAng = a; return; }
+    if (type === 'trap'){ if (!warned){ warned = true; M.flash('flash', 'Bloccata! La vite trapezia non si lascia girare dalla slitta'); } return; }
+    const mm = (p.x + grabOff - X0) / PX;
+    setTh(mm / P * 360);
+    if (!warned){ warned = true; M.flash('flash', 'Con le sfere la vite gira da sola!', true); }
+  },
+  end: () => { dragging = false; }
+});
+
+M.seg('driveSeg', v => { drive = v; $('hint').textContent = v === 'wheel' ? '👆 Trascina il volantino' : '👆 Trascina la slitta a destra e sinistra'; }, 'wheel');
+M.seg('speedSeg', v => { speed = +v; }, 600);
+M.seg('pitchSeg', v => { const mm = pos(); P = +v; th = mm / P * 360; setupPitch(); }, 5);
+M.seg('typeSeg', v => {
+  type = v; const show = v === 'ball';
+  $('returnG').style.display = show ? '' : 'none'; $('balls').style.display = show ? '' : 'none';
+}, 'ball');
+
+$('tryBtn').addEventListener('click', () => {
+  document.querySelector('#speedSeg [data-v="0"]').click();
+  document.querySelector('#driveSeg [data-v="slide"]').click();
+  M.scrollToStage('stage');
+});
+
+M.loop(dt => {
+  if (!dragging && drive === 'wheel' && speed > 0){
+    setTh(th + dir*speed*dt);
+    if (th >= maxTh() - 0.01) dir = -1; else if (th <= 0.01) dir = 1;
+  }
+  render();
+});
+
+const INFO = {
+  screw: '<b>Vite</b> — un albero con una gola elicoidale. Gira sul posto, sostenuta dai cuscinetti alle due estremità, ma non si sposta.',
+  nut: '<b>Madrevite</b> (chiocciola) — avvolge la vite e non può girare: a ogni giro della vite avanza di un passo.',
+  balls: '<b>Sfere</b> — rotolano tra la vite e la madrevite al posto dello strisciamento. Così l\'attrito è minimo e il rendimento arriva a circa il 90%.',
+  return: '<b>Ricircolo</b> — il tubo riporta le sfere dalla fine all\'inizio della madrevite: girano in un circuito chiuso senza uscire mai.',
+  table: '<b>Slitta</b> — il carico da spostare, fissato alla madrevite e appoggiato a una guida che le impedisce di ruotare.',
+  wheel: '<b>Volantino</b> — fa girare la vite. Nelle macchine CNC al suo posto c\'è un motore elettrico.'
+};
+
+Mecc.parts('stage', 'chips', 'chipInfo', INFO, 'Scegli una parte per scoprire a cosa serve.');
+Mecc.quiz("Esatto! Rotolare costa molto meno che strisciare: il rendimento arriva al 90%.", "Non proprio: prova l'esperimento con la vite trapezia.");
+Mecc.reveal();
+})();
+</script>
+</body>
+</html>

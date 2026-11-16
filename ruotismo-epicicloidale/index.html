@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ruotismo epicicloidale — Come funziona</title>
+<meta name="description" content="Come funziona il ruotismo epicicloidale (planetario): animazione interattiva e spiegazione.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="../assets/stile.css">
+</head>
+<body>
+<nav class="topbar" aria-label="Navigazione">
+  <a class="brand" href="../meccanismi/">Meccanismi<small>Open Day SAM</small></a>
+  <a class="tab" href="../meccanismi/">Tutti i meccanismi</a>
+</nav>
+<main class="page">
+
+  <header class="hero">
+    <span class="eyebrow">Ruotismo epicicloidale</span>
+    <h1>Ruote che girano<br><span>come pianeti</span></h1>
+    <p>Trascina col dito e prova a bloccare un pezzo diverso.</p>
+    <p class="by">Pagina di <b>Alessandro Siano</b></p>
+  </header>
+
+  <div class="stage" id="stage">
+<div class="mode-row">
+  <div class="seg" id="modeSeg">
+    <button data-v="ring">Corona ferma</button>
+    <button data-v="carrier">Portatreno fermo</button>
+    <button data-v="sun">Sole fermo</button>
+    <button data-v="direct">Presa diretta</button>
+  </div>
+</div>
+<div class="phase-bar" id="roles">
+  <div class="phase" id="roleS">Sole</div>
+  <div class="phase" id="roleC">Portatreno</div>
+  <div class="phase" id="roleR">Corona</div>
+</div>
+
+<svg id="mech" class="mech" viewBox="0 0 360 316" aria-label="Animazione del ruotismo epicicloidale">
+  <g class="part p-ring">
+    <g id="ringMount"></g>
+    <path id="ring" class="sv-body3" fill-rule="evenodd" d=""/>
+    <circle id="ringMark" class="sv-hot" r="5" cx="0" cy="0"/>
+  </g>
+  <g class="part p-planet" id="planets"></g>
+  <g class="part p-sun">
+    <path id="sun" class="sv-body2" d=""/>
+    <circle class="sv-fg" cx="180" cy="158" r="9"/>
+    <circle id="sunMark" class="sv-hot" r="4" cx="0" cy="0"/>
+  </g>
+  <g class="part p-carrier">
+    <path id="carrier" d="" style="fill:none;stroke:#5b8dff;stroke-width:9;stroke-linecap:round;stroke-linejoin:round;opacity:.9"/>
+    <g id="pins"></g>
+    <circle class="sv-acc" cx="180" cy="158" r="6"/>
+  </g>
+  <text id="fixLbl" class="sv-text-b" x="180" y="310" text-anchor="middle"></text>
+</svg>
+
+<div class="drag-hint" id="hint">👆 Trascina per far girare l'ingresso</div>
+<div class="flash" id="flash"></div>
+
+<svg id="graph" class="graph" viewBox="0 0 340 92" aria-label="Grafico della rotazione dell'uscita in funzione dell'ingresso">
+  <line class="g-axis" x1="24" y1="72" x2="330" y2="72"/>
+  <line class="g-axis" x1="24" y1="8" x2="24" y2="72"/>
+  <path class="g-ghost" d=""/><path class="g-trace" d=""/>
+  <circle class="g-dot" r="5" cx="24" cy="72"/>
+  <text class="g-lbl" x="24" y="86" text-anchor="middle">0°</text>
+  <text class="g-lbl" x="177" y="86" text-anchor="middle">ingresso 180°</text>
+  <text class="g-lbl" x="330" y="86" text-anchor="middle">360°</text>
+  <text class="g-lbl" x="2" y="14">usc.</text>
+</svg>
+
+<div class="readout">
+  <div><b id="outIn">0°</b><span>rotazione ingresso</span></div>
+  <div><b id="outOut">0°</b><span>rotazione uscita</span></div>
+  <div><b id="outI">4 : 1</b><span>rapporto</span></div>
+</div>
+
+<div class="ctrl">
+  <div class="seg" id="speedSeg">
+    <button data-v="0">Pausa</button>
+    <button data-v="40">Lento</button>
+    <button data-v="110">Normale</button>
+    <button data-v="360">Veloce</button>
+  </div>
+</div>
+
+  </div>
+
+  <section class="reveal">
+    <h2>In 3 passi</h2>
+    <p class="lead">Tre parti che possono girare, una che blocchi.</p>
+    <div class="steps">
+      <div class="step"><div class="ico">☀️</div><b>Il sole</b><span>la ruota al centro</span></div>
+      <div class="step"><div class="ico">🪐</div><b>I satelliti</b><span>girano attorno al sole, portati dal portatreno</span></div>
+      <div class="step"><div class="ico">⭕</div><b>La corona</b><span>con i denti all&#x27;interno, chiude tutto</span></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Tocca una parte</h2>
+    <p class="lead">Si illumina nell'animazione qui sopra.</p>
+    <div class="chips" id="chips">
+      <button class="chip" data-p="sun">Sole</button>
+      <button class="chip" data-p="planet">Satelliti</button>
+      <button class="chip" data-p="ring">Corona</button>
+      <button class="chip" data-p="carrier">Portatreno</button>
+    </div>
+    <div class="chip-info" id="chipInfo">Scegli una parte per scoprire a cosa serve.</div>
+  </section>
+
+  <section class="reveal">
+    <h2>Esperimento: la presa diretta</h2>
+    <p class="lead">Se blocchi insieme due elementi qualsiasi, i satelliti smettono di girare su sé stessi e tutto il ruotismo gira come un pezzo unico, con rapporto 1 : 1. È la marcia «diretta» dei cambi automatici.</p>
+    <button class="chip" id="tryBtn">▶ Fammelo vedere</button>
+  </section>
+
+  <section class="reveal">
+    <h2>La formula di Willis</h2>
+    <div class="formula">
+      <span class="f">(ω_sole − ω_port.) / (ω_corona − ω_port.) = − Z_corona / Z_sole</span>
+      <p>Qui il sole ha 18 denti e la corona 54. Con la corona ferma il portatreno gira 4 volte più piano del sole; con il portatreno fermo la corona gira 3 volte più piano e al contrario; con il sole fermo il rapporto è 1,33.</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Dove lo trovi</h2>
+    <p class="lead">Scorri di lato →</p>
+    <div class="uses">
+      <div class="use"><div class="ico">🚗</div><b>Cambi automatici</b><span>Bloccando a turno sole, corona o portatreno si ottengono le diverse marce.</span></div>
+      <div class="use"><div class="ico">🔧</div><b>Avvitatori e trapani</b><span>Riducono la velocità del motore e moltiplicano la coppia in poco spazio.</span></div>
+      <div class="use"><div class="ico">🚲</div><b>Mozzi con cambio</b><span>Le marce delle bici da città sono dentro il mozzo della ruota.</span></div>
+      <div class="use"><div class="ico">🤖</div><b>Riduttori dei robot</b><span>Molto compatti e robusti, con l&#x27;uscita sullo stesso asse dell&#x27;ingresso.</span></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Il modello di Alessandro</h2>
+    <p class="lead">Il meccanismo costruito per l'Open Day.</p>
+    <div class="model">
+      <div class="ph">Foto o render del modello<br>(in arrivo)</div>
+      <dl>
+        <dt>Denti del sole</dt><dd>—</dd>
+        <dt>Denti dei satelliti</dt><dd>—</dd>
+        <dt>Denti della corona</dt><dd>—</dd>
+        <dt>Rapporto</dt><dd>—</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Hai capito?</h2>
+    <div class="quiz">
+      <p>Con la corona bloccata, se il sole fa 4 giri, quanti giri fa il portatreno?</p>
+      <button class="opt" data-ok="0">4 giri</button>
+      <button class="opt" data-ok="1">1 giro</button>
+      <button class="opt" data-ok="0">3 giri al contrario</button>
+      <div class="fb" id="fb" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <p class="foot">Open Day · Scuola d'arti e mestieri Bellinzona<br><a href="../meccanismi/">← Tutti i meccanismi</a></p>
+</main>
+
+<script src="../assets/comune.js"></script>
+<script>
+(function(){
+"use strict";
+const M = Mecc, $ = M.$;
+const C = { x:180, y:158 }, MOD = 4.5, ZS = 18, ZP = 18, ZR = 54;   // ZR = ZS + 2·ZP
+const rS = MOD*ZS/2, rP = MOD*ZP/2, rR = MOD*ZR/2, rC = rS + rP;
+let mode = 'ring', inp = 0, speed = 110, dragging = false;
+
+// profilo semplificato di una ruota dentata (denti trapezoidali), coordinate locali con y verso l'alto
+function teeth(Z, rp, inward){
+  const T = 2*Math.PI/Z, tip = inward ? rp - MOD : rp + MOD, root = inward ? rp + 1.25*MOD : rp - 1.25*MOD;
+  const pts = [];
+  for (let k = 0; k < Z; k++){
+    const a = k*T;
+    [[-0.5, root], [-0.27, root], [-0.15, tip], [0.15, tip], [0.27, root]].forEach(([f, r]) => pts.push([r*Math.cos(a + f*T), r*Math.sin(a + f*T)]));
+  }
+  return 'M' + pts.map(p => p[0].toFixed(2) + ',' + (-p[1]).toFixed(2)).join('L') + 'Z';
+}
+const circ = r => `M${r},0 A${r},${r} 0 1 0 ${-r},0 A${r},${r} 0 1 0 ${r},0Z`;
+$('ring').setAttribute('d', circ(rR + 16) + teeth(ZR, rR, true));
+$('sun').setAttribute('d', teeth(ZS, rS, false));
+const planets = [], pins = [];
+for (let k = 0; k < 3; k++){
+  const g = M.el('g', {}, $('planets'));
+  M.el('path', { class:'sv-body', d:teeth(ZP, rP, false) }, g);
+  M.el('circle', { class:'sv-hot', r:3.5, cx:0, cy:-(rP - 2.6*MOD) }, g);
+  planets.push(g);
+  pins.push(M.el('circle', { class:'sv-fg', r:5, cx:0, cy:0 }, $('pins')));
+}
+// supporti della corona (visibili quando è bloccata)
+[[-1, 0], [1, 0]].forEach(([sx]) => {
+  const x = C.x + sx*(rR + 16);
+  M.el('rect', { class:'sv-frame', x:(x - 7).toFixed(1), y:C.y - 12, width:14, height:24, rx:3 }, $('ringMount'));
+});
+
+const ROLE = {
+  ring:    { inp:'s', out:'c', fix:'r', i:4,     lbl:'4 : 1',   range:[0, 90] },
+  carrier: { inp:'s', out:'r', fix:'c', i:-3,    lbl:'−3 : 1',  range:[-120, 0] },
+  sun:     { inp:'r', out:'c', fix:'s', i:4/3,   lbl:'1,33 : 1', range:[0, 270] },
+  direct:  { inp:'s', out:'c', fix:'',  i:1,     lbl:'1 : 1',   range:[0, 360] }
+};
+const NAME = { s:'Sole', c:'Portatreno', r:'Corona' };
+const G = M.graph('graph', 360, 0, 90);
+
+function angles(){
+  const R = ROLE[mode]; let s = 0, c = 0, r = 0;
+  if (mode === 'ring'){ s = inp; c = inp/4; }
+  else if (mode === 'carrier'){ s = inp; r = -inp/3; }
+  else if (mode === 'sun'){ r = inp; c = 3*inp/4; }
+  else { s = c = r = inp; }
+  return { s, c, r };
+}
+const rot = (g, x, y, a) => g.setAttribute('transform', `translate(${x.toFixed(2)},${y.toFixed(2)}) rotate(${(-a).toFixed(2)})`);
+
+function render(){
+  const A = angles();
+  rot($('ring'), C.x, C.y, A.r);
+  rot($('sun'), C.x, C.y, A.s);
+  const ra = M.rad(A.r), sa = M.rad(A.s);
+  $('ringMark').setAttribute('cx', (C.x + (rR + 8)*Math.cos(ra + Math.PI/2)).toFixed(1));
+  $('ringMark').setAttribute('cy', (C.y - (rR + 8)*Math.sin(ra + Math.PI/2)).toFixed(1));
+  $('sunMark').setAttribute('cx', (C.x + (rS - 2.6*MOD)*Math.cos(sa + Math.PI/2)).toFixed(1));
+  $('sunMark').setAttribute('cy', (C.y - (rS - 2.6*MOD)*Math.sin(sa + Math.PI/2)).toFixed(1));
+  let d = '';
+  for (let k = 0; k < 3; k++){
+    const gam = M.rad(A.c) + k*2*Math.PI/3;
+    const px = C.x + rC*Math.cos(gam), py = C.y - rC*Math.sin(gam);
+    // rotazione del satellite: ingranamento con il sole (formula di Willis)
+    const thp = gam + Math.PI + Math.PI/ZP + (ZS/ZP)*(gam - sa);
+    rot(planets[k], px, py, M.deg(thp));
+    pins[k].setAttribute('cx', px.toFixed(1)); pins[k].setAttribute('cy', py.toFixed(1));
+    d += (k ? 'L' : 'M') + px.toFixed(1) + ',' + py.toFixed(1);
+  }
+  $('carrier').setAttribute('d', d + 'Z');
+  const R = ROLE[mode], out = A[R.out];
+  $('outIn').textContent = Math.round(inp % 360 + (inp < 0 ? 360 : 0)) + '°';
+  const o = ((out % 360) + 360) % 360;
+  $('outOut').textContent = (R.i < 0 ? '−' + Math.round((360 - o) % 360) : Math.round(o)) + '°';
+  const x = ((inp % 360) + 360) % 360;
+  G.at(x, x / R.i);
+}
+
+function setMode(v){
+  mode = v; inp = 0; const R = ROLE[v];
+  ['s','c','r'].forEach(k => {
+    const e = $('role' + k.toUpperCase());
+    const role = R.inp === k ? 'ingresso' : (R.out === k ? 'uscita' : (R.fix === k ? 'fermo' : 'unito'));
+    e.textContent = NAME[k] + ': ' + role;
+    e.classList.toggle('on', R.inp === k || R.out === k);
+  });
+  $('ringMount').style.display = R.fix === 'r' ? '' : 'none';
+  $('fixLbl').textContent = R.fix ? NAME[R.fix] + (R.fix === 'r' ? ' bloccata' : ' bloccato') : 'tutto unito: gira come un pezzo solo';
+  $('outI').textContent = R.lbl;
+  G.range(R.range[0], R.range[1]); G.curve(x => x / R.i);
+}
+
+M.hint('hint');
+M.dragRotate($('mech'), C, d => { inp += d; }, { start: () => { dragging = true; }, end: () => { dragging = false; } });
+M.seg('modeSeg', setMode, 'ring');
+M.seg('speedSeg', v => { speed = +v; }, 110);
+$('tryBtn').addEventListener('click', () => { document.querySelector('#modeSeg [data-v="direct"]').click(); M.scrollToStage('stage'); });
+
+M.loop(dt => { if (!dragging) inp += speed*dt; render(); });
+
+const INFO = {
+  sun: '<b>Sole</b> — la ruota dentata al centro. Qui ha 18 denti.',
+  planet: '<b>Satelliti</b> — tre ruote che ingranano sia con il sole sia con la corona. Girano su sé stesse e, intanto, girano attorno al sole come pianeti.',
+  ring: '<b>Corona</b> — la ruota con i denti all\'interno (54 denti). Avvolge tutto il ruotismo.',
+  carrier: '<b>Portatreno</b> — il telaio (in blu) che porta i perni dei satelliti. Quando gira, trascina i satelliti attorno al sole.'
+};
+
+Mecc.parts('stage', 'chips', 'chipInfo', INFO, 'Scegli una parte per scoprire a cosa serve.');
+Mecc.quiz("Esatto! Rapporto 4 : 1, perché (18 + 54) / 18 = 4.", "Non proprio: scegli «Corona ferma» e guarda il rapporto.");
+Mecc.reveal();
+})();
+</script>
+</body>
+</html>

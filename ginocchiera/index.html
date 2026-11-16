@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Meccanismo a ginocchiera — Come funziona</title>
+<meta name="description" content="Come funziona il meccanismo a ginocchiera: animazione interattiva e spiegazione.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="../assets/stile.css">
+</head>
+<body>
+<nav class="topbar" aria-label="Navigazione">
+  <a class="brand" href="../meccanismi/">Meccanismi<small>Open Day SAM</small></a>
+  <a class="tab" href="../meccanismi/">Tutti i meccanismi</a>
+</nav>
+<main class="page">
+
+  <header class="hero">
+    <span class="eyebrow">Meccanismo a ginocchiera</span>
+    <h1>Una piccola spinta,<br><span>una forza enorme</span></h1>
+    <p>Trascina la leva e guarda crescere la forza sul punzone.</p>
+    <p class="by">Pagina di <b>Sam Schillerwein</b></p>
+  </header>
+
+  <div class="stage" id="stage">
+<div class="phase-bar" id="phases">
+  <div class="phase" data-ph="0">↕ Corsa libera</div>
+  <div class="phase" data-ph="1">⬇ Pressatura</div>
+  <div class="phase" data-ph="2">🔒 Oltre il punto morto</div>
+</div>
+
+<svg id="mech" class="mech" viewBox="0 0 360 300" aria-label="Animazione del meccanismo a ginocchiera">
+  <g class="part p-frame">
+    <rect class="sv-frame" x="120" y="14" width="200" height="10" rx="3"/>
+    <rect class="sv-frame" x="300" y="14" width="12" height="276" rx="3"/>
+    <rect class="sv-frame" x="60" y="284" width="252" height="8" rx="3"/>
+    <rect class="sv-bush" x="140" y="256" width="60" height="28" rx="3"/>
+    <text class="sv-text" x="132" y="276" text-anchor="end">incudine</text>
+    <path class="sv-bush" d="M160,24 L180,24 L176,36 L164,36 Z"/>
+    <line class="sv-line" x1="146" y1="150" x2="146" y2="252"/>
+    <line class="sv-line" x1="194" y1="150" x2="194" y2="252"/>
+    <rect id="stop" class="sv-bush" x="140" y="0" width="12" height="16" rx="3"/>
+    <text class="sv-text" x="208" y="160">guida</text>
+  </g>
+  <g id="nutG">
+    <ellipse id="nut" cx="170" cy="248" rx="20" ry="8" style="fill:#b07a3c;stroke:#f3d3a6;stroke-width:2"/>
+    <g id="crack" style="display:none">
+      <path d="M150,252 Q158,240 166,252 Z" style="fill:#b07a3c;stroke:#f3d3a6;stroke-width:1.5"/>
+      <path d="M172,252 Q181,239 190,252 Z" style="fill:#b07a3c;stroke:#f3d3a6;stroke-width:1.5"/>
+      <circle cx="140" cy="250" r="2.5" style="fill:#f3d3a6"/><circle cx="200" cy="249" r="2" style="fill:#f3d3a6"/>
+    </g>
+  </g>
+  <g class="part p-ram">
+    <rect id="ram" class="sv-body2" x="148" y="0" width="44" height="34" rx="4"/>
+  </g>
+  <g class="part p-link">
+    <line id="link1" class="sv-lever" x1="170" y1="30" x2="0" y2="0"/>
+    <line id="link2" class="sv-lever" x1="0" y1="0" x2="170" y2="0"/>
+  </g>
+  <g class="part p-lever">
+    <line id="handle" class="sv-acc-stroke" x1="0" y1="0" x2="0" y2="0" style="stroke-width:6"/>
+    <circle id="grip" class="sv-acc" cx="0" cy="0" r="9"/>
+  </g>
+  <g class="part p-knee">
+    <circle id="knee" class="sv-roller" cx="0" cy="0" r="8"/>
+  </g>
+  <circle class="sv-fg" cx="170" cy="30" r="5"/>
+  <circle id="pinB" class="sv-fg" cx="170" cy="0" r="5"/>
+  <g id="forces">
+    <line id="fIn" class="sv-good-stroke" x1="0" y1="0" x2="0" y2="0" style="stroke-width:4"/>
+    <path id="fInH" d="" style="fill:#3ccf8e"/>
+    <line id="fOut" class="sv-hot-stroke" x1="0" y1="0" x2="0" y2="0" style="stroke-width:5"/>
+    <path id="fOutH" d="" style="fill:#ff7a45"/>
+    <text id="fInT" class="sv-text-b" x="0" y="0">50 N</text>
+    <text id="fOutT" class="sv-text-b" x="0" y="0"></text>
+  </g>
+  <text class="sv-text" id="alphaT" x="0" y="0"></text>
+  <path id="alphaArc" class="sv-pointer" d=""/>
+</svg>
+
+<div class="drag-hint" id="hint">👆 Trascina la leva verso sinistra</div>
+<div class="flash" id="flash"></div>
+
+<svg id="graph" class="graph" viewBox="0 0 340 92" aria-label="Grafico della moltiplicazione della forza">
+  <line class="g-axis" x1="24" y1="72" x2="330" y2="72"/>
+  <line class="g-axis" x1="24" y1="8" x2="24" y2="72"/>
+  <path class="g-ghost" d=""/><path class="g-trace" d=""/>
+  <circle class="g-dot" r="5" cx="24" cy="72"/>
+  <text class="g-lbl" x="24" y="86" text-anchor="middle">α 40°</text>
+  <text class="g-lbl" x="177" y="86" text-anchor="middle">20°</text>
+  <text class="g-lbl" x="320" y="86" text-anchor="middle">α 1°</text>
+  <text class="g-lbl" x="2" y="14">×F</text>
+</svg>
+
+<div class="readout">
+  <div><b id="outA">0°</b><span>angolo α delle aste</span></div>
+  <div><b id="outF">0 N</b><span>forza sul punzone</span></div>
+  <div><b id="outK">×0</b><span>moltiplicazione</span></div>
+</div>
+
+<div class="ctrl">
+  <div class="seg" id="speedSeg">
+    <button data-v="0">Pausa</button>
+    <button data-v="0.5">Lento</button>
+    <button data-v="1.2">Normale</button>
+    <button data-v="3">Veloce</button>
+  </div>
+  <button class="pill on" id="forceBtn" aria-pressed="true"><span class="sw"></span>Forze</button>
+</div>
+
+  </div>
+
+  <section class="reveal">
+    <h2>In 3 passi</h2>
+    <p class="lead">Tutto il meccanismo, in un colpo d&#x27;occhio.</p>
+    <div class="steps">
+      <div class="step"><div class="ico">👉</div><b>Spingi</b><span>la leva sposta il ginocchio di lato</span></div>
+      <div class="step"><div class="ico">🦵</div><b>Si raddrizza</b><span>le due aste si mettono in linea</span></div>
+      <div class="step"><div class="ico">⬇️</div><b>Preme</b><span>il punzone scende con una forza sempre più grande</span></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Tocca una parte</h2>
+    <p class="lead">Si illumina nell'animazione qui sopra.</p>
+    <div class="chips" id="chips">
+      <button class="chip" data-p="link">Aste</button>
+      <button class="chip" data-p="knee">Ginocchio</button>
+      <button class="chip" data-p="lever">Leva</button>
+      <button class="chip" data-p="ram">Punzone</button>
+      <button class="chip" data-p="frame">Telaio</button>
+    </div>
+    <div class="chip-info" id="chipInfo">Scegli una parte per scoprire a cosa serve.</div>
+  </section>
+
+  <section class="reveal">
+    <h2>Esperimento: conia una moneta</h2>
+    <p class="lead">Negli ultimi gradi la corsa del punzone è minima ma la forza diventa enorme: con 50 N sulla leva, a 2° si superano i 700 N. Spingi la leva fino in fondo e poi oltre il punto morto: il fermo la tiene chiusa da sola.</p>
+    <button class="chip" id="tryBtn">▶ Fammelo provare</button>
+  </section>
+
+  <section class="reveal">
+    <h2>La formula</h2>
+    <div class="formula">
+      <span class="f">F_uscita = F_ingresso / (2 · tan α)</span>
+      <p>α è l&#x27;angolo tra ciascuna asta e la verticale. A 30° la forza resta quasi uguale (×0,9); a 10° diventa quasi tripla (×2,8); a 2° è 14 volte più grande. A 0°, aste in linea, il punzone è al punto morto.</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Dove lo trovi</h2>
+    <p class="lead">Scorri di lato →</p>
+    <div class="uses">
+      <div class="use"><div class="ico">🏭</div><b>Presse meccaniche</b><span>Coniano monete, stampano lamiere e tranciano pezzi.</span></div>
+      <div class="use"><div class="ico">🪨</div><b>Frantoi a mascelle</b><span>Rompono le rocce con una forza enorme.</span></div>
+      <div class="use"><div class="ico">🗜️</div><b>Morsetti rapidi e pinze autobloccanti</b><span>Si chiudono oltre il punto morto e restano bloccati da soli.</span></div>
+      <div class="use"><div class="ico">🧩</div><b>Stampi a iniezione</b><span>La ginocchiera tiene chiuso lo stampo contro la pressione della plastica.</span></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Il modello di Sam</h2>
+    <p class="lead">Il meccanismo costruito per l'Open Day.</p>
+    <div class="model">
+      <div class="ph">Foto o render del modello<br>(in arrivo)</div>
+      <dl>
+        <dt>Lunghezza aste</dt><dd>—</dd>
+        <dt>Corsa del punzone</dt><dd>—</dd>
+        <dt>Forza in ingresso</dt><dd>—</dd>
+        <dt>Materiale</dt><dd>—</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Hai capito?</h2>
+    <div class="quiz">
+      <p>Quando la forza sul punzone è più grande?</p>
+      <button class="opt" data-ok="0">Quando le aste sono molto piegate</button>
+      <button class="opt" data-ok="1">Quando le aste sono quasi in linea</button>
+      <button class="opt" data-ok="0">È sempre uguale</button>
+      <div class="fb" id="fb" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <p class="foot">Open Day · Scuola d'arti e mestieri Bellinzona<br><a href="../meccanismi/">← Tutti i meccanismi</a></p>
+</main>
+
+<script src="../assets/comune.js"></script>
+<script>
+(function(){
+"use strict";
+const M = Mecc, $ = M.$;
+const A = { x:170, y:30 }, LK = 100, FIN = 50, RAM_H = 26, ANVIL = 256, COIN = 4;
+let al = 30, ph = 0.6, speed = 1.2, dragging = false, grab = 0, forces = true, coined = false, warned = false;
+
+const knee = a => ({ x: A.x + LK*Math.sin(M.rad(a)), y: A.y + LK*Math.cos(M.rad(a)) });
+const pinB = a => A.y + 2*LK*Math.cos(M.rad(a));
+const amp = a => 1 / (2*Math.tan(M.rad(a)));
+// fermo meccanico oltre il punto morto
+const kStop = knee(-4);
+$('stop').setAttribute('x', (kStop.x - 21).toFixed(1)); $('stop').setAttribute('y', (kStop.y - 8).toFixed(1));
+
+const G = M.graph('graph', 39, 0, 20);
+G.curve(x => Math.min(20, amp(40 - x)));
+
+// la moneta da coniare: un dischetto di 4 px sotto il punzone
+const coin = M.el('rect', { x:152, y:ANVIL - COIN, width:36, height:COIN, rx:1.5, style:'fill:#c9cfd8;stroke:#fff;stroke-width:1' }, $('nutG'));
+$('nut').style.display = 'none';
+const coinTxt = M.el('text', { class:'sv-text-b', x:132, y:252, 'text-anchor':'end' }, $('nutG'));
+
+function arrow(lineId, headId, x1, y1, x2, y2){
+  $(lineId).setAttribute('x1', x1.toFixed(1)); $(lineId).setAttribute('y1', y1.toFixed(1));
+  $(lineId).setAttribute('x2', x2.toFixed(1)); $(lineId).setAttribute('y2', y2.toFixed(1));
+  const a = Math.atan2(y2 - y1, x2 - x1), h = 9;
+  const p = (k, s) => (x2 + Math.cos(a + s)*k).toFixed(1) + ',' + (y2 + Math.sin(a + s)*k).toFixed(1);
+  $(headId).setAttribute('d', 'M' + (x2 + Math.cos(a)*4).toFixed(1) + ',' + (y2 + Math.sin(a)*4).toFixed(1) + 'L' + p(h, Math.PI*0.82) + 'L' + p(h, -Math.PI*0.82) + 'Z');
+}
+
+function render(){
+  const K = knee(al), By = pinB(al), ramBottom = By + RAM_H;
+  $('link1').setAttribute('x2', K.x.toFixed(1)); $('link1').setAttribute('y2', K.y.toFixed(1));
+  $('link2').setAttribute('x1', K.x.toFixed(1)); $('link2').setAttribute('y1', K.y.toFixed(1));
+  $('link2').setAttribute('y2', By.toFixed(1));
+  $('knee').setAttribute('cx', K.x.toFixed(1)); $('knee').setAttribute('cy', K.y.toFixed(1));
+  $('pinB').setAttribute('cy', By.toFixed(1));
+  $('ram').setAttribute('y', By.toFixed(1));
+  const G2 = { x: K.x + 72, y: K.y - 46 };
+  $('handle').setAttribute('x1', K.x.toFixed(1)); $('handle').setAttribute('y1', K.y.toFixed(1));
+  $('handle').setAttribute('x2', G2.x.toFixed(1)); $('handle').setAttribute('y2', G2.y.toFixed(1));
+  $('grip').setAttribute('cx', G2.x.toFixed(1)); $('grip').setAttribute('cy', G2.y.toFixed(1));
+  // angolo α tra asta e verticale
+  const r = 34, e = { x: A.x + r*Math.sin(M.rad(al)), y: A.y + r*Math.cos(M.rad(al)) };
+  $('alphaArc').setAttribute('d', `M${A.x},${A.y + r} A${r},${r} 0 0 ${al >= 0 ? 0 : 1} ${e.x.toFixed(1)},${e.y.toFixed(1)}`);
+  $('alphaT').setAttribute('x', A.x + (al >= 0 ? 6 : -16)); $('alphaT').setAttribute('y', A.y + r + 14); $('alphaT').textContent = 'α';
+  // moneta
+  const h = ramBottom > ANVIL - COIN ? Math.max(2.6, ANVIL - ramBottom) : COIN;
+  coin.setAttribute('y', (ANVIL - h).toFixed(1)); coin.setAttribute('height', h.toFixed(1));
+  if (al < 2 && !coined){ coined = true; coin.style.fill = '#e8c25a'; coinTxt.textContent = 'coniata!'; if (dragging) M.flash('flash', 'Moneta coniata!', true); }
+  if (al > 20 && coined){ coined = false; coin.style.fill = '#c9cfd8'; coinTxt.textContent = ''; }
+  // forze
+  $('forces').style.display = forces ? '' : 'none';
+  arrow('fIn', 'fInH', G2.x + 48, G2.y, G2.x + 14, G2.y);
+  $('fInT').setAttribute('x', (G2.x + 22).toFixed(1)); $('fInT').setAttribute('y', (G2.y - 10).toFixed(1));
+  const k = al > 0.3 ? amp(al) : Infinity, fout = FIN*k;
+  const len = Math.min(70, 10 + 3*Math.min(k, 20));
+  arrow('fOut', 'fOutH', 212, By + 2, 212, By + 2 + len);
+  $('fOutT').setAttribute('x', 222); $('fOutT').setAttribute('y', (By + 22).toFixed(1));
+  $('fOutT').textContent = al > 0.3 ? M.fmt(fout, 0) + ' N' : 'bloccata';
+  $('outA').textContent = M.fmt(al, 1) + '°';
+  $('outF').textContent = al > 0.3 ? M.fmt(fout, 0) + ' N' : '—';
+  $('outK').textContent = al > 0.3 ? '×' + M.fmt(k, k < 10 ? 1 : 0) : 'bloccata';
+  M.phases('phases', al < 0 ? 2 : (ramBottom > ANVIL - COIN ? 1 : 0));
+  const gx = Math.max(0, Math.min(39, 40 - al));
+  G.at(gx, Math.min(20, amp(40 - gx)));
+}
+
+M.hint('hint');
+M.drag($('mech'), {
+  start: p => { dragging = true; warned = false; grab = knee(al).x - p.x; },
+  move: p => {
+    const s = (p.x + grab - A.x) / LK;
+    al = Math.max(-4, Math.min(40, M.deg(Math.asin(Math.max(-1, Math.min(1, s))))));
+    if (al <= -3.5 && !warned){ warned = true; M.flash('flash', 'Bloccata oltre il punto morto: non si riapre da sola'); }
+  },
+  end: () => { dragging = false; ph = Math.acos(Math.max(-1, Math.min(1, (al - 18)/22))); }
+});
+M.seg('speedSeg', v => { speed = +v; }, 1.2);
+M.toggle('forceBtn', true, v => { forces = v; });
+$('tryBtn').addEventListener('click', () => {
+  document.querySelector('#speedSeg [data-v="0"]').click();
+  al = 30; M.scrollToStage('stage');
+  M.flash('flash', 'Ora trascina la leva fino in fondo', true);
+});
+
+M.loop(dt => {
+  if (!dragging && speed > 0){ ph += speed*dt; al = 18 + 22*Math.cos(ph); }
+  render();
+});
+
+const INFO = {
+  link: '<b>Aste (bracci)</b> — due aste uguali unite al centro da un perno, come una gamba con il ginocchio. Più si avvicinano alla linea dritta, più la forza si moltiplica.',
+  knee: '<b>Ginocchio</b> — il perno tra le due aste. È lì che si spinge (con la leva) per raddrizzarle.',
+  lever: '<b>Leva</b> — dove si mette la forza d\'ingresso, qui 50 N, come una spinta con la mano.',
+  ram: '<b>Punzone</b> — scende lungo la guida e preme sul pezzo. È l\'uscita del meccanismo.',
+  frame: '<b>Telaio</b> — tiene fisso il perno in alto e l\'incudine in basso, e porta il fermo che blocca il ginocchio oltre il punto morto.'
+};
+
+Mecc.parts('stage', 'chips', 'chipInfo', INFO, 'Scegli una parte per scoprire a cosa serve.');
+Mecc.quiz("Esatto! Più α si avvicina a 0°, più la forza si moltiplica.", "Non proprio: guarda il grafico mentre trascini la leva.");
+Mecc.reveal();
+})();
+</script>
+</body>
+</html>

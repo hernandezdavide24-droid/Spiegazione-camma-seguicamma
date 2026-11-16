@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Giunto cardanico — Come funziona</title>
+<meta name="description" content="Come funziona il giunto cardanico: animazione interattiva e spiegazione.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap">
+<link rel="stylesheet" href="../assets/stile.css">
+</head>
+<body>
+<nav class="topbar" aria-label="Navigazione">
+  <a class="brand" href="../meccanismi/">Meccanismi<small>Open Day SAM</small></a>
+  <a class="tab" href="../meccanismi/">Tutti i meccanismi</a>
+</nav>
+<main class="page">
+
+  <header class="hero">
+    <span class="eyebrow">Giunto cardanico</span>
+    <h1>Girare anche<br><span>ad angolo</span></h1>
+    <p>Trascina il quadrante d&#x27;ingresso e cambia l&#x27;angolo tra gli alberi.</p>
+    <p class="by">Pagina di <b>Giada Mislim</b></p>
+  </header>
+
+  <div class="stage" id="stage">
+<div class="mode-row">
+  <div class="seg" id="betaSeg">
+    <button data-v="0">0°</button>
+    <button data-v="15">15°</button>
+    <button data-v="30">30°</button>
+    <button data-v="45">45°</button>
+  </div>
+</div>
+
+<svg id="mech" class="mech" viewBox="0 0 360 316" aria-label="Animazione del giunto cardanico">
+  <g class="part p-shaft">
+    <rect class="sv-bush" x="44" y="98" width="20" height="24" rx="3"/>
+    <line class="sv-line" x1="54" y1="122" x2="54" y2="168"/>
+    <line x1="22" y1="110" x2="126" y2="110" style="stroke:#9fb6ea;stroke-width:12;stroke-linecap:round"/>
+    <line id="stripeIn" x1="40" y1="110" x2="110" y2="110" style="stroke:#ff7a45;stroke-width:3"/>
+    <text class="sv-text" x="22" y="140">albero motore</text>
+  </g>
+  <g class="part p-shaft2">
+    <line id="shaft2" x1="0" y1="0" x2="0" y2="0" style="stroke:#9fb6ea;stroke-width:12;stroke-linecap:round"/>
+    <line id="shaft3" x1="0" y1="0" x2="0" y2="0" style="stroke:#9fb6ea;stroke-width:12;stroke-linecap:round"/>
+    <text id="outLbl" class="sv-text" x="0" y="0">albero condotto</text>
+  </g>
+  <g class="part p-fork" id="forks"></g>
+  <g class="part p-cross" id="crosses"></g>
+  <rect class="sv-frame" x="20" y="168" width="320" height="4" rx="2"/>
+
+  <g transform="translate(0,6)">
+    <circle class="sv-body3" cx="95" cy="238" r="44"/>
+    <g id="dialTicks1"></g>
+    <line id="needle1" class="sv-acc-stroke" x1="95" y1="238" x2="95" y2="198"/>
+    <circle class="sv-fg" cx="95" cy="238" r="5"/>
+    <text class="sv-text" x="95" y="300" text-anchor="middle">ingresso</text>
+    <circle class="sv-body3" cx="265" cy="238" r="44"/>
+    <g id="dialTicks2"></g>
+    <line id="ghostNeedle" class="sv-pointer" x1="265" y1="238" x2="265" y2="198"/>
+    <line id="needle2" class="sv-hot-stroke" x1="265" y1="238" x2="265" y2="198" style="stroke-width:3.5"/>
+    <circle class="sv-fg" cx="265" cy="238" r="5"/>
+    <text class="sv-text" x="265" y="300" text-anchor="middle">uscita (tratteggio = ingresso)</text>
+  </g>
+</svg>
+
+<div class="drag-hint" id="hint">👆 Trascina il quadrante d'ingresso</div>
+
+<svg id="graph" class="graph" viewBox="0 0 340 92" aria-label="Grafico del rapporto di velocità in funzione dell'angolo">
+  <line class="g-axis" x1="24" y1="72" x2="330" y2="72"/>
+  <line class="g-axis" x1="24" y1="8" x2="24" y2="72"/>
+  <line class="g-axis" id="gOne" x1="24" y1="40" x2="330" y2="40" style="stroke-dasharray:2 3"/>
+  <path class="g-ghost" d=""/><path class="g-trace" d=""/>
+  <circle class="g-dot" r="5" cx="24" cy="72"/>
+  <text class="g-lbl" x="24" y="86" text-anchor="middle">0°</text>
+  <text class="g-lbl" x="177" y="86" text-anchor="middle">180°</text>
+  <text class="g-lbl" x="330" y="86" text-anchor="middle">360°</text>
+  <text class="g-lbl" x="2" y="14">ω₂/ω₁</text>
+</svg>
+
+<div class="readout">
+  <div><b id="outB">30°</b><span>angolo tra gli alberi</span></div>
+  <div><b id="outW">1,00</b><span>velocità uscita / ingresso</span></div>
+  <div><b id="outD">0°</b><span>anticipo / ritardo</span></div>
+</div>
+
+<div class="ctrl">
+  <div class="seg" id="speedSeg">
+    <button data-v="0">Pausa</button>
+    <button data-v="40">Lento</button>
+    <button data-v="110">Normale</button>
+    <button data-v="360">Veloce</button>
+  </div>
+  <button class="pill" id="dblBtn" aria-pressed="false"><span class="sw"></span>Doppio cardano</button>
+</div>
+
+  </div>
+
+  <section class="reveal">
+    <h2>In 3 passi</h2>
+    <p class="lead">Tutto il meccanismo, in un colpo d&#x27;occhio.</p>
+    <div class="steps">
+      <div class="step"><div class="ico">🔄</div><b>Giri</b><span>l&#x27;albero motore gira a velocità costante</span></div>
+      <div class="step"><div class="ico">✖️</div><b>La crociera</b><span>unisce due forcelle messe a 90°</span></div>
+      <div class="step"><div class="ico">↗️</div><b>Ad angolo</b><span>l&#x27;albero condotto gira anche se è inclinato</span></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Tocca una parte</h2>
+    <p class="lead">Si illumina nell'animazione qui sopra.</p>
+    <div class="chips" id="chips">
+      <button class="chip" data-p="shaft">Albero motore</button>
+      <button class="chip" data-p="fork">Forcelle</button>
+      <button class="chip" data-p="cross">Crociera</button>
+      <button class="chip" data-p="shaft2">Albero condotto</button>
+    </div>
+    <div class="chip-info" id="chipInfo">Scegli una parte per scoprire a cosa serve.</div>
+  </section>
+
+  <section class="reveal">
+    <h2>Esperimento: due giunti</h2>
+    <p class="lead">Con un solo giunto l&#x27;uscita accelera e rallenta due volte per giro: guarda l&#x27;ago arancione che anticipa e ritarda. Con due giunti uguali e in fase le irregolarità si annullano.</p>
+    <button class="chip" id="tryBtn">▶ Metti il doppio cardano</button>
+  </section>
+
+  <section class="reveal">
+    <h2>La formula</h2>
+    <div class="formula">
+      <span class="f">tan θ₂ = tan θ₁ / cos β</span>
+      <p>β è l&#x27;angolo tra gli alberi. La velocità dell&#x27;uscita oscilla tra cos β e 1/cos β volte quella d&#x27;ingresso: a 30° tra 0,87 e 1,15, cioè ±15%. Per questo i giunti si montano a coppie.</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Dove lo trovi</h2>
+    <p class="lead">Scorri di lato →</p>
+    <div class="uses">
+      <div class="use"><div class="ico">🚚</div><b>Alberi di trasmissione</b><span>Portano il moto dal cambio al ponte posteriore di auto e camion.</span></div>
+      <div class="use"><div class="ico">🚜</div><b>Trattori</b><span>La presa di forza fa girare le macchine agricole attaccate dietro.</span></div>
+      <div class="use"><div class="ico">🛞</div><b>Piantone dello sterzo</b><span>Collega il volante alla scatola dello sterzo, che non è allineata.</span></div>
+      <div class="use"><div class="ico">🔧</div><b>Attrezzi</b><span>Le prolunghe snodate delle chiavi a bussola.</span></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Il modello di Giada</h2>
+    <p class="lead">Il meccanismo costruito per l'Open Day.</p>
+    <div class="model">
+      <div class="ph">Foto o render del modello<br>(in arrivo)</div>
+      <dl>
+        <dt>Diametro alberi</dt><dd>—</dd>
+        <dt>Angolo massimo</dt><dd>—</dd>
+        <dt>Materiale</dt><dd>—</dd>
+        <dt>Tipo di cuscinetti</dt><dd>—</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Hai capito?</h2>
+    <div class="quiz">
+      <p>Con un solo giunto inclinato di 30°, l&#x27;albero condotto…</p>
+      <button class="opt" data-ok="0">gira sempre alla stessa velocità dell&#x27;ingresso</button>
+      <button class="opt" data-ok="1">accelera e rallenta due volte per giro</button>
+      <button class="opt" data-ok="0">si ferma ogni mezzo giro</button>
+      <div class="fb" id="fb" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <p class="foot">Open Day · Scuola d'arti e mestieri Bellinzona<br><a href="../meccanismi/">← Tutti i meccanismi</a></p>
+</main>
+
+<script src="../assets/comune.js"></script>
+<script>
+(function(){
+"use strict";
+const M = Mecc, $ = M.$;
+const J1 = { x:150, y:110 }, RF = 20, LM = 95;
+let beta = 30, t1 = 0, speed = 110, dbl = false, dragging = false;
+
+const V = (x, y, z) => ({ x, y, z });
+const cross = (a, b) => V(a.y*b.z - a.z*b.y, a.z*b.x - a.x*b.z, a.x*b.y - a.y*b.x);
+const norm = a => { const l = Math.hypot(a.x, a.y, a.z) || 1; return V(a.x/l, a.y/l, a.z/l); };
+const add = (p, d, k) => ({ x: p.x + d.x*k, y: p.y - d.y*k });     // punto sullo schermo: y verso il basso
+const pt = p => p.x.toFixed(1) + ',' + p.y.toFixed(1);
+
+// quadranti
+[['dialTicks1', 95], ['dialTicks2', 265]].forEach(([id, cx]) => {
+  for (let k = 0; k < 12; k++){
+    const a = k*Math.PI/6, r1 = k % 3 ? 38 : 34;
+    M.el('line', { class:'sv-tick', x1:(cx + r1*Math.sin(a)).toFixed(1), y1:(238 - r1*Math.cos(a)).toFixed(1), x2:(cx + 42*Math.sin(a)).toFixed(1), y2:(238 - 42*Math.cos(a)).toFixed(1) }, $(id));
+  }
+});
+const G = M.graph('graph', 360, 0.6, 1.5);
+$('gOne').setAttribute('y1', (72 - (0.4/0.9)*64).toFixed(1)); $('gOne').setAttribute('y2', (72 - (0.4/0.9)*64).toFixed(1));
+const ratio = t => dbl ? 1 : Math.cos(M.rad(beta)) / (1 - Math.pow(Math.sin(M.rad(beta)), 2) * Math.pow(Math.cos(M.rad(t)), 2));
+
+function forkPath(J, d, pin, side){
+  const base = add(J, d, 24*side), P1 = add(J, pin, RF), P2 = add(J, pin, -RF);
+  const S1 = add(base, pin, RF), S2 = add(base, pin, -RF);
+  return { d: 'M' + pt(P1) + 'L' + pt(S1) + 'L' + pt(base) + 'L' + pt(S2) + 'L' + pt(P2), P1, P2, z: pin.z };
+}
+function drawFork(f){
+  M.el('path', { d:f.d, style:'fill:none;stroke:#eaf1ff;stroke-width:5;stroke-linejoin:round;stroke-linecap:round' }, $('forks'));
+  [[f.P1, f.z], [f.P2, -f.z]].forEach(([p, z]) => M.el('circle', { cx:p.x.toFixed(1), cy:p.y.toFixed(1), r:4.5, class:'sv-roller', style:'stroke-width:2;opacity:' + (z >= 0 ? 1 : 0.45) }, $('forks')));
+}
+function drawCross(J, a, b){
+  const g = $('crosses');
+  [a, b].forEach((v, i) => {
+    const p1 = add(J, v, RF - 2), p2 = add(J, v, -(RF - 2));
+    M.el('line', { x1:p1.x.toFixed(1), y1:p1.y.toFixed(1), x2:p2.x.toFixed(1), y2:p2.y.toFixed(1), style:'stroke:' + (i ? '#ff7a45' : '#5b8dff') + ';stroke-width:4;stroke-linecap:round' }, g);
+  });
+  M.el('circle', { cx:J.x, cy:J.y, r:5, class:'sv-hot' }, g);
+}
+
+let tOut = 0;
+function render(){
+  const bR = M.rad(beta), a1 = M.rad(t1);
+  const d1 = V(1, 0, 0), d2 = V(Math.cos(bR), Math.sin(bR), 0);
+  const a = V(0, Math.cos(a1), Math.sin(a1));
+  const b = norm(cross(d2, a));
+  $('forks').innerHTML = ''; $('crosses').innerHTML = '';
+  drawFork(forkPath(J1, d1, a, -1));
+  drawFork(forkPath(J1, d2, b, 1));
+  drawCross(J1, a, b);
+  const s2a = add(J1, d2, 24);
+  let raw, endLbl;
+  if (!dbl){
+    const s2b = add(J1, d2, 150);
+    $('shaft2').setAttribute('x1', s2a.x.toFixed(1)); $('shaft2').setAttribute('y1', s2a.y.toFixed(1));
+    $('shaft2').setAttribute('x2', s2b.x.toFixed(1)); $('shaft2').setAttribute('y2', s2b.y.toFixed(1));
+    $('shaft3').style.display = 'none';
+    // angolo dell'uscita: componenti della forcella condotta nel suo piano
+    raw = M.deg(Math.atan2(b.x*Math.sin(bR) - b.y*Math.cos(bR), b.z));
+    endLbl = add(J1, d2, 80); endLbl = { x: endLbl.x + 10, y: endLbl.y };
+  } else {
+    const J2 = add(J1, d2, LM), s2b = add(J1, d2, LM - 24);
+    $('shaft2').setAttribute('x1', s2a.x.toFixed(1)); $('shaft2').setAttribute('y1', s2a.y.toFixed(1));
+    $('shaft2').setAttribute('x2', s2b.x.toFixed(1)); $('shaft2').setAttribute('y2', s2b.y.toFixed(1));
+    const e = norm(cross(d1, b));
+    drawFork(forkPath(J2, d2, b, -1));
+    drawFork(forkPath(J2, d1, e, 1));
+    drawCross(J2, b, e);
+    $('shaft3').style.display = '';
+    $('shaft3').setAttribute('x1', (J2.x + 24).toFixed(1)); $('shaft3').setAttribute('y1', J2.y.toFixed(1));
+    $('shaft3').setAttribute('x2', 340); $('shaft3').setAttribute('y2', J2.y.toFixed(1));
+    raw = M.deg(Math.atan2(-e.y, e.z)) - 90;
+    endLbl = { x: 262, y: J2.y };
+  }
+  tOut = t1 + M.wrap180(raw - t1);
+  $('outLbl').setAttribute('x', Math.min(262, endLbl.x).toFixed(0)); $('outLbl').setAttribute('y', (endLbl.y + 24).toFixed(0));
+  $('outLbl').textContent = 'albero condotto';
+  // striscia sull'albero motore: mostra che gira
+  const sy = 110 - 4.5*Math.cos(a1);
+  $('stripeIn').setAttribute('y1', sy.toFixed(1)); $('stripeIn').setAttribute('y2', sy.toFixed(1));
+  $('stripeIn').style.opacity = Math.sin(a1) >= 0 ? 1 : 0.25;
+  const nd = (id, cx, t) => { $(id).setAttribute('x2', (cx + 38*Math.sin(M.rad(t))).toFixed(1)); $(id).setAttribute('y2', (238 - 38*Math.cos(M.rad(t))).toFixed(1)); };
+  nd('needle1', 95, t1); nd('ghostNeedle', 265, t1); nd('needle2', 265, tOut);
+  const tt = ((t1 % 360) + 360) % 360, r = ratio(tt), diff = tOut - t1;
+  $('outW').textContent = M.fmt(r, 2);
+  $('outD').textContent = (diff >= 0.05 ? '+' : (diff <= -0.05 ? '−' : '')) + M.fmt(Math.abs(diff), 1) + '°';
+  G.at(tt, r);
+}
+
+M.hint('hint');
+M.dragRotate($('mech'), { x:95, y:244 }, d => { t1 -= d; }, { start: () => { dragging = true; }, end: () => { dragging = false; } });
+M.seg('betaSeg', v => { beta = +v; $('outB').textContent = v + '°'; G.curve(ratio); }, 30);
+M.seg('speedSeg', v => { speed = +v; }, 110);
+const setDbl = M.toggle('dblBtn', false, v => { dbl = v; G.curve(ratio); });
+$('tryBtn').addEventListener('click', () => { setDbl(true); if (beta === 0) document.querySelector('#betaSeg [data-v="30"]').click(); M.scrollToStage('stage'); });
+
+M.loop(dt => { if (!dragging) t1 += speed*dt; render(); });
+
+const INFO = {
+  shaft: '<b>Albero motore</b> — porta il moto in ingresso. Gira a velocità costante.',
+  shaft2: '<b>Albero condotto</b> — riceve il moto anche se è inclinato. Con un solo giunto la sua velocità oscilla due volte per giro.',
+  fork: '<b>Forcelle</b> — una all\'estremità di ciascun albero. Ognuna tiene due bracci opposti della crociera e può ruotare attorno a loro.',
+  cross: '<b>Crociera</b> — la croce al centro (blu e arancione). Un braccio è infilato nella prima forcella, l\'altro nella seconda: è lei che permette l\'angolo.'
+};
+
+Mecc.parts('stage', 'chips', 'chipInfo', INFO, 'Scegli una parte per scoprire a cosa serve.');
+Mecc.quiz("Esatto! Per questo si usano due giunti in fase: il secondo compensa il primo.", "Non proprio: guarda il grafico ω₂/ω₁ mentre l'albero gira.");
+Mecc.reveal();
+})();
+</script>
+</body>
+</html>
