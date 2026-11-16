@@ -12,9 +12,55 @@
 <body>
 <nav class="topbar" aria-label="Navigazione">
   <a class="brand" href="../meccanismi/">Meccanismi<small>Open Day SAM</small></a>
-  <a class="tab" href="../meccanismi/">Tutti i meccanismi</a>
+  <button class="tab on" type="button" data-view="modello" aria-selected="true">Il modello 3D</button>
+  <button class="tab" type="button" data-view="spiega" aria-selected="false">Come funziona</button>
+  <a class="tab" href="../meccanismi/" aria-label="Tutti i meccanismi">Tutti</a>
 </nav>
-<main class="page">
+<main class="m3d view" id="modello">
+<div class="app" style="min-height:560px">
+  <div class="stage3" id="stage3" style="min-height:360px">
+    <div class="loadmsg" id="loadmsg">Caricamento del modello 3D…</div>
+    <div class="hint3">Trascina la manovella per cambiare foto · trascina altrove per ruotare la vista</div>
+  </div>
+  <aside class="panel3">
+    <header>
+      <h1>Espositore di foto a croce di Malta</h1>
+      <p class="sub">Modello 3D ricostruito dai render CAD del dispositivo: a ogni giro di manovella il tamburo gira di 90° e mostra la foto successiva.</p>
+    </header>
+
+    <section>
+      <p class="label">Manovella</p>
+      <div class="row3" style="margin-top:0">
+        <button class="btn3" id="stepBtn" type="button">↻ Un giro di manovella</button>
+        <button class="btn3 ghost" id="motBtn" type="button" aria-pressed="false">▶ Gira da sola</button>
+      </div>
+      <label class="spd3">Lento<input type="range" id="rpm" min="5" max="60" step="5" value="20">Veloce<output id="rpmOut">20 giri/min</output></label>
+      <div class="row3">
+        <button class="btn3 ghost" id="lock3Btn" type="button" aria-pressed="false">Togli il disco di bloccaggio</button>
+        <button class="btn3 ghost" id="shellBtn" type="button" aria-pressed="false">Carter trasparente</button>
+      </div>
+      <div class="pills3" id="ph3"><span data-ph="0">Cambio foto</span><span data-ph="1">Foto ferma (bloccata)</span></div>
+    </section>
+
+    <section>
+      <p class="label">Valori in questo istante</p>
+      <div class="nums">
+        <div><b id="vG">0,00</b><span>giri della manovella</span></div>
+        <div><b id="vD">0°</b><span>rotazione del tamburo</span></div>
+        <div><b id="vF">1 / 4</b><span>foto in vista</span></div>
+        <div><b id="vA">0°</b><span>angolo della motrice nel giro</span></div>
+      </div>
+    </section>
+
+    <section>
+      <p class="label">Regole geometriche (n = 4 stazioni)</p>
+      <p class="note3" style="margin-top:0">Angolo per ciclo α = 360° / n = 90°. Con interasse C tra motrice e croce: raggio della manovella (perno) R = C · sin(180°/n) ≈ 0,71 · C e raggio della croce r = C · cos(180°/n) ≈ 0,71 · C. La croce si muove per 90° di giro della motrice e resta ferma, bloccata dal disco, per gli altri 270°.</p>
+    </section>
+  </aside>
+</div>
+
+</main>
+<main class="page view" id="spiega" hidden>
 
   <header class="hero">
     <span class="eyebrow">Meccanismo di Ginevra · croce di Malta</span>
@@ -116,10 +162,10 @@
   </section>
 
   <section class="reveal">
-    <h2>Le regole</h2>
+    <h2>Come si progetta</h2>
     <div class="formula">
-      <span class="f">passo = 360° / n      sosta = (180° + 360°/n) / 360°</span>
-      <p>n è il numero di cave. Con 4 cave la croce gira di 90° a ogni giro della motrice e resta ferma per 3/4 del giro; con 6 cave gira di 60° e resta ferma per 2/3 del giro. Perché il perno entri senza urti, l&#x27;interasse vale a = r / sin(180°/n).</p>
+      <span class="f">α = 360° / n     R = C · sin(180°/n)     r = C · cos(180°/n)</span>
+      <p>Si sceglie il numero di stazioni n, cioè quante posizioni di sosta deve avere la ruota condotta (di solito 4, 6 o 8 cave); ogni cava si sposta di α = 360°/n a ogni ciclo. Poi si fissa l&#x27;interasse C tra la ruota motrice (la manovella) e la croce: il raggio su cui è montato il perno vale R = C · sin(180°/n) e la distanza dal centro della croce al perno, quando entra nella cava, vale r = C · cos(180°/n). Con n = 4 i due raggi sono uguali (≈ 0,71 · C).</p>
     </div>
   </section>
 
@@ -138,12 +184,15 @@
     <h2>Il modello</h2>
     <p class="lead">Il meccanismo costruito per l'Open Day.</p>
     <div class="model">
-      <div class="ph">Foto o render del modello<br>(in arrivo)</div>
+      <img src="render-assieme.jpg" alt="Render CAD dell’assieme completo" style="border-radius:14px;display:block;width:100%">
+      <p class="lead" style="margin:0">Il dispositivo è un espositore di foto: la manovella fa girare la ruota motrice, nascosta nel carter, e la croce di Malta a 4 cave fa avanzare di 90° un tamburo con quattro pannelli. A ogni giro di manovella compare una nuova foto, che poi resta ferma, bloccata dal disco della motrice.</p>
       <dl>
-        <dt>Numero di cave</dt><dd>—</dd>
-        <dt>Interasse</dt><dd>—</dd>
-        <dt>Raggio del perno</dt><dd>—</dd>
-        <dt>Materiale</dt><dd>—</dd>
+        <dt>Stazioni (n)</dt><dd>4 cave, 4 foto</dd>
+        <dt>Rotazione per ciclo</dt><dd>α = 360° / 4 = 90°</dd>
+        <dt>Raggio della manovella</dt><dd>R = C · sin(45°) ≈ 0,71 · C</dd>
+        <dt>Raggio della croce</dt><dd>r = C · cos(45°) ≈ 0,71 · C</dd>
+        <dt>Azionamento</dt><dd>manovella a mano</dd>
+        <dt>Uscita</dt><dd>tamburo con 4 pannelli foto</dd>
       </dl>
     </div>
   </section>
@@ -255,6 +304,275 @@ const INFO = {
 Mecc.parts('stage', 'chips', 'chipInfo', INFO, 'Scegli una parte per scoprire a cosa serve.');
 Mecc.quiz("Esatto! 360° / 6 = 60° a ogni giro, poi si ferma.", "Non proprio: scegli «6 cave» e guarda la posizione.");
 Mecc.reveal();
+})();
+</script>
+<script src="../assets/lib/three.min.js"></script>
+<script src="../assets/lib/OrbitControls.js"></script>
+<script>
+window.addEventListener("error", e => { const m = document.getElementById("loadmsg"); if (m) m.textContent = "Errore nel modello 3D: " + e.message; });
+/* Modello 3D interattivo dell'espositore di foto con meccanismo di Ginevra (croce di Malta, 4 stazioni).
+   Proporzioni ricavate dalle viste CAD; unità = pixel della vista frontale.
+   Assi: X lungo il tamburo (carter a sinistra), Y in alto dal piano della base, Z verso chi guarda. */
+(function(){
+"use strict";
+const $ = id => document.getElementById(id);
+const rad = d => d*Math.PI/180, deg = r => r*180/Math.PI;
+const wrap = d => ((d % 360) + 540) % 360 - 180;
+const fmt = (v, n=0) => v.toLocaleString('it-IT', { minimumFractionDigits:n, maximumFractionDigits:n });
+const N = 4, DRV_Y = 453, CRS_Y = 301, C = DRV_Y - CRS_Y;
+const R = C*Math.sin(Math.PI/N), PIN = 8, RW = Math.hypot(R, 12), RL = 0.72*R;
+const TE = 90 - 180/N;                                   // semiampiezza dell'ingranamento (45°)
+
+let p = 150, Wc = 45, motor = false, rpm = 20, step = null, dragging = false, lockOn = true, t = 0, warned = false;
+
+// --- pannello ---
+const motBtn = $('motBtn');
+function setMotor(on){ motor = on; motBtn.textContent = on ? '■ Ferma' : '▶ Gira da sola'; motBtn.setAttribute('aria-pressed', on); motBtn.classList.toggle('on', on); }
+motBtn.addEventListener('click', () => { step = null; setMotor(!motor); });
+$('stepBtn').addEventListener('click', () => { setMotor(false); step = { from:p, t:0 }; });
+$('rpm').addEventListener('input', e => { rpm = +e.target.value; $('rpmOut').value = rpm + ' giri/min'; });
+$('lock3Btn').addEventListener('click', e => { lockOn = !lockOn; warned = false; e.currentTarget.classList.toggle('on', !lockOn); e.currentTarget.setAttribute('aria-pressed', !lockOn); e.currentTarget.textContent = lockOn ? 'Togli il disco di bloccaggio' : 'Rimetti il disco di bloccaggio'; if (window.__disc) window.__disc.visible = lockOn; });
+let shellTr = false;
+$('shellBtn').addEventListener('click', e => { shellTr = !shellTr; e.currentTarget.classList.toggle('on', shellTr); e.currentTarget.setAttribute('aria-pressed', shellTr); if (window.__shell) window.__shell(shellTr); });
+
+// --- cinematica: la croce segue il perno solo quando è dentro una cava ---
+function engaged(){ return Math.abs(wrap(p - 270)) < TE; }
+function updateCross(){
+  if (!engaged()) return;
+  const s = deg(Math.atan2(C + R*Math.sin(rad(p)), R*Math.cos(rad(p))));
+  let c = s - 90; c += 90*Math.round((Wc - c)/90); Wc = c;
+}
+function panel(shownW){
+  $('vG').textContent = fmt((p - 150)/360, 2);
+  $('vD').textContent = fmt(Math.round(45 - Wc), 0) + '°';
+  const idx = (((Math.round((45 - shownW)/90)) % N) + N) % N;
+  $('vF').textContent = (idx + 1) + ' / ' + N;
+  $('vA').textContent = Math.round(((p % 360) + 360) % 360) + '°';
+  document.querySelectorAll('#ph3 span').forEach(s => s.classList.toggle('on', +s.dataset.ph === (engaged() ? 0 : 1)));
+}
+
+if (!window.THREE){ $('loadmsg').textContent = 'Il modello 3D non si è caricato. Prova a ricaricare la pagina.'; panel(Wc); return; }
+$('loadmsg').remove();
+const S = 0.022;
+const stage = $('stage3');
+const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+stage.prepend(renderer.domElement);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 400);
+camera.position.set(27.5, 15.5, 28);
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.target.set(6.4, 5.2, 0.6);
+controls.enableDamping = true; controls.dampingFactor = 0.08;
+controls.minDistance = 8; controls.maxDistance = 80; controls.maxPolarAngle = Math.PI*0.52;
+scene.add(new THREE.HemisphereLight(0xf4f7ff, 0x6c7484, 0.85));
+const sun = new THREE.DirectionalLight(0xffffff, 1.0);
+sun.position.set(-8, 24, 16); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+Object.assign(sun.shadow.camera, { left:-18, right:18, top:18, bottom:-18, near:1, far:80 }); sun.shadow.bias = -0.0004;
+scene.add(sun);
+const fill = new THREE.DirectionalLight(0xdfe8ff, 0.45); fill.position.set(18, 8, -10); scene.add(fill);
+
+const Mt = (c, m, r, x) => new THREE.MeshStandardMaterial(Object.assign({ color:new THREE.Color(c).convertSRGBToLinear(), metalness:m, roughness:r }, x || {}));
+const mat = {
+  shell: Mt(0xdfe2e6, 0.08, 0.5), part: Mt(0xd9dce0, 0.15, 0.45), part2: Mt(0xc6cad0, 0.2, 0.4), steel: Mt(0xeef1f4, 0.4, 0.22),
+  dark: Mt(0x3b414a, 0.4, 0.45), base: Mt(0x141619, 0.1, 0.55), frame: Mt(0xb3b7bd, 0.1, 0.5), back: Mt(0xe9ebee, 0.05, 0.6)
+};
+const dev = new THREE.Group(); dev.scale.setScalar(S); dev.position.x = 0; scene.add(dev);
+function mesh(g, m, parent){ const o = new THREE.Mesh(g, m); o.castShadow = true; o.receiveShadow = true; (parent || dev).add(o); return o; }
+function ext(shape, depth, m, parent, bevel){ return mesh(new THREE.ExtrudeGeometry(shape, { depth, bevelEnabled:!!bevel, bevelThickness:0.8, bevelSize:0.8, bevelSegments:2, curveSegments:28 }), m, parent); }
+// gruppo con il piano locale (x, y) = (Z, Y) del mondo; l'estrusione locale (+z) va verso -X
+function yzGroup(x, y, parent){ const g = new THREE.Group(); g.rotation.y = -Math.PI/2; g.position.set(x, y, 0); (parent || dev).add(g); return g; }
+function cylLocalZ(r, z0, z1, x, y, m, parent, seg){ const o = mesh(new THREE.CylinderGeometry(r, r, z1 - z0, seg || 36), m, parent); o.rotation.x = Math.PI/2; o.position.set(x, y, (z0 + z1)/2); return o; }
+function tomb(hw, top, r, bottom){ const s = new THREE.Shape(); s.moveTo(-hw, bottom); s.lineTo(hw, bottom); s.lineTo(hw, top - r); s.absarc(0, top - r, r, 0, Math.PI, false); s.lineTo(-hw, bottom); return s; }
+function tombPath(hw, top, r, bottom){ const s = new THREE.Path(); s.moveTo(-hw, bottom); s.lineTo(-hw, top - r); s.absarc(0, top - r, r, Math.PI, 0, true); s.lineTo(hw, bottom); s.lineTo(-hw, bottom); return s; }
+
+// --- base nera con la scritta incisa ---
+{
+  const pts = [[0,-200],[560,-200],[655,-130],[655,175],[600,250],[120,250],[0,185]];
+  const s = new THREE.Shape(); s.moveTo(pts[0][0], pts[0][1]); pts.slice(1).forEach(q => s.lineTo(q[0], q[1])); s.lineTo(pts[0][0], pts[0][1]);
+  const o = ext(s, 30, mat.base, null, true); o.rotation.x = Math.PI/2; o.position.y = 0;
+  const cv = document.createElement('canvas'); cv.width = 1310; cv.height = 900;
+  const g = cv.getContext('2d'), X = x => x/655*1310, Z = z => (z + 200)/450*900;
+  g.clearRect(0, 0, 1310, 900);
+  g.strokeStyle = 'rgba(200,205,212,.55)'; g.lineWidth = 5;
+  g.beginPath(); const rr = (x0, z0, x1, z1, r) => { g.moveTo(X(x0 + r), Z(z0)); g.arcTo(X(x1), Z(z0), X(x1), Z(z1), r*2); g.arcTo(X(x1), Z(z1), X(x0), Z(z1), r*2); g.arcTo(X(x0), Z(z1), X(x0), Z(z0), r*2); g.arcTo(X(x0), Z(z0), X(x1), Z(z0), r*2); };
+  rr(222, -95, 650, 120, 30); g.stroke();
+  g.fillStyle = 'rgba(214,218,224,.9)'; g.font = '600 46px Arial, Helvetica, sans-serif';
+  g.fillText('Meccanismo di Ginevra', X(330), Z(175)); g.fillText('(Croce di Malta)', X(360), Z(218));
+  const tex = new THREE.CanvasTexture(cv); tex.encoding = THREE.sRGBEncoding; tex.anisotropy = 8;
+  const pl = new THREE.Mesh(new THREE.PlaneGeometry(655, 450), new THREE.MeshStandardMaterial({ map:tex, transparent:true, roughness:0.6 }));
+  pl.rotation.x = -Math.PI/2; pl.position.set(327.5, 0.9, 25); pl.receiveShadow = true; dev.add(pl);
+}
+// --- carter a lapide, aperto dalla parte del tamburo ---
+const shellMeshes = [];
+{
+  const g = yzGroup(211, 0);
+  const wall = tomb(150, 601, 150, 0); wall.holes.push(tombPath(136, 587, 136, 14));
+  const w = ext(wall, 193, mat.shell, g, true); shellMeshes.push(w);          // da X 211 a X 18
+  const back = ext(tomb(150, 601, 150, 0), 18, mat.shell, g, true); back.position.z = 193; shellMeshes.push(back);
+  // logo sul fianco anteriore
+  const img = new Image(); img.onload = () => {
+    const tx = new THREE.Texture(img); tx.encoding = THREE.sRGBEncoding; tx.needsUpdate = true;
+    const lg = new THREE.Mesh(new THREE.PlaneGeometry(130, 51), new THREE.MeshStandardMaterial({ map:tx, transparent:true, roughness:0.6 }));
+    lg.position.set(104, 120, 150.9); dev.add(lg); shellMeshes.push(lg);
+  }; img.src = '../assets/logo_cpt.png';
+}
+window.__shell = on => shellMeshes.forEach(m => { m.material = m.material.clone(); m.material.transparent = on; m.material.opacity = on ? 0.18 : 1; m.material.depthWrite = !on; });
+
+// --- croce di Malta (ruota condotta, 4 cave) sull'albero del tamburo ---
+function crossShape(){
+  const w = PIN + 1.5, rin = C - R - PIN - 3, Rc = RL + 2.5;
+  const e = Math.asin(w/RW), dl = Math.acos((RW*RW + C*C - Rc*Rc)/(2*RW*C));
+  const pts = [], P = (r, a) => [r*Math.cos(a), r*Math.sin(a)];
+  const rot = (x, y, a) => [x*Math.cos(a) - y*Math.sin(a), x*Math.sin(a) + y*Math.cos(a)];
+  for (let k = 0; k < N; k++){
+    const s0 = k*2*Math.PI/N, m = s0 + Math.PI/N, s1 = s0 + 2*Math.PI/N;
+    for (let i = 0; i <= 8; i++) pts.push(P(RW, s0 + e + (m - dl - s0 - e)*i/8));
+    const Mc = [C*Math.cos(m), C*Math.sin(m)], a1 = Math.atan2(RW*Math.sin(m - dl) - Mc[1], RW*Math.cos(m - dl) - Mc[0]), a2 = Math.atan2(RW*Math.sin(m + dl) - Mc[1], RW*Math.cos(m + dl) - Mc[0]);
+    const mid = m + Math.PI, A1 = mid + rad(wrap(deg(a1 - mid))), A2 = mid + rad(wrap(deg(a2 - mid)));
+    for (let i = 1; i < 24; i++){ const a = A1 + (A2 - A1)*i/24; pts.push([Mc[0] + Rc*Math.cos(a), Mc[1] + Rc*Math.sin(a)]); }
+    for (let i = 0; i <= 8; i++) pts.push(P(RW, m + dl + (s1 - e - m - dl)*i/8));
+    const L = Math.sqrt(RW*RW - w*w);
+    pts.push(rot(L, -w, s1), rot(rin, -w, s1));
+    for (let i = 1; i < 12; i++){ const a = -Math.PI/2 - Math.PI*i/12; pts.push(rot(rin + w*Math.cos(a), w*Math.sin(a), s1)); }
+    pts.push(rot(rin, w, s1), rot(L, w, s1));
+  }
+  const sh = new THREE.Shape(pts.map(q => new THREE.Vector2(q[0], q[1])));
+  const h = new THREE.Path(); h.absarc(0, 0, 10, 0, Math.PI*2, true); sh.holes.push(h);
+  return sh;
+}
+const crossG = yzGroup(137, CRS_Y), crossRot = new THREE.Group(); crossG.add(crossRot);
+ext(crossShape(), 12, mat.part, crossRot, true);
+cylLocalZ(18, -1, 13, 0, 0, mat.part2, crossRot);
+// --- ruota motrice: disco di bloccaggio con lo scarico, braccio e perno ---
+function discShape(){
+  const Rcut = RW + 3, al = Math.acos((RL*RL + C*C - Rcut*Rcut)/(2*RL*C));
+  const s = new THREE.Shape(); s.moveTo(RL*Math.cos(al), RL*Math.sin(al));
+  s.absarc(0, 0, RL, al, 2*Math.PI - al, false);
+  const b1 = Math.atan2(-RL*Math.sin(al), RL*Math.cos(al) - C), b2 = Math.atan2(RL*Math.sin(al), RL*Math.cos(al) - C);
+  s.absarc(C, 0, Rcut, b1 + 2*Math.PI, b2, true);
+  return s;
+}
+const drvG = yzGroup(137, DRV_Y), drvRot = new THREE.Group(); drvG.add(drvRot);
+const disc = ext(discShape(), 12, mat.part, drvRot, true); window.__disc = disc;
+for (let k = 0; k < 3; k++){ const a = rad(150 + 120*k); cylLocalZ(5.5, -2, 1, 26*Math.cos(a), 26*Math.sin(a), mat.dark, drvRot, 16); }
+{ const arm = mesh(new THREE.BoxGeometry(R + 16, 24, 10), mat.part2, drvRot); arm.position.set((R + 16)/2 - 8, 0, 20); }
+cylLocalZ(PIN, -1, 25, R, 0, mat.steel, drvRot);
+cylLocalZ(14, 0, 30, 0, 0, mat.part2, drvRot);
+// alberi
+{ const g = yzGroup(137, DRV_Y); cylLocalZ(9, 0, 207, 0, 0, mat.steel, g); }
+// --- manovella esterna ---
+const crankG = yzGroup(0, DRV_Y), crank = new THREE.Group(); crankG.add(crank);
+cylLocalZ(27, 0, 44, 0, 0, mat.part, crank);
+{ const a = mesh(new THREE.BoxGeometry(187 + 30, 30, 24), mat.part, crank); a.position.set(187/2, 0, 56); }
+cylLocalZ(15, 44, 68, 0, 0, mat.part, crank); cylLocalZ(15, 44, 68, 187, 0, mat.part, crank);
+{
+  const prof = [[0,0],[14,0],[19,10],[21,30],[19,58],[15,72],[16,84],[0,86]].map(q => new THREE.Vector2(q[0], q[1]));
+  const h = mesh(new THREE.LatheGeometry(prof, 40), mat.part, crank); h.rotation.x = Math.PI/2; h.position.set(187, 0, 68);
+}
+// --- supporti del tamburo ---
+for (const [x0, x1, hw] of [[227, 272, 42], [610, 653, 62]]){
+  const g = yzGroup(x1, 0);
+  ext(tomb(hw, CRS_Y + hw, hw, 0), x1 - x0, mat.shell, g, true);
+  cylLocalZ(26, -6, x1 - x0 + 6, 0, CRS_Y, mat.part2, g);
+}
+// --- tamburo con i quattro pannelli delle foto ---
+const drumG = yzGroup(272, CRS_Y), spinner = new THREE.Group(); drumG.add(spinner);
+cylLocalZ(32, -333, 0, 0, 0, mat.part, spinner);
+cylLocalZ(40, -12, 0, 0, 0, mat.part2, spinner); cylLocalZ(40, -333, -321, 0, 0, mat.part2, spinner);
+cylLocalZ(10, -392, 147, 0, 0, mat.steel, spinner);
+{
+  const photo = new Image();
+  const texs = [];
+  for (let k = 0; k < N; k++){
+    const cv = document.createElement('canvas'); cv.width = 574; cv.height = 422;
+    const tx = new THREE.CanvasTexture(cv); tx.encoding = THREE.sRGBEncoding; tx.anisotropy = 8; texs.push([cv, tx]);
+  }
+  function draw(){
+    texs.forEach(([cv, tx], k) => {
+      const g = cv.getContext('2d');
+      g.fillStyle = '#cfd5dc'; g.fillRect(0, 0, 574, 422);
+      if (photo.complete && photo.naturalWidth) g.drawImage(photo, 0, 0, 574, 422);
+      g.fillStyle = 'rgba(15,26,51,.82)'; g.beginPath(); g.arc(538, 36, 24, 0, Math.PI*2); g.fill();
+      g.fillStyle = '#fff'; g.font = 'bold 30px Arial, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(String(k + 1), 538, 37);
+      tx.needsUpdate = true;
+    });
+  }
+  photo.onload = draw; photo.src = 'foto1.jpg'; draw();
+  for (let k = 0; k < N; k++){
+    const pg = new THREE.Group(); pg.rotation.z = k*Math.PI/2; spinner.add(pg);
+    const b = mesh(new THREE.BoxGeometry(225, 10, 307), [mat.frame, mat.frame, mat.back, mat.frame, mat.frame, mat.frame], pg); b.position.set(172.5, 0, -161.5);
+    for (const z of [-20, -303]){ const br = mesh(new THREE.BoxGeometry(30, 10, 14), mat.part2, pg); br.position.set(46, 0, z); }
+    const pl = new THREE.Mesh(new THREE.PlaneGeometry(287, 211), new THREE.MeshStandardMaterial({ map:texs[k][1], roughness:0.5 }));
+    const m4 = new THREE.Matrix4().makeBasis(new THREE.Vector3(0, 0, -1), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, -1, 0));
+    pl.quaternion.setFromRotationMatrix(m4); pl.position.set(172.5, -5.4, -161.5); pl.receiveShadow = true; pg.add(pl);
+  }
+}
+{ const g = new THREE.Mesh(new THREE.PlaneGeometry(2400, 2400), new THREE.ShadowMaterial({ opacity:0.18 })); g.rotation.x = -Math.PI/2; g.position.y = -30; g.receiveShadow = true; dev.add(g); }
+
+// --- trascinamento della manovella ---
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(), hit = new THREE.Vector3(), crankMeshes = [];
+crank.traverse(o => { if (o.isMesh) crankMeshes.push(o); });
+const crankPlane = new THREE.Plane(new THREE.Vector3(1, 0, 0), 80*S);
+function setRay(e){ const r = renderer.domElement.getBoundingClientRect(); ndc.set(((e.clientX - r.left)/r.width)*2 - 1, -((e.clientY - r.top)/r.height)*2 + 1); ray.setFromCamera(ndc, camera); }
+function angNow(){ if (!ray.ray.intersectPlane(crankPlane, hit)) return null; return deg(Math.atan2(hit.y/S - DRV_Y, hit.z/S)); }
+let lastA = 0;
+renderer.domElement.addEventListener('pointerdown', e => {
+  setRay(e); if (!ray.intersectObjects(crankMeshes, false).length) return;
+  const a = angNow(); if (a === null) return;
+  dragging = true; lastA = a; step = null; setMotor(false); controls.enabled = false;
+  renderer.domElement.setPointerCapture(e.pointerId); renderer.domElement.style.cursor = 'grabbing';
+});
+renderer.domElement.addEventListener('pointermove', e => {
+  setRay(e);
+  if (!dragging){ renderer.domElement.style.cursor = ray.intersectObjects(crankMeshes, false).length ? 'grab' : ''; return; }
+  const a = angNow(); if (a === null) return;
+  const d = wrap(a - lastA); lastA = a;
+  if (d > 0) advance(d);                                   // come un cricchetto: la manovella gira solo in avanti
+});
+const endDrag = () => { if (!dragging) return; dragging = false; controls.enabled = true; renderer.domElement.style.cursor = ''; };
+renderer.domElement.addEventListener('pointerup', endDrag); renderer.domElement.addEventListener('pointercancel', endDrag);
+function advance(d){ const n = Math.ceil(d/2); for (let i = 0; i < n; i++){ p += d/n; updateCross(); } }
+
+function resize(){
+  const w = stage.clientWidth, h = stage.clientHeight; if (!w || !h) return;
+  renderer.setSize(w, h, false); camera.aspect = w/h; camera.updateProjectionMatrix();
+  if (!resize.done){ resize.done = true; const f = Math.max(1, Math.pow(1.45/camera.aspect, 0.55)); camera.position.sub(controls.target).multiplyScalar(f).add(controls.target); }
+}
+new ResizeObserver(resize).observe(stage); resize();
+document.addEventListener('vista', e => { if (e.detail === 'modello') resize(); });
+
+let last = performance.now();
+function loop(now){
+  const dt = Math.min(0.05, (now - last)/1000); last = now; t += dt;
+  if (step){ step.t += dt; const k = Math.min(1, step.t/2.4); const target = step.from + 360*(0.5 - 0.5*Math.cos(Math.PI*k)); advance(target - p); if (k >= 1) step = null; }
+  else if (motor && !dragging) advance(rpm*6*dt);
+  let shown = Wc;
+  if (!lockOn && !engaged()){
+    shown += 7*Math.sin(t*6.3)*Math.sin(t*1.9);
+    if (!warned){ warned = true; }
+  }
+  drvRot.rotation.z = rad(p); crank.rotation.z = rad(p + 180);
+  crossRot.rotation.z = rad(shown); spinner.rotation.z = rad(shown + 45);
+  panel(shown); controls.update(); renderer.render(scene, camera);
+  requestAnimationFrame(loop);
+}
+updateCross(); requestAnimationFrame(loop);
+})();
+
+</script>
+<script>
+(function(){
+  const tabs = [...document.querySelectorAll('.topbar button.tab')];
+  function show(v){
+    tabs.forEach(t => { const on = t.dataset.view === v; t.classList.toggle('on', on); t.setAttribute('aria-selected', on); document.getElementById(t.dataset.view).hidden = !on; });
+    document.dispatchEvent(new CustomEvent('vista', { detail:v }));
+    window.scrollTo(0, 0);
+  }
+  tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.view)));
+  if (location.hash === '#spiega') show('spiega');
 })();
 </script>
 </body>
