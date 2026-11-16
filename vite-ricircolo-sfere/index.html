@@ -430,8 +430,13 @@ function hits(x, z){
   return false;
 }
 function moveBall(dt){
-  if (!ball.attached || done) return;
+  if (done) return;
   const tx = xc(), tz = zc(), dx = tx - ball.x, dz = tz - ball.z, d = Math.hypot(dx, dz);
+  if (!ball.attached){
+    // il magnete torna sotto la pallina: si riattacca
+    if (d < 6){ ball.attached = true; msg('Pallina riagganciata', true); }
+    return;
+  }
   if (d > 14){ ball.attached = false; msg('La pallina si è staccata dal magnete!'); return; }
   const stepMax = 160*dt, k = Math.min(1, stepMax/Math.max(d, 1e-6));
   const n = Math.ceil(Math.max(Math.abs(dx), Math.abs(dz))*k/0.4) || 1;
