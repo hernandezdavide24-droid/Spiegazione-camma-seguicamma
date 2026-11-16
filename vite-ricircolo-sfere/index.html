@@ -7,14 +7,62 @@
 <meta name="description" content="Come funziona la vite a ricircolo di sfere: animazione interattiva e spiegazione.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap">
-<link rel="stylesheet" href="../assets/stile.css?v=3">
+<link rel="stylesheet" href="../assets/stile.css?v=4">
 </head>
 <body>
 <nav class="topbar" aria-label="Navigazione">
   <a class="brand" href="../meccanismi/">Meccanismi<small>Open Day SAM</small></a>
-  <a class="tab" href="../meccanismi/">Tutti i meccanismi</a>
+  <button class="tab on" type="button" data-view="modello" aria-selected="true">Il modello 3D</button>
+  <button class="tab" type="button" data-view="spiega" aria-selected="false">Come funziona</button>
+  <a class="tab" href="../meccanismi/" aria-label="Tutti i meccanismi">Tutti</a>
 </nav>
-<main class="page">
+<main class="m3d view" id="modello">
+<div class="app" style="min-height:560px">
+  <div class="stage3" id="stage3" style="min-height:360px">
+    <div class="loadmsg" id="loadmsg">Caricamento del modello 3D…</div>
+    <div class="hint3">Trascina i due volantini bianchi · trascina altrove per ruotare la vista</div>
+    <div class="msg3" id="msg3"></div>
+  </div>
+  <aside class="panel3">
+    <header>
+      <h1>Tavola XY a ricircolo di sfere</h1>
+      <p class="sub">Modello 3D ricostruito dai render CAD del dispositivo: due viti a ricircolo di sfere muovono un magnete sotto il coperchio, e il magnete guida una pallina nel labirinto.</p>
+    </header>
+
+    <section>
+      <p class="label">Volantini (tieni premuto)</p>
+      <div class="pad3">
+        <button class="btn3 ghost" type="button" data-ax="y" data-d="-1" aria-label="Asse Y indietro">▲</button>
+        <button class="btn3 ghost" type="button" data-ax="x" data-d="-1" aria-label="Asse X a sinistra">◀</button>
+        <button class="btn3 ghost" type="button" data-ax="x" data-d="1" aria-label="Asse X a destra">▶</button>
+        <button class="btn3 ghost" type="button" data-ax="y" data-d="1" aria-label="Asse Y avanti">▼</button>
+      </div>
+      <div class="row3">
+        <button class="btn3" id="ballBtn" type="button">Pallina alla partenza</button>
+        <button class="btn3 ghost" id="lid3Btn" type="button" aria-pressed="false">Togli il coperchio</button>
+      </div>
+      <p class="note3">Porta la pallina dalla partenza (blu) al traguardo (verde) senza farla staccare dal magnete.</p>
+    </section>
+
+    <section>
+      <p class="label">Valori in questo istante</p>
+      <div class="nums">
+        <div><b id="vX">0,0 mm</b><span>posizione asse X (corsa 140 mm)</span></div>
+        <div><b id="vY">0,0 mm</b><span>posizione asse Y (corsa 140 mm)</span></div>
+        <div><b id="vGx">0,0</b><span>giri volantino X</span></div>
+        <div><b id="vGy">0,0</b><span>giri volantino Y</span></div>
+      </div>
+    </section>
+
+    <section>
+      <p class="label">Il passo</p>
+      <p class="note3" style="margin-top:0">Passo p = 10 mm/giro: a ogni giro del volantino la chiocciola avanza di 10 mm. Per percorrere tutta la corsa L = 140 mm servono n = L / p = 140 / 10 = 14 giri, uguali per l'asse X e per l'asse Y.</p>
+    </section>
+  </aside>
+</div>
+
+</main>
+<main class="page view" id="spiega" hidden>
 
   <header class="hero">
     <span class="eyebrow">Vite–madrevite a ricircolo di sfere</span>
@@ -145,10 +193,10 @@
   </section>
 
   <section class="reveal">
-    <h2>La formula</h2>
+    <h2>La formula del passo</h2>
     <div class="formula">
-      <span class="f">spostamento = passo × giri       coppia = F · passo / (2π · η)</span>
-      <p>Con un passo di 5 mm, 10 giri spostano la slitta di 50 mm. Il rendimento η è circa 0,9 con le sfere e circa 0,35 con una vite trapezia: per spingere 1000 N servono 0,88 N·m invece di 2,27 N·m.</p>
+      <span class="f">n = L / p = 140 mm / 10 mm/giro = 14 giri</span>
+      <p>p è il passo, cioè di quanto avanza la chiocciola a ogni giro della vite; L è la corsa. Nel dispositivo le due assi hanno la stessa corsa (Lx = Ly = 140 mm) e lo stesso passo, quindi per andare da un&#x27;estremità all&#x27;altra servono 14 giri di volantino su entrambe.</p>
     </div>
   </section>
 
@@ -167,12 +215,15 @@
     <h2>Il modello</h2>
     <p class="lead">Il meccanismo costruito per l'Open Day.</p>
     <div class="model">
-      <div class="ph">Foto o render del modello<br>(in arrivo)</div>
+      <img src="render-assieme.jpg" alt="Render CAD dell’assieme completo" style="border-radius:14px;display:block;width:100%">
+      <p class="lead" style="margin:0">Il dispositivo è una tavola a due assi: due viti a ricircolo di sfere, messe a croce, muovono una chiocciola doppia in X e in Y. Ogni vite è montata su un carrello che scorre sulle guide della scatola, e i volantini passano nelle asole delle pareti. Sopra la chiocciola c&#x27;è un magnete che, attraverso il coperchio trasparente, guida una pallina nel labirinto.</p>
       <dl>
-        <dt>Diametro vite</dt><dd>—</dd>
-        <dt>Passo</dt><dd>—</dd>
-        <dt>Corsa</dt><dd>—</dd>
-        <dt>Numero di sfere</dt><dd>—</dd>
+        <dt>Corsa asse X</dt><dd>140 mm</dd>
+        <dt>Corsa asse Y</dt><dd>140 mm</dd>
+        <dt>Passo delle viti</dt><dd>p = 10 mm/giro</dd>
+        <dt>Giri per tutta la corsa</dt><dd>n = 140 / 10 = 14</dd>
+        <dt>Azionamento</dt><dd>due volantini a mano</dd>
+        <dt>Uscita</dt><dd>magnete sotto il labirinto</dd>
       </dl>
     </div>
   </section>
@@ -323,6 +374,288 @@ const INFO = {
 Mecc.parts('stage', 'chips', 'chipInfo', INFO, 'Scegli una parte per scoprire a cosa serve.');
 Mecc.quiz("Esatto! Rotolare costa molto meno che strisciare: il rendimento arriva al 90%.", "Non proprio: prova l'esperimento con la vite trapezia.");
 Mecc.reveal();
+})();
+</script>
+<script src="../assets/lib/three.min.js"></script>
+<script src="../assets/lib/OrbitControls.js"></script>
+<script>
+window.addEventListener("error", e => { const m = document.getElementById("loadmsg"); if (m) m.textContent = "Errore nel modello 3D: " + e.message; });
+/* Modello 3D interattivo della tavola XY con due viti a ricircolo di sfere (passo 10 mm, corsa 140 mm)
+   e coperchio con labirinto (ricavato dalla vista dall'alto del CAD). Unità: mm.
+   Assi: X a destra, Y in alto, Z verso chi guarda (Z = asse Y del disegno). */
+(function(){
+"use strict";
+const $ = id => document.getElementById(id);
+const rad = d => d*Math.PI/180, deg = r => r*180/Math.PI;
+const fmt = (v, n=0) => v.toLocaleString('it-IT', { minimumFractionDigits:n, maximumFractionDigits:n });
+const P = 10, TRAVEL = 140, HALF = TRAVEL/2;
+const MAZE = [[-62.85, -62.85, 62.85, -58.72], [57.89, -58.72, 62.85, -57.89], [-62.85, -58.72, -57.89, -48.79], [-35.56, -58.72, -31.43, -48.79], [58.72, -57.89, 62.85, -48.79], [-35.56, -48.79, 21.5, -47.96], [-35.56, -47.96, 22.33, -45.48], [-62.85, -48.79, -45.48, -44.66], [-34.73, -45.48, 22.33, -44.66], [45.48, -48.79, 62.85, -44.66], [-48.79, -44.66, -45.48, -35.56], [32.25, -48.79, 35.56, -35.56], [-48.79, -35.56, -44.66, -34.73], [32.25, -35.56, 36.39, -34.73], [-48.79, -34.73, 8.27, -31.43], [32.25, -34.73, 48.79, -31.43], [-22.33, -31.43, -18.19, -30.6], [44.66, -31.43, 48.79, -30.6], [45.48, -30.6, 48.79, -22.33], [18.19, -44.66, 22.33, -21.5], [44.66, -22.33, 48.79, -21.5], [-48.79, -21.5, -31.43, -18.19], [-8.27, -21.5, 48.79, -18.19], [-48.79, -18.19, -44.66, -17.37], [-8.27, -18.19, -4.13, -17.37], [31.43, -18.19, 36.39, -17.37], [32.25, -17.37, 35.56, -4.96], [-35.56, -8.27, -31.43, 4.96], [-21.5, -30.6, -18.19, 4.96], [18.19, -8.27, 22.33, 4.96], [45.48, -8.27, 48.79, 4.96], [-35.56, 4.96, -18.19, 8.27], [-34.73, 8.27, -18.19, 9.1], [18.19, 4.96, 48.79, 9.1], [-48.79, -17.37, -45.48, 18.19], [-8.27, -17.37, -4.96, 18.19], [4.96, -8.27, 8.27, 18.19], [-48.79, 18.19, -44.66, 19.02], [-9.1, 18.19, -4.13, 19.02], [4.13, 18.19, 8.27, 19.02], [-48.79, 19.02, 8.27, 22.33], [-62.85, -44.66, -57.89, 32.25], [-62.85, 32.25, -45.48, 35.56], [-21.5, 32.25, -4.96, 35.56], [-9.1, 35.56, -4.96, 36.39], [-35.56, 22.33, -31.43, 45.48], [-48.79, 45.48, -18.19, 48.79], [4.96, 22.33, 8.27, 48.79], [45.48, 9.1, 48.79, 48.79], [-62.85, 35.56, -57.89, 58.72], [-8.27, 36.39, -4.96, 58.72], [18.19, 9.1, 22.33, 58.72], [32.25, 19.02, 35.56, 58.72], [58.72, -44.66, 62.85, 58.72], [-62.85, 58.72, 62.85, 62.85]];                      // rettangoli delle pareti [x0, z0, x1, z1]
+const PTS = {"start": [-54.2, 55.0], "goal": [26.0, 55.0]};
+const BALL_R = 3.2, YX = 30, YZ = 56, LID_Y = 86;
+
+let thx = 0, thz = 0, hold = null, dragging = null;
+const ball = { x: PTS.start[0], z: PTS.start[1], attached: true };
+let done = false;
+const xc = () => -HALF + P*thx/360, zc = () => -HALF + P*thz/360;
+function clampT(){ const mx = TRAVEL/P*360; thx = Math.max(0, Math.min(mx, thx)); thz = Math.max(0, Math.min(mx, thz)); }
+// partenza: il magnete sotto la pallina
+thx = (ball.x + HALF)/P*360; thz = (ball.z + HALF)/P*360;
+
+let msgT = 0;
+function msg(t, good){ const m = $('msg3'); m.textContent = t; m.classList.toggle('good', !!good); m.classList.add('show'); clearTimeout(msgT); msgT = setTimeout(() => m.classList.remove('show'), 2200); }
+
+document.querySelectorAll('.pad3 button').forEach(b => {
+  const start = e => { e.preventDefault(); hold = { ax:b.dataset.ax, d:+b.dataset.d }; b.classList.add('on'); };
+  const stop = () => { hold = null; b.classList.remove('on'); };
+  b.addEventListener('pointerdown', start); b.addEventListener('pointerup', stop); b.addEventListener('pointerleave', stop); b.addEventListener('pointercancel', stop);
+});
+$('ballBtn').addEventListener('click', () => { ball.x = PTS.start[0]; ball.z = PTS.start[1]; ball.attached = true; done = false; thx = (ball.x + HALF)/P*360; thz = (ball.z + HALF)/P*360; });
+let lidOff = false;
+$('lid3Btn').addEventListener('click', e => { lidOff = !lidOff; e.currentTarget.classList.toggle('on', lidOff); e.currentTarget.setAttribute('aria-pressed', lidOff); e.currentTarget.textContent = lidOff ? 'Rimetti il coperchio' : 'Togli il coperchio'; if (window.__lid) window.__lid.visible = !lidOff; });
+
+function panel(){
+  $('vX').textContent = fmt(xc() + HALF, 1) + ' mm';
+  $('vY').textContent = fmt(HALF - zc(), 1) + ' mm';
+  $('vGx').textContent = fmt(thx/360, 1);
+  $('vGy').textContent = fmt(thz/360, 1);
+}
+
+// --- pallina: segue il magnete ma non attraversa le pareti ---
+function hits(x, z){
+  if (Math.abs(x) > 62.85 - BALL_R || Math.abs(z) > 62.85 - BALL_R) return true;
+  for (const r of MAZE){
+    const cx = Math.max(r[0], Math.min(x, r[2])), cz = Math.max(r[1], Math.min(z, r[3]));
+    if ((x - cx)*(x - cx) + (z - cz)*(z - cz) < BALL_R*BALL_R) return true;
+  }
+  return false;
+}
+function moveBall(dt){
+  if (!ball.attached || done) return;
+  const tx = xc(), tz = zc(), dx = tx - ball.x, dz = tz - ball.z, d = Math.hypot(dx, dz);
+  if (d > 14){ ball.attached = false; msg('La pallina si è staccata dal magnete!'); return; }
+  const stepMax = 160*dt, k = Math.min(1, stepMax/Math.max(d, 1e-6));
+  const n = Math.ceil(Math.max(Math.abs(dx), Math.abs(dz))*k/0.4) || 1;
+  for (let i = 0; i < n; i++){
+    const sx = dx*k/n, sz = dz*k/n;
+    if (!hits(ball.x + sx, ball.z + sz)){ ball.x += sx; ball.z += sz; }
+    else if (!hits(ball.x + sx, ball.z)) ball.x += sx;
+    else if (!hits(ball.x, ball.z + sz)) ball.z += sz;
+  }
+  if (Math.hypot(ball.x - PTS.goal[0], ball.z - PTS.goal[1]) < 4){ done = true; msg('Traguardo raggiunto!', true); }
+}
+
+if (!window.THREE){ $('loadmsg').textContent = 'Il modello 3D non si è caricato. Prova a ricaricare la pagina.'; panel(); return; }
+$('loadmsg').remove();
+const S = 0.05, stage = $('stage3');
+const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+renderer.outputEncoding = THREE.sRGBEncoding; renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+stage.prepend(renderer.domElement);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 400);
+camera.position.set(13, 20, 17);
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 1.8, 0.6); controls.enableDamping = true; controls.dampingFactor = 0.08;
+controls.minDistance = 6; controls.maxDistance = 70; controls.maxPolarAngle = Math.PI*0.5;
+scene.add(new THREE.HemisphereLight(0xf4f7ff, 0x6c7484, 0.85));
+const sun = new THREE.DirectionalLight(0xffffff, 1.0); sun.position.set(10, 26, 14); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+Object.assign(sun.shadow.camera, { left:-12, right:12, top:12, bottom:-12, near:1, far:70 }); sun.shadow.bias = -0.0004; scene.add(sun);
+const fill = new THREE.DirectionalLight(0xdfe8ff, 0.45); fill.position.set(-14, 8, -6); scene.add(fill);
+const Mt = (c, m, r, x) => new THREE.MeshStandardMaterial(Object.assign({ color:new THREE.Color(c).convertSRGBToLinear(), metalness:m, roughness:r }, x || {}));
+const mat = {
+  box: Mt(0xd3d8de, 0.15, 0.45), rail: Mt(0xc4cad1, 0.35, 0.35), orange: Mt(0xf08a1c, 0.2, 0.4), white: Mt(0xf1f2f4, 0.05, 0.4),
+  screw: Mt(0xe9ebee, 0.2, 0.3), dark: Mt(0x3b414a, 0.4, 0.45), magnet: Mt(0x8a1f24, 0.3, 0.4),
+  lid: Mt(0xdbe7f5, 0.05, 0.1, { transparent:true, opacity:0.32, depthWrite:false }),
+  maze: Mt(0xcfd6de, 0.05, 0.35, { transparent:true, opacity:0.8 }), ball: Mt(0x8f99a5, 0.9, 0.18)
+};
+const dev = new THREE.Group(); dev.scale.setScalar(S); scene.add(dev);
+function mesh(g, m, parent){ const o = new THREE.Mesh(g, m); o.castShadow = true; o.receiveShadow = true; (parent || dev).add(o); return o; }
+function box(x0, x1, y0, y1, z0, z1, m, parent){ const o = mesh(new THREE.BoxGeometry(x1 - x0, y1 - y0, z1 - z0), m, parent); o.position.set((x0 + x1)/2, (y0 + y1)/2, (z0 + z1)/2); return o; }
+function cyl(r, len, axis, x, y, z, m, parent, seg){
+  const o = mesh(new THREE.CylinderGeometry(r, r, len, seg || 32), m, parent);
+  if (axis === 'x') o.rotation.z = Math.PI/2; if (axis === 'z') o.rotation.x = Math.PI/2;
+  o.position.set(x, y, z); return o;
+}
+// lastra verticale con asola (forma nel piano della parete)
+function slotted(w, h, sl, sh, sy, m){
+  const s = new THREE.Shape(); s.moveTo(-w/2, 0); s.lineTo(w/2, 0); s.lineTo(w/2, h); s.lineTo(-w/2, h); s.lineTo(-w/2, 0);
+  if (sl){ const p = new THREE.Path(); p.absarc(-sl/2, sy, sh/2, Math.PI/2, Math.PI*1.5, false); p.lineTo(sl/2, sy - sh/2); p.absarc(sl/2, sy, sh/2, -Math.PI/2, Math.PI/2, false); p.lineTo(-sl/2, sy + sh/2); s.holes.push(p); }
+  return mesh(new THREE.ExtrudeGeometry(s, { depth:6, bevelEnabled:true, bevelThickness:0.5, bevelSize:0.5, bevelSegments:2, curveSegments:16 }), m);
+}
+
+// --- scatola: fondo e quattro pareti; asole sulle pareti dei volantini ---
+box(-130, 130, -6, 0, -130, 130, mat.box);
+{ const f = slotted(260, 85, 152, 14, YZ, mat.box); f.position.z = 124; }                         // davanti (volantino Y)
+{ const b = slotted(260, 85, 0, 0, 0, mat.box); b.position.z = -130; }                            // dietro
+{ const r = slotted(248, 85, 152, 14, YX, mat.box); r.rotation.y = Math.PI/2; r.position.set(124, 0, 0); }   // destra (volantino X)
+{ const l = slotted(248, 85, 0, 0, 0, mat.box); l.rotation.y = Math.PI/2; l.position.set(-130, 0, 0); }
+// squadrette arancioni negli angoli e appoggi del coperchio
+for (const sx of [-1, 1]) for (const sz of [-1, 1]){
+  box(sx > 0 ? 112 : -124, sx > 0 ? 124 : -112, 72, 84, sz > 0 ? 121 : -124, sz > 0 ? 124 : -121, mat.orange);
+  box(sx > 0 ? 121 : -124, sx > 0 ? 124 : -121, 72, 84, sz > 0 ? 112 : -124, sz > 0 ? 124 : -112, mat.orange);
+}
+// guide con i fori
+for (const sx of [-1, 1]){ box(sx > 0 ? 118 : -124, sx > 0 ? 124 : -118, YX - 9, YX + 9, -112, 112, mat.rail); }
+for (const sz of [-1, 1]){ box(-112, 112, YZ - 9, YZ + 9, sz > 0 ? 118 : -124, sz > 0 ? 124 : -118, mat.rail); }
+for (let k = -4; k <= 4; k++){
+  for (const sx of [-1, 1]) cyl(1.6, 1, 'x', sx*117.8, YX, k*25, mat.dark, null, 10);
+  for (const sz of [-1, 1]) cyl(1.6, 1, 'z', k*25, YZ, sz*117.8, mat.dark, null, 10);
+}
+
+// --- vite a ricircolo: anima + elica (passo 10 mm) ---
+function screwGeo(len){
+  const g = new THREE.Group();
+  mesh(new THREE.CylinderGeometry(5.4, 5.4, len, 24), mat.screw, g);
+  const pts = [], turns = len/P, n = Math.round(turns*36);
+  for (let i = 0; i <= n; i++){ const a = i/n*turns*2*Math.PI; pts.push(new THREE.Vector3(5.2*Math.cos(a), -len/2 + len*i/n, 5.2*Math.sin(a))); }
+  mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), n*3, 3.1, 10, false), mat.screw, g);
+  return g;
+}
+function handwheel(parent){
+  const g = new THREE.Group(); parent.add(g);
+  const prof = [[0,0],[27,0],[30,2],[30,12],[27,14],[8,14],[7,18],[0,18]].map(q => new THREE.Vector2(q[0], q[1]));
+  mesh(new THREE.LatheGeometry(prof, 48), mat.white, g);
+  const cap = mesh(new THREE.CylinderGeometry(4.5, 4.5, 1, 20), mat.dark, g); cap.position.y = 18.2;
+  const mark = mesh(new THREE.BoxGeometry(4, 1, 14), mat.dark, g); mark.position.set(0, 14.3, 18);
+  return g;
+}
+// carrello dell'asse X: vite lungo X, scorre lungo Z sulle guide laterali
+const gx = new THREE.Group(); dev.add(gx);
+for (const sx of [-1, 1]){
+  box(sx > 0 ? 104 : -118, sx > 0 ? 118 : -104, YX - 12, YX + 12, -16, 16, mat.rail, gx);
+  box(sx > 0 ? 90 : -104, sx > 0 ? 104 : -90, YX - 18, YX + 20, -20, 20, mat.orange, gx);
+  cyl(10, 15, 'x', sx*97, YX, 0, mat.white, gx);
+  for (const dy of [-10, 10]) for (const dz of [-12, 12]) cyl(2.2, 1, 'x', sx*(sx > 0 ? 104.3 : 104.3), YX + dy, dz, mat.dark, gx, 10);
+}
+const screwX = new THREE.Group(); screwX.position.y = YX; gx.add(screwX);
+{ const s = screwGeo(180); s.rotation.z = -Math.PI/2; screwX.add(s); }
+cyl(5, 52, 'x', 130, YX, 0, mat.screw, gx);
+const wheelX = new THREE.Group(); wheelX.position.set(146, YX, 0); gx.add(wheelX);
+{ const w = handwheel(wheelX); w.rotation.z = -Math.PI/2; }
+// carrello dell'asse Y: vite lungo Z, scorre lungo X sulle guide davanti e dietro
+const gz = new THREE.Group(); dev.add(gz);
+for (const sz of [-1, 1]){
+  box(-16, 16, YZ - 12, YZ + 12, sz > 0 ? 104 : -118, sz > 0 ? 118 : -104, mat.rail, gz);
+  box(-20, 20, YZ - 20, YZ + 18, sz > 0 ? 90 : -104, sz > 0 ? 104 : -90, mat.orange, gz);
+  cyl(10, 15, 'z', 0, YZ, sz*97, mat.white, gz);
+}
+const screwZ = new THREE.Group(); screwZ.position.y = YZ; gz.add(screwZ);
+{ const s = screwGeo(180); s.rotation.x = Math.PI/2; screwZ.add(s); }
+cyl(5, 52, 'z', 0, YZ, 130, mat.screw, gz);
+const wheelZ = new THREE.Group(); wheelZ.position.set(0, YZ, 146); gz.add(wheelZ);
+{ const w = handwheel(wheelZ); w.rotation.x = Math.PI/2; }
+// chiocciole a ricircolo con flangia, staffa arancione e magnete
+const nut = new THREE.Group(); dev.add(nut);
+function ballNut(axis, y, parent){
+  const g = new THREE.Group(); g.position.y = y; parent.add(g);
+  cyl(14, 34, axis, 0, 0, 0, mat.white, g, 40);
+  const fl = axis === 'x' ? [20, 0, 0] : [0, 0, 20];
+  cyl(23, 7, axis, fl[0], 0, fl[2], mat.white, g, 40);
+  for (let k = 0; k < 4; k++){
+    const a = rad(45 + 90*k), u = 17*Math.cos(a), v = 17*Math.sin(a);
+    if (axis === 'x') cyl(2.6, 1, 'x', 23.7, v, u, mat.dark, g, 12); else cyl(2.6, 1, 'z', u, v, 23.7, mat.dark, g, 12);
+  }
+  return g;
+}
+ballNut('x', YX, nut); ballNut('z', YZ, nut);
+box(23.5, 29.5, 8, 76, -22, 32, mat.orange, nut);
+box(-22, 32, 34, 76, 23.5, 29.5, mat.orange, nut);
+box(-10, 32, 70, 76, -10, 32, mat.orange, nut);
+cyl(6, 7, 'y', 0, 79.5, 0, mat.magnet, nut, 24);
+box(-10, 2, 70, 76, -10, 2, mat.orange, nut);
+
+// --- coperchio trasparente con il labirinto ---
+const lid = new THREE.Group(); dev.add(lid); window.__lid = lid;
+{
+  const p = mesh(new THREE.BoxGeometry(247, 5, 247), mat.lid, lid); p.position.y = LID_Y + 2.5; p.castShadow = false;
+  // pareti del labirinto in un'unica geometria
+  const pos = [], nor = [];
+  const quad = (a, b, c, d, n) => { [a, b, c, a, c, d].forEach(v => { pos.push(v[0], v[1], v[2]); nor.push(n[0], n[1], n[2]); }); };
+  const y0 = LID_Y + 5, y1 = LID_Y + 11;
+  for (const r of MAZE){
+    const [x0, z0, x1, z1] = r;
+    quad([x0,y1,z0],[x0,y1,z1],[x1,y1,z1],[x1,y1,z0],[0,1,0]);
+    quad([x0,y0,z1],[x1,y0,z1],[x1,y1,z1],[x0,y1,z1],[0,0,1]);
+    quad([x1,y0,z0],[x0,y0,z0],[x0,y1,z0],[x1,y1,z0],[0,0,-1]);
+    quad([x1,y0,z1],[x1,y0,z0],[x1,y1,z0],[x1,y1,z1],[1,0,0]);
+    quad([x0,y0,z0],[x0,y0,z1],[x0,y1,z1],[x0,y1,z0],[-1,0,0]);
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('normal', new THREE.Float32BufferAttribute(nor, 3));
+  const m = mesh(g, mat.maze, lid); m.castShadow = false;
+  const mk = (pt, c) => { const o = mesh(new THREE.RingGeometry(3.4, 5.2, 32), Mt(c, 0, 0.5, { side:THREE.DoubleSide }), lid); o.rotation.x = -Math.PI/2; o.position.set(pt[0], LID_Y + 5.05, pt[1]); };
+  mk(PTS.start, 0x2f6fed); mk(PTS.goal, 0x16a36a);
+}
+const ballM = mesh(new THREE.SphereGeometry(BALL_R, 24, 16), mat.ball, lid);
+{ const g = new THREE.Mesh(new THREE.PlaneGeometry(1400, 1400), new THREE.ShadowMaterial({ opacity:0.16 })); g.rotation.x = -Math.PI/2; g.position.y = -6; g.receiveShadow = true; dev.add(g); }
+
+function pose(){
+  const x = xc(), z = zc();
+  gx.position.z = z; gz.position.x = x;
+  nut.position.set(x, 0, z);
+  screwX.rotation.x = rad(thx); wheelX.rotation.x = rad(thx);
+  screwZ.rotation.z = -rad(thz); wheelZ.rotation.z = -rad(thz);
+  ballM.position.set(ball.x, LID_Y + 5 + BALL_R, ball.z);
+}
+
+// --- trascinamento dei volantini ---
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(), hit = new THREE.Vector3();
+const wxM = [], wzM = []; wheelX.traverse(o => o.isMesh && wxM.push(o)); wheelZ.traverse(o => o.isMesh && wzM.push(o));
+function setRay(e){ const r = renderer.domElement.getBoundingClientRect(); ndc.set(((e.clientX - r.left)/r.width)*2 - 1, -((e.clientY - r.top)/r.height)*2 + 1); ray.setFromCamera(ndc, camera); }
+function ang(ax){
+  if (ax === 'x'){ const pl = new THREE.Plane(new THREE.Vector3(1, 0, 0), -160*S); if (!ray.ray.intersectPlane(pl, hit)) return null; return deg(Math.atan2(hit.y/S - YX, hit.z/S - zc())); }
+  const pl = new THREE.Plane(new THREE.Vector3(0, 0, 1), -160*S); if (!ray.ray.intersectPlane(pl, hit)) return null; return deg(Math.atan2(hit.y/S - YZ, hit.x/S - xc()));
+}
+let lastA = 0;
+renderer.domElement.addEventListener('pointerdown', e => {
+  setRay(e);
+  const a = ray.intersectObjects(wxM, false)[0], b = ray.intersectObjects(wzM, false)[0];
+  const pick = a && (!b || a.distance < b.distance) ? 'x' : (b ? 'z' : null); if (!pick) return;
+  const an = ang(pick); if (an === null) return;
+  dragging = pick; lastA = an; controls.enabled = false; renderer.domElement.setPointerCapture(e.pointerId); renderer.domElement.style.cursor = 'grabbing';
+});
+renderer.domElement.addEventListener('pointermove', e => {
+  setRay(e);
+  if (!dragging){ renderer.domElement.style.cursor = (ray.intersectObjects(wxM, false).length || ray.intersectObjects(wzM, false).length) ? 'grab' : ''; return; }
+  const an = ang(dragging); if (an === null) return;
+  let d = ((an - lastA + 540) % 360) - 180; lastA = an;
+  if (dragging === 'x') thx -= d; else thz += d;
+  clampT();
+});
+const endDrag = () => { if (!dragging) return; dragging = null; controls.enabled = true; renderer.domElement.style.cursor = ''; };
+renderer.domElement.addEventListener('pointerup', endDrag); renderer.domElement.addEventListener('pointercancel', endDrag);
+
+function resize(){
+  const w = stage.clientWidth, h = stage.clientHeight; if (!w || !h) return;
+  renderer.setSize(w, h, false); camera.aspect = w/h; camera.updateProjectionMatrix();
+  if (!resize.done){ resize.done = true; const f = Math.max(1, Math.pow(1.45/camera.aspect, 0.55)); camera.position.sub(controls.target).multiplyScalar(f).add(controls.target); }
+}
+new ResizeObserver(resize).observe(stage); resize();
+document.addEventListener('vista', e => { if (e.detail === 'modello') resize(); });
+
+let last = performance.now();
+function loop(now){
+  const dt = Math.min(0.05, (now - last)/1000); last = now;
+  if (hold){ if (hold.ax === 'x') thx += hold.d*540*dt; else thz += hold.d*540*dt; clampT(); }
+  moveBall(dt); pose(); panel();
+  controls.update(); renderer.render(scene, camera);
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+window.__test = { set:(a, b) => { thx = a; thz = b; clampT(); }, ball, xc, zc };
+})();
+
+</script>
+<script>
+(function(){
+  const tabs = [...document.querySelectorAll('.topbar button.tab')];
+  function show(v){
+    tabs.forEach(t => { const on = t.dataset.view === v; t.classList.toggle('on', on); t.setAttribute('aria-selected', on); document.getElementById(t.dataset.view).hidden = !on; });
+    document.dispatchEvent(new CustomEvent('vista', { detail:v }));
+    window.scrollTo(0, 0);
+  }
+  tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.view)));
+  if (location.hash === '#spiega') show('spiega');
 })();
 </script>
 </body>
