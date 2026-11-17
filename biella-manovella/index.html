@@ -12,9 +12,73 @@
 <body>
 <nav class="topbar" aria-label="Navigazione">
   <a class="brand" href="../meccanismi/">Meccanismi<small>Open Day SAM</small></a>
-  <a class="tab" href="../meccanismi/">Tutti i meccanismi</a>
+  <button class="tab on" type="button" data-view="modello" aria-selected="true">Il modello 3D</button>
+  <button class="tab" type="button" data-view="spiega" aria-selected="false">Come funziona</button>
+  <a class="tab" href="../meccanismi/" aria-label="Tutti i meccanismi">Tutti</a>
 </nav>
-<main class="page">
+<main class="m3d view" id="modello">
+<div class="app" style="min-height:560px">
+  <div class="stage3" id="stage3" style="min-height:360px">
+    <div class="loadmsg" id="loadmsg">Caricamento del modello 3D…</div>
+    <div class="hint3">Tieni premuto sul cannone e lascia per tirare · trascina la manovella · trascina altrove per ruotare la vista</div>
+  </div>
+  <aside class="panel3">
+    <header>
+      <h1>Rigore al portiere</h1>
+      <p class="sub">Un motore fa girare la manovella, la biella trasforma il giro in un avanti e indietro e muove il portiere davanti alla porta. Prova a segnare con il cannone a molla.</p>
+    </header>
+
+    <section>
+      <p class="label">Il gioco</p>
+      <div class="nums">
+        <div><b id="b3Gol">0</b><span>gol</span></div>
+        <div><b id="b3Par">0</b><span>parate del portiere</span></div>
+      </div>
+      <p class="note3" id="b3Msg" aria-live="polite" style="min-height:2.9em">Carica la molla e tira quando il portiere è lontano dalla palla.</p>
+      <div class="row3">
+        <button class="btn3" id="b3Fire" type="button">Tieni premuto: carica · lascia: tira</button>
+      </div>
+      <label class="spd3">Mira<input type="range" id="b3Aim" min="-14" max="14" step="1" value="0"><output id="b3AimOut">0°</output></label>
+      <p class="label" style="margin:6px 0 4px">Carica della molla</p>
+      <div class="pow3" style="height:8px;border-radius:4px;background:var(--bar-line,#dde3ea);overflow:hidden"><i id="b3Pow" style="display:block;height:100%;width:0;background:#f49712"></i></div>
+    </section>
+
+    <section>
+      <p class="label">Il motore</p>
+      <label class="spd3">Velocità<input type="range" id="b3Rpm" min="5" max="40" step="1" value="20"><output id="b3RpmOut">20 giri/min</output></label>
+      <div class="row3">
+        <button class="btn3" id="b3Mot" type="button" aria-pressed="true">■ Ferma</button>
+      </div>
+    </section>
+
+    <section>
+      <p class="label">Valori in questo istante</p>
+      <div class="nums">
+        <div><b id="b3Phi">0°</b><span>angolo della manovella θ</span></div>
+        <div><b id="b3X">0 mm</b><span>posizione del portiere (0 = centro porta)</span></div>
+        <div><b id="b3V">0</b><span>velocità del portiere (mm/s)</span></div>
+        <div><b>100 mm</b><span>corsa = 2 · r</span></div>
+      </div>
+    </section>
+
+    <section>
+      <p class="label">Posizione del portiere durante un giro</p>
+      <svg class="g3" id="b3G" viewBox="0 0 340 130" aria-label="Posizione del portiere in funzione dell'angolo della manovella">
+        <line class="ax" x1="30" y1="110" x2="330" y2="110"/><line class="ax" x1="30" y1="8" x2="30" y2="110"/>
+        <path id="b3C" d="" style="fill:none;stroke:#f49712;stroke-width:2.5"/>
+        <path id="b3Cs" d="" style="fill:none;stroke:var(--bar-accent);stroke-width:1.5;stroke-dasharray:4 3"/>
+        <line id="b3Cur" x1="30" y1="8" x2="30" y2="110" style="stroke:var(--bar-muted);stroke-width:1"/>
+        <circle id="b3Dot" r="4" cx="30" cy="60" style="fill:#f49712"/>
+        <text class="tl" x="30" y="124" text-anchor="middle">0°</text><text class="tl" x="180" y="124" text-anchor="middle">180°</text><text class="tl" x="330" y="124" text-anchor="end">360°</text>
+        <text class="tl" x="26" y="14" text-anchor="end">+50</text><text class="tl" x="26" y="63" text-anchor="end">0</text><text class="tl" x="26" y="113" text-anchor="end">−50</text>
+      </svg>
+      <p class="note3"><span style="color:#f49712">■</span> biella-manovella vera · <span style="color:var(--bar-accent)">■</span> moto armonico puro (biella infinita), per confronto</p>
+    </section>
+  </aside>
+</div>
+
+</main>
+<main class="page view" id="spiega" hidden>
 
   <header class="hero">
     <span class="eyebrow">Meccanismo biella-manovella</span>
@@ -153,12 +217,13 @@
     <h2>Il modello</h2>
     <p class="lead">Il meccanismo costruito per l'Open Day.</p>
     <div class="model">
-      <div class="ph">Foto o render del modello<br>(in arrivo)</div>
+      <img src="render-assieme.jpg" alt="Render CAD dell’assieme completo" style="border-radius:14px;display:block;width:100%">
+      <p class="lead" style="margin:0">Il modello è un piccolo gioco da tavolo: un motore fa girare la manovella e la biella trasforma il giro in un avanti e indietro del pattino, che porta il portiere da un palo all&#x27;altro della porta. Davanti alla porta c&#x27;è una rampa trasparente con un cannone a molla, simile a quello di un flipper: lo scopo è fare gol tirando la pallina nel momento giusto.</p>
       <dl>
-        <dt>Raggio manovella</dt><dd>—</dd>
-        <dt>Lunghezza biella</dt><dd>—</dd>
-        <dt>Corsa</dt><dd>—</dd>
-        <dt>Materiale</dt><dd>—</dd>
+        <dt>Movimento</dt><dd>manovella → biella → pattino con portiere</dd>
+        <dt>Azionamento</dt><dd>motore elettrico</dd>
+        <dt>Corsa del portiere</dt><dd>2 · r (doppio del raggio della manovella)</dd>
+        <dt>Tiro</dt><dd>cannone a molla su rampa trasparente</dd>
       </dl>
     </div>
   </section>
@@ -305,6 +370,250 @@ const INFO = {
 Mecc.parts('stage', 'chips', 'chipInfo', INFO, 'Scegli una parte per scoprire a cosa serve.');
 Mecc.quiz("Esatto! La corsa è il doppio del raggio: 2 · 25 = 50 mm.", "Non proprio: guarda i segni PMS e PMI nell'animazione.");
 Mecc.reveal();
+})();
+</script>
+<script src="../assets/lib/three.min.js"></script>
+<script src="../assets/lib/OrbitControls.js"></script>
+<script>
+window.addEventListener("error", e => { const m = document.getElementById("loadmsg"); if (m) m.textContent = "Errore nel modello 3D: " + e.message; });
+/* Modello 3D interattivo del gioco "rigore al portiere" con meccanismo biella-manovella,
+   ricostruito dalle immagini del modello CAD. Le misure sono stimate dalle proporzioni dei render.
+   Assi: x verso destra, y verso l'alto, z verso chi guarda. Unità: mm. */
+(function(){
+"use strict";
+const $ = id => document.getElementById(id);
+const rad = d => d*Math.PI/180;
+const fmt = (v, n=0) => v.toLocaleString('it-IT', { minimumFractionDigits:n, maximumFractionDigits:n });
+// --- misure principali (mm) ---
+const PV = { x:30, y:106 };          // perno della manovella
+const R = 50, L = 230;               // raggio manovella, lunghezza biella
+const KOFF = 38;                     // portiere rispetto al perno del pattino
+const GOALC = 298, POSTL = 236, POSTR = 360, DECK = 137;
+const RAMP0 = { y:8, z:328 }, RAMP1 = { y:135, z:33 }, RX0 = 225, RX1 = 371;
+const RLEN = Math.hypot(RAMP0.y - RAMP1.y, RAMP0.z - RAMP1.z);
+const RANG = Math.atan2(RAMP1.y - RAMP0.y, RAMP0.z - RAMP1.z);
+const BR = 9, S0 = 92, ACC = 5/7*9810*Math.sin(RANG);
+let th = rad(90), rpm = 20, motor = true, dragCrank = false, wEff = 0;
+const sliderX = t => PV.x + R*Math.cos(t) + Math.sqrt(L*L - R*R*Math.sin(t)**2);
+const keeperX = t => sliderX(t) + KOFF;
+
+// --- pannello ---
+const rpmIn = $('b3Rpm'), aimIn = $('b3Aim');
+rpmIn.addEventListener('input', () => { rpm = +rpmIn.value; $('b3RpmOut').value = rpm + ' giri/min'; });
+aimIn.addEventListener('input', () => { $('b3AimOut').value = (aimIn.value > 0 ? '+' : '') + aimIn.value + '°'; });
+$('b3Mot').addEventListener('click', e => { motor = !motor; e.currentTarget.textContent = motor ? '■ Ferma' : '▶ Avvia'; e.currentTarget.setAttribute('aria-pressed', motor); });
+const GX = d => 30 + d/360*300, GY = v => 60 - v;
+{ let a = '', b = ''; for (let i = 0; i <= 180; i++){ const t = rad(i*2); a += (i ? 'L' : 'M') + GX(i*2).toFixed(1) + ',' + GY(keeperX(t) - GOALC).toFixed(1); b += (i ? 'L' : 'M') + GX(i*2).toFixed(1) + ',' + GY(R*Math.cos(t)).toFixed(1); }
+  $('b3C').setAttribute('d', a); $('b3Cs').setAttribute('d', b); }
+function panel(){
+  const d = ((th*180/Math.PI) % 360 + 360) % 360, xr = keeperX(th) - GOALC;
+  const dx = -R*Math.sin(th) - R*R*Math.sin(th)*Math.cos(th)/Math.sqrt(L*L - R*R*Math.sin(th)**2);
+  $('b3Phi').textContent = fmt(d) + '°'; $('b3X').textContent = (xr > 0.5 ? '+' : '') + fmt(xr) + ' mm'; $('b3V').textContent = fmt(Math.abs(dx*wEff));
+  $('b3Cur').setAttribute('x1', GX(d).toFixed(1)); $('b3Cur').setAttribute('x2', GX(d).toFixed(1));
+  $('b3Dot').setAttribute('cx', GX(d).toFixed(1)); $('b3Dot').setAttribute('cy', GY(xr).toFixed(1));
+}
+
+if (!window.THREE){ $('loadmsg').textContent = 'Il modello 3D non si è caricato. Prova a ricaricare la pagina.'; panel(); return; }
+$('loadmsg').remove();
+const S = 0.035, stage = $('stage3');
+const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+renderer.outputEncoding = THREE.sRGBEncoding; renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+stage.prepend(renderer.domElement);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 400);
+camera.position.set(-10, 13.5, 25);
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.target.set(0.6, 2.4, 0.4); controls.enableDamping = true; controls.dampingFactor = 0.08; controls.minDistance = 6; controls.maxDistance = 70; controls.maxPolarAngle = Math.PI*0.49;
+scene.add(new THREE.HemisphereLight(0xf4f7ff, 0x6c7484, 0.8));
+const sun = new THREE.DirectionalLight(0xffffff, 1.0); sun.position.set(8, 22, 12); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+Object.assign(sun.shadow.camera, { left:-14, right:14, top:14, bottom:-14, near:1, far:60 }); sun.shadow.bias = -0.0004; scene.add(sun);
+const fill = new THREE.DirectionalLight(0xdfe8ff, 0.45); fill.position.set(-14, 8, -8); scene.add(fill);
+const Mt = (c, m, r, extra) => new THREE.MeshStandardMaterial(Object.assign({ color:new THREE.Color(c).convertSRGBToLinear(), metalness:m, roughness:r }, extra || {}));
+const mat = {
+  pla: Mt(0xe6e8eb, 0.02, 0.62), pla2: Mt(0xd3d6db, 0.02, 0.62), red: Mt(0xa3422a, 0.05, 0.5),
+  motor: Mt(0x50565f, 0.5, 0.4), steel: Mt(0xc4c9d0, 0.7, 0.3), ring: Mt(0x8a3423, 0.2, 0.4),
+  glass: Mt(0xbfd8ee, 0.0, 0.08, { transparent:true, opacity:0.32, depthWrite:false }), ball: Mt(0xf49712, 0.05, 0.35)
+};
+const dev = new THREE.Group(); dev.scale.setScalar(S); dev.position.set(-185*S, 0, -150*S); scene.add(dev);
+function mesh(g, m, parent){ const o = new THREE.Mesh(g, m); o.castShadow = m !== mat.glass; o.receiveShadow = true; (parent || dev).add(o); return o; }
+function boxP(x0, x1, y0, y1, z0, z1, m, parent){ const o = mesh(new THREE.BoxGeometry(x1 - x0, y1 - y0, z1 - z0), m, parent); o.position.set((x0 + x1)/2, (y0 + y1)/2, (z0 + z1)/2); return o; }
+function cylZ(r, x, y, z0, z1, m, parent, seg){ const o = mesh(new THREE.CylinderGeometry(r, r, z1 - z0, seg || 36), m, parent); o.rotation.x = Math.PI/2; o.position.set(x, y, (z0 + z1)/2); return o; }
+function prismX(pts, x0, x1, m){ const sh = new THREE.Shape(pts.map(p => new THREE.Vector2(p[0], p[1]))); const g = new THREE.ExtrudeGeometry(sh, { depth:x1 - x0, bevelEnabled:false }); const o = mesh(g, m); o.rotation.y = -Math.PI/2; o.position.x = x1; return o; }
+
+// basamento e torre del motore
+boxP(0, 364, 0, 19, -33, 33, mat.pla);
+boxP(0, 60, 19, PV.y, -15, 15, mat.pla);
+cylZ(30, PV.x, PV.y, -15, 15, mat.pla);
+cylZ(24, PV.x, PV.y, -46, -15, mat.motor); cylZ(16, PV.x, PV.y, -50, -46, mat.motor);
+boxP(4, 56, 19, 60, -30, -15, mat.pla2);
+cylZ(5, PV.x, PV.y, 15, 20, mat.steel);
+// cassa della porta
+boxP(232, 364, 19, 25, -33, 33, mat.pla2);
+boxP(232, 364, 19, DECK - 6, -33, -27, mat.pla);
+boxP(358, 364, 19, DECK - 6, -33, 33, mat.pla);
+boxP(232, 238, 19, 82, -33, 33, mat.pla); boxP(232, 238, 126, DECK - 6, -33, 33, mat.pla);
+boxP(232, 364, 25, 40, 27, 33, mat.pla);
+boxP(232, 364, DECK - 6, DECK, -33, -3, mat.pla); boxP(232, 364, DECK - 6, DECK, 3, 33, mat.pla);
+boxP(238, 358, 70, 76, -12, 18, mat.steel);
+// porta: 4 montanti e traversa
+for (const x of [POSTL, POSTR]) for (const z of [-27, 27]) { const p = mesh(new THREE.CylinderGeometry(3, 3, 64, 18), mat.pla); p.position.set(x, DECK + 32, z); }
+boxP(232, 364, DECK + 64, DECK + 70, -33, 33, mat.pla);
+for (const x of [POSTL, POSTR]) for (const z of [-27, 27]) cylZ(1.6, x, DECK + 70.2, z - 0.2, z + 0.2, mat.motor).rotation.set(0, 0, 0);
+// rampa trasparente, supporti e piede
+{ const g = mesh(new THREE.BoxGeometry(RX1 - RX0, 3, RLEN), mat.glass); g.position.set((RX0 + RX1)/2, (RAMP0.y + RAMP1.y)/2, (RAMP0.z + RAMP1.z)/2); g.rotation.x = RANG; g.renderOrder = 2; }
+prismX([[33, 0], [33, 132], [52, 0]], RX0, RX0 + 4, mat.pla);
+prismX([[33, 0], [33, 132], [52, 0]], RX1 - 4, RX1, mat.pla);
+boxP(RX0, RX1, 0, 7, 312, 344, mat.pla);
+// manovella
+const crank = new THREE.Group(); crank.position.set(PV.x, PV.y, 20); dev.add(crank);
+{ const sh = new THREE.Shape([new THREE.Vector2(0, 22), new THREE.Vector2(R, 14), new THREE.Vector2(R, -14), new THREE.Vector2(0, -22)]);
+  mesh(new THREE.ExtrudeGeometry(sh, { depth:8, bevelEnabled:false }), mat.pla, crank);
+  cylZ(22, 0, 0, 0, 8, mat.pla, crank); cylZ(14, R, 0, 0, 8, mat.pla, crank); cylZ(7, R, 0, 8, 9, mat.ring, crank); cylZ(3.5, R, 0, 8, 17, mat.steel, crank); }
+const crankMeshes = []; crank.traverse(o => o.isMesh && crankMeshes.push(o));
+// biella
+const rod = new THREE.Group(); rod.position.z = 28; dev.add(rod);
+boxP(0, L, -7, 7, 0, 6, mat.pla, rod); cylZ(10, 0, 0, 0, 6, mat.pla, rod); cylZ(10, L, 0, 0, 6, mat.pla, rod);
+cylZ(6, 0, 0, 6, 7, mat.ring, rod); cylZ(6, L, 0, 6, 7, mat.ring, rod);
+// pattino (rosso), asta e portiere
+const slider = new THREE.Group(); dev.add(slider);
+boxP(5, 46, 76, 126, -10, 18, mat.red, slider);
+boxP(-10, 8, 96, 116, 18, 28, mat.red, slider); cylZ(10, -2, PV.y, 18, 28, mat.red, slider); cylZ(3.5, 0, PV.y, 18, 35, mat.steel, slider);
+boxP(KOFF - 3, KOFF + 3, 126, DECK + 2, -2.5, 2.5, mat.pla2, slider);
+const keeper = new THREE.Group(); keeper.position.set(KOFF, DECK, 0); slider.add(keeper);
+boxP(-9, 9, 0, 4, -4, 4, mat.pla, keeper);
+boxP(-8, -2, 4, 24, -2, 2, mat.pla, keeper); boxP(2, 8, 4, 24, -2, 2, mat.pla, keeper);
+boxP(-8, 8, 24, 44, -2, 2, mat.pla, keeper);
+for (const s of [-1, 1]) { const a = boxP(-2.5, 2.5, -10, 0, -2, 2, mat.pla, keeper); a.position.set(s*11, 43, 0); a.rotation.z = s*0.45; }
+{ const h = mesh(new THREE.SphereGeometry(6, 24, 16), mat.pla, keeper); h.position.set(0, 51, 0); }
+// cannone a molla (sulla rampa)
+const ramp = (s, x, h) => new THREE.Vector3(x, RAMP0.y + s*Math.sin(RANG) + h*Math.cos(RANG), RAMP0.z - s*Math.cos(RANG) + h*Math.sin(RANG));
+const cannon = new THREE.Group(); dev.add(cannon);
+const cBody = new THREE.Group(); cannon.add(cBody);
+boxP(-14, 14, 0, 26, -70, 0, mat.pla, cBody);
+{ const b = mesh(new THREE.CylinderGeometry(8, 8, 10, 24), mat.pla, cBody); b.rotation.x = Math.PI/2; b.position.set(0, 13, -75); }
+const plunger = new THREE.Group(); cBody.add(plunger);
+{ const r1 = mesh(new THREE.CylinderGeometry(4, 4, 22, 16), mat.steel, plunger); r1.rotation.x = Math.PI/2; r1.position.set(0, 13, 11);
+  const k = mesh(new THREE.CylinderGeometry(9, 9, 9, 28), mat.pla2, plunger); k.rotation.x = Math.PI/2; k.position.set(0, 13, 25); }
+{ const pin = mesh(new THREE.CylinderGeometry(2.5, 2.5, 10, 12), mat.pla2, cBody); pin.position.set(0, -4, -40); }
+const cannonMeshes = []; cannon.traverse(o => o.isMesh && cannonMeshes.push(o));
+function placeCannon(aim){
+  cannon.position.copy(ramp(12, GOALC, 1.5));
+  cannon.rotation.set(RANG, 0, 0);
+  cBody.rotation.set(0, -rad(aim), 0);
+}
+// palla
+const ball = mesh(new THREE.SphereGeometry(BR, 32, 20), mat.ball);
+{ const g = new THREE.Mesh(new THREE.PlaneGeometry(2000, 2000), new THREE.ShadowMaterial({ opacity:0.15 })); g.rotation.x = -Math.PI/2; g.position.y = -0.2; g.receiveShadow = true; dev.add(g); }
+
+function pose(){
+  const cp = { x:PV.x + R*Math.cos(th), y:PV.y + R*Math.sin(th) }, sx = sliderX(th);
+  crank.rotation.z = th;
+  rod.position.x = cp.x; rod.position.y = cp.y; rod.rotation.z = Math.atan2(PV.y - cp.y, sx - cp.x);
+  slider.position.x = sx;
+}
+
+// --- gioco ---
+const G = { state:'ready', s:S0, x:GOALC, vs:0, vx:0, z:0, vz:0, power:0, charging:false, wait:0, hit:false, gol:0, par:0 };
+const msg = t => { $('b3Msg').textContent = t; };
+function resetBall(){ Object.assign(G, { state:'ready', s:S0, x:GOALC + Math.tan(rad(+aimIn.value))*(S0 - 12), vs:0, vx:0, hit:false }); }
+function startCharge(){ if (G.state !== 'ready') return; G.charging = true; G.power = 0; }
+function release(){
+  if (!G.charging) return; G.charging = false;
+  const a = rad(+aimIn.value), v = 650 + 1350*G.power;
+  G.vs = v*Math.cos(a); G.vx = v*Math.sin(a); G.state = 'ramp'; G.power = 0;
+  msg('Tiro partito…');
+}
+function result(t, cls){ G.hit = true; msg(t); if (cls === 'gol'){ G.gol++; $('b3Gol').textContent = G.gol; } if (cls === 'par'){ G.par++; $('b3Par').textContent = G.par; } }
+function stepBall(dt){
+  if (G.state === 'ramp'){
+    G.vs -= ACC*dt; G.s += G.vs*dt; G.x += G.vx*dt;
+    if (G.x < RX0 + 4 + BR){ G.x = RX0 + 4 + BR; G.vx = Math.abs(G.vx)*0.6; }
+    if (G.x > RX1 - 4 - BR){ G.x = RX1 - 4 - BR; G.vx = -Math.abs(G.vx)*0.6; }
+    ball.rotation.x -= G.vs*dt/BR;
+    if (G.s >= RLEN){ G.state = 'deck'; G.z = RAMP1.z; G.vz = -G.vs; }
+    else if (G.s <= S0 && G.vs < 0){ if (!G.hit) msg('Troppo piano: la palla non è arrivata alla porta. Carica di più la molla.'); resetBall(); }
+  } else if (G.state === 'deck'){
+    const z0 = G.z; G.vz -= Math.sign(G.vz)*260*dt; G.z += G.vz*dt; G.x += G.vx*dt;
+    ball.rotation.x += G.vz*dt/BR;
+    if (z0 > 27 && G.z <= 27){
+      if (G.x < POSTL - 3 || G.x > POSTR + 3){ result('Fuori! La palla è passata accanto alla porta.', 'out'); G.vz = Math.abs(G.vz)*0.4; }
+      else if (G.x < POSTL + 3 + BR || G.x > POSTR - 3 - BR){ result('Palo!', 'out'); G.vz = Math.abs(G.vz)*0.5; G.vx = -G.vx*0.5; }
+    }
+    if (G.vz < 0 && z0 > 4 + BR && G.z <= 4 + BR && Math.abs(G.x - keeperX(th)) < 13 + BR){ result('Parata! Il portiere è arrivato in tempo.', 'par'); G.vz = Math.abs(G.vz)*0.55; G.vx += (G.x - keeperX(th))*4; }
+    if (G.z <= -18){ G.z = -18; G.vz = 0; if (!G.hit) result('GOL! ⚽', 'gol'); }
+    if (G.x < POSTL + 3 + BR && G.z < 27){ G.x = POSTL + 3 + BR; G.vx = Math.abs(G.vx)*0.5; }
+    if (G.x > POSTR - 3 - BR && G.z < 27){ G.x = POSTR - 3 - BR; G.vx = -Math.abs(G.vx)*0.5; }
+    if (G.vz > 0 && G.z >= RAMP1.z){ G.state = 'ramp'; G.s = RLEN; G.vs = -G.vz; }
+    if (Math.abs(G.vz) < 15){ G.vz = 0; G.state = 'wait'; G.wait = 1.3; if (!G.hit) msg('La palla si è fermata prima del portiere: tira più forte.'); }
+  } else if (G.state === 'wait'){ G.wait -= dt; if (G.wait <= 0) resetBall(); }
+}
+function placeBall(){
+  if (G.state === 'ready' || G.state === 'ramp'){ const s = G.state === 'ready' ? S0 - 15*G.power : G.s; ball.position.copy(ramp(Math.min(s, RLEN), G.x, 1.5 + BR)); }
+  else ball.position.set(G.x, DECK + BR, G.z);
+}
+const fire = $('b3Fire');
+fire.addEventListener('pointerdown', e => { e.preventDefault(); startCharge(); });
+fire.addEventListener('pointerup', release); fire.addEventListener('pointerleave', release); fire.addEventListener('pointercancel', release);
+fire.addEventListener('keydown', e => { if ((e.key === ' ' || e.key === 'Enter') && !e.repeat){ e.preventDefault(); startCharge(); } });
+fire.addEventListener('keyup', e => { if (e.key === ' ' || e.key === 'Enter') release(); });
+aimIn.addEventListener('input', () => { if (G.state === 'ready') resetBall(); });
+
+// --- trascinamento: manovella o cannone ---
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(), plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0), hitP = new THREE.Vector3();
+let lastTh = 0, onCannon = false;
+function setRay(e){ const r = renderer.domElement.getBoundingClientRect(); ndc.set(((e.clientX - r.left)/r.width)*2 - 1, -((e.clientY - r.top)/r.height)*2 + 1); ray.setFromCamera(ndc, camera); }
+function crankAngle(){ plane.constant = -(24*S + dev.position.z); if (!ray.ray.intersectPlane(plane, hitP)) return null; const p = dev.worldToLocal(hitP.clone()); return Math.atan2(p.y - PV.y, p.x - PV.x); }
+renderer.domElement.addEventListener('pointerdown', e => {
+  setRay(e);
+  if (ray.intersectObjects(cannonMeshes, false).length && G.state === 'ready'){ onCannon = true; startCharge(); }
+  else if (ray.intersectObjects(crankMeshes, false).length){ const a = crankAngle(); if (a === null) return; dragCrank = true; lastTh = a; }
+  else return;
+  controls.enabled = false; renderer.domElement.setPointerCapture(e.pointerId); renderer.domElement.style.cursor = 'grabbing';
+});
+renderer.domElement.addEventListener('pointermove', e => {
+  setRay(e);
+  if (dragCrank){ const a = crankAngle(); if (a === null) return; let d = a - lastTh; d = Math.atan2(Math.sin(d), Math.cos(d)); th += d; lastTh = a; return; }
+  if (!onCannon) renderer.domElement.style.cursor = ray.intersectObjects(crankMeshes.concat(cannonMeshes), false).length ? 'grab' : '';
+});
+const endDrag = () => { if (onCannon){ onCannon = false; release(); } if (!dragCrank && controls.enabled) return; dragCrank = false; controls.enabled = true; renderer.domElement.style.cursor = ''; };
+renderer.domElement.addEventListener('pointerup', endDrag); renderer.domElement.addEventListener('pointercancel', endDrag);
+
+function resize(){
+  const w = stage.clientWidth, h = stage.clientHeight; if (!w || !h) return;
+  renderer.setSize(w, h, false); camera.aspect = w/h; camera.updateProjectionMatrix();
+  if (!resize.done){ resize.done = true; const f = Math.max(1, Math.pow(1.45/camera.aspect, 0.75)); camera.position.sub(controls.target).multiplyScalar(f).add(controls.target); }
+}
+new ResizeObserver(resize).observe(stage); resize();
+document.addEventListener('vista', e => { if (e.detail === 'modello') resize(); });
+resetBall();
+let last = performance.now(), prevTh = th;
+function loop(now){
+  const dt = Math.min(0.05, (now - last)/1000); last = now;
+  if (motor && !dragCrank) th += rpm/60*2*Math.PI*dt;
+  wEff = dt > 0 ? wEff*0.85 + 0.15*(th - prevTh)/dt : wEff; prevTh = th;
+  if (G.charging){ G.power = Math.min(1, G.power + dt/1.1); }
+  $('b3Pow').style.width = (G.power*100).toFixed(0) + '%';
+  for (let i = 0; i < 4; i++) stepBall(dt/4);
+  placeCannon(+aimIn.value);
+  plunger.position.z = 15*G.power;
+  pose(); placeBall(); panel(); controls.update(); renderer.render(scene, camera);
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+})();
+
+</script>
+<script>
+(function(){
+  const tabs = [...document.querySelectorAll('.topbar button.tab')];
+  function show(v){
+    tabs.forEach(t => { const on = t.dataset.view === v; t.classList.toggle('on', on); t.setAttribute('aria-selected', on); document.getElementById(t.dataset.view).hidden = !on; });
+    document.dispatchEvent(new CustomEvent('vista', { detail:v }));
+    window.scrollTo(0, 0);
+  }
+  tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.view)));
+  if (location.hash === '#spiega') show('spiega');
 })();
 </script>
 </body>
