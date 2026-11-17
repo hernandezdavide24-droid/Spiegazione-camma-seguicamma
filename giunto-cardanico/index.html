@@ -12,9 +12,64 @@
 <body>
 <nav class="topbar" aria-label="Navigazione">
   <a class="brand" href="../meccanismi/">Meccanismi<small>Open Day SAM</small></a>
-  <a class="tab" href="../meccanismi/">Tutti i meccanismi</a>
+  <button class="tab on" type="button" data-view="modello" aria-selected="true">Il modello 3D</button>
+  <button class="tab" type="button" data-view="spiega" aria-selected="false">Come funziona</button>
+  <a class="tab" href="../meccanismi/" aria-label="Tutti i meccanismi">Tutti</a>
 </nav>
-<main class="page">
+<main class="m3d view" id="modello">
+<div class="app" style="min-height:560px">
+  <div class="stage3" id="stage3" style="min-height:360px">
+    <div class="loadmsg" id="loadmsg">Caricamento del modello 3D…</div>
+    <div class="hint3">Trascina l'albero d'ingresso (ω₁) per farlo girare · trascina altrove per ruotare la vista</div>
+  </div>
+  <aside class="panel3">
+    <header>
+      <h1>Doppio giunto cardanico</h1>
+      <p class="sub">Modello 3D ricostruito dal foglio di progetto: albero d'ingresso (ω₁), albero intermedio (ω₃) e albero d'uscita (ω₂), uniti da due crociere.</p>
+    </header>
+
+    <section>
+      <p class="label">Angolo di ciascun giunto</p>
+      <label class="spd3">α₁ = α₂<input type="range" id="c3Ang" min="115" max="180" step="1" value="115"><output id="c3AngOut">115°</output></label>
+      <div class="row3">
+        <button class="btn3 ghost" type="button" data-ang="180">1. Dritto (180°)</button>
+        <button class="btn3 ghost" type="button" data-ang="115">2. Piegato (115°)</button>
+      </div>
+      <div class="row3">
+        <button class="btn3" id="c3Mot" type="button" aria-pressed="true">■ Ferma</button>
+        <button class="btn3 ghost" id="c3Phase" type="button" aria-pressed="false">Sfasa le forcelle di 90°</button>
+      </div>
+    </section>
+
+    <section>
+      <p class="label">Valori in questo istante</p>
+      <div class="nums">
+        <div><b id="c3W3">1,00</b><span>ω₃ / ω₁ (albero intermedio)</span></div>
+        <div><b id="c3W2">1,00</b><span>ω₂ / ω₁ (uscita)</span></div>
+        <div><b id="c3B">65°</b><span>deviazione di ogni giunto β = 180° − α₁</span></div>
+        <div><b id="c3A">50°</b><span>angolo tra ingresso e uscita α</span></div>
+      </div>
+    </section>
+
+    <section>
+      <p class="label">Velocità durante un giro dell'ingresso</p>
+      <svg class="g3" id="c3G" viewBox="0 0 340 130" aria-label="Rapporti di velocità durante un giro">
+        <line class="ax" x1="30" y1="110" x2="330" y2="110"/><line class="ax" x1="30" y1="8" x2="30" y2="110"/>
+        <line class="ax" id="c3One" x1="30" y1="0" x2="330" y2="0" style="stroke-dasharray:3 3"/>
+        <path id="c3C3" d="" style="fill:none;stroke:#f49712;stroke-width:2.5"/>
+        <path id="c3C2" d="" style="fill:none;stroke:var(--bar-accent);stroke-width:3"/>
+        <line id="c3Cur" x1="30" y1="8" x2="30" y2="110" style="stroke:var(--bar-muted);stroke-width:1"/>
+        <text class="tl" x="30" y="124" text-anchor="middle">0°</text><text class="tl" x="180" y="124" text-anchor="middle">180°</text><text class="tl" x="330" y="124" text-anchor="end">360°</text>
+        <text class="tl" id="c3Max" x="26" y="12" text-anchor="end"></text><text class="tl" x="26" y="113" text-anchor="end">0</text><text class="tl" id="c3OneL" x="26" y="0" text-anchor="end">1</text>
+      </svg>
+      <p class="note3"><span style="color:#f49712">■</span> ω₃/ω₁ albero intermedio · <span style="color:var(--bar-accent)">■</span> ω₂/ω₁ uscita</p>
+      <p class="note3" id="c3Note"></p>
+    </section>
+  </aside>
+</div>
+
+</main>
+<main class="page view" id="spiega" hidden>
 
   <header class="hero">
     <span class="eyebrow">Giunto cardanico</span>
@@ -148,12 +203,14 @@
     <h2>Il modello</h2>
     <p class="lead">Il meccanismo costruito per l'Open Day.</p>
     <div class="model">
-      <div class="ph">Foto o render del modello<br>(in arrivo)</div>
+      <img src="schizzo.jpg" alt="Schizzo di progetto del doppio giunto cardanico" style="border-radius:14px;display:block;width:100%">
+      <p class="lead" style="margin:0">Il modello è un doppio giunto cardanico: albero d&#x27;ingresso, albero intermedio corto e albero d&#x27;uscita, collegati da due crociere. Il foglio di progetto studia due casi: alberi allineati (α₁ = α₂ = 180°) e alberi piegati (α₁ = α₂ = 115°, quindi ogni giunto devia di 65°). Il modello 3D è ricostruito da questo schizzo.</p>
       <dl>
-        <dt>Diametro alberi</dt><dd>—</dd>
-        <dt>Angolo massimo</dt><dd>—</dd>
-        <dt>Materiale</dt><dd>—</dd>
-        <dt>Tipo di cuscinetti</dt><dd>—</dd>
+        <dt>Configurazione</dt><dd>doppio giunto cardanico, forcelle in fase</dd>
+        <dt>Angolo di ciascun giunto</dt><dd>α₁ = α₂ = 115° (deviazione β = 65°)</dd>
+        <dt>Angolo tra ingresso e uscita</dt><dd>α = 50°</dd>
+        <dt>Albero intermedio ω₃/ω₁</dt><dd>tra 0,423 e 2,366</dd>
+        <dt>Uscita ω₂/ω₁</dt><dd>1 (costante)</dd>
       </dl>
     </div>
   </section>
@@ -283,6 +340,201 @@ const INFO = {
 Mecc.parts('stage', 'chips', 'chipInfo', INFO, 'Scegli una parte per scoprire a cosa serve.');
 Mecc.quiz("Esatto! Per questo si usano due giunti in fase: il secondo compensa il primo.", "Non proprio: guarda il grafico ω₂/ω₁ mentre l'albero gira.");
 Mecc.reveal();
+})();
+</script>
+<script src="../assets/lib/three.min.js"></script>
+<script src="../assets/lib/OrbitControls.js"></script>
+<script>
+window.addEventListener("error", e => { const m = document.getElementById("loadmsg"); if (m) m.textContent = "Errore nel modello 3D: " + e.message; });
+/* Modello 3D interattivo del doppio giunto cardanico, ricostruito dal foglio di progetto.
+   Ingresso ω1, albero intermedio ω3, uscita ω2; α1 = α2 è l'angolo (interno) di ciascun giunto,
+   β = 180° − α1 la deviazione. Piegatura nel piano orizzontale. Unità: mm. */
+(function(){
+"use strict";
+const $ = id => document.getElementById(id);
+const rad = d => d*Math.PI/180, deg = r => r*180/Math.PI;
+const fmt = (v, n=0) => v.toLocaleString('it-IT', { minimumFractionDigits:n, maximumFractionDigits:n });
+const LM = 44, RP = 16;
+let alpha1 = 115, t1 = 0, motor = true, phase90 = false, dragging = false;
+
+// --- cinematica (vettoriale, esatta) ---
+const V = (x, y, z) => ({ x, y, z });
+const cr = (a, b) => V(a.y*b.z - a.z*b.y, a.z*b.x - a.x*b.z, a.x*b.y - a.y*b.x);
+const dot = (a, b) => a.x*b.x + a.y*b.y + a.z*b.z;
+const nrm = a => { const l = Math.hypot(a.x, a.y, a.z) || 1; return V(a.x/l, a.y/l, a.z/l); };
+function kin(t, a1, ph){
+  const b = rad(180 - a1);
+  const d1 = V(1, 0, 0), d2 = V(Math.cos(b), 0, -Math.sin(b)), d3 = V(Math.cos(2*b), 0, -Math.sin(2*b));
+  const A = V(0, Math.cos(rad(t)), Math.sin(rad(t)));
+  const B = nrm(cr(d2, A));
+  const Cp = ph ? nrm(cr(d2, B)) : B;
+  const E = nrm(cr(d3, Cp));
+  const up = V(0, 1, 0);
+  const th3 = deg(Math.atan2(dot(B, cr(d2, up)), dot(B, up)));
+  const th2 = deg(Math.atan2(dot(E, cr(d3, up)), dot(E, up)));
+  return { d1, d2, d3, A, B, Cp, E, th3, th2 };
+}
+const w180 = d => ((d % 360) + 540) % 360 - 180;
+function ratios(t, a1, ph){
+  const h = 0.25, p = kin(t + h, a1, ph), m = kin(t - h, a1, ph);
+  return { r3: w180(p.th3 - m.th3)/(2*h), r2: w180(p.th2 - m.th2)/(2*h) };
+}
+
+// --- pannello ---
+const ang = $('c3Ang');
+function setAng(v){ alpha1 = +v; ang.value = v; $('c3AngOut').value = v + '°'; drawGraph(); }
+ang.addEventListener('input', () => setAng(ang.value));
+document.querySelectorAll('[data-ang]').forEach(b => b.addEventListener('click', () => setAng(b.dataset.ang)));
+$('c3Mot').addEventListener('click', e => { motor = !motor; e.currentTarget.textContent = motor ? '■ Ferma' : '▶ Gira'; e.currentTarget.setAttribute('aria-pressed', motor); });
+$('c3Phase').addEventListener('click', e => { phase90 = !phase90; e.currentTarget.classList.toggle('on', phase90); e.currentTarget.setAttribute('aria-pressed', phase90); e.currentTarget.textContent = phase90 ? 'Rimetti le forcelle in fase' : 'Sfasa le forcelle di 90°'; drawGraph(); });
+let yMax = 2.6;
+const GX = t => 30 + t/360*300, GY = v => 110 - Math.min(v, yMax)/yMax*102;
+function drawGraph(){
+  let d3 = '', d2 = '', mx = 1;
+  const pts = [];
+  for (let i = 0; i <= 180; i++){ const t = i*2, r = ratios(t, alpha1, phase90); pts.push([t, r]); mx = Math.max(mx, r.r3, r.r2); }
+  yMax = Math.max(1.5, Math.ceil(mx*1.1*2)/2);
+  pts.forEach(([t, r], i) => { d3 += (i ? 'L' : 'M') + GX(t).toFixed(1) + ',' + GY(r.r3).toFixed(1); d2 += (i ? 'L' : 'M') + GX(t).toFixed(1) + ',' + GY(r.r2).toFixed(1); });
+  $('c3C3').setAttribute('d', d3); $('c3C2').setAttribute('d', d2);
+  const y1 = GY(1).toFixed(1); $('c3One').setAttribute('y1', y1); $('c3One').setAttribute('y2', y1); $('c3OneL').setAttribute('y', +y1 + 3);
+  $('c3Max').textContent = fmt(yMax, 1);
+  const b = 180 - alpha1, cb = Math.cos(rad(b));
+  $('c3B').textContent = b + '°'; $('c3A').textContent = (2*alpha1 - 180) + '°';
+  $('c3Note').textContent = b === 0
+    ? 'Alberi allineati: tutti e tre girano alla stessa velocità, ω₁ = ω₃ = ω₂.'
+    : (phase90
+      ? `Forcelle sfasate: le irregolarità dei due giunti si sommano e l'uscita oscilla tra ${fmt(cb*cb, 3)} e ${fmt(1/(cb*cb), 3)} volte l'ingresso.`
+      : `L'albero intermedio oscilla tra cos β = ${fmt(cb, 3)} e 1/cos β = ${fmt(1/cb, 3)} volte l'ingresso, ma con α₁ = α₂ e le forcelle in fase il secondo giunto compensa il primo: ω₂/ω₁ = 1, costante.`);
+}
+function panel(){
+  const t = ((t1 % 360) + 360) % 360, r = ratios(t, alpha1, phase90);
+  $('c3W3').textContent = fmt(r.r3, 2); $('c3W2').textContent = fmt(r.r2, 2);
+  $('c3Cur').setAttribute('x1', GX(t).toFixed(1)); $('c3Cur').setAttribute('x2', GX(t).toFixed(1));
+}
+setAng(115);
+
+if (!window.THREE){ $('loadmsg').textContent = 'Il modello 3D non si è caricato. Prova a ricaricare la pagina.'; panel(); return; }
+$('loadmsg').remove();
+const S = 0.06, stage = $('stage3');
+const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+renderer.outputEncoding = THREE.sRGBEncoding; renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+stage.prepend(renderer.domElement);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 400);
+camera.position.set(1.8, 12, 22.5);
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 0, 0); controls.enableDamping = true; controls.dampingFactor = 0.08; controls.minDistance = 6; controls.maxDistance = 70;
+scene.add(new THREE.HemisphereLight(0xf4f7ff, 0x6c7484, 0.85));
+const sun = new THREE.DirectionalLight(0xffffff, 1.0); sun.position.set(6, 22, 12); sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048);
+Object.assign(sun.shadow.camera, { left:-14, right:14, top:14, bottom:-14, near:1, far:60 }); sun.shadow.bias = -0.0004; scene.add(sun);
+const fill = new THREE.DirectionalLight(0xdfe8ff, 0.45); fill.position.set(-14, 8, -8); scene.add(fill);
+const Mt = (c, m, r) => new THREE.MeshStandardMaterial({ color:new THREE.Color(c).convertSRGBToLinear(), metalness:m, roughness:r });
+const mat = { shaft: Mt(0xdde1e6, 0.35, 0.3), fork: Mt(0xc9ced5, 0.35, 0.32), hex: Mt(0x8d949d, 0.5, 0.35), cross: Mt(0xf08a1c, 0.25, 0.4), pin: Mt(0x3b414a, 0.4, 0.4), mark: Mt(0x1f45c8, 0.2, 0.4) };
+const dev = new THREE.Group(); dev.scale.setScalar(S); scene.add(dev);
+function mesh(g, m, parent){ const o = new THREE.Mesh(g, m); o.castShadow = true; o.receiveShadow = true; parent.add(o); return o; }
+function cylX(r, x0, x1, m, parent, seg){ const o = mesh(new THREE.CylinderGeometry(r, r, x1 - x0, seg || 32), m, parent); o.rotation.z = Math.PI/2; o.position.x = (x0 + x1)/2; return o; }
+function boxP(x0, x1, y0, y1, z0, z1, m, parent){ const o = mesh(new THREE.BoxGeometry(x1 - x0, y1 - y0, z1 - z0), m, parent); o.position.set((x0 + x1)/2, (y0 + y1)/2, (z0 + z1)/2); return o; }
+// forcella: s = +1 se l'albero sta dalla parte +x del centro del giunto, -1 se dalla parte -x
+function fork(parent, s, x0){
+  const g = new THREE.Group(); g.position.x = x0; parent.add(g);
+  for (const sy of [-1, 1]){
+    boxP(s > 0 ? 0 : -20, s > 0 ? 20 : 0, sy > 0 ? 13.5 : -19.5, sy > 0 ? 19.5 : -13.5, -7, 7, mat.fork, g);
+    const boss = mesh(new THREE.CylinderGeometry(7, 7, 6, 28), mat.fork, g); boss.position.set(0, sy*16.5, 0);
+    const cap = mesh(new THREE.CylinderGeometry(3.6, 3.6, 6.6, 18), mat.pin, g); cap.position.set(0, sy*16.5, 0);
+  }
+  boxP(s > 0 ? 18 : -26, s > 0 ? 26 : -18, -19.5, 19.5, -9, 9, mat.fork, g);
+  return g;
+}
+function crossPiece(){
+  const g = new THREE.Group(); dev.add(g);
+  mesh(new THREE.BoxGeometry(10, 10, 10), mat.cross, g);
+  cylX(3.4, -RP - 1, RP + 1, mat.cross, g, 18);
+  const c = mesh(new THREE.CylinderGeometry(3.4, 3.4, 2*RP + 2, 18), mat.cross, g);
+  return g;
+}
+// albero d'ingresso (dal giunto verso -x) e d'uscita (verso +x): forcella, esagono, tubo, collare, codolo
+function endShaft(s){
+  const g = new THREE.Group(); dev.add(g);
+  fork(g, s, 0);
+  const X = v => s*v;
+  const hex = mesh(new THREE.CylinderGeometry(13, 13, 14, 6), mat.hex, g); hex.rotation.z = Math.PI/2; hex.position.x = X(33);
+  const tube = cylX(10, Math.min(X(40), X(84)), Math.max(X(40), X(84)), mat.shaft, g);
+  for (const v of [52, 72]) cylX(10.4, Math.min(X(v), X(v + 1.2)), Math.max(X(v), X(v + 1.2)), mat.hex, g);
+  cylX(7.5, Math.min(X(84), X(92)), Math.max(X(84), X(92)), mat.fork, g);
+  cylX(5, Math.min(X(92), X(118)), Math.max(X(92), X(118)), mat.shaft, g);
+  const key = boxP(Math.min(X(98), X(112)), Math.max(X(98), X(112)), 3.6, 5.4, -1.6, 1.6, mat.mark, g);
+  return g;
+}
+const inShaft = endShaft(-1), outShaft = endShaft(1);
+const mid = new THREE.Group(); dev.add(mid);
+fork(mid, 1, 0);
+cylX(8, 12, LM - 12, mat.fork, mid);
+for (const v of [17, LM - 17]) cylX(9.5, v - 1.5, v + 1.5, mat.hex, mid);
+const fork2Holder = new THREE.Group(); fork2Holder.position.x = LM; mid.add(fork2Holder);
+fork(fork2Holder, -1, 0);
+const cross1 = crossPiece(), cross2 = crossPiece();
+{ const g = new THREE.Mesh(new THREE.PlaneGeometry(1400, 1400), new THREE.ShadowMaterial({ opacity:0.15 })); g.rotation.x = -Math.PI/2; g.position.y = -60; g.receiveShadow = true; dev.add(g); }
+const inMeshes = []; inShaft.traverse(o => o.isMesh && inMeshes.push(o));
+
+const tv = v => new THREE.Vector3(v.x, v.y, v.z);
+function setBasis(obj, x, y){ const X = tv(x), Y = tv(y), Z = new THREE.Vector3().crossVectors(X, Y); obj.quaternion.setFromRotationMatrix(new THREE.Matrix4().makeBasis(X, Y, Z)); }
+function pose(){
+  const k = kin(t1, alpha1, phase90);
+  const J1 = new THREE.Vector3(0, 0, 0), J2 = tv(k.d2).multiplyScalar(LM);
+  const c = J1.clone().add(J2).add(tv(k.d1).multiplyScalar(-118)).add(J2.clone().add(tv(k.d3).multiplyScalar(118))).multiplyScalar(0.25);
+  dev.position.copy(c).multiplyScalar(-S);
+  inShaft.position.copy(J1); setBasis(inShaft, k.d1, k.A);
+  mid.position.copy(J1); setBasis(mid, k.d2, k.B);
+  fork2Holder.rotation.x = phase90 ? Math.PI/2 : 0;
+  outShaft.position.copy(J2); setBasis(outShaft, k.d3, k.E);
+  cross1.position.copy(J1); setBasis(cross1, k.A, k.B);
+  cross2.position.copy(J2); setBasis(cross2, k.Cp, k.E);
+}
+
+// --- trascinamento dell'albero d'ingresso ---
+const ray = new THREE.Raycaster(), ndc = new THREE.Vector2();
+let lastX = 0;
+function setRay(e){ const r = renderer.domElement.getBoundingClientRect(); ndc.set(((e.clientX - r.left)/r.width)*2 - 1, -((e.clientY - r.top)/r.height)*2 + 1); ray.setFromCamera(ndc, camera); }
+renderer.domElement.addEventListener('pointerdown', e => {
+  setRay(e); if (!ray.intersectObjects(inMeshes, false).length) return;
+  dragging = true; lastX = e.clientY + e.clientX; controls.enabled = false; renderer.domElement.setPointerCapture(e.pointerId); renderer.domElement.style.cursor = 'grabbing';
+});
+renderer.domElement.addEventListener('pointermove', e => {
+  if (!dragging){ setRay(e); renderer.domElement.style.cursor = ray.intersectObjects(inMeshes, false).length ? 'grab' : ''; return; }
+  const v = e.clientY + e.clientX; t1 += (v - lastX)*0.9; lastX = v;
+});
+const endDrag = () => { if (!dragging) return; dragging = false; controls.enabled = true; renderer.domElement.style.cursor = ''; };
+renderer.domElement.addEventListener('pointerup', endDrag); renderer.domElement.addEventListener('pointercancel', endDrag);
+
+function resize(){
+  const w = stage.clientWidth, h = stage.clientHeight; if (!w || !h) return;
+  renderer.setSize(w, h, false); camera.aspect = w/h; camera.updateProjectionMatrix();
+  if (!resize.done){ resize.done = true; const f = Math.max(1, Math.pow(1.45/camera.aspect, 0.55)); camera.position.sub(controls.target).multiplyScalar(f).add(controls.target); }
+}
+new ResizeObserver(resize).observe(stage); resize();
+document.addEventListener('vista', e => { if (e.detail === 'modello') resize(); });
+let last = performance.now();
+function loop(now){
+  const dt = Math.min(0.05, (now - last)/1000); last = now;
+  if (motor && !dragging) t1 += 120*dt;
+  pose(); panel(); controls.update(); renderer.render(scene, camera);
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+})();
+
+</script>
+<script>
+(function(){
+  const tabs = [...document.querySelectorAll('.topbar button.tab')];
+  function show(v){
+    tabs.forEach(t => { const on = t.dataset.view === v; t.classList.toggle('on', on); t.setAttribute('aria-selected', on); document.getElementById(t.dataset.view).hidden = !on; });
+    document.dispatchEvent(new CustomEvent('vista', { detail:v }));
+    window.scrollTo(0, 0);
+  }
+  tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.view)));
+  if (location.hash === '#spiega') show('spiega');
 })();
 </script>
 </body>
